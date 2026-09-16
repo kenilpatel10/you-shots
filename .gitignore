@@ -1,0 +1,13 @@
+node_modules/
+out/
+.cache/
+public/drafts/
+public/samples/
+.env
+.env.local
+*.log
+.DS_Store
+.remotion/
+remotion-bundle/
+coverage/
+.vitest/

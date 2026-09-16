@@ -1,0 +1,52 @@
+{
+  "name": "bolt-shorts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bolt Asks Why — a free, human-reviewed kids' YouTube Shorts pipeline",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "studio": "remotion studio remotion/index.ts",
+    "showcase": "tsx src/cli/showcase.ts",
+    "generate": "tsx src/cli/generate.ts",
+    "publish": "tsx src/cli/publish.ts",
+    "weekly": "tsx src/cli/weekly.ts",
+    "preview": "tsx src/cli/preview.ts",
+    "auth:youtube": "tsx src/cli/authYoutube.ts",
+    "smoke": "tsx src/cli/smoke.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@google/genai": "^2.22.0",
+    "@remotion/bundler": "4.0.525",
+    "@remotion/cli": "4.0.525",
+    "@remotion/install-whisper-cpp": "4.0.525",
+    "@remotion/media-utils": "4.0.525",
+    "@remotion/renderer": "4.0.525",
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
+    "googleapis": "^160.0.0",
+    "groq-sdk": "^1.6.0",
+    "kokoro-js": "^1.2.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "4.0.525",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^22.20.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^3.2.7"
+  }
+}

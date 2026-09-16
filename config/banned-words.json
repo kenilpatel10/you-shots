@@ -1,0 +1,23 @@
+{
+  "_comment": "Lower-case word or phrase list. Matched as whole words (case-insensitive) in the spoken script and on-screen text. Keep it conservative: these are hard fails.",
+  "banned": [
+    "kill", "killed", "killing", "murder", "die", "died", "dead", "death", "blood", "bleed", "gun", "guns", "knife", "knives", "weapon", "bomb", "war", "fight", "fighting", "punch", "stab", "shoot",
+    "scary", "terrifying", "horror", "nightmare", "monster", "ghost", "demon", "haunted", "creepy",
+    "poop", "pee", "vomit", "puke", "fart", "snot", "gross", "disgusting",
+    "kiss", "kissing", "boyfriend", "girlfriend", "sexy", "romance", "dating",
+    "stupid", "dumb", "idiot", "hate", "shut up", "loser", "ugly", "fat",
+    "drunk", "beer", "wine", "alcohol", "cigarette", "smoking", "vape", "drugs",
+    "fire", "flame", "flames", "burn", "burning", "stove", "oven", "candle", "match", "matches", "lighter", "electricity", "electric", "plug", "socket", "outlet", "battery", "batteries", "scissors", "needle", "bleach", "vinegar", "chemical", "chemicals", "medicine", "pills",
+    "subscribe", "like and subscribe", "smash that", "watch till the end", "watch until the end", "you won't believe", "wait for it", "don't skip", "link in bio", "comment below", "follow me", "giveaway",
+    "instagram", "tiktok", "facebook", "snapchat", "whatsapp", "roblox", "minecraft", "fortnite", "youtube", "iphone", "ipad", "nintendo", "playstation", "xbox", "disney", "mcdonald", "coca-cola", "pepsi", "lego", "barbie",
+    "stranger", "strangers", "phone number", "address", "password", "online", "website", "app", "download", "call me", "text me", "dm me",
+    "god", "jesus", "allah", "pray", "prayer", "heaven", "hell",
+    "study shows", "studies show", "scientists say", "research shows", "percent", "%"
+  ],
+  "requiredWhenHandling": {
+    "_comment": "If the experiment contains any of the trigger words, the experiment text must contain one of the required phrases.",
+    "triggers": ["pour", "pours", "pouring", "fill", "fills", "filling", "cup", "glass", "bowl", "jar", "bottle", "water", "spoon", "bag", "tape", "string", "coin", "jug", "ice"],
+    "required": ["ask a grown-up", "ask a grownup", "ask a grown up", "with a grown-up", "with a grownup", "with a grown up"]
+  },
+  "kitchenAllowList": ["water", "salt", "sugar", "paper", "spoon", "cup", "bowl", "ice", "flour", "rice", "beans", "string", "tape", "coin", "balloon", "towel", "pencil", "crayon", "cardboard", "box", "blanket", "pillow", "mirror", "ruler", "book", "sock", "ball", "leaf", "leaves", "stone", "rock", "sand", "soil", "flower", "seed", "cotton", "clip", "bag", "jar", "bottle", "straw", "plate", "lid", "rubber band", "torch", "flashlight"]
+}

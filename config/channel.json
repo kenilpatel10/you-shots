@@ -1,0 +1,44 @@
+{
+  "name": "Bolt Asks Why",
+  "handle": "@BoltAsksWhy",
+  "characterName": "Bolt",
+  "language": "en",
+  "timezone": "Asia/Kolkata",
+  "uploadTime": "17:00",
+  "maxShortsPerDay": 1,
+  "reminderAfterHours": 48,
+  "weeklyMinApproved": 5,
+  "youtube": {
+    "categoryId": "27",
+    "containsSyntheticMedia": true,
+    "notifySubscribers": true,
+    "shortTags": ["kids", "learning", "science for kids", "why questions", "Bolt Asks Why", "shorts"],
+    "longTags": ["kids", "learning", "science for kids", "why questions", "Bolt Asks Why", "compilation"]
+  },
+  "languages": {
+    "en": {
+      "label": "English",
+      "catchphrase": "Stay curious, friends!",
+      "voice": { "engine": "kokoro", "voiceId": "af_heart", "speed": 1.06 },
+      "whisper": { "model": "base.en", "language": "en" },
+      "askGrownUp": "Ask a grown-up to help",
+      "weeklyTitle": "Bolt's Big Week",
+      "weeklyOutro": "See you next week!",
+      "font": "Fredoka"
+    }
+  },
+  "music": {
+    "enabled": true,
+    "file": "music/bolt-theme.mp3",
+    "volume": 0.14,
+    "duckedVolume": 0.045,
+    "fadeSeconds": 1.5
+  },
+  "colors": {
+    "primary": "#3C7DFF",
+    "accent": "#FFB627",
+    "highlight": "#FF6B6B",
+    "ink": "#1E2A44",
+    "paper": "#FFFDF7"
+  }
+}
