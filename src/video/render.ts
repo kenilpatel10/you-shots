@@ -73,6 +73,14 @@ export function resolveBrowser(): Promise<BrowserChoice> {
   return browserChoice;
 }
 
+/** REMOTION_CONCURRENCY may be a number of workers ("4") or a percentage ("50%"). */
+export function parseConcurrency(raw: string | undefined): number | string | null {
+  if (!raw) return null;
+  if (/^\d+%$/.test(raw)) return raw;
+  const n = Number(raw);
+  return Number.isFinite(n) && n > 0 ? Math.floor(n) : null;
+}
+
 export type RenderVideoOptions = {
   compositionId: string;
   inputProps: Record<string, unknown>;
@@ -103,7 +111,7 @@ export async function renderVideo(opts: RenderVideoOptions): Promise<{ outputPat
     crf: opts.crf ?? 20,
     scale: opts.scale ?? 1,
     frameRange: opts.frameRange,
-    concurrency: env("REMOTION_CONCURRENCY") ?? null,
+    concurrency: parseConcurrency(env("REMOTION_CONCURRENCY")),
     logLevel: "warn",
     chromiumOptions: { gl: "swangle" },
     onProgress: (p) => {
