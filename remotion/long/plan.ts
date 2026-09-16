@@ -40,11 +40,12 @@ export function formatChapterTime(frame: number, fps: number): string {
   return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 
-/** YouTube chapter list for the description (first chapter must be 00:00, each ≥ 10 s). */
+/**
+ * YouTube chapter list for the description. YouTube requires the first chapter at 00:00 and every
+ * chapter to be at least 10 s long, so the short intro card is folded into the first question's
+ * chapter and the 4 s outro is not listed separately.
+ */
 export function chapterList(props: Pick<LongVideoProps, "episodes" | "weekTitle" | "outro">, fps: number): string {
   const plan = planLongVideo(props);
-  const lines = [`00:00 ${props.weekTitle}`];
-  for (const ep of plan.episodes) lines.push(`${formatChapterTime(ep.chapterFrom, fps)} ${props.episodes[ep.index]!.chapterTitle}`);
-  lines.push(`${formatChapterTime(plan.outroFrom, fps)} ${props.outro}`);
-  return lines.join("\n");
+  return plan.episodes.map((ep, i) => `${i === 0 ? "00:00" : formatChapterTime(ep.chapterFrom, fps)} ${props.episodes[ep.index]!.chapterTitle}`).join("\n");
 }

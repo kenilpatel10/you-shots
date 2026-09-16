@@ -108,7 +108,7 @@ export const ThumbnailPropsZ = z.object({
 export type ThumbnailProps = z.infer<typeof ThumbnailPropsZ>;
 
 /* Timing constants shared by the pipeline and the compositions. */
-export const INTRO_FRAMES = 30 * 1.5; // title card before the first episode in the long video
+export const INTRO_FRAMES = 30 * 3; // title card before the first episode in the long video
 export const CHAPTER_CARD_FRAMES = 30 * 2.5;
 export const OUTRO_FRAMES = 30 * 4;
 export const SIGNOFF_TAIL_FRAMES = 30 * 2; // wave + channel name after the last word
