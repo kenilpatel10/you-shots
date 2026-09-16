@@ -10,7 +10,7 @@ export const SECTION_ORDER: SectionKey[] = ["hook", "answer", "wowFact", "experi
 /** Average speaking rate used for duration estimates (words per second) at speed ≈1.06. */
 export const WORDS_PER_SECOND = 2.7;
 /** Silence inserted between sections in the voice track. */
-export const SECTION_GAP_MS = 380;
+export const SECTION_GAP_MS = 320;
 
 export function tokenizeWords(text: string): string[] {
   return text

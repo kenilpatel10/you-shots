@@ -3,8 +3,8 @@
   "title": "How big was T. rex?",
   "hook": "Hello friends! Tyrannosaurus rex was a giant dinosaur. But just how big was it really?",
   "answer": "T. rex was about as long as a big bus and as tall as a giraffe's shoulder. Its head alone was longer than you are tall! It walked on two strong back legs, and its teeth were as long as bananas. But its arms were tiny, so it could not even scratch its own nose.",
-  "wowFact": "Here is a wow fact! A baby T. rex hatched from an egg only a little bigger than a football, and then it grew a lot every single day.",
-  "experiment": "Try this! Ask a grown-up to help you count twelve big steps in a row. That is about how long a T. rex was from nose to tail. Imagine it next to you!",
+  "wowFact": "Here is a wow fact! A baby T. rex hatched from an egg only a little bigger than a football.",
+  "experiment": "Try this! Ask a grown-up to help you count twelve big steps in a row. That is about how long a T. rex was from nose to tail!",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
     "hook": "How BIG was T. rex?",
@@ -35,6 +35,15 @@
     }
   ],
   "background": "dinosaurs",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "As big as a cat",
+      "As tall as a cloud",
+      "As long as a bus"
+    ],
+    "answer": 2
+  },
   "description": "Bolt compares the giant T. rex to buses, giraffes and bananas so kids can picture how big it really was. Then he measures a dinosaur with big steps.",
   "tags": [
     "t rex for kids",

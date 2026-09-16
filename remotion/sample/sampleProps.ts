@@ -30,6 +30,7 @@ export const sampleShortProps: ShortProps = {
     signOff: script.signOff,
     onScreenText: script.onScreenText,
     background: script.background,
+    guess: script.guess,
   },
   channel: sampleChannel,
   timeline: estimateTimeline(script, FPS, script.expressionCues as ExpressionCue[], true),

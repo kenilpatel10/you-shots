@@ -3,7 +3,7 @@
   "title": "Why do magnets stick to the fridge?",
   "hook": "Hi friends! Why does a magnet stick to the fridge but not to me?",
   "answer": "A magnet has an invisible pull all around it. That pull only grabs certain metals, and the fridge door is made of one. When the magnet gets close, its pull reaches out like an invisible hand and holds on tight. Wood, plastic and paper do not have that metal inside.",
-  "wowFact": "Here is a wow fact! The whole Earth is a giant magnet too. That is why a compass needle always turns to point the same way, towards the north.",
+  "wowFact": "Here is a wow fact! The whole Earth is a giant magnet too. That is why a compass always points north.",
   "experiment": "Try this! Ask a grown-up for a fridge magnet. Touch it to a spoon, a pencil and a cup. Which things does the magnet grab? Make a list of the sticky ones!",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
@@ -35,6 +35,15 @@
     }
   ],
   "background": "everyday-things",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "Invisible pull",
+      "Sticky glue",
+      "Tiny hooks"
+    ],
+    "answer": 0
+  },
   "description": "Bolt explains the invisible pull of a magnet and why it only grabs some things. Then he goes on a magnet hunt around the house with a grown-up.",
   "tags": [
     "why do magnets stick",

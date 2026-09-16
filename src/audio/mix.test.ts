@@ -35,4 +35,9 @@ describe("audio utilities", () => {
     expect(starts).toEqual([250, 250 + 1000 + 380]);
     expect(track.samples.length).toBe(Math.round(((250 + 1000 + 380 + 500 + 400) / 1000) * 24000));
   });
+
+  it("adds an extra pause after a chosen section", () => {
+    const { starts } = mixSections([tone(1, 0.3), tone(0.5, 0.3)], 380, 250, [2600]);
+    expect(starts).toEqual([250, 250 + 1000 + 380 + 2600]);
+  });
 });

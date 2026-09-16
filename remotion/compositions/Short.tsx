@@ -18,7 +18,7 @@ export const Short: React.FC<ShortProps> = ({ script, channel, timeline, audio }
       {audio.music ? (
         <MusicBed src={audio.music} timeline={timeline} volume={audio.musicVolume} duckedVolume={audio.duckedVolume} fadeSeconds={audio.fadeSeconds} totalFrames={timeline.totalFrames} />
       ) : null}
-      <Episode script={script} channel={channel} timeline={timeline} voice={audio.voice} variant="short" />
+      <Episode script={script} channel={channel} timeline={timeline} voice={audio.voice} variant="short" sfx={audio.sfx} />
     </AbsoluteFill>
   );
 };

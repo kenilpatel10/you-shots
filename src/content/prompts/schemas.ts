@@ -25,10 +25,19 @@ export const SCRIPT_JSON_SCHEMA = {
       },
     },
     background: { type: "string", enum: [...CATEGORIES] },
+    guess: {
+      type: "object",
+      properties: {
+        prompt: { type: "string" },
+        options: { type: "array", items: { type: "string" }, minItems: 3, maxItems: 3 },
+        answer: { type: "integer", enum: [0, 1, 2] },
+      },
+      required: ["prompt", "options", "answer"],
+    },
     description: { type: "string" },
     tags: { type: "array", items: { type: "string" } },
   },
-  required: ["topicId", "title", "hook", "answer", "wowFact", "experiment", "signOff", "onScreenText", "expressionCues", "background", "description", "tags"],
+  required: ["topicId", "title", "hook", "answer", "wowFact", "experiment", "signOff", "onScreenText", "expressionCues", "background", "guess", "description", "tags"],
 };
 
 export const REVIEW_JSON_SCHEMA = {

@@ -2,9 +2,9 @@
   "topicId": "food-001",
   "title": "Why is popcorn puffy?",
   "hook": "Hello friends! Pop, pop, pop! Why does a tiny hard seed turn into fluffy popcorn?",
-  "answer": "Every popcorn seed has a tiny drop of water hiding inside a hard shell. When the seed is warmed up, the water turns into steam. Steam needs much more room, so it pushes on the shell like air filling a balloon. When the shell cannot hold on, it bursts, and the soft inside puffs out.",
-  "wowFact": "Here is a wow fact! When a popcorn seed bursts, it can jump higher than your knee. That is why it pops with such a loud noise.",
-  "experiment": "Try this! Look closely at a few popcorn seeds and some popped popcorn. Line them up and compare the sizes. How many seeds fit in one puff? Count them!",
+  "answer": "Every popcorn seed has a tiny drop of water hiding inside a hard shell. When the seed is warmed up, the water turns into steam. Steam needs much more room, so it pushes on the shell like air filling a balloon, until the shell bursts and the soft inside puffs out.",
+  "wowFact": "Here is a wow fact! When a popcorn seed bursts open, it can jump higher than your knee, which is why it pops so loudly.",
+  "experiment": "Try this! Look closely at a few popcorn seeds and some popped popcorn. Line them up and compare the sizes. How many seeds fit in one puff?",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
     "hook": "Why is POPCORN puffy?",
@@ -35,6 +35,15 @@
     }
   ],
   "background": "food",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "Steam bursts it",
+      "Seeds are hollow",
+      "It grows fast"
+    ],
+    "answer": 0
+  },
   "description": "Bolt finds out why hard popcorn seeds burst into fluffy puffs. Then he compares the sizes of seeds and puffs in a simple counting experiment.",
   "tags": [
     "why does popcorn pop",

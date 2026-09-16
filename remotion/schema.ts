@@ -36,6 +36,8 @@ export const TimelineZ = z.object({
   sections: z.array(SectionTimingZ),
   /** Where the word timings came from — shown nowhere, but useful for QA. */
   timingSource: z.enum(["whisper", "estimated"]).default("estimated"),
+  /** Silent "guess" window between the hook and the answer (only when script.guess exists). */
+  guess: z.object({ startMs: z.number(), endMs: z.number() }).optional(),
 });
 export type Timeline = z.infer<typeof TimelineZ>;
 
@@ -49,6 +51,7 @@ export const ScriptZ = z.object({
   signOff: z.string(),
   onScreenText: z.object({ hook: z.string(), answer: z.string(), wowFact: z.string(), experiment: z.string() }),
   background: z.string(),
+  guess: z.object({ prompt: z.string(), options: z.array(z.string()).length(3), answer: z.number().int().min(0).max(2) }).optional(),
 });
 export type ScriptProps = z.infer<typeof ScriptZ>;
 
@@ -69,6 +72,8 @@ export const AudioPropsZ = z.object({
   musicVolume: z.number().min(0).max(1).default(0.14),
   duckedVolume: z.number().min(0).max(1).default(0.045),
   fadeSeconds: z.number().min(0).default(1.5),
+  /** Optional soft chimes (public-relative paths). */
+  sfx: z.object({ ding: z.string(), pop: z.string() }).optional(),
 });
 
 export const ShortPropsZ = z.object({
@@ -112,3 +117,7 @@ export const INTRO_FRAMES = 30 * 3; // title card before the first episode in th
 export const CHAPTER_CARD_FRAMES = 30 * 2.5;
 export const OUTRO_FRAMES = 30 * 4;
 export const SIGNOFF_TAIL_FRAMES = 30 * 2; // wave + channel name after the last word
+/** Silent pause after the hook while the three guess bubbles are shown. */
+export const GUESS_PAUSE_MS = 2600;
+/** Frames at the start of the answer during which the correct bubble is revealed. */
+export const REVEAL_FRAMES = 42;

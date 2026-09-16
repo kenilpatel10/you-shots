@@ -3,7 +3,7 @@
   "title": "How does a fridge stay cold?",
   "hook": "Hi friends! The kitchen is warm, but the fridge is always cold. How?",
   "answer": "A fridge does not make cold. It moves warmth out. Inside its walls are thin pipes with a special liquid that soaks up warmth from the food, like a sponge soaking up water. A little pump pushes the liquid to the back of the fridge, where the warmth leaks out into the kitchen.",
-  "wowFact": "Here is a wow fact! The back of a fridge feels a little warm. That is the warmth from your food being pushed out into the room.",
+  "wowFact": "Here is a wow fact! The back of a fridge feels a little warm. That is the warmth from your food being pushed out.",
   "experiment": "Try this! Ask a grown-up to help you put a cup of warm water in the fridge. Touch it after one hour. Does it feel cooler? Where did the warmth go?",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
@@ -35,6 +35,15 @@
     }
   ],
   "background": "how-things-work",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "Moves warmth out",
+      "Makes snow inside",
+      "Blows cold wind"
+    ],
+    "answer": 0
+  },
   "description": "Bolt explains that a fridge does not make cold, it moves warmth out of the food. Then he tests it with a cup of warm water and a grown-up.",
   "tags": [
     "how does a fridge work",

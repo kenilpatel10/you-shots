@@ -2,7 +2,8 @@
  * Builds the render timeline from per-section audio durations and word timings.
  * Pure and browser-safe (imported by Remotion for Studio samples too).
  */
-import { SIGNOFF_TAIL_FRAMES, type SectionKey, type SectionTiming, type Timeline, type WordTiming } from "../../remotion/schema";
+import { GUESS_PAUSE_MS, SIGNOFF_TAIL_FRAMES, type SectionKey, type SectionTiming, type Timeline, type WordTiming } from "../../remotion/schema";
+import { sectionSpokenText } from "./schema";
 import { estimateSectionDurationMs, estimateWordTimings, SECTION_GAP_MS, SECTION_ORDER } from "../audio/estimateTimings";
 
 export type SectionInput = {
@@ -40,6 +41,8 @@ export function buildTimeline(opts: {
   grownUp?: boolean;
   timingSource?: Timeline["timingSource"];
   tailFrames?: number;
+  /** Extra silence after the hook for the guess bubbles (0 when the script has no guess). */
+  guessPauseMs?: number;
 }): Timeline {
   const gap = opts.gapMs ?? SECTION_GAP_MS;
   let cursor = 0;
@@ -63,20 +66,31 @@ export function buildTimeline(opts: {
       grownUp: s.key === "experiment" && (opts.grownUp ?? false),
     });
     cursor = endMs + gap;
+    if (s.key === "hook" && opts.guessPauseMs) cursor += opts.guessPauseMs;
   }
   const lastEnd = sections.length ? sections[sections.length - 1]!.endMs : 0;
   const tail = opts.tailFrames ?? SIGNOFF_TAIL_FRAMES;
   const totalFrames = Math.ceil((lastEnd / 1000) * opts.fps) + tail;
-  return { fps: opts.fps, totalFrames, sections, timingSource: opts.timingSource ?? "estimated" };
+  const timeline: Timeline = { fps: opts.fps, totalFrames, sections, timingSource: opts.timingSource ?? "estimated" };
+  if (opts.guessPauseMs) {
+    const hook = sections.find((s) => s.key === "hook");
+    const answer = sections.find((s) => s.key === "answer");
+    if (hook && answer) timeline.guess = { startMs: hook.endMs + 150, endMs: answer.startMs };
+  }
+  return timeline;
 }
 
 /** Timeline with purely estimated durations (no audio yet). */
-export function estimateTimeline(script: Record<SectionKey, string>, fps: number, cues?: ExpressionCue[], grownUp = false): Timeline {
+export function estimateTimeline(script: Record<SectionKey, string> & { guess?: { prompt: string } | undefined }, fps: number, cues?: ExpressionCue[], grownUp = false): Timeline {
   return buildTimeline({
     fps,
     expressionCues: cues,
     grownUp,
-    sections: SECTION_ORDER.map((key) => ({ key, text: script[key], durationMs: estimateSectionDurationMs(script[key]) })),
+    guessPauseMs: script.guess ? GUESS_PAUSE_MS : 0,
+    sections: SECTION_ORDER.map((key) => {
+      const text = sectionSpokenText(script, key);
+      return { key, text, durationMs: estimateSectionDurationMs(text) };
+    }),
   });
 }
 

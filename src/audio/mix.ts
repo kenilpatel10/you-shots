@@ -14,7 +14,8 @@ export type MixedVoice = {
   starts: number[];
 };
 
-export function mixSections(sections: PcmAudio[], gapMs = SECTION_GAP_MS, leadInMs = LEAD_IN_MS): MixedVoice {
+/** `extraGapAfterMs[i]` adds silence after section i (used for the guess pause after the hook). */
+export function mixSections(sections: PcmAudio[], gapMs = SECTION_GAP_MS, leadInMs = LEAD_IN_MS, extraGapAfterMs: number[] = []): MixedVoice {
   const sr = sections[0]?.sampleRate ?? 24000;
   const parts: Float32Array[] = [silence(leadInMs, sr)];
   const starts: number[] = [];
@@ -26,8 +27,9 @@ export function mixSections(sections: PcmAudio[], gapMs = SECTION_GAP_MS, leadIn
     parts.push(norm);
     cursor += Math.round((norm.length / sr) * 1000);
     if (i < sections.length - 1) {
-      parts.push(silence(gapMs, sr));
-      cursor += gapMs;
+      const g = gapMs + (extraGapAfterMs[i] ?? 0);
+      parts.push(silence(g, sr));
+      cursor += g;
     }
   });
   parts.push(silence(400, sr));

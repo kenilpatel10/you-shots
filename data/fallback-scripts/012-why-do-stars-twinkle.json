@@ -1,10 +1,10 @@
 {
   "topicId": "space-003",
   "title": "Why do stars twinkle?",
-  "hook": "Hi friends! Why do stars seem to blink and twinkle on a clear night?",
-  "answer": "Stars are giant balls of light very far away, shining steadily. But their light travels through the air around Earth, and that air is always wobbling with warm and cool bits. The wobbly air bends the starlight a tiny bit this way and that, like a coin at the bottom of a wobbly bath.",
-  "wowFact": "Here is a wow fact! Astronauts in space see stars that do not twinkle at all. Up there, there is no wobbly air in the way.",
-  "experiment": "Try this! On a clear night, find a bright star and watch it for a whole minute. Does it flicker or change colour a little? Now look for a planet, which shines more steadily.",
+  "hook": "Hi friends! Why do stars twinkle and blink on a clear night?",
+  "answer": "Stars are giant balls of light very far away, shining steadily. But their light travels through the air around Earth, which is always wobbling with warm and cool bits. That wobbly air bends the starlight a tiny bit this way and that, like a coin at the bottom of a wobbly bath.",
+  "wowFact": "Here is a wow fact! Astronauts in space see stars that do not twinkle at all, because there is no wobbly air up there.",
+  "experiment": "Try this! On a clear night, find a bright star and watch it for a whole minute. Does it flicker or change colour a little? Now look for a planet, which shines steadily.",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
     "hook": "Why do STARS twinkle?",
@@ -35,6 +35,15 @@
     }
   ],
   "background": "space",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "Stars switch off",
+      "Clouds blink",
+      "Wobbly air"
+    ],
+    "answer": 2
+  },
   "description": "Bolt explains why stars seem to twinkle when their light passes through Earth's wobbly air. Then he suggests watching a star for one minute at night.",
   "tags": [
     "why do stars twinkle",

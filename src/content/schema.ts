@@ -22,6 +22,15 @@ export type Category = (typeof CATEGORIES)[number];
 
 const nonEmpty = z.string().trim().min(1);
 
+export const GuessSchema = z.object({
+  /** Spoken + shown right after the hook, e.g. "What do you think?" (≤ 4 words). */
+  prompt: z.string().trim().min(3).max(32),
+  /** Three short answer bubbles (≤ 20 characters each), one correct. */
+  options: z.array(z.string().trim().min(1).max(20)).length(3),
+  answer: z.union([z.literal(0), z.literal(1), z.literal(2)]),
+});
+export type Guess = z.infer<typeof GuessSchema>;
+
 export const ScriptSchema = z.object({
   topicId: nonEmpty,
   title: z.string().trim().min(3).max(60),
@@ -45,6 +54,7 @@ export const ScriptSchema = z.object({
     )
     .min(1),
   background: z.enum(CATEGORIES),
+  guess: GuessSchema.optional(),
   description: nonEmpty,
   tags: z.array(z.string().trim().min(1)).min(1).max(20),
 });
@@ -77,6 +87,12 @@ export const TopicSchema = z.object({
 export type Topic = z.infer<typeof TopicSchema>;
 export const TopicsFileSchema = z.array(TopicSchema);
 
+/** Text actually spoken for a section: the hook also speaks the guess prompt when present. */
+export function sectionSpokenText(script: Pick<Script, SectionKey> & { guess?: Pick<Guess, "prompt"> | undefined }, key: SectionKey): string {
+  if (key === "hook" && script.guess) return `${script.hook} ${script.guess.prompt}`;
+  return script[key];
+}
+
 export function spokenText(script: Script): string {
-  return [script.hook, script.answer, script.wowFact, script.experiment, script.signOff].join(" ");
+  return SECTION_KEYS.map((k) => sectionSpokenText(script, k)).join(" ");
 }

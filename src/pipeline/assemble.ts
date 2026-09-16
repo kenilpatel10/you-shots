@@ -5,17 +5,18 @@
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import { FPS } from "../../remotion/theme";
-import type { ShortProps, Timeline } from "../../remotion/schema";
+import { GUESS_PAUSE_MS, SIGNOFF_TAIL_FRAMES, type ShortProps, type Timeline } from "../../remotion/schema";
 import { currentLanguage, loadChannelConfig } from "../config";
 import { SECTION_ORDER } from "../audio/estimateTimings";
 import { mixSections } from "../audio/mix";
 import { ensureMusic } from "../audio/music";
+import { ensureSfx } from "../audio/sfx";
 import { placeholderVoice } from "../audio/placeholder";
 import { timeSection } from "../audio/timings";
 import { synthesizeSection } from "../audio/tts";
 import { encodeWav, type PcmAudio } from "../audio/wav";
 import { buildTimeline, type SectionInput } from "../content/timeline";
-import type { ScriptRecord } from "../content/schema";
+import { sectionSpokenText, type ScriptRecord } from "../content/schema";
 import { needsGrownUp } from "../content/validate";
 import { envBool } from "../lib/env";
 import { ensureDir, writeJsonAtomic } from "../lib/fs";
@@ -78,16 +79,18 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   opts.onProgress?.("voice");
   const clips: PcmAudio[] = [];
   let voiceSource: "kokoro" | "placeholder" = "kokoro";
+  const spoken = Object.fromEntries(SECTION_ORDER.map((k) => [k, sectionSpokenText(opts.script, k)])) as Record<(typeof SECTION_ORDER)[number], string>;
   for (const [i, key] of SECTION_ORDER.entries()) {
-    const { audio, source } = await makeVoice(opts.script[key], mode, i + 1);
+    const { audio, source } = await makeVoice(spoken[key], mode, i + 1);
     if (source === "placeholder") voiceSource = "placeholder";
     clips.push(audio);
     await fs.writeFile(path.join(audioDir, `${key}.wav`), encodeWav(audio));
     log.info(`  ${key}: ${(audio.samples.length / audio.sampleRate).toFixed(1)}s`);
   }
 
-  // 2. Normalise + concatenate
-  const mixed = mixSections(clips);
+  // 2. Normalise + concatenate (extra silence after the hook when there is a guess beat)
+  const guessPause = opts.script.guess ? GUESS_PAUSE_MS : 0;
+  const mixed = mixSections(clips, undefined, undefined, [guessPause]);
   const voicePath = path.join(audioDir, "voice.wav");
   await fs.writeFile(voicePath, encodeWav(mixed.track));
 
@@ -101,9 +104,9 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
     const t =
       voiceSource === "placeholder"
         ? { words: undefined, source: "estimated" as const }
-        : await timeSection({ text: opts.script[key], audio: clip, model: lang.whisper.model, language: lang.whisper.language, workDir: audioDir, key });
+        : await timeSection({ text: spoken[key], audio: clip, model: lang.whisper.model, language: lang.whisper.language, workDir: audioDir, key });
     if (t.source === "estimated") timingSource = "estimated";
-    sections.push({ key, text: opts.script[key], durationMs, words: t.words });
+    sections.push({ key, text: spoken[key], durationMs, words: t.words });
   }
 
   // Sections are positioned by the mixer's actual starts (lead-in + gaps + normalised lengths).
@@ -126,7 +129,12 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
     }
   });
   const lastEnd = timeline.sections[timeline.sections.length - 1]!.endMs;
-  timeline.totalFrames = Math.ceil((lastEnd / 1000) * FPS) + 2 * FPS;
+  timeline.totalFrames = Math.ceil((lastEnd / 1000) * FPS) + SIGNOFF_TAIL_FRAMES;
+  if (guessPause) {
+    const hook = timeline.sections[0]!;
+    const answer = timeline.sections[1]!;
+    timeline.guess = { startMs: hook.endMs + 150, endMs: answer.startMs };
+  }
   const durationSeconds = timeline.totalFrames / FPS;
   if (durationSeconds > HARD_MAX_SECONDS) {
     throw new Error(`Rendered length would be ${durationSeconds.toFixed(1)}s, above the ${HARD_MAX_SECONDS}s hard maximum. The script is too long.`);
@@ -137,6 +145,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   await ensureDir(pub);
   await fs.copyFile(voicePath, path.join(pub, "voice.wav"));
   const music = await ensureMusic(cfg.music.file, cfg.music.enabled);
+  const sfx = await ensureSfx();
   const props: ShortProps = {
     script: {
       topicId: opts.script.topicId,
@@ -148,6 +157,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       signOff: opts.script.signOff,
       onScreenText: opts.script.onScreenText,
       background: opts.script.background,
+      guess: opts.script.guess,
     },
     channel: {
       name: cfg.name,
@@ -164,6 +174,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       musicVolume: cfg.music.volume,
       duckedVolume: cfg.music.duckedVolume,
       fadeSeconds: cfg.music.fadeSeconds,
+      sfx,
     },
   };
   const propsPath = path.join(dir, "video.json");

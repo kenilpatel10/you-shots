@@ -2,8 +2,8 @@
   "topicId": "ocean-001",
   "title": "Why is the sea salty?",
   "hook": "Hi friends! Have you ever tasted sea water by accident? So salty! Why?",
-  "answer": "Rain runs over rocks and soil into rivers, picking up tiny bits of salt on the way, like a sock picking up dust. The rivers carry that salt to the sea. Then the Sun warms the sea and some water floats away as mist, but the salt stays behind. Over a very long time, the sea got saltier and saltier.",
-  "wowFact": "Here is a wow fact! All the salt in the sea could cover the whole land with a salty blanket taller than a house!",
+  "answer": "Rain runs over rocks and soil into rivers, picking up tiny bits of salt on the way, like a sock picking up dust. The rivers carry that salt to the sea. The Sun warms the sea and some water floats away as mist, but the salt stays behind, so the sea got saltier.",
+  "wowFact": "Here is a wow fact! All the salt in the sea could cover the whole land with a blanket taller than a house!",
   "experiment": "Try this! Ask a grown-up to help you stir a spoon of salt into a cup of warm water. Leave it by a sunny window for a few days. What is left behind?",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
@@ -35,6 +35,15 @@
     }
   ],
   "background": "ocean",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "Fish add salt",
+      "Rivers bring salt",
+      "Salt from the Sun"
+    ],
+    "answer": 1
+  },
   "description": "Bolt follows salt from the land to the sea and explains why the ocean tastes salty. Then he sets up a salty water experiment with a grown-up.",
   "tags": [
     "why is the sea salty",

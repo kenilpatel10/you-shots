@@ -22,8 +22,8 @@ export async function produceScript(topic: Topic, language: string): Promise<Pro
     const written = await writeScript(topic, feedback);
     let candidate: Script = written.script;
 
-    const review = await reviewScript(candidate, topic);
-    log.info(`Reviewer (${review.provider}/${review.model}): approved=${review.approved}${review.issues.length ? ` issues=${review.issues.length}` : ""}`);
+    const review = await reviewScript(candidate, topic, written.provider);
+    log.info(`Reviewer (${review.provider}/${review.model}${review.provider !== written.provider ? ", independent of writer" : ""}): approved=${review.approved}${review.issues.length ? ` issues=${review.issues.length}` : ""}`);
     notes.push(...review.issues.map((i) => `[attempt ${attempt}] ${i}`));
     if (!review.approved) {
       if (review.fixedScript) {

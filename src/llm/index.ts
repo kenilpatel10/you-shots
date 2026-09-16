@@ -40,8 +40,14 @@ export function hasLlm(): boolean {
 
 export type JsonResult<T> = { data: T; provider: string; model: string };
 
-export async function completeJson<T>(req: LlmRequest, schema: ZodType<T, unknown>, label = "request"): Promise<JsonResult<T>> {
-  const list = getProviders();
+export type CompleteOptions = {
+  /** Try every other provider before this one (independent second opinion). */
+  avoidProvider?: string;
+};
+
+export async function completeJson<T>(req: LlmRequest, schema: ZodType<T, unknown>, label = "request", options: CompleteOptions = {}): Promise<JsonResult<T>> {
+  const all = getProviders();
+  const list = options.avoidProvider ? [...all.filter((p) => p.name !== options.avoidProvider), ...all.filter((p) => p.name === options.avoidProvider)] : all;
   if (!list.length) throw new LlmUnavailableError("No LLM API keys configured (GEMINI_API_KEY / GROQ_API_KEY)");
   const causes: { provider: string; error: string }[] = [];
   for (const p of list) {

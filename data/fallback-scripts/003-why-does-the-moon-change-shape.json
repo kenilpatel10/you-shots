@@ -3,7 +3,7 @@
   "title": "Why does the Moon change shape?",
   "hook": "Hello friends! Why is the Moon round some nights and a thin banana on others?",
   "answer": "The Moon is always a big round ball of rock. It does not make its own light. It only shines because the Sun lights it up, like a torch shining on a ball. As the Moon travels around the Earth, we see different amounts of its bright side. Sometimes all of it, sometimes a thin slice.",
-  "wowFact": "Here is a wow fact! It takes about one whole month for the Moon to go from a thin slice to a full circle and back again.",
+  "wowFact": "Here is a wow fact! It takes about one whole month for the Moon to go from a thin slice to a full circle.",
   "experiment": "Try this! Look at the Moon tonight and draw its shape on paper. Draw it again in a few nights. Did your Moon get bigger or smaller?",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
@@ -35,6 +35,15 @@
     }
   ],
   "background": "space",
+  "guess": {
+    "prompt": "What do you think?",
+    "options": [
+      "Clouds cover it",
+      "It really shrinks",
+      "We see Sun's light"
+    ],
+    "answer": 2
+  },
   "description": "Bolt explains why the Moon seems to change shape even though it is always a round ball. Then he suggests a simple Moon drawing diary to try at home.",
   "tags": [
     "moon phases for kids",

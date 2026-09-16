@@ -4,7 +4,8 @@
  */
 import { loadBannedWords, type BannedWords } from "../config";
 import { estimateSectionDurationMs, tokenizeWords, SECTION_GAP_MS } from "../audio/estimateTimings";
-import { CATEGORIES, ScriptSchema, type Script } from "./schema";
+import { CATEGORIES, ScriptSchema, sectionSpokenText, type Script } from "./schema";
+import { GUESS_PAUSE_MS } from "../../remotion/schema";
 
 export type ValidationResult = { ok: true; estimatedSeconds: number } | { ok: false; reasons: string[]; estimatedSeconds: number };
 
@@ -49,10 +50,12 @@ export function hasGrownUpPhrase(experiment: string, rules: BannedWords["require
   return rules.required.some((r) => lower.includes(r));
 }
 
-export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "wowFact" | "experiment" | "signOff">): number {
+export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "wowFact" | "experiment" | "signOff"> & { guess?: Script["guess"] }): number {
+  const keys = ["hook", "answer", "wowFact", "experiment", "signOff"] as const;
   const ms =
-    [script.hook, script.answer, script.wowFact, script.experiment, script.signOff].reduce((a, t) => a + estimateSectionDurationMs(t), 0) +
+    keys.reduce((a, k) => a + estimateSectionDurationMs(sectionSpokenText(script, k)), 0) +
     4 * SECTION_GAP_MS +
+    (script.guess ? GUESS_PAUSE_MS : 0) +
     250 + // lead-in
     2000; // sign-off tail
   return ms / 1000;
@@ -89,7 +92,11 @@ export function validateScript(input: unknown, banned: BannedWords = loadBannedW
   }
 
   const spoken = [s.hook, s.answer, s.wowFact, s.experiment, s.signOff].join(" ");
-  const everything = [spoken, s.title, s.description, ...Object.values(s.onScreenText), ...s.tags].join(" ");
+  const everything = [spoken, s.title, s.description, ...Object.values(s.onScreenText), ...s.tags, ...(s.guess ? [s.guess.prompt, ...s.guess.options] : [])].join(" ");
+  if (s.guess) {
+    if (tokenizeWords(s.guess.prompt).length > 5) reasons.push("guess.prompt longer than 5 words");
+    if (new Set(s.guess.options.map((o) => o.toLowerCase())).size !== 3) reasons.push("guess options must be three different answers");
+  }
   const hits = findBannedWords(everything, banned.banned);
   if (hits.length) reasons.push(`banned words: ${hits.join(", ")}`);
   const hazards = findBannedWords(s.experiment, banned.bannedInExperiment);

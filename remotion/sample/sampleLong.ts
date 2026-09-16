@@ -12,7 +12,7 @@ const lang = channel.languages[channel.language as keyof typeof channel.language
 const episode = (s: typeof s1, i: number): LongEpisode => ({
   draftId: `sample-${i}`,
   chapterTitle: s.title,
-  script: { topicId: s.topicId, title: s.title, hook: s.hook, answer: s.answer, wowFact: s.wowFact, experiment: s.experiment, signOff: s.signOff, onScreenText: s.onScreenText, background: s.background },
+  script: { topicId: s.topicId, title: s.title, hook: s.hook, answer: s.answer, wowFact: s.wowFact, experiment: s.experiment, signOff: s.signOff, onScreenText: s.onScreenText, background: s.background, guess: s.guess },
   timeline: estimateTimeline(s, FPS, s.expressionCues as ExpressionCue[], true),
   audio: { voice: "", musicVolume: 0.12, duckedVolume: 0.04, fadeSeconds: 1.5 },
 });

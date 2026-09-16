@@ -43,6 +43,8 @@ Each Short is 45–58 seconds and ALWAYS has exactly this structure, spoken by $
 4. experiment — one safe thing to try or notice at home (${WORD_LIMITS.experiment[0]}–${WORD_LIMITS.experiment[1]} words). Start with "Try this!".
 5. signOff — exactly: "${ctx.catchphrase}"
 
+GUESS BEAT: right after the hook, ${ctx.characterName} says a short prompt (e.g. "What do you think?") and three big answer bubbles appear for a couple of seconds before the answer reveals the right one. Provide the "guess" object: { prompt (≤ 4 words), options (exactly 3, each ≤ 20 characters, each ≤ 3 words, all plausible to a child, exactly one correct, no jokes that could confuse), answer (0, 1 or 2 — vary which position is correct) }. The answer section must clearly confirm the correct option.
+
 Word limits: ${limits}. Total spoken words 115–150.
 
 ${SAFETY(ctx)}
@@ -54,6 +56,7 @@ OUTPUT: Reply with ONLY a JSON object (no markdown) with these fields:
 - onScreenText: { hook, answer, wowFact, experiment } — each ≤ 45 characters, big-text summaries (e.g. "Why is the sky BLUE?")
 - expressionCues: one entry per section: { section: "hook"|"answer"|"wowFact"|"experiment"|"signOff", expression: "curious"|"happy"|"surprised"|"thinking"|"excited" }
 - background: the topic category key exactly as given
+- guess: { prompt: string, options: [string, string, string], answer: 0|1|2 }
 - description: 2–3 kid-safe sentences for the YouTube description, written for parents; no links, no hashtags
 - tags: 5–10 short lowercase search tags`,
 
@@ -76,7 +79,7 @@ Check, in this order:
 1. FACTS: every claim in answer and wowFact must be true and not misleading when simplified. Reject anything you are not confident is correct.
 2. SAFETY: ${SAFETY(ctx)}
 3. AGE FIT: vocabulary and sentence length suitable for a 6-year-old; the comparison in the answer must be concrete.
-4. STRUCTURE: word limits — ${limits}; signOff exactly "${ctx.catchphrase}"; onScreenText each ≤ 45 characters; title ≤ 60 characters without emoji or clickbait.
+4. STRUCTURE: word limits — ${limits}; signOff exactly "${ctx.catchphrase}"; onScreenText each ≤ 45 characters; title ≤ 60 characters without emoji or clickbait; guess has exactly 3 short options (≤ 20 characters), exactly one correct and consistent with the answer.
 5. TONE: warm, kind, never sarcastic, no engagement bait, no talking down.
 
 OUTPUT: Reply with ONLY a JSON object: { "approved": boolean, "issues": string[], "fixedScript"?: <script object with the same fields as the input> }.

@@ -4,7 +4,8 @@ import { getPrompts, promptContext } from "./prompts";
 import { REVIEW_JSON_SCHEMA } from "./prompts/schemas";
 
 /** Second, independent LLM pass acting as a strict children's-content editor and fact checker. */
-export async function reviewScript(script: Script, topic: Topic): Promise<ReviewResult & { provider: string; model: string }> {
+/** `avoidProvider`: the writer's provider — the reviewer prefers a different model when one is configured. */
+export async function reviewScript(script: Script, topic: Topic, avoidProvider?: string): Promise<ReviewResult & { provider: string; model: string }> {
   const prompts = getPrompts();
   const ctx = promptContext();
   const { data, provider, model } = await completeJson(
@@ -16,6 +17,7 @@ export async function reviewScript(script: Script, topic: Topic): Promise<Review
     },
     ReviewResultSchema,
     "reviewer",
+    { avoidProvider },
   );
   if (data.fixedScript) data.fixedScript = { ...data.fixedScript, topicId: topic.id, background: topic.category };
   return { ...data, provider, model };

@@ -57,7 +57,7 @@ export const LongVideo: React.FC<LongVideoProps> = (props) => {
               <Card title={ep.chapterTitle} category={ep.script.background} pose="point" index={i + 1} />
             </Sequence>
             <Sequence from={p.from} durationInFrames={p.durationInFrames} name={`episode-${i + 1}`}>
-              <Episode script={ep.script} channel={props.channel} timeline={ep.timeline} voice={ep.audio.voice} variant="long" />
+              <Episode script={ep.script} channel={props.channel} timeline={ep.timeline} voice={ep.audio.voice} variant="long" sfx={ep.audio.sfx} />
             </Sequence>
           </React.Fragment>
         );
