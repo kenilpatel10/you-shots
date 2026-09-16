@@ -22,7 +22,7 @@ export const poses: Record<Pose, PoseSpec> = {
   wave: { armAngle: [14, -138], elbowAngle: [0, -28], pointing: false, lift: 0, feetTuck: 0, tilt: -3, handToChin: false },
   point: { armAngle: [18, -105], elbowAngle: [0, -10], pointing: true, lift: 0, feetTuck: 0, tilt: 2, handToChin: false },
   think: { armAngle: [10, -95], elbowAngle: [0, -120], pointing: false, lift: 0, feetTuck: 0, tilt: 4, handToChin: true },
-  jump: { armAngle: [150, -150], elbowAngle: [10, -10], pointing: false, lift: 70, feetTuck: 1, tilt: 0, handToChin: false },
+  jump: { armAngle: [150, -150], elbowAngle: [10, -10], pointing: false, lift: 46, feetTuck: 1, tilt: 0, handToChin: false },
 };
 
 export const POSE_LIST: Pose[] = ["idle", "wave", "point", "think", "jump"];

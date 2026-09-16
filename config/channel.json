@@ -21,7 +21,7 @@
       "catchphrase": "Stay curious, friends!",
       "voice": { "engine": "kokoro", "voiceId": "af_heart", "speed": 1.06 },
       "whisper": { "model": "base.en", "language": "en" },
-      "askGrownUp": "Ask a grown-up to help",
+      "askGrownUp": "Ask a grown-up",
       "weeklyTitle": "Bolt's Big Week",
       "weeklyOutro": "See you next week!",
       "font": "Fredoka"

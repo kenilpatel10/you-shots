@@ -3,6 +3,7 @@ out/
 .cache/
 public/drafts/
 public/samples/
+!public/silence.wav
 .env
 .env.local
 *.log
