@@ -124,7 +124,7 @@ async function main() {
       const [m, s] = l.slice(0, 5).split(":").map(Number);
       return m! * 60 + s!;
     });
-    const shots: [string, number][] = [["intro", 1.5], ["chapter card", secs[0]! + 3.5], ["episode 1", secs[0]! + 12], ["episode 2 reveal", (secs[1] ?? 60) + 9.5], ["outro", meta.durationSeconds - 2]];
+    const shots: [string, number][] = [["intro", 1.5], ["chapter card", secs[0]! + 3.5], ["episode 1", secs[0]! + 12], ["episode 2 (hook)", (secs[1] ?? 60) + 5], ["outro", meta.durationSeconds - 2]];
     lines.push("| Beat | Time | Frame |", "| --- | --- | --- |");
     for (const [label, sec] of shots) {
       const name = `long-${label.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}.png`;
