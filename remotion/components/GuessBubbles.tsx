@@ -21,22 +21,22 @@ const LETTERS = ["A", "B", "C"];
 export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, box, compact }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const fontSize = compact ? 40 : 50;
+  const fontSize = compact ? 38 : 44;
   return (
     <div style={{ position: "absolute", left: box.left, top: box.top, width: box.width, fontFamily: fonts.family }}>
       <div
         style={{
-          fontSize: compact ? 44 : 56,
+          fontSize: compact ? 42 : 48,
           fontWeight: fonts.weightBold,
           color: colors.ink,
           textAlign: "center",
-          marginBottom: compact ? 14 : 20,
+          marginBottom: compact ? 10 : 12,
           opacity: mode === "ask" ? interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" }) : interpolate(frame, [0, 10], [1, 0.35], { extrapolateRight: "clamp" }),
         }}
       >
         {mode === "ask" ? prompt : "The answer is…"}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: compact ? 12 : 16 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: compact ? 8 : 10 }}>
         {options.map((opt, i) => {
           const s = spring({ frame: frame - (mode === "ask" ? 6 + i * 7 : 0), fps, config: { damping: 13, stiffness: 150 } });
           const correct = i === answer;
@@ -52,7 +52,7 @@ export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, b
                 backgroundColor: mode === "reveal" && correct ? "#2FA36B" : colors.white,
                 color: mode === "reveal" && correct ? colors.white : colors.ink,
                 borderRadius: 999,
-                padding: compact ? "12px 22px" : "16px 26px",
+                padding: compact ? "10px 20px" : "11px 24px",
                 boxShadow: "0 8px 0 rgba(30,42,68,0.14)",
                 transform: `scale(${(mode === "ask" ? interpolate(s, [0, 1], [0.6, 1]) : 1) * revealScale})`,
                 opacity: (mode === "ask" ? s : 1) * revealOpacity,
@@ -64,15 +64,15 @@ export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, b
             >
               <span
                 style={{
-                  width: compact ? 52 : 64,
-                  height: compact ? 52 : 64,
+                  width: compact ? 48 : 56,
+                  height: compact ? 48 : 56,
                   borderRadius: "50%",
                   backgroundColor: mode === "reveal" && correct ? colors.white : BUBBLE_COLORS[i],
                   color: mode === "reveal" && correct ? "#2FA36B" : colors.white,
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: compact ? 30 : 36,
+                  fontSize: compact ? 28 : 32,
                   flexShrink: 0,
                 }}
               >
