@@ -1,0 +1,46 @@
+{
+  "topicId": "animals-001",
+  "title": "Why do cats purr?",
+  "hook": "Hi friends! Have you heard a cat make a soft rumbly sound? Why do cats purr?",
+  "answer": "Inside a cat's throat are tiny stretchy strings. When a cat breathes in and out, it wiggles those strings super fast, like a little drum that never stops. That wiggle makes the gentle rumble we call purring. Cats purr when they feel cosy and safe, like you under a warm blanket.",
+  "wowFact": "Here is a wow fact! Kittens start purring when they are only a few days old, before their eyes even open. The purr helps their mum find them.",
+  "experiment": "Try this! Put your hand on your neck and hum a long, low sound. Can you feel a tiny buzz under your fingers? That is a bit like a purr!",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why do cats PURR?",
+    "answer": "A tiny wiggle in the throat",
+    "wowFact": "Kittens purr before they can see",
+    "experiment": "Try it: hum and feel the buzz"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "animals",
+  "description": "Bolt finds out why cats purr and what the soft rumble means. Then he tries a gentle humming experiment to feel a purr in his own throat.",
+  "tags": [
+    "why do cats purr",
+    "cats for kids",
+    "animals for kids",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

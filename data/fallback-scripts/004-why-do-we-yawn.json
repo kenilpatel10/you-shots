@@ -1,0 +1,46 @@
+{
+  "topicId": "human-body-001",
+  "title": "Why do we yawn?",
+  "hook": "Hi friends! When I am sleepy my mouth opens really wide. Why do we yawn?",
+  "answer": "A yawn is a big, slow breath in and out. When we feel sleepy or bored, our brain gets a little warm and slow. A yawn pulls in cool air and stretches the muscles in our face and chest. It is like opening a window to let fresh air into a stuffy room.",
+  "wowFact": "Here is a wow fact! Yawns are catching. When you see a friend yawn, you often yawn too. Even dogs sometimes yawn when their owner yawns!",
+  "experiment": "Try this! Look at a grown-up and do a big, slow pretend yawn. Now wait and watch quietly. Did the grown-up yawn back? Try it on a friend too.",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why do we YAWN?",
+    "answer": "A big breath to wake up the brain",
+    "wowFact": "Yawns are catching",
+    "experiment": "Try it: fake a yawn and watch"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "human-body",
+  "description": "Bolt discovers why we yawn when we are sleepy and why yawns seem to spread from person to person. Then he tries a fun yawn experiment on a grown-up.",
+  "tags": [
+    "why do we yawn",
+    "human body for kids",
+    "kids science",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "topicId": "everyday-things-011",
+  "title": "Why do magnets stick to the fridge?",
+  "hook": "Hi friends! Why does a magnet stick to the fridge but not to me?",
+  "answer": "A magnet has an invisible pull all around it. That pull only grabs certain metals, and the fridge door is made of one. When the magnet gets close, its pull reaches out like an invisible hand and holds on tight. Wood, plastic and paper do not have that metal inside.",
+  "wowFact": "Here is a wow fact! The whole Earth is a giant magnet too. That is why a compass needle always turns to point the same way, towards the north.",
+  "experiment": "Try this! Ask a grown-up for a fridge magnet. Touch it to a spoon, a pencil and a cup. Which things does the magnet grab? Make a list of the sticky ones!",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why do MAGNETS stick?",
+    "answer": "An invisible pull grabs some metals",
+    "wowFact": "Earth is a giant magnet",
+    "experiment": "Try it: test what a magnet grabs"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "thinking"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "everyday-things",
+  "description": "Bolt explains the invisible pull of a magnet and why it only grabs some things. Then he goes on a magnet hunt around the house with a grown-up.",
+  "tags": [
+    "why do magnets stick",
+    "magnets for kids",
+    "everyday science",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

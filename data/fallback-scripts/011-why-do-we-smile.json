@@ -1,0 +1,46 @@
+{
+  "topicId": "feelings-friendship-001",
+  "title": "Why do we smile when we are happy?",
+  "hook": "Hello friends! When I am happy my mouth curls up by itself. Why do we smile?",
+  "answer": "When you feel happy, your brain sends a tiny message to the little muscles in your cheeks. They pull the corners of your mouth up, and your eyes crinkle too. A smile is like a little flag that tells everyone, I feel good! When a friend sees it, their cheeks often smile right back.",
+  "wowFact": "Here is a wow fact! It works the other way too. A big smile when you feel grumpy can make your brain feel a little happier.",
+  "experiment": "Try this! Look in a mirror and make the biggest, silliest smile you can. Hold it and count to ten. Do you feel a tiny bit happier? Try it on a friend!",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why do we SMILE?",
+    "answer": "Happy messages to cheek muscles",
+    "wowFact": "Smiling can make you happier",
+    "experiment": "Try it: a giant mirror smile"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "feelings-friendship",
+  "description": "Bolt explores what happens in our face and brain when we smile, and why smiles spread between friends. Then he tries a silly mirror smile.",
+  "tags": [
+    "why do we smile",
+    "feelings for kids",
+    "friendship for kids",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

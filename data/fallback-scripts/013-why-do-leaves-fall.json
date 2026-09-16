@@ -1,0 +1,46 @@
+{
+  "topicId": "weather-nature-005",
+  "title": "Why do leaves fall in autumn?",
+  "hook": "Hello friends! Crunch, crunch! Why do trees drop their leaves in autumn?",
+  "answer": "In summer, leaves are little green kitchens that use sunlight to make food for the tree. In autumn the days get shorter and colder. The tree stops sending water to the leaves, so they lose their green, turn yellow and red, and dry out. Then a breeze comes and they let go, like a hand letting go of a balloon.",
+  "wowFact": "Here is a wow fact! The yellow and orange colours were hiding inside the leaves all summer long. The bright green just covered them up.",
+  "experiment": "Try this! Collect five fallen leaves on a walk. Put them in a row from most green to most brown. Which leaf do you think fell first? Look for tiny holes too.",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why do LEAVES fall?",
+    "answer": "Trees get ready for winter",
+    "wowFact": "The colours were hiding all summer",
+    "experiment": "Try it: line up leaves by colour"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "weather-nature",
+  "description": "Bolt finds out why trees drop their leaves in autumn and where the bright colours come from. Then he sorts fallen leaves on a walk.",
+  "tags": [
+    "why do leaves fall",
+    "autumn for kids",
+    "nature for kids",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

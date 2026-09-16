@@ -92,6 +92,8 @@ export function validateScript(input: unknown, banned: BannedWords = loadBannedW
   const everything = [spoken, s.title, s.description, ...Object.values(s.onScreenText), ...s.tags].join(" ");
   const hits = findBannedWords(everything, banned.banned);
   if (hits.length) reasons.push(`banned words: ${hits.join(", ")}`);
+  const hazards = findBannedWords(s.experiment, banned.bannedInExperiment);
+  if (hazards.length) reasons.push(`unsafe experiment (hazard words): ${hazards.join(", ")}`);
 
   for (const re of ENGAGEMENT_BAIT) if (re.test(everything)) reasons.push(`engagement bait: ${re.source}`);
   for (const re of STATS) if (re.test(spoken)) reasons.push(`invented statistics/studies: ${re.source}`);
@@ -100,8 +102,8 @@ export function validateScript(input: unknown, banned: BannedWords = loadBannedW
   if (needsGrownUp(s.experiment, banned.requiredWhenHandling) && !hasGrownUpPhrase(s.experiment, banned.requiredWhenHandling)) {
     reasons.push('experiment involves pouring/handling but does not say "ask a grown-up"');
   }
-  if (/\b(eat|taste|lick|drink|swallow|mouth|eyes?|ears?|nose)\b/i.test(s.experiment) && !/\bdo not\b|\bdon't\b|\bnever\b/i.test(s.experiment)) {
-    reasons.push("experiment mentions mouth/eyes/ears/eating without a 'do not' warning");
+  if (/\b(eat|eating|taste|tasting|lick|drink|drinking|swallow)\b|\b(in|into|near) (your|the|their) (mouth|eyes?|ears?|nose)\b/i.test(s.experiment)) {
+    reasons.push("experiment involves eating/tasting or putting things near the mouth, eyes, ears or nose");
   }
 
   const cueSections = new Set(s.expressionCues.map((c) => c.section));

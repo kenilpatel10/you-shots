@@ -1,0 +1,46 @@
+{
+  "topicId": "everyday-things-001",
+  "title": "Why does soap make bubbles?",
+  "hook": "Hi friends! Bath time is full of bubbles. Why does soap make bubbles?",
+  "answer": "Water likes to hold itself tightly together, like friends holding hands. That is why a drop is round. Soap gets between the water friends and loosens their grip. Now the water can stretch into a very thin skin. Blow air into that skin and it puffs up into a bubble, like a tiny stretchy balloon.",
+  "wowFact": "Here is a wow fact! A bubble is always round, even if you blow it through a square shape. The stretchy skin pulls itself into a ball.",
+  "experiment": "Try this! Ask a grown-up to help you mix a spoon of dish soap into a cup of water. Dip a paper straw in and blow gently. How big can your bubble grow?",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why does SOAP make bubbles?",
+    "answer": "Soap loosens the water's grip",
+    "wowFact": "Bubbles are always round",
+    "experiment": "Try it: soap, water and a straw"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "everyday-things",
+  "description": "Bolt explains why soap turns plain water into bubbles and why every bubble ends up round. Then he mixes an easy bubble solution with a grown-up.",
+  "tags": [
+    "why does soap make bubbles",
+    "bubbles for kids",
+    "everyday science",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

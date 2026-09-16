@@ -19,6 +19,7 @@ const base: Draft = {
   assets: {},
   reviewerIssues: [],
   includes: [],
+  tags: [],
 };
 
 describe("state transitions", () => {

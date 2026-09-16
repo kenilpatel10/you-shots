@@ -21,14 +21,20 @@ export const DraftSchema = z.object({
   updatedAt: iso,
   durationSeconds: z.number().nonnegative().optional(),
   releaseTag: z.string().optional(),
+  releaseUrl: z.string().url().optional(),
+  /** GitHub API asset URLs (downloadable with the repo token) plus the public page link. */
   assets: z
     .object({
       video: z.string().url().optional(),
+      videoPublic: z.string().url().optional(),
       script: z.string().url().optional(),
       audio: z.string().url().optional(),
       thumbnail: z.string().url().optional(),
+      props: z.string().url().optional(),
     })
     .default({}),
+  description: z.string().optional(),
+  tags: z.array(z.string()).default([]),
   reviewerIssues: z.array(z.string()).default([]),
   rejectReason: z.string().optional(),
   approvedAt: iso.optional(),

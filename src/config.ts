@@ -61,6 +61,7 @@ export type LanguageConfig = z.infer<typeof LanguageConfig>;
 
 export const BannedWordsSchema = z.object({
   banned: z.array(z.string()),
+  bannedInExperiment: z.array(z.string()).default([]),
   requiredWhenHandling: z.object({
     triggers: z.array(z.string()),
     required: z.array(z.string()),

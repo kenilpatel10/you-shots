@@ -1,0 +1,46 @@
+{
+  "topicId": "ocean-001",
+  "title": "Why is the sea salty?",
+  "hook": "Hi friends! Have you ever tasted sea water by accident? So salty! Why?",
+  "answer": "Rain runs over rocks and soil into rivers, picking up tiny bits of salt on the way, like a sock picking up dust. The rivers carry that salt to the sea. Then the Sun warms the sea and some water floats away as mist, but the salt stays behind. Over a very long time, the sea got saltier and saltier.",
+  "wowFact": "Here is a wow fact! All the salt in the sea could cover the whole land with a salty blanket taller than a house!",
+  "experiment": "Try this! Ask a grown-up to help you stir a spoon of salt into a cup of warm water. Leave it by a sunny window for a few days. What is left behind?",
+  "signOff": "Stay curious, friends!",
+  "onScreenText": {
+    "hook": "Why is the SEA salty?",
+    "answer": "Rivers carry salt to the sea",
+    "wowFact": "Enough salt to cover the land",
+    "experiment": "Try it: salt water by a window"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "ocean",
+  "description": "Bolt follows salt from the land to the sea and explains why the ocean tastes salty. Then he sets up a salty water experiment with a grown-up.",
+  "tags": [
+    "why is the sea salty",
+    "ocean for kids",
+    "kids science",
+    "kids learning",
+    "bolt asks why"
+  ]
+}

@@ -54,7 +54,7 @@ export function useMouthCurve(voice: string, timeline: Timeline): (frame: number
       const t = (ms - w.startMs) / 1000;
       return 0.3 + 0.5 * Math.abs(Math.sin(t * Math.PI * 9 + w.startMs));
     };
-  }, [audioData, src, timeline]);
+  }, [audioData, voice, timeline]);
 }
 
 /** True while any word is being spoken (with a little padding) — used for music ducking. */
