@@ -2,7 +2,7 @@
  * Provider chain: Gemini (primary) → Groq (fallback). Each call is retried with backoff on
  * 429/5xx/network errors; invalid JSON gets one repair retry per provider before moving on.
  */
-import type { ZodType, ZodTypeDef } from "zod";
+import type { ZodType } from "zod";
 import { env } from "../lib/env";
 import { createLogger } from "../lib/logger";
 import { retry } from "../lib/retry";
@@ -40,7 +40,7 @@ export function hasLlm(): boolean {
 
 export type JsonResult<T> = { data: T; provider: string; model: string };
 
-export async function completeJson<T>(req: LlmRequest, schema: ZodType<T, ZodTypeDef, unknown>, label = "request"): Promise<JsonResult<T>> {
+export async function completeJson<T>(req: LlmRequest, schema: ZodType<T, unknown>, label = "request"): Promise<JsonResult<T>> {
   const list = getProviders();
   if (!list.length) throw new LlmUnavailableError("No LLM API keys configured (GEMINI_API_KEY / GROQ_API_KEY)");
   const causes: { provider: string; error: string }[] = [];

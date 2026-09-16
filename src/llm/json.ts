@@ -1,4 +1,4 @@
-import type { ZodType, ZodTypeDef } from "zod";
+import type { ZodType } from "zod";
 
 export class JsonParseError extends Error {}
 
@@ -31,7 +31,7 @@ export function extractJson(text: string): unknown {
   }
 }
 
-export function parseWith<T>(schema: ZodType<T, ZodTypeDef, unknown>, text: string): T {
+export function parseWith<T>(schema: ZodType<T, unknown>, text: string): T {
   const raw = extractJson(text);
   const result = schema.safeParse(raw);
   if (!result.success) {

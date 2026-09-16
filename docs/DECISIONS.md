@@ -11,7 +11,7 @@ the build environment. Package versions are pinned in `package.json`.
 | **Node ≥ 20, 22 recommended.** `googleapis` is pinned to `^160` (engines `>=18`); the latest major requires Node 22. | Keeps the "Node 20+" requirement true. GitHub Actions uses Node 22. |
 | `@google/genai` pinned `<3`. | v3 changes automatic function calling and requires Node 22. Structured output uses `responseMimeType: "application/json"` + `responseJsonSchema` (present in v2.22 typings). |
 | Groq uses `response_format: { type: "json_object" }` with the schema in the prompt. | `json_schema` mode only works on some Groq models; `json_object` works on all. |
-| `zod` 3.x (not 4). | Remotion's `Composition schema` and `@remotion/zod-types` expect zod 3. |
+| `zod` pinned to exactly **4.5.4**. | Remotion 4.0.525 declares `zod@4.5.4` and its CLI warns on any other version. |
 | Remotion 4.0.525 (`remotion`, `@remotion/cli`, `@remotion/renderer`, `@remotion/bundler`, `@remotion/media-utils`, `@remotion/install-whisper-cpp`, `@remotion/fonts`). | Current at build time. Remotion is free for individuals and companies ≤ 3 people (see `node_modules/remotion/LICENSE.md`); a company licence is needed above that. |
 | TypeScript 5.9, `tsx` for running CLIs, ESLint 9 flat config, Vitest 3. | Boring, stable choices. TypeScript 7 (Go compiler) was available but typescript-eslint support was not confirmed. |
 
