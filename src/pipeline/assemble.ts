@@ -1,0 +1,181 @@
+/**
+ * Turns a reviewed script into a finished Short: voice (Kokoro) → normalised track → word
+ * timings (whisper.cpp or estimate) → timeline → Remotion props → MP4.
+ */
+import path from "node:path";
+import { promises as fs } from "node:fs";
+import { FPS } from "../../remotion/theme";
+import type { ShortProps, Timeline } from "../../remotion/schema";
+import { currentLanguage, loadChannelConfig } from "../config";
+import { SECTION_ORDER } from "../audio/estimateTimings";
+import { mixSections } from "../audio/mix";
+import { ensureMusic } from "../audio/music";
+import { placeholderVoice } from "../audio/placeholder";
+import { timeSection } from "../audio/timings";
+import { synthesizeSection } from "../audio/tts";
+import { encodeWav, type PcmAudio } from "../audio/wav";
+import { buildTimeline, type SectionInput } from "../content/timeline";
+import type { ScriptRecord } from "../content/schema";
+import { needsGrownUp } from "../content/validate";
+import { envBool } from "../lib/env";
+import { ensureDir, writeJsonAtomic } from "../lib/fs";
+import { createLogger } from "../lib/logger";
+import { draftDir, publicDraftDir } from "../lib/paths";
+import { renderVideo } from "../video/render";
+
+const log = createLogger("assemble");
+
+export const HARD_MAX_SECONDS = 59;
+
+export type VoiceMode = "kokoro" | "placeholder" | "auto";
+
+export type AssembleResult = {
+  draftId: string;
+  dir: string;
+  videoPath: string;
+  propsPath: string;
+  voicePath: string;
+  durationSeconds: number;
+  timeline: Timeline;
+  voiceSource: "kokoro" | "placeholder";
+  timingSource: Timeline["timingSource"];
+};
+
+export type AssembleOptions = {
+  draftId: string;
+  script: ScriptRecord;
+  voiceMode?: VoiceMode;
+  /** Skip rendering (audio + props only). */
+  skipRender?: boolean;
+  onProgress?: (stage: string) => void;
+};
+
+async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{ audio: PcmAudio; source: "kokoro" | "placeholder" }> {
+  const lang = currentLanguage();
+  if (mode === "placeholder") return { audio: placeholderVoice(text, seed), source: "placeholder" };
+  try {
+    const audio = await synthesizeSection(text, { voiceId: lang.voice.voiceId, speed: lang.voice.speed });
+    return { audio, source: "kokoro" };
+  } catch (err) {
+    if (mode === "auto" && envBool("ALLOW_PLACEHOLDER_VOICE")) {
+      log.warn(`Kokoro unavailable (${(err as Error).message.split("\n")[0]}). Using PLACEHOLDER voice — not for publishing.`);
+      return { audio: placeholderVoice(text, seed), source: "placeholder" };
+    }
+    throw new Error(`Text-to-speech failed: ${(err as Error).message}. Set ALLOW_PLACEHOLDER_VOICE=1 for an offline test render.`);
+  }
+}
+
+export async function assembleShort(opts: AssembleOptions): Promise<AssembleResult> {
+  const cfg = loadChannelConfig();
+  const lang = currentLanguage(cfg);
+  const mode = opts.voiceMode ?? "auto";
+  const dir = draftDir(opts.draftId);
+  const audioDir = path.join(dir, "audio");
+  await ensureDir(audioDir);
+  await writeJsonAtomic(path.join(dir, "script.json"), opts.script);
+
+  // 1. Voice per section
+  opts.onProgress?.("voice");
+  const clips: PcmAudio[] = [];
+  let voiceSource: "kokoro" | "placeholder" = "kokoro";
+  for (const [i, key] of SECTION_ORDER.entries()) {
+    const { audio, source } = await makeVoice(opts.script[key], mode, i + 1);
+    if (source === "placeholder") voiceSource = "placeholder";
+    clips.push(audio);
+    await fs.writeFile(path.join(audioDir, `${key}.wav`), encodeWav(audio));
+    log.info(`  ${key}: ${(audio.samples.length / audio.sampleRate).toFixed(1)}s`);
+  }
+
+  // 2. Normalise + concatenate
+  const mixed = mixSections(clips);
+  const voicePath = path.join(audioDir, "voice.wav");
+  await fs.writeFile(voicePath, encodeWav(mixed.track));
+
+  // 3. Word timings per section (whisper.cpp or estimate)
+  opts.onProgress?.("timings");
+  const sections: SectionInput[] = [];
+  let timingSource: Timeline["timingSource"] = "whisper";
+  for (const [i, key] of SECTION_ORDER.entries()) {
+    const clip = clips[i]!;
+    const durationMs = Math.round((clip.samples.length / clip.sampleRate) * 1000);
+    const t =
+      voiceSource === "placeholder"
+        ? { words: undefined, source: "estimated" as const }
+        : await timeSection({ text: opts.script[key], audio: clip, model: lang.whisper.model, language: lang.whisper.language, workDir: audioDir, key });
+    if (t.source === "estimated") timingSource = "estimated";
+    sections.push({ key, text: opts.script[key], durationMs, words: t.words });
+  }
+
+  // Sections are positioned by the mixer's actual starts (lead-in + gaps + normalised lengths).
+  const timeline = buildTimeline({
+    fps: FPS,
+    sections,
+    expressionCues: opts.script.expressionCues,
+    grownUp: needsGrownUp(opts.script.experiment),
+    timingSource,
+    gapMs: 0,
+  });
+  // Shift to absolute positions from the mixer.
+  timeline.sections.forEach((s, i) => {
+    const offset = mixed.starts[i]! - s.startMs;
+    s.startMs += offset;
+    s.endMs += offset;
+    for (const w of s.words) {
+      w.startMs += offset;
+      w.endMs += offset;
+    }
+  });
+  const lastEnd = timeline.sections[timeline.sections.length - 1]!.endMs;
+  timeline.totalFrames = Math.ceil((lastEnd / 1000) * FPS) + 2 * FPS;
+  const durationSeconds = timeline.totalFrames / FPS;
+  if (durationSeconds > HARD_MAX_SECONDS) {
+    throw new Error(`Rendered length would be ${durationSeconds.toFixed(1)}s, above the ${HARD_MAX_SECONDS}s hard maximum. The script is too long.`);
+  }
+
+  // 4. Stage assets for Remotion (public/drafts/<id>/) and build props
+  const pub = publicDraftDir(opts.draftId);
+  await ensureDir(pub);
+  await fs.copyFile(voicePath, path.join(pub, "voice.wav"));
+  const music = await ensureMusic(cfg.music.file, cfg.music.enabled);
+  const props: ShortProps = {
+    script: {
+      topicId: opts.script.topicId,
+      title: opts.script.title,
+      hook: opts.script.hook,
+      answer: opts.script.answer,
+      wowFact: opts.script.wowFact,
+      experiment: opts.script.experiment,
+      signOff: opts.script.signOff,
+      onScreenText: opts.script.onScreenText,
+      background: opts.script.background,
+    },
+    channel: {
+      name: cfg.name,
+      handle: cfg.handle,
+      characterName: cfg.characterName,
+      catchphrase: lang.catchphrase,
+      askGrownUp: lang.askGrownUp,
+      language: cfg.language,
+    },
+    timeline,
+    audio: {
+      voice: `drafts/${opts.draftId}/voice.wav`,
+      music,
+      musicVolume: cfg.music.volume,
+      duckedVolume: cfg.music.duckedVolume,
+      fadeSeconds: cfg.music.fadeSeconds,
+    },
+  };
+  const propsPath = path.join(dir, "video.json");
+  await writeJsonAtomic(propsPath, props);
+  await writeJsonAtomic(path.join(dir, "timings.json"), { timingSource, voiceSource, sections: timeline.sections });
+
+  // 5. Render
+  const videoPath = path.join(dir, "short.mp4");
+  if (!opts.skipRender) {
+    opts.onProgress?.("render");
+    await renderVideo({ compositionId: "Short", inputProps: props, outputPath: videoPath });
+  }
+  log.info(`Short assembled: ${durationSeconds.toFixed(1)}s, voice=${voiceSource}, timings=${timingSource}`);
+  return { draftId: opts.draftId, dir, videoPath, propsPath, voicePath, durationSeconds, timeline, voiceSource, timingSource };
+}

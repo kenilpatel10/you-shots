@@ -1,0 +1,2222 @@
+[
+  {
+    "id": "animals-001",
+    "question": "Why do cats purr?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-002",
+    "question": "Why do dogs wag their tails?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-003",
+    "question": "Why do birds sing in the morning?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-004",
+    "question": "How do fish breathe underwater?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-005",
+    "question": "Why do rabbits have long ears?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-006",
+    "question": "Why do cows say moo?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-007",
+    "question": "Why do ducks float?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-008",
+    "question": "Why do bees buzz?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "animals-009",
+    "question": "Why do zebras have stripes?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-010",
+    "question": "How do birds fly?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-011",
+    "question": "Why do owls come out at night?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-012",
+    "question": "Why do elephants have such big ears?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-013",
+    "question": "How do chameleons change colour?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-014",
+    "question": "Why do giraffes have long necks?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-015",
+    "question": "Why do snakes stick out their tongues?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-016",
+    "question": "How do bees make honey?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-017",
+    "question": "Why do dogs sniff everything?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-018",
+    "question": "How do caterpillars turn into butterflies?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-019",
+    "question": "Why do frogs croak?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-020",
+    "question": "Why do bears sleep all winter?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-021",
+    "question": "How do spiders spin webs?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-022",
+    "question": "Why do cats have whiskers?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-023",
+    "question": "Why do woodpeckers peck trees?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-024",
+    "question": "How do ants carry things so heavy?",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animals-025",
+    "question": "Why do penguins huddle together?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-026",
+    "question": "How do bats find their way in the dark?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-027",
+    "question": "Why do camels have humps?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-028",
+    "question": "How do birds know where to fly in winter?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-029",
+    "question": "Why do turtles have shells?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-030",
+    "question": "How do fireflies light up?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-031",
+    "question": "Why do hummingbirds hover?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-032",
+    "question": "Why do kangaroos have pouches?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-033",
+    "question": "How do geckos walk on walls?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-034",
+    "question": "Why do cheetahs run so fast?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-035",
+    "question": "How do chickens make eggs?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-036",
+    "question": "Why do pandas eat so much bamboo?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "animals-037",
+    "question": "Why do parrots copy what we say?",
+    "category": "animals",
+    "difficulty": 3
+  },
+  {
+    "id": "space-001",
+    "question": "Why does the Moon change shape?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-002",
+    "question": "Why is the Sun so hot?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-003",
+    "question": "Why do stars twinkle?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-004",
+    "question": "Why is it dark at night?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-005",
+    "question": "Why can't we see stars in the daytime?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-006",
+    "question": "Why does the Sun rise in the morning?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-007",
+    "question": "What is the Moon made of?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "space-008",
+    "question": "Why do we have day and night?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-009",
+    "question": "Why does the Moon follow us in the car?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-010",
+    "question": "How far away is the Moon?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-011",
+    "question": "Why do astronauts float in space?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-012",
+    "question": "Why is Mars red?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-013",
+    "question": "What is a shooting star?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-014",
+    "question": "Why does Saturn have rings?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-015",
+    "question": "How big is the Sun?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-016",
+    "question": "Why do we have seasons?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-017",
+    "question": "What is a comet?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-018",
+    "question": "Why is space so quiet?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-019",
+    "question": "How do rockets fly?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-020",
+    "question": "What do astronauts eat?",
+    "category": "space",
+    "difficulty": 2
+  },
+  {
+    "id": "space-021",
+    "question": "How many planets are there?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-022",
+    "question": "Why is Jupiter so big?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-023",
+    "question": "What is a black hole?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-024",
+    "question": "Why does the Earth spin?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-025",
+    "question": "Why is Earth called the blue planet?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-026",
+    "question": "How do astronauts sleep in space?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-027",
+    "question": "Why do we only see one side of the Moon?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-028",
+    "question": "What is the Milky Way?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-029",
+    "question": "Why is space cold?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-030",
+    "question": "How long is a year on other planets?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-031",
+    "question": "What is an eclipse?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-032",
+    "question": "Why do planets go around the Sun?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-033",
+    "question": "How do telescopes see so far?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-034",
+    "question": "Why does the Moon have craters?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-035",
+    "question": "What is a galaxy?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-036",
+    "question": "Why is Venus so hot?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "space-037",
+    "question": "What is gravity?",
+    "category": "space",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-001",
+    "question": "Why do we yawn?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-002",
+    "question": "Why do we have eyebrows?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-003",
+    "question": "Why do we sneeze?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-004",
+    "question": "Why do we get hiccups?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-005",
+    "question": "Why do we blink?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-006",
+    "question": "Why do we need to sleep?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-007",
+    "question": "Why do our tummies rumble?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-008",
+    "question": "Why do we have belly buttons?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "human-body-009",
+    "question": "Why do we get goosebumps?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-010",
+    "question": "Why does hair grow?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-011",
+    "question": "Why do we have two eyes?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-012",
+    "question": "Why do our fingers go wrinkly in the bath?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-013",
+    "question": "How do we taste things?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-014",
+    "question": "Why do we lose our baby teeth?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-015",
+    "question": "Why do we sweat?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-016",
+    "question": "How do bones grow?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-017",
+    "question": "Why do we dream?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-018",
+    "question": "Why do we have fingernails?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-019",
+    "question": "Why does my heart beat faster when I run?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-020",
+    "question": "Why do we get tired?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-021",
+    "question": "Why do we laugh when we are tickled?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-022",
+    "question": "How do we smell things?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-023",
+    "question": "Why do we have hair on our heads?",
+    "category": "human-body",
+    "difficulty": 2
+  },
+  {
+    "id": "human-body-024",
+    "question": "How does food become energy?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-025",
+    "question": "Why do we have different eye colours?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-026",
+    "question": "How do our ears hear?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-027",
+    "question": "Why do we get dizzy when we spin?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-028",
+    "question": "How do cuts heal?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-029",
+    "question": "Why do we have freckles?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-030",
+    "question": "How does our brain remember things?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-031",
+    "question": "Why do we breathe faster when we run?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-032",
+    "question": "How do muscles make us move?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-033",
+    "question": "Why do we get thirsty?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-034",
+    "question": "Why do our voices sound different?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-035",
+    "question": "How do our eyes see colours?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-036",
+    "question": "Why do babies cry so much?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "human-body-037",
+    "question": "Why do we shiver when it's cold?",
+    "category": "human-body",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-001",
+    "question": "Why is the sky blue?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-002",
+    "question": "Why does it rain?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-003",
+    "question": "Where do rainbows come from?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-004",
+    "question": "Why is snow white?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-005",
+    "question": "Why do leaves fall in autumn?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-006",
+    "question": "Why do flowers smell nice?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-007",
+    "question": "Why is grass green?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-008",
+    "question": "Why do clouds float?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "weather-nature-009",
+    "question": "Why is the wind invisible?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-010",
+    "question": "What makes thunder so loud?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-011",
+    "question": "Why do puddles disappear?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-012",
+    "question": "Why do trees have bark?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-013",
+    "question": "Why do we see our breath when it's cold?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-014",
+    "question": "What are clouds made of?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-015",
+    "question": "Why does the sunset turn orange?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-016",
+    "question": "Why do rivers flow to the sea?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-017",
+    "question": "How do seeds grow into plants?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-018",
+    "question": "Why is the desert so dry?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-019",
+    "question": "Why do mountains have snow on top?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-020",
+    "question": "Why is fog so hard to see through?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-021",
+    "question": "Why do some trees stay green all winter?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-022",
+    "question": "Why are deserts hot in the day and cold at night?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "weather-nature-023",
+    "question": "How do plants drink water?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-024",
+    "question": "Why is the Earth round?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-025",
+    "question": "How are mountains made?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-026",
+    "question": "What makes a volcano erupt?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-027",
+    "question": "Why does lightning zigzag?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-028",
+    "question": "How do rocks get smooth in rivers?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-029",
+    "question": "Why does dew appear on grass in the morning?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-030",
+    "question": "How does a cactus live without much rain?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-031",
+    "question": "Why do leaves change colour?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-032",
+    "question": "Where does sand come from?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-033",
+    "question": "How does hail form?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-034",
+    "question": "Why are some lakes salty?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-035",
+    "question": "How do caves form?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-036",
+    "question": "Why does the wind blow?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "weather-nature-037",
+    "question": "What is a tornado made of?",
+    "category": "weather-nature",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-001",
+    "question": "Why does soap make bubbles?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-002",
+    "question": "Why do balloons float?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-003",
+    "question": "Why does ice melt?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-004",
+    "question": "Why do we see ourselves in a mirror?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-005",
+    "question": "Why do shoes have laces?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-006",
+    "question": "Why does a ball bounce?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-007",
+    "question": "Why do we have shadows?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-008",
+    "question": "Why do socks get lost?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "everyday-things-009",
+    "question": "Why does bread rise?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-010",
+    "question": "Why does a spinning top stay up?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-011",
+    "question": "Why do magnets stick to the fridge?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-012",
+    "question": "Why do crayons melt in the sun?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-013",
+    "question": "Why does glue stick?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-014",
+    "question": "Why does a kite fly?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-015",
+    "question": "Why do wheels make it easier to move things?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-016",
+    "question": "Why do bubbles pop?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-017",
+    "question": "Why is it hard to walk on ice?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-018",
+    "question": "Why do windows fog up?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-019",
+    "question": "Why do we hear an echo?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-020",
+    "question": "Why does paper tear but not stretch?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-021",
+    "question": "Why does a straw make drinks go up?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-022",
+    "question": "Why does a boat float but a stone sink?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-023",
+    "question": "Why do rubber bands stretch?",
+    "category": "everyday-things",
+    "difficulty": 2
+  },
+  {
+    "id": "everyday-things-024",
+    "question": "How does a zip work?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-025",
+    "question": "Why does a torch need batteries?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-026",
+    "question": "How does a clock know the time?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-027",
+    "question": "Why does a bicycle stay up when it moves?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-028",
+    "question": "Why do things fall down and not up?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-029",
+    "question": "How does a thermometer work?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-030",
+    "question": "Why does metal feel colder than wood?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-031",
+    "question": "Why do we see colours in a bubble?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-032",
+    "question": "Why do ice cubes crack in a drink?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-033",
+    "question": "How does a pencil write?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-034",
+    "question": "Why does a seesaw go up and down?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-035",
+    "question": "How does a swing keep swinging?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-036",
+    "question": "Why does sound get quieter far away?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "everyday-things-037",
+    "question": "Why does a sponge soak up water?",
+    "category": "everyday-things",
+    "difficulty": 3
+  },
+  {
+    "id": "food-001",
+    "question": "Why is popcorn puffy?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-002",
+    "question": "Why do onions make us cry?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-003",
+    "question": "Why are lemons sour?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-004",
+    "question": "Why is honey sticky?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-005",
+    "question": "Why do apples turn brown?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-006",
+    "question": "Why does ice cream melt?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-007",
+    "question": "Why is milk white?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-008",
+    "question": "Why do bananas have peels?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "food-009",
+    "question": "Why does toast turn brown?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-010",
+    "question": "Where does chocolate come from?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-011",
+    "question": "Why do carrots grow underground?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-012",
+    "question": "Why does fizzy water fizz?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-013",
+    "question": "Why do we need to eat vegetables?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-014",
+    "question": "Why does cheese have holes?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-015",
+    "question": "Why do eggs go hard when you cook them?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-016",
+    "question": "Why do we get hungry?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-017",
+    "question": "Where does rice come from?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-018",
+    "question": "Why does jelly wobble?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-019",
+    "question": "Why does salt melt ice?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-020",
+    "question": "Why are strawberries red?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-021",
+    "question": "Why do peppers taste spicy?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-022",
+    "question": "Why does bread go stale?",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-023",
+    "question": "How is butter made?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-024",
+    "question": "Why do some fruits have seeds inside?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-025",
+    "question": "Why does fruit taste sweet?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-026",
+    "question": "How do bees help make our food?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-027",
+    "question": "Why does popcorn pop but rice does not?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-028",
+    "question": "Why do we cook food?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-029",
+    "question": "How do plants make sugar?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-030",
+    "question": "Why does pasta go soft in hot water?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-031",
+    "question": "Where does sugar come from?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-032",
+    "question": "Why does ice cream feel so cold?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-033",
+    "question": "Why do grapes turn into raisins?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-034",
+    "question": "Why does a cake rise in the oven?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-035",
+    "question": "Why does yogurt taste tangy?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-036",
+    "question": "Why does mint feel cold in your mouth?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "food-037",
+    "question": "Why are potatoes so filling?",
+    "category": "food",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-001",
+    "question": "Why is the sea salty?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-002",
+    "question": "Why do waves crash?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-003",
+    "question": "Why is the ocean blue?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-004",
+    "question": "Why do crabs walk sideways?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-005",
+    "question": "How do fish sleep?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-006",
+    "question": "Why do starfish have five arms?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-007",
+    "question": "Why do shells wash up on the beach?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-008",
+    "question": "Why do dolphins jump?",
+    "category": "ocean",
+    "difficulty": 1
+  },
+  {
+    "id": "ocean-009",
+    "question": "How do whales breathe?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-010",
+    "question": "Why do jellyfish glow?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-011",
+    "question": "How deep is the ocean?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-012",
+    "question": "Why do octopuses have eight arms?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-013",
+    "question": "How do sea turtles find the beach?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-014",
+    "question": "Why do fish have scales?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-015",
+    "question": "Why do seals have whiskers?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-016",
+    "question": "What is coral?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-017",
+    "question": "Why does the tide come in and out?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-018",
+    "question": "How do sharks smell so well?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-019",
+    "question": "Why do puffer fish puff up?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-020",
+    "question": "How do penguins swim so fast?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-021",
+    "question": "Why are some fish so colourful?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-022",
+    "question": "Why do whales sing?",
+    "category": "ocean",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-023",
+    "question": "Why can't we drink sea water?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-024",
+    "question": "How do fish breathe with gills?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-025",
+    "question": "Why is the deep sea so dark?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-026",
+    "question": "How do clownfish live in anemones?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-027",
+    "question": "Why do icebergs float?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-028",
+    "question": "How do seahorses have babies?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-029",
+    "question": "Why do some fish glow in the dark?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-030",
+    "question": "How do dolphins talk to each other?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-031",
+    "question": "Why is the ocean so big?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-032",
+    "question": "How do sea otters keep warm?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-033",
+    "question": "Why does the sea look green sometimes?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-034",
+    "question": "How do squid squirt ink?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-035",
+    "question": "Why do we find fossils of sea creatures on mountains?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-036",
+    "question": "How do fish swim in groups without bumping?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-037",
+    "question": "Why do hermit crabs change shells?",
+    "category": "ocean",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-001",
+    "question": "How big was T. rex?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-002",
+    "question": "What did dinosaurs eat?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-003",
+    "question": "Did dinosaurs have feathers?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-004",
+    "question": "What colour were dinosaurs?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-005",
+    "question": "Were all dinosaurs big?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-006",
+    "question": "Did dinosaurs lay eggs?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-007",
+    "question": "What is a fossil?",
+    "category": "dinosaurs",
+    "difficulty": 1
+  },
+  {
+    "id": "dinosaurs-008",
+    "question": "Why did some dinosaurs have long necks?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-009",
+    "question": "How do we know what dinosaurs looked like?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-010",
+    "question": "Why did Stegosaurus have plates on its back?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-011",
+    "question": "Could dinosaurs swim?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-012",
+    "question": "Why did Triceratops have horns?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-013",
+    "question": "How fast could dinosaurs run?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-014",
+    "question": "Did dinosaurs live with people?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-015",
+    "question": "How do fossils form?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-016",
+    "question": "Why did T. rex have such tiny arms?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-017",
+    "question": "How did dinosaurs get their names?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-018",
+    "question": "Did dinosaurs roar?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-019",
+    "question": "Which dinosaur was the smallest?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-020",
+    "question": "Did dinosaurs live in groups?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-021",
+    "question": "Are birds really dinosaurs?",
+    "category": "dinosaurs",
+    "difficulty": 2
+  },
+  {
+    "id": "dinosaurs-022",
+    "question": "What happened to the dinosaurs?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-023",
+    "question": "How long ago did dinosaurs live?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-024",
+    "question": "How do scientists dig up fossils?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-025",
+    "question": "Which dinosaur was the biggest?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-026",
+    "question": "Did dinosaurs have teeth like ours?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-027",
+    "question": "How did flying reptiles fly?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-028",
+    "question": "Could dinosaurs see well?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-029",
+    "question": "How do we know how old a fossil is?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-030",
+    "question": "Why were some dinosaurs so huge?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-031",
+    "question": "Did dinosaurs look after their babies?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-032",
+    "question": "What did baby dinosaurs look like?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-033",
+    "question": "What did the world look like when dinosaurs lived?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-034",
+    "question": "How did dinosaurs stay warm?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-035",
+    "question": "Which animals today are like dinosaurs?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-036",
+    "question": "Why do we find dinosaur footprints?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "dinosaurs-037",
+    "question": "Did dinosaurs live where I live?",
+    "category": "dinosaurs",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-001",
+    "question": "How does a fridge stay cold?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-002",
+    "question": "How does a bicycle move?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-003",
+    "question": "How does a light switch work?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-004",
+    "question": "How does a car go?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-005",
+    "question": "How does a telephone carry my voice?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-006",
+    "question": "How does an umbrella keep me dry?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-007",
+    "question": "How does a whistle make sound?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "how-things-work-008",
+    "question": "How does an aeroplane stay in the sky?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-009",
+    "question": "How does a boat float?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-010",
+    "question": "How does a magnet work?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-011",
+    "question": "How do traffic lights know when to change?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-012",
+    "question": "How does a television show pictures?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-013",
+    "question": "How does a lift go up?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-014",
+    "question": "How do wheels turn on a train?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-015",
+    "question": "How does a camera take a picture?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-016",
+    "question": "How does a compass point north?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-017",
+    "question": "How does a toilet flush?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-018",
+    "question": "How does a microwave heat food?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-019",
+    "question": "How does a pencil sharpener work?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-020",
+    "question": "How does a parachute slow you down?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-021",
+    "question": "How does a drum make a sound?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-022",
+    "question": "How does a hot-air balloon rise?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "how-things-work-023",
+    "question": "How does a computer think?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-024",
+    "question": "How does a submarine dive?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-025",
+    "question": "How does a rocket leave Earth?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-026",
+    "question": "How do solar panels make power?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-027",
+    "question": "How does a windmill make electricity?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-028",
+    "question": "How does a piano make music?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-029",
+    "question": "How does a bridge hold so much weight?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-030",
+    "question": "How does a helicopter hover?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-031",
+    "question": "How do glasses help people see?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-032",
+    "question": "How does a vacuum cleaner suck up dust?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-033",
+    "question": "How does a printer put ink on paper?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-034",
+    "question": "How does a wristwatch tick?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-035",
+    "question": "How does a kettle boil water?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-036",
+    "question": "How does a lock know the right key?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "how-things-work-037",
+    "question": "How does a speaker make sound?",
+    "category": "how-things-work",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-001",
+    "question": "Why do we smile when we are happy?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-002",
+    "question": "Why do hugs feel nice?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-003",
+    "question": "Why do we say please and thank you?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-004",
+    "question": "Why do we laugh?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-005",
+    "question": "Why do we feel shy sometimes?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-006",
+    "question": "Why does sharing feel good?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-007",
+    "question": "Why do we cry when we are sad?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-008",
+    "question": "Why do we like to play with friends?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "feelings-friendship-009",
+    "question": "Why do we get butterflies in our tummy?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-010",
+    "question": "Why do we blush?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-011",
+    "question": "Why do we feel angry sometimes?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-012",
+    "question": "How do we make a new friend?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-013",
+    "question": "Why does saying sorry help?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-014",
+    "question": "Why do we feel proud?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-015",
+    "question": "Why do we miss people?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-016",
+    "question": "Why does taking deep breaths calm us down?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-017",
+    "question": "Why is it good to take turns?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-018",
+    "question": "Why do we feel excited before a birthday?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-019",
+    "question": "Why do we sometimes feel nervous?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-020",
+    "question": "Why do we feel better after a good sleep?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-021",
+    "question": "Why do we like being with our family?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-022",
+    "question": "Why do kind words feel so good?",
+    "category": "feelings-friendship",
+    "difficulty": 2
+  },
+  {
+    "id": "feelings-friendship-023",
+    "question": "Why do we feel jealous sometimes?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-024",
+    "question": "Why do we feel brave when a friend is with us?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-025",
+    "question": "Why do we feel calm in nature?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-026",
+    "question": "Why do friends sometimes disagree?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-027",
+    "question": "Why does helping someone make us happy?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-028",
+    "question": "Why do we feel bored?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-029",
+    "question": "Why do we feel frustrated when something is hard?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-030",
+    "question": "Why does listening make people feel good?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-031",
+    "question": "Why do we feel worried about new things?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-032",
+    "question": "Why does music change how we feel?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-033",
+    "question": "Why does everyone like different things?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-034",
+    "question": "Why do we feel grateful?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-035",
+    "question": "Why do we feel silly sometimes?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-036",
+    "question": "Why does it feel good to finish something hard?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  },
+  {
+    "id": "feelings-friendship-037",
+    "question": "Why do we feel lonely sometimes?",
+    "category": "feelings-friendship",
+    "difficulty": 3
+  }
+]
