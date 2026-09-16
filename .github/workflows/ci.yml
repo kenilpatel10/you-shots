@@ -17,6 +17,9 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    env:
+      REMOTION_PREFER_DOWNLOADED_BROWSER: "1"
+      REMOTION_CONCURRENCY: "2"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
