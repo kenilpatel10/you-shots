@@ -30,7 +30,9 @@ jobs:
       - name: Cache Remotion browser
         uses: actions/cache@v4
         with:
-          path: node_modules/.remotion
+          path: |
+            .remotion
+            node_modules/.remotion
           key: remotion-browser-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: 3-second smoke render
         run: npm run smoke

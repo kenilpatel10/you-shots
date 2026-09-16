@@ -1,0 +1,75 @@
+name: Weekly compilation
+
+on:
+  schedule:
+    # Sunday 03:00 UTC (08:30 IST). Compiles Mon–Sun of the week that is ending.
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        description: "Dry run with 5 sample scripts (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bolt-state
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CHANNEL_LANGUAGE: ${{ vars.CHANNEL_LANGUAGE }}
+      REMOTION_PREFER_DOWNLOADED_BROWSER: "1"
+      REMOTION_CONCURRENCY: "2"
+    steps:
+- uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Cache Kokoro model (Hugging Face)
+        uses: actions/cache@v4
+        with:
+          path: .cache/hf
+          key: hf-kokoro-q8-v1
+      - name: Cache whisper.cpp + model
+        uses: actions/cache@v4
+        with:
+          path: .cache/whisper
+          key: whisper-${{ runner.os }}-1.7.5-base.en
+      - name: Cache Remotion headless browser
+        uses: actions/cache@v4
+        with:
+          path: |
+            .remotion
+            node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Compile the week
+        run: |
+          if [ "${{ github.event.inputs.dryRun }}" = "true" ]; then npm run weekly -- --dry-run; else npm run weekly; fi
+      - name: Commit state
+        if: github.event.inputs.dryRun != 'true'
+        run: scripts/commit-state.sh "weekly $(date -u +%F)"
+      - name: Upload dry-run output
+        if: github.event.inputs.dryRun == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-dry-run
+          path: |
+            out/weekly-dryrun/long.mp4
+            out/weekly-dryrun/thumbnail.png
+          retention-days: 3
+      - name: Alert on failure
+        if: failure()
+        run: scripts/telegram-alert.sh weekly

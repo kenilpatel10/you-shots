@@ -1,0 +1,88 @@
+name: Generate daily Short
+
+on:
+  schedule:
+    # 01:30 UTC = 07:00 IST. Change here and in config/channel.json (timezone/uploadTime).
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+    inputs:
+      topicId:
+        description: "Force a topic id from data/topics.json (optional)"
+        required: false
+        default: ""
+      dryRun:
+        description: "Dry run: render only, no Telegram/release/state (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+# Shares one group with publish.yml and weekly.yml so state.json is never written by two jobs at once.
+# NOTE: the "Setup" steps are duplicated in generate.yml and weekly.yml on purpose (no include in Actions); keep them identical.
+concurrency:
+  group: bolt-state
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CHANNEL_LANGUAGE: ${{ vars.CHANNEL_LANGUAGE }}
+      REMOTION_PREFER_DOWNLOADED_BROWSER: "1"
+      REMOTION_CONCURRENCY: "2"
+    steps:
+- uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Cache Kokoro model (Hugging Face)
+        uses: actions/cache@v4
+        with:
+          path: .cache/hf
+          key: hf-kokoro-q8-v1
+      - name: Cache whisper.cpp + model
+        uses: actions/cache@v4
+        with:
+          path: .cache/whisper
+          key: whisper-${{ runner.os }}-1.7.5-base.en
+      - name: Cache Remotion headless browser
+        uses: actions/cache@v4
+        with:
+          path: |
+            .remotion
+            node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Generate
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.topicId }}" ]; then ARGS="$ARGS --topic ${{ github.event.inputs.topicId }}"; fi
+          if [ "${{ github.event.inputs.dryRun }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          npm run generate -- $ARGS
+      - name: Commit state
+        if: github.event.inputs.dryRun != 'true'
+        run: scripts/commit-state.sh "generate $(date -u +%F)"
+      - name: Upload dry-run output
+        if: github.event.inputs.dryRun == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dry-run-output
+          path: |
+            out/**/short.mp4
+            out/**/script.json
+          retention-days: 3
+      - name: Alert on failure
+        if: failure()
+        run: scripts/telegram-alert.sh generate

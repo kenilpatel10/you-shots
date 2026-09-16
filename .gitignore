@@ -3,6 +3,8 @@ out/
 .cache/
 public/drafts/
 public/samples/
+public/music/*.mp3
+public/music/*.wav
 !public/silence.wav
 .env
 .env.local

@@ -9,6 +9,8 @@ import { createLogger } from "../lib/logger";
 import { outPath, renderPng, renderVideo } from "../video/render";
 import { ShortPropsZ, LongVideoPropsZ } from "../../remotion/schema";
 import { sampleShortProps } from "../../remotion/sample/sampleProps";
+import { sampleLongProps, sampleThumbnailProps } from "../../remotion/sample/sampleLong";
+import { ThumbnailPropsZ } from "../../remotion/schema";
 
 const log = createLogger("preview");
 
@@ -20,11 +22,18 @@ function arg(name: string): string | undefined {
 async function main() {
   const propsFile = arg("--props");
   const compositionId = arg("--composition") ?? "Short";
-  const raw = propsFile ? await readJson(propsFile) : sampleShortProps;
-  const props = compositionId === "LongVideo" ? LongVideoPropsZ.parse(raw) : ShortPropsZ.parse(raw);
+  const sample = compositionId === "LongVideo" ? sampleLongProps : compositionId === "Thumbnail" ? sampleThumbnailProps : sampleShortProps;
+  const raw = propsFile ? await readJson(propsFile) : sample;
+  const props = compositionId === "LongVideo" ? LongVideoPropsZ.parse(raw) : compositionId === "Thumbnail" ? ThumbnailPropsZ.parse(raw) : ShortPropsZ.parse(raw);
   const outDir = arg("--out") ?? outPath("preview");
   const stills = arg("--stills");
   const fps = "timeline" in props ? props.timeline.fps : 30;
+  if (compositionId === "Thumbnail") {
+    const file = path.join(outDir, "thumbnail.png");
+    await renderPng({ compositionId, inputProps: props, outputPath: file });
+    log.info(`Thumbnail → ${file}`);
+    return;
+  }
   if (stills) {
     for (const sec of stills.split(",").map(Number)) {
       const frame = Math.round(sec * fps);
