@@ -30,8 +30,11 @@ generate.yml                            publish.yml
  └ send to Telegram for approval         └ same approval + upload flow, with chapters + thumbnail
 ```
 
-Every Short has the same five beats: **hook question → simple answer with one comparison →
-wow fact → Bolt's tiny safe experiment → "Stay curious, friends!"** (all configurable).
+Every Short has the same beats: **hook question → "What do you think?" with three answer bubbles
+→ simple answer with one comparison (the right bubble pops) → wow fact → Bolt's tiny safe
+experiment → "Stay curious, friends!"** (all configurable). The guess beat is what makes the
+channel feel like a game rather than a lecture: children predict first, then learn — and it
+invites real comments without any engagement bait.
 
 ## Quick start (local, no accounts needed)
 
@@ -100,13 +103,14 @@ src/publish/       telegram, releases (GitHub), youtube, schedule (publishAt slo
 src/state/         zod-typed state with tested transitions, atomic writes
 remotion/          Root, compositions/ (Short, LongVideo, Thumbnail, BoltShowcase, Episode),
                    character/ (Bolt.tsx, poses, expressions), scenes/, backgrounds/, components/, theme.ts
-docs/              SETUP_TELEGRAM, SETUP_AI_KEYS, SETUP_YOUTUBE, CONTENT_POLICY, DECISIONS, HINDI
+docs/              SETUP_*, CONTENT_POLICY, DECISIONS, HINDI, TOOL_EVALUATION, PROOF (rendered evidence)
 .github/workflows/ generate.yml, publish.yml, weekly.yml, ci.yml
 ```
 
 ## Safety, by design
 
-- Two LLM passes (writer, then an independent reviewer/fact-checker), then a **deterministic
+- Two LLM passes (writer, then an independent reviewer/fact-checker — on a *different* model when
+  both Gemini and Groq keys exist), then a **deterministic
   validator** in code: word counts, estimated length, banned words, hazard words in experiments,
   invented statistics, engagement bait, "ask a grown-up" when anything is handled
   (`src/content/validate.ts`, unit-tested). Failing scripts are never rendered.

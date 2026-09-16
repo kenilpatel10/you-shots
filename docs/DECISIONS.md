@@ -91,6 +91,20 @@ the build environment. Package versions are pinned in `package.json`.
 - The repo is assumed public; secrets only come from GitHub Secrets/`.env`, and the logger
   redacts any secret value that appears in a message.
 
+## Enhancements beyond the spec (added after the tool evaluation)
+
+- **Guess beat.** `script.guess` (optional) adds a spoken prompt after the hook and a 2.6 s pause
+  with three answer bubbles; the answer section opens with a 1.4 s reveal. Timing constants:
+  `GUESS_PAUSE_MS`, `REVEAL_FRAMES` in `remotion/schema.ts`. The validator includes the pause in
+  its length estimate, so scripts stay under 58 s. Scripts without `guess` render exactly as before.
+- **Cross-provider review.** `completeJson(..., { avoidProvider })` reorders the provider chain so
+  the reviewer runs on a different model than the writer when possible (logged as "independent
+  of writer").
+- **Chimes.** `src/audio/sfx.ts` synthesises a quiet bell (wow fact) and pop (reveal) into
+  `public/sfx/` on first use; both are placed with `<Sequence>` + `<Audio>` in `Episode.tsx`.
+- **External generators** (ZSky, InVideo, Pictory, D-ID, Steve AI) were evaluated and rejected
+  for the core pipeline — see `docs/TOOL_EVALUATION.md`.
+
 ## Not done / known limitations
 
 - Hindi is prepared in config, prompt registry and font stack but **not implemented**; kokoro-js
