@@ -70,7 +70,7 @@
       "voice": {
         "engine": "espeak",
         "voiceId": "af_heart",
-        "speed": 1.2,
+        "speed": 1.15,
         "espeakVoice": "hi+f3"
       },
       "whisper": {

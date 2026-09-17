@@ -52,8 +52,9 @@ the build environment. Package versions are pinned in `package.json`.
   are aligned to the script's own words with an LCS aligner (`src/audio/align.ts`) so captions
   always show the exact script text. If whisper cannot be installed, timings are estimated
   proportionally by character count and the draft message says `captions: estimated`.
-- **Bundled eSpeak voice** (`src/audio/espeak.ts`, via `mespeak`): eSpeak-NG compiled to JS with
-  its English voices inside the npm package, so an offline machine can still render *intelligible*
+- **Bundled eSpeak voice** (`src/audio/espeak.ts`, via `text2wav`): eSpeak-NG compiled to WASM with
+  100+ language voices (Hindi included) inside the npm package (all option values must be passed
+  as strings — numbers are mangled in its argv), so an offline machine can still render *intelligible*
   speech (`--voice espeak`, or automatically in dry runs with `ALLOW_FALLBACK_VOICE=1`). It is
   robotic; Kokoro remains the production engine and `generate` refuses to publish audio that does
   not come from the configured engine. `voice.engine: "espeak"` in `config/channel.json` makes it
