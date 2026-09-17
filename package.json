@@ -36,6 +36,7 @@
     "googleapis": "^160.0.0",
     "groq-sdk": "^1.6.0",
     "kokoro-js": "^1.2.1",
+    "mespeak": "^2.0.2",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "remotion": "4.0.525",

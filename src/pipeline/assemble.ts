@@ -12,6 +12,7 @@ import { mixSections } from "../audio/mix";
 import { ensureMusic } from "../audio/music";
 import { ensureSfx } from "../audio/sfx";
 import { placeholderVoice } from "../audio/placeholder";
+import { synthesizeEspeak } from "../audio/espeak";
 import { timeSection } from "../audio/timings";
 import { synthesizeSection } from "../audio/tts";
 import { encodeWav, type PcmAudio } from "../audio/wav";
@@ -28,7 +29,8 @@ const log = createLogger("assemble");
 
 export const HARD_MAX_SECONDS = 59;
 
-export type VoiceMode = "kokoro" | "placeholder" | "auto";
+export type VoiceMode = "kokoro" | "espeak" | "placeholder" | "auto";
+export type VoiceSource = "kokoro" | "espeak" | "placeholder";
 
 export type AssembleResult = {
   draftId: string;
@@ -38,7 +40,7 @@ export type AssembleResult = {
   voicePath: string;
   durationSeconds: number;
   timeline: Timeline;
-  voiceSource: "kokoro" | "placeholder";
+  voiceSource: VoiceSource;
   timingSource: Timeline["timingSource"];
 };
 
@@ -51,18 +53,24 @@ export type AssembleOptions = {
   onProgress?: (stage: string) => void;
 };
 
-async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{ audio: PcmAudio; source: "kokoro" | "placeholder" }> {
+let warnedFallback = false;
+
+async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{ audio: PcmAudio; source: VoiceSource }> {
   const lang = currentLanguage();
   if (mode === "placeholder") return { audio: placeholderVoice(text, seed), source: "placeholder" };
+  const engine = mode === "auto" ? lang.voice.engine : mode;
+  if (engine === "espeak") return { audio: synthesizeEspeak(text), source: "espeak" };
   try {
     const audio = await synthesizeSection(text, { voiceId: lang.voice.voiceId, speed: lang.voice.speed });
     return { audio, source: "kokoro" };
   } catch (err) {
-    if (mode === "auto" && envBool("ALLOW_PLACEHOLDER_VOICE")) {
-      log.warn(`Kokoro unavailable (${(err as Error).message.split("\n")[0]}). Using PLACEHOLDER voice — not for publishing.`);
-      return { audio: placeholderVoice(text, seed), source: "placeholder" };
+    if (mode === "auto" && (envBool("ALLOW_FALLBACK_VOICE") || envBool("ALLOW_PLACEHOLDER_VOICE"))) {
+      // Offline machines: eSpeak ships inside node_modules, so speech stays real and intelligible.
+      if (!warnedFallback) log.warn(`Kokoro unavailable (${(err as Error).message.split("\n")[0]}). Using the bundled eSpeak voice — dry runs only.`);
+      warnedFallback = true;
+      return { audio: synthesizeEspeak(text), source: "espeak" };
     }
-    throw new Error(`Text-to-speech failed: ${(err as Error).message}. Set ALLOW_PLACEHOLDER_VOICE=1 for an offline test render.`);
+    throw new Error(`Text-to-speech failed: ${(err as Error).message}. Set ALLOW_FALLBACK_VOICE=1 for an offline test render with the bundled eSpeak voice.`);
   }
 }
 
@@ -78,11 +86,11 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   // 1. Voice per section
   opts.onProgress?.("voice");
   const clips: PcmAudio[] = [];
-  let voiceSource: "kokoro" | "placeholder" = "kokoro";
+  let voiceSource: VoiceSource = "kokoro";
   const spoken = Object.fromEntries(SECTION_ORDER.map((k) => [k, sectionSpokenText(opts.script, k)])) as Record<(typeof SECTION_ORDER)[number], string>;
   for (const [i, key] of SECTION_ORDER.entries()) {
     const { audio, source } = await makeVoice(spoken[key], mode, i + 1);
-    if (source === "placeholder") voiceSource = "placeholder";
+    if (source !== "kokoro") voiceSource = source;
     clips.push(audio);
     await fs.writeFile(path.join(audioDir, `${key}.wav`), encodeWav(audio));
     log.info(`  ${key}: ${(audio.samples.length / audio.sampleRate).toFixed(1)}s`);

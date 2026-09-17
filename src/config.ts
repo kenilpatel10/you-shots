@@ -8,7 +8,7 @@ const LanguageConfig = z.object({
   label: z.string(),
   catchphrase: z.string().min(3),
   voice: z.object({
-    engine: z.literal("kokoro"),
+    engine: z.enum(["kokoro", "espeak"]),
     voiceId: z.string(),
     speed: z.number().min(0.7).max(1.4),
   }),

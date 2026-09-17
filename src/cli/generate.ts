@@ -9,7 +9,7 @@
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import { Command } from "commander";
-import { loadChannelConfig } from "../config";
+import { currentLanguage, loadChannelConfig } from "../config";
 import { fallbackTopic, pickFallbackScript } from "../content/fallback";
 import { produceScript } from "../content/produceScript";
 import { ScriptRecordSchema, TopicsFileSchema, type ScriptRecord, type Topic } from "../content/schema";
@@ -32,13 +32,14 @@ const log = createLogger("generate");
 const program = new Command()
   .option("--dry-run", "run everything locally; no Telegram, no release upload, no state change", false)
   .option("--topic <id>", "force a topic id from data/topics.json")
-  .option("--placeholder-voice", "use the offline placeholder voice (dry runs only)", false)
+  .option("--voice <engine>", "kokoro | espeak (bundled, offline) | placeholder (babble, tests only); default: config engine")
+  .option("--placeholder-voice", "alias for --voice placeholder (dry runs only)", false)
   .option("--skip-render", "stop after audio + props (no MP4)", false)
   .option("--force", "generate even if today already has a draft", false)
   .option("--fallback", "skip the LLM and use a hand-written fallback script", false)
   .parse(process.argv);
 
-type Opts = { dryRun: boolean; topic?: string; placeholderVoice: boolean; skipRender: boolean; force: boolean; fallback: boolean };
+type Opts = { dryRun: boolean; topic?: string; voice?: "kokoro" | "espeak" | "placeholder"; placeholderVoice: boolean; skipRender: boolean; force: boolean; fallback: boolean };
 const opts = program.opts<Opts>();
 
 async function loadTopics(): Promise<Topic[]> {
@@ -93,7 +94,8 @@ async function main() {
       return;
     }
   }
-  if (opts.placeholderVoice && !opts.dryRun) throw new Error("--placeholder-voice is only allowed with --dry-run");
+  const voiceMode = opts.placeholderVoice ? "placeholder" : (opts.voice ?? "auto");
+  if (voiceMode === "placeholder" && !opts.dryRun) throw new Error("--placeholder-voice is only allowed with --dry-run");
 
   const { record, topic, fallbackFile } = await produce(state, topics, cfg.language);
   const draftId = opts.dryRun ? `dryrun-${today}-${topic.id}` : makeDraftId("short", today, topic.id);
@@ -102,7 +104,7 @@ async function main() {
   const result: AssembleResult = await assembleShort({
     draftId,
     script: record,
-    voiceMode: opts.placeholderVoice ? "placeholder" : "auto",
+    voiceMode,
     skipRender: opts.skipRender,
     onProgress: (stage) => log.info(`→ ${stage}`),
   });
@@ -112,7 +114,8 @@ async function main() {
     log.info(`  duration ${result.durationSeconds.toFixed(1)}s · voice ${result.voiceSource} · captions ${result.timingSource}`);
     return;
   }
-  if (result.voiceSource !== "kokoro") throw new Error("Refusing to publish a draft with a placeholder voice");
+  const engine = currentLanguage(cfg).voice.engine;
+  if (result.voiceSource !== engine) throw new Error(`Refusing to publish: voice was ${result.voiceSource}, config engine is ${engine}`);
   if (!telegramConfigured()) throw new Error("Telegram is not configured (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID); use --dry-run for local runs");
 
   const now = new Date().toISOString();

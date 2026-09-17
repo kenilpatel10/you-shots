@@ -29,11 +29,12 @@ import { renderPng, renderVideo } from "../video/render";
 const log = createLogger("weekly");
 const opts = new Command()
   .option("--dry-run", "compile 5 sample scripts locally; no Telegram/release/state", false)
-  .option("--placeholder-voice", "offline placeholder voice (dry runs only)", false)
+  .option("--voice <engine>", "kokoro | espeak | placeholder (dry runs)")
+  .option("--placeholder-voice", "alias for --voice placeholder", false)
   .option("--skip-render", "stop after props (no MP4)", false)
   .option("--week <key>", "ISO week key like 2026-W37 (default: the week containing today)")
   .parse(process.argv)
-  .opts<{ dryRun: boolean; placeholderVoice: boolean; skipRender: boolean; week?: string }>();
+  .opts<{ dryRun: boolean; voice?: "kokoro" | "espeak" | "placeholder"; placeholderVoice: boolean; skipRender: boolean; week?: string }>();
 
 /** Monday..Sunday (channel timezone) of the ISO week containing `today`. */
 function weekRange(today: string): { key: string; start: string; end: string } {
@@ -90,7 +91,7 @@ async function main() {
     for (const [i, s] of samples.entries()) {
       const id = `weekly-sample-${i + 1}`;
       const record = ScriptRecordSchema.parse({ ...s.script, language: cfg.language, source: "fallback", createdAt: new Date().toISOString() });
-      const r = await assembleShort({ draftId: id, script: record, voiceMode: opts.placeholderVoice ? "placeholder" : "auto", skipRender: true });
+      const r = await assembleShort({ draftId: id, script: record, voiceMode: opts.placeholderVoice ? "placeholder" : (opts.voice ?? "auto"), skipRender: true });
       const p = (await readJson(r.propsPath)) as ShortProps;
       episodes.push({ draftId: id, chapterTitle: p.script.title, script: p.script, timeline: p.timeline, audio: p.audio });
     }
