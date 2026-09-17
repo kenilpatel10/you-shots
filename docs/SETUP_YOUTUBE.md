@@ -60,6 +60,11 @@ npm run auth:youtube
 
 1. Open the printed URL, sign in with the channel's account, accept the scopes
    (through the "unverified app" warning if shown).
+   **If the channel is a brand account** (a channel created separately from the Google
+   account's own channel, e.g. "Bolt & Pip"), Google shows a second chooser after the
+   account screen listing the personal channel *and* the brand channel. Pick the brand
+   channel there, otherwise the token uploads to the personal channel. Verify with
+   `npm run auth:youtube -- --whoami` (prints the channel the stored token belongs to).
 2. The browser lands on `localhost:5173`, and the terminal prints
    `YOUTUBE_REFRESH_TOKEN=…`.
 3. Put it in `.env` and in GitHub Secrets. Never commit it.

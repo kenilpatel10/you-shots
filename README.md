@@ -17,6 +17,12 @@ Shorts into a 5–8 minute landscape video, also approval-gated.
 
 <p align="center"><img src="docs/images/bolt-showcase.png" width="720" alt="Bolt design sheet"></p>
 
+**Status: live.** The first Short produced entirely by this pipeline on GitHub Actions
+(Gemini script → independent review → Kokoro voice → whisper captions → Remotion render →
+Telegram `/approve` → YouTube upload) is scheduled on
+[youtube.com/@BoltPip-f5k](https://www.youtube.com/@BoltPip-f5k). Day-to-day operation is
+described in [docs/RUNBOOK.md](docs/RUNBOOK.md).
+
 ## How it works
 
 ```
@@ -141,6 +147,7 @@ See `.env.example`. Locally, copy it to `.env`. In Actions, add the same names a
 | `whisper.cpp unavailable … using estimated word timings` | Install `git` and `cmake` (Linux/macOS); captions still work with estimated timings. |
 | Telegram `Bad Request: chat not found` | Press *Start* in the bot chat first; check `TELEGRAM_CHAT_ID`. |
 | YouTube `invalid_grant` after a week | Publish the OAuth consent screen (`docs/SETUP_YOUTUBE.md`), re-run `npm run auth:youtube`. |
+| Upload landed on the wrong channel | The token was issued for the personal channel, not the brand channel. `npm run auth:youtube -- --whoami` shows which; re-run `npm run auth:youtube` and pick the brand channel on the chooser. |
 | `quotaExceeded` | Wait for the daily reset; the draft stays queued. |
 
 ## Licence notes
