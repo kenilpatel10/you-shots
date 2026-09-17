@@ -1,6 +1,6 @@
 # Proof of output
 
-Generated 2026-09-17T05:49:17.165Z by `npm run proof` from the files in `out/`. Everything below was measured or extracted from the actual rendered MP4s — nothing is mocked.
+Generated 2026-09-17T17:14:54.471Z by `npm run proof` from the files in `out/`. Everything below was measured or extracted from the actual rendered MP4s — nothing is mocked.
 
 > Voice note: renders made in an environment without Hugging Face access use the bundled **eSpeak-NG** voice (`voice=espeak` in the log) — real, intelligible speech with a robotic timbre. On your machine or GitHub Actions the natural **Kokoro** voice is used, and `generate` refuses to publish audio that does not come from the configured engine.
 
@@ -44,47 +44,6 @@ Measured loudness (voice vs. music-only gaps — music is ducked under speech):
 Eight consecutive frames (1/30 s apart) during speech — the mouth follows the syllables:
 
 ![m0](images/proof/short-en-mouth-0.png) ![m1](images/proof/short-en-mouth-1.png) ![m2](images/proof/short-en-mouth-2.png) ![m3](images/proof/short-en-mouth-3.png) ![m4](images/proof/short-en-mouth-4.png) ![m5](images/proof/short-en-mouth-5.png) ![m6](images/proof/short-en-mouth-6.png) ![m7](images/proof/short-en-mouth-7.png)
-
-## Short — hi (1080×1920)
-
-```
-codec_name=h264
-codec_type=video
-width=1080
-height=1920
-r_frame_rate=30/1
-codec_name=aac
-codec_type=audio
-sample_rate=48000
-channels=2
-r_frame_rate=0/0
-duration=53.482667
-size=12499389
-```
-
-- Title: **आसमान नीला क्यों है?** · sections: hook 6.567s, answer 17.9s, wow 10.3s, experiment 10.4s, sign-off 1.6s · total 53.4s (hard max 59s)
-- Captions source: estimated; guess beat: 2.8s pause
-
-Measured loudness (voice vs. music-only gaps — music is ducked under speech):
-
-- speech: 1.1–3.1 s: -21.7 dBFS
-- gap after hook (music only): 7.5–7.9 s: -46.6 dBFS
-- speech: 11.3–13.3 s: -22.2 dBFS
-- sign-off tail (music only, fading): 51.8–53.2 s: -52.9 dBFS
-
-| Beat | Time | Frame |
-| --- | --- | --- |
-| hook | 2.0s | ![hook](images/proof/short-hi-hook.png) |
-| guess bubbles | 8.7s | ![guess bubbles](images/proof/short-hi-guess-bubbles.png) |
-| reveal | 11.0s | ![reveal](images/proof/short-hi-reveal.png) |
-| answer | 14.3s | ![answer](images/proof/short-hi-answer.png) |
-| wow fact (antenna glow) | 30.5s | ![wow fact (antenna glow)](images/proof/short-hi-wow-fact-antenna-glow-.png) |
-| experiment (badge) | 41.1s | ![experiment (badge)](images/proof/short-hi-experiment-badge-.png) |
-| sign-off (channel name) | 52.8s | ![sign-off (channel name)](images/proof/short-hi-sign-off-channel-name-.png) |
-
-Eight consecutive frames (1/30 s apart) during speech — the mouth follows the syllables:
-
-![m0](images/proof/short-hi-mouth-0.png) ![m1](images/proof/short-hi-mouth-1.png) ![m2](images/proof/short-hi-mouth-2.png) ![m3](images/proof/short-hi-mouth-3.png) ![m4](images/proof/short-hi-mouth-4.png) ![m5](images/proof/short-hi-mouth-5.png) ![m6](images/proof/short-hi-mouth-6.png) ![m7](images/proof/short-hi-mouth-7.png)
 
 ## Weekly compilation (1920×1080)
 
