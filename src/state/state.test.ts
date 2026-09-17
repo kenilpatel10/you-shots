@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { mkdtempSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { draftForDate, emptyState, loadState, saveState, transition, TransitionError, upsertDraft, type Draft } from "./state";
+import { draftForDate, emptyState, langState, loadState, makeDraftId, migrateState, saveState, transition, TransitionError, upsertDraft, withLangState, type Draft } from "./state";
 
 const now = new Date("2026-09-16T05:00:00Z");
 const base: Draft = {
@@ -65,5 +65,42 @@ describe("state transitions", () => {
     const back = await loadState(file);
     expect(back.drafts[0]?.id).toBe(base.id);
     expect(back.lastTelegramUpdateId).toBeNull();
+  });
+
+  it("migrates a v1 state file into per-language bookkeeping", () => {
+    const v1 = {
+      version: 1,
+      usedTopicIds: ["a"],
+      redoTopicIds: ["b"],
+      usedFallbackScripts: ["001.json"],
+      weeklyCompiled: ["2026-W37"],
+      drafts: [base],
+      lastTelegramUpdateId: 7,
+    };
+    const s = migrateState(v1);
+    expect(s.version).toBe(2);
+    expect(langState(s, "en")).toEqual({
+      usedTopicIds: ["a"],
+      redoTopicIds: ["b"],
+      usedFallbackScripts: ["001.json"],
+      weeklyCompiled: ["2026-W37"],
+    });
+    expect(langState(s, "hi").usedTopicIds).toEqual([]);
+    expect(s.lastTelegramUpdateId).toBe(7);
+    expect(s.drafts[0]?.id).toBe(base.id);
+  });
+
+  it("keeps topic history separate per language", () => {
+    let s = withLangState(emptyState(), "en", { usedTopicIds: ["ocean-001"] });
+    s = withLangState(s, "hi", { usedTopicIds: ["ocean-002"] });
+    expect(langState(s, "en").usedTopicIds).toEqual(["ocean-001"]);
+    expect(langState(s, "hi").usedTopicIds).toEqual(["ocean-002"]);
+    expect(draftForDate(upsertDraft(s, base), "2026-09-16", "short", "hi")).toBeUndefined();
+    expect(draftForDate(upsertDraft(s, base), "2026-09-16", "short", "en")?.id).toBe(base.id);
+  });
+
+  it("puts the language into draft ids", () => {
+    expect(makeDraftId("short", "2026-09-19", "ocean-002", "hi")).toBe("short-2026-09-19-hi-ocean-002");
+    expect(makeDraftId("weekly", "2026-W38", "", "en")).toBe("weekly-2026-W38-en");
   });
 });

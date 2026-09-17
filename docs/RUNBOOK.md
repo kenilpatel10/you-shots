@@ -14,6 +14,11 @@ Everything runs on GitHub Actions. Your only recurring job is to answer one Tele
 
 Other commands: `/status` (pipeline state), `/help`.
 
+**Several channels (languages):** the daily run produces one draft per language listed in the
+`CHANNEL_LANGUAGES` variable, each Telegram message names its channel, and the draft id carries the
+language (`short-2026-09-19-hi-ocean-002`). Commands are identical; each channel has its own upload
+slot per day and its own token (`YOUTUBE_REFRESH_TOKEN_HI`).
+
 ## Where things live
 
 - **Drafts**: GitHub Releases, one per day (`draft-YYYY-MM-DD`): video, script, voice, props.
@@ -41,9 +46,11 @@ npm run generate -- --dry-run      # full local render (needs Hugging Face acces
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Telegram alert "generate failed" with `429` or `RESOURCE_EXHAUSTED` | Gemini free-tier quota | Wait for the daily reset; or add `GROQ_API_KEY` so the writer falls over to Groq. Without any key the run uses a hand-written fallback script. |
+| Telegram alert "generate failed" with `429` or `RESOURCE_EXHAUSTED` | Gemini free-tier quota (about 20 requests per day **per model**) | The writer already walks a chain of models (`GEMINI_FALLBACK_MODELS`), each with its own daily bucket. Add `GROQ_API_KEY` for a second provider. With nothing left the run uses a hand-written fallback script, never fails silently. |
 | Alert with `invalid_grant` | YouTube token revoked/expired | `npm run auth:youtube` (pick the brand channel), update the `YOUTUBE_REFRESH_TOKEN` secret. |
 | Upload went to the wrong channel | Token issued for the personal channel | Same as above; confirm with `--whoami`. Delete the wrong video in YouTube Studio. |
+| "YouTube is not configured for hi" in Telegram | `YOUTUBE_REFRESH_TOKEN_HI` secret missing | `npm run auth:youtube -- --language hi`, add the secret; the draft stays approved and uploads on the next hourly run. |
+| Hindi voice failed (`Gemini TTS … 429`) | Gemini free-tier TTS quota | Wait for the reset (the run retries with backoff); or set `GEMINI_TTS_MODEL=gemini-2.5-flash-preview-tts` as a variable to use the other free model. |
 | `quotaExceeded` from YouTube | 10 000 units/day, an upload costs 1 600 | Nothing; the draft stays *approved* and uploads on a later hourly run. |
 | Run "succeeds" in seconds and no draft appears | A stalled promise (fixed: CLIs now fail loudly) | Open the run log; the last line names the stage. |
 | Telegram video missing, only text arrives | File over 50 MB | Shorts are ~12 MB; the weekly video is sent at 720p to stay under the limit. The link to the Release is always included. |
@@ -60,6 +67,6 @@ Scenes and the characters live in `remotion/`; `npm run preview` opens Remotion 
 | Resource | Used per month | Free allowance |
 | --- | --- | --- |
 | GitHub Actions minutes | ~450 (generate) + ~360 (publish polling) + ~60 (weekly) ≈ 870 | 2 000 (private) / unlimited (public repo) |
-| Gemini requests | ~90 (writer + reviewer + occasional rewrite) | 1 500/day on the free tier |
+| Gemini requests | 2–6 per channel per day (writer + reviewer + rewrite) | ~20/day per model on the free tier; four models in the chain ≈ 80/day |
 | YouTube API units | ~50 000 | 300 000 |
 | Storage | ~15 MB per draft on Releases | effectively unlimited |

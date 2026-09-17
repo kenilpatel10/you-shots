@@ -9,6 +9,7 @@
  */
 import { createReadStream } from "node:fs";
 import { google } from "googleapis";
+import { defaultLanguage } from "../config";
 import { env } from "../lib/env";
 import { createLogger } from "../lib/logger";
 
@@ -17,13 +18,23 @@ const log = createLogger("youtube");
 export const SCOPES = ["https://www.googleapis.com/auth/youtube.upload", "https://www.googleapis.com/auth/youtube"];
 export const LOCAL_REDIRECT = "http://localhost:5173/oauth2callback";
 
-export function youtubeConfigured(): boolean {
-  return Boolean(env("YOUTUBE_CLIENT_ID") && env("YOUTUBE_CLIENT_SECRET") && env("YOUTUBE_REFRESH_TOKEN"));
+/**
+ * Secret name holding the refresh token for a language's channel. The default language (config
+ * `language`) uses YOUTUBE_REFRESH_TOKEN; every other language needs its own suffixed secret
+ * (YOUTUBE_REFRESH_TOKEN_HI) so a Hindi draft can never land on the English channel by accident.
+ */
+export function refreshTokenVar(language?: string): string {
+  if (!language || language === defaultLanguage()) return "YOUTUBE_REFRESH_TOKEN";
+  return `YOUTUBE_REFRESH_TOKEN_${language.toUpperCase().replace(/[^A-Z0-9]/g, "_")}`;
 }
 
-export function oauthClient(withRefresh = true) {
+export function youtubeConfigured(language?: string): boolean {
+  return Boolean(env("YOUTUBE_CLIENT_ID") && env("YOUTUBE_CLIENT_SECRET") && env(refreshTokenVar(language)));
+}
+
+export function oauthClient(withRefresh = true, language?: string) {
   const client = new google.auth.OAuth2(env("YOUTUBE_CLIENT_ID"), env("YOUTUBE_CLIENT_SECRET"), LOCAL_REDIRECT);
-  if (withRefresh) client.setCredentials({ refresh_token: env("YOUTUBE_REFRESH_TOKEN") });
+  if (withRefresh) client.setCredentials({ refresh_token: env(refreshTokenVar(language)) });
   return client;
 }
 
@@ -40,8 +51,11 @@ export type UploadInput = {
 };
 
 export async function uploadVideo(input: UploadInput): Promise<{ videoId: string }> {
-  const youtube = google.youtube({ version: "v3", auth: oauthClient() });
-  log.info(`Uploading "${input.title}" scheduled for ${input.publishAt.toISOString()}`);
+  const youtube = google.youtube({
+    version: "v3",
+    auth: oauthClient(true, input.language),
+  });
+  log.info(`Uploading "${input.title}" (${input.language}, token ${refreshTokenVar(input.language)}) scheduled for ${input.publishAt.toISOString()}`);
   const res = await youtube.videos.insert({
     part: ["snippet", "status"],
     notifySubscribers: input.notifySubscribers,
@@ -70,30 +84,60 @@ export async function uploadVideo(input: UploadInput): Promise<{ videoId: string
   return { videoId };
 }
 
-export async function setThumbnail(videoId: string, file: string): Promise<void> {
-  const youtube = google.youtube({ version: "v3", auth: oauthClient() });
-  await youtube.thumbnails.set({ videoId, media: { mimeType: "image/png", body: createReadStream(file) } });
+export async function setThumbnail(videoId: string, file: string, language?: string): Promise<void> {
+  const youtube = google.youtube({
+    version: "v3",
+    auth: oauthClient(true, language),
+  });
+  await youtube.thumbnails.set({
+    videoId,
+    media: { mimeType: "image/png", body: createReadStream(file) },
+  });
 }
 
 export type YoutubeErrorKind = "quota" | "auth" | "other";
 
 /** Classify API failures so publish.ts can stop and tell the reviewer exactly what to fix. */
-export function classifyYoutubeError(err: unknown): { kind: YoutubeErrorKind; fix: string; message: string } {
-  const e = err as { code?: number | string; message?: string; errors?: { reason?: string }[]; response?: { data?: { error?: string | { errors?: { reason?: string }[] } } } };
+export function classifyYoutubeError(err: unknown): {
+  kind: YoutubeErrorKind;
+  fix: string;
+  message: string;
+} {
+  const e = err as {
+    code?: number | string;
+    message?: string;
+    errors?: { reason?: string }[];
+    response?: {
+      data?: { error?: string | { errors?: { reason?: string }[] } };
+    };
+  };
   const message = String(e?.message ?? err);
-  const reasons = [
-    ...(e?.errors?.map((x) => x.reason) ?? []),
-    ...(typeof e?.response?.data?.error === "object" ? (e.response.data.error.errors?.map((x) => x.reason) ?? []) : []),
-  ].filter(Boolean);
+  const reasons = [...(e?.errors?.map((x) => x.reason) ?? []), ...(typeof e?.response?.data?.error === "object" ? (e.response.data.error.errors?.map((x) => x.reason) ?? []) : [])].filter(Boolean);
   const text = `${message} ${reasons.join(" ")} ${typeof e?.response?.data?.error === "string" ? e.response.data.error : ""}`;
   if (/quotaExceeded|dailyLimitExceeded|rateLimitExceeded|uploadLimitExceeded/i.test(text)) {
-    return { kind: "quota", message, fix: "YouTube API quota exhausted for today. The draft stays queued and will upload on a later run (quota resets at midnight Pacific time). If this keeps happening, request a quota increase in Google Cloud Console → APIs → YouTube Data API v3 → Quotas." };
+    return {
+      kind: "quota",
+      message,
+      fix: "YouTube API quota exhausted for today. The draft stays queued and will upload on a later run (quota resets at midnight Pacific time). If this keeps happening, request a quota increase in Google Cloud Console → APIs → YouTube Data API v3 → Quotas.",
+    };
   }
   if (/invalid_grant|invalid_client|unauthorized|401|Login Required|Token has been expired or revoked/i.test(text)) {
-    return { kind: "auth", message, fix: "YouTube OAuth token is invalid or expired. Run `npm run auth:youtube` locally, copy the new YOUTUBE_REFRESH_TOKEN into GitHub Secrets. If tokens keep expiring after 7 days, publish the OAuth consent screen (docs/SETUP_YOUTUBE.md → 'Publishing status')." };
+    return {
+      kind: "auth",
+      message,
+      fix: "YouTube OAuth token is invalid or expired. Run `npm run auth:youtube` locally, copy the new YOUTUBE_REFRESH_TOKEN into GitHub Secrets. If tokens keep expiring after 7 days, publish the OAuth consent screen (docs/SETUP_YOUTUBE.md → 'Publishing status').",
+    };
   }
   if (/youtubeSignupRequired/i.test(text)) {
-    return { kind: "auth", message, fix: "The Google account has no YouTube channel. Create one at youtube.com, then re-run `npm run auth:youtube` with that account." };
+    return {
+      kind: "auth",
+      message,
+      fix: "The Google account has no YouTube channel. Create one at youtube.com, then re-run `npm run auth:youtube` with that account.",
+    };
   }
-  return { kind: "other", message, fix: "Unexpected YouTube error — check the job log." };
+  return {
+    kind: "other",
+    message,
+    fix: "Unexpected YouTube error — check the job log.",
+  };
 }

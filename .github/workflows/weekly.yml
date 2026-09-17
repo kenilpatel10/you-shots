@@ -20,13 +20,25 @@ concurrency:
 
 jobs:
   weekly:
+    # One job per channel language. Repository variable CHANNEL_LANGUAGES (JSON array, e.g. ["en","hi"])
+    # adds channels; jobs run one at a time so state.json commits never race.
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        language: ${{ fromJSON(vars.CHANNEL_LANGUAGES || '["en"]') }}
+    name: weekly (${{ matrix.language }})
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CHANNEL_LANGUAGE: ${{ vars.CHANNEL_LANGUAGE }}
+      CHANNEL_LANGUAGE: ${{ matrix.language }}
+      GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL }}
       REMOTION_PREFER_DOWNLOADED_BROWSER: "1"
       REMOTION_CONCURRENCY: "2"
     steps:
@@ -47,7 +59,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/whisper
-          key: whisper-${{ runner.os }}-1.7.5-base.en
+          key: whisper-${{ runner.os }}-1.7.5-${{ matrix.language }}
       - name: Cache Remotion headless browser
         uses: actions/cache@v4
         with:

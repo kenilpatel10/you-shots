@@ -1,5 +1,6 @@
 import type { Topic } from "../schema";
-import { WORD_LIMITS } from "../validate";
+import type { WORD_LIMITS } from "../validate";
+import { wordLimitsFor, totalWordsFor, type WordLimits } from "../validate";
 
 export type PromptSet = {
   writerSystem: (ctx: PromptContext) => string;
@@ -15,11 +16,14 @@ export type PromptContext = {
   bannedWords: string[];
   hazardWords: string[];
   askGrownUp: string;
+  /** Word windows for this language's voice (see wordLimitsFor). */
+  wordLimits: WordLimits;
+  totalWords: readonly [number, number];
 };
 
-const limits = Object.entries(WORD_LIMITS)
-  .map(([k, [a, b]]) => `${k}: ${a}–${b} words`)
-  .join("; ");
+export const defaultLimits = (): Pick<PromptContext, "wordLimits" | "totalWords"> => ({ wordLimits: wordLimitsFor(), totalWords: totalWordsFor() });
+
+const limitsText = (ctx: PromptContext) => (Object.entries(ctx.wordLimits) as [keyof typeof WORD_LIMITS, readonly [number, number]][]).map(([k, [a, b]]) => `${k}: ${a}–${b} words`).join("; ");
 
 const SAFETY = (ctx: PromptContext) => `CONTENT SAFETY RULES (hard requirements):
 - Audience is children aged 5–9. Use short sentences and simple words a 6-year-old understands.
@@ -34,18 +38,20 @@ const SAFETY = (ctx: PromptContext) => `CONTENT SAFETY RULES (hard requirements)
 - The experiment section must not use these words: ${ctx.hazardWords.join(", ")}.`;
 
 export const en: PromptSet = {
-  writerSystem: (ctx) => `You write scripts for "${ctx.channelName}", a YouTube Shorts channel for children aged 5–9 starring ${ctx.characterName}, a small, friendly, round robot who is curious, kind, gentle and a little clumsy, never sarcastic. ${ctx.characterName} speaks in first person, warmly, like a curious six-year-old who just learned something wonderful.
+  writerSystem: (
+    ctx,
+  ) => `You write scripts for "${ctx.channelName}", a YouTube Shorts channel for children aged 5–9 starring ${ctx.characterName}, a small, friendly, round robot who is curious, kind, gentle and a little clumsy, never sarcastic. ${ctx.characterName} speaks in first person, warmly, like a curious six-year-old who just learned something wonderful.
 
 Each Short is 45–58 seconds and ALWAYS has exactly this structure, spoken by ${ctx.characterName}:
-1. hook — ${ctx.characterName} asks the question in a fun way (${WORD_LIMITS.hook[0]}–${WORD_LIMITS.hook[1]} words).
-2. answer — the simple, true explanation using ONE comparison a 6-year-old understands (${WORD_LIMITS.answer[0]}–${WORD_LIMITS.answer[1]} words).
-3. wowFact — one surprising, TRUE, related fact (${WORD_LIMITS.wowFact[0]}–${WORD_LIMITS.wowFact[1]} words). Start with something like "Here is a wow fact!".
-4. experiment — one safe thing to try or notice at home (${WORD_LIMITS.experiment[0]}–${WORD_LIMITS.experiment[1]} words). Start with "Try this!".
+1. hook — ${ctx.characterName} asks the question in a fun way (${ctx.wordLimits.hook[0]}–${ctx.wordLimits.hook[1]} words).
+2. answer — the simple, true explanation using ONE comparison a 6-year-old understands (${ctx.wordLimits.answer[0]}–${ctx.wordLimits.answer[1]} words).
+3. wowFact — one surprising, TRUE, related fact (${ctx.wordLimits.wowFact[0]}–${ctx.wordLimits.wowFact[1]} words). Start with something like "Here is a wow fact!".
+4. experiment — one safe thing to try or notice at home (${ctx.wordLimits.experiment[0]}–${ctx.wordLimits.experiment[1]} words). Start with "Try this!".
 5. signOff — exactly: "${ctx.catchphrase}"
 
 GUESS BEAT: right after the hook, ${ctx.characterName} says a short prompt (e.g. "What do you think?") and three big answer bubbles appear for a couple of seconds before the answer reveals the right one. Provide the "guess" object: { prompt (≤ 4 words), options (exactly 3, each ≤ 20 characters, each ≤ 3 words, all plausible to a child, exactly one correct, no jokes that could confuse), answer (0, 1 or 2 — vary which position is correct) }. The answer section must clearly confirm the correct option.
 
-Word limits: ${limits}. Total spoken words 115–150.
+Word limits: ${limitsText(ctx)}. Total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}.
 
 ${SAFETY(ctx)}
 
@@ -67,11 +73,7 @@ question: ${topic.question}
 category (background key): ${topic.category}
 difficulty: ${topic.difficulty} (1 = simplest)
 character: ${ctx.characterName}
-sign-off phrase: ${ctx.catchphrase}${
-      feedback?.length
-        ? `\n\nA children's-content editor rejected the previous draft for these reasons. Fix every one of them:\n- ${feedback.join("\n- ")}`
-        : ""
-    }`,
+sign-off phrase: ${ctx.catchphrase}${feedback?.length ? `\n\nA children's-content editor rejected the previous draft for these reasons. Fix every one of them:\n- ${feedback.join("\n- ")}` : ""}`,
 
   reviewerSystem: (ctx) => `You are a strict children's-content editor and science fact checker for "${ctx.channelName}" (ages 5–9). You review a script JSON and decide whether it can be published.
 
@@ -79,7 +81,7 @@ Check, in this order:
 1. FACTS: every claim in answer and wowFact must be true and not misleading when simplified. Reject anything you are not confident is correct.
 2. SAFETY: ${SAFETY(ctx)}
 3. AGE FIT: vocabulary and sentence length suitable for a 6-year-old; the comparison in the answer must be concrete.
-4. STRUCTURE: word limits — ${limits}; signOff exactly "${ctx.catchphrase}"; onScreenText each ≤ 45 characters; title ≤ 60 characters without emoji or clickbait; guess has exactly 3 short options (≤ 20 characters), exactly one correct and consistent with the answer.
+4. STRUCTURE: word limits — ${limitsText(ctx)}; signOff exactly "${ctx.catchphrase}"; onScreenText each ≤ 45 characters; title ≤ 60 characters without emoji or clickbait; guess has exactly 3 short options (≤ 20 characters), exactly one correct and consistent with the answer.
 5. TONE: warm, kind, never sarcastic, no engagement bait, no talking down.
 
 OUTPUT: Reply with ONLY a JSON object: { "approved": boolean, "issues": string[], "fixedScript"?: <script object with the same fields as the input> }.

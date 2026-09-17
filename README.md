@@ -127,16 +127,26 @@ docs/              SETUP_*, CONTENT_POLICY, DECISIONS, HINDI, TOOL_EVALUATION, P
 - Uploads are always `private` + `publishAt`, `selfDeclaredMadeForKids: true`, with the synthetic
   content disclosure set (`config/channel.json → youtube`).
 
-## Languages
+## Languages and channels
 
-English and **Hindi** are built in: `CHANNEL_LANGUAGE=hi` switches prompts, catchphrase, safety
-word lists, the Devanagari font (Baloo 2) and the voice (eSpeak-NG Hindi offline; Piper for a
-natural voice — `docs/HINDI.md`). Everything language-specific is keyed by `CHANNEL_LANGUAGE`.
+English and **Hindi** are built in, and each language is its own YouTube channel run from the same
+repo and the same Telegram chat:
+
+- `config/channel.json → languages.<lang>` holds the catchphrase, safety phrases, on-screen labels,
+  font (Baloo 2 for Devanagari), voice engine and the channel's own name, handle and tags.
+- Repository variable `CHANNEL_LANGUAGES` (JSON array, e.g. `["en","hi"]`) drives a one-language-at-a-time
+  matrix in the generate and weekly workflows. Each language keeps its own topic history in
+  `data/state.json`; draft ids and release tags carry the language (`short-2026-09-19-hi-ocean-002`).
+- Uploads route by language: the default language uses `YOUTUBE_REFRESH_TOKEN`, every other one needs
+  `YOUTUBE_REFRESH_TOKEN_<LANG>` (`npm run auth:youtube -- --language hi`). A draft is never uploaded
+  with another channel's token.
+- Voices: English → Kokoro (local). Hindi → **Gemini TTS** (free tier, natural), eSpeak-NG as the
+  offline fallback. `docs/HINDI.md` has the details and how to add a third language.
 
 ## Environment variables
 
 See `.env.example`. Locally, copy it to `.env`. In Actions, add the same names as secrets
-(`GEMINI_MODEL`, `GROQ_MODEL`, `CHANNEL_LANGUAGE` may be plain *variables*).
+(`GEMINI_MODEL`, `GEMINI_TTS_MODEL`, `GROQ_MODEL`, `CHANNEL_LANGUAGES` are plain *variables*).
 
 ## Troubleshooting
 

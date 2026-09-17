@@ -13,6 +13,7 @@ import { ensureMusic } from "../audio/music";
 import { ensureSfx } from "../audio/sfx";
 import { placeholderVoice } from "../audio/placeholder";
 import { synthesizeEspeak } from "../audio/espeak";
+import { synthesizeGemini } from "../audio/geminiTts";
 import { timeSection } from "../audio/timings";
 import { synthesizeSection } from "../audio/tts";
 import { encodeWav, type PcmAudio } from "../audio/wav";
@@ -29,8 +30,8 @@ const log = createLogger("assemble");
 
 export const HARD_MAX_SECONDS = 59;
 
-export type VoiceMode = "kokoro" | "espeak" | "placeholder" | "auto";
-export type VoiceSource = "kokoro" | "espeak" | "placeholder";
+export type VoiceMode = "kokoro" | "gemini" | "espeak" | "placeholder" | "auto";
+export type VoiceSource = "kokoro" | "gemini" | "espeak" | "placeholder";
 
 export type AssembleResult = {
   draftId: string;
@@ -59,15 +60,29 @@ async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{
   const lang = currentLanguage();
   if (mode === "placeholder") return { audio: placeholderVoice(text, seed), source: "placeholder" };
   const engine = mode === "auto" ? lang.voice.engine : mode;
-  const espeak = { voice: lang.voice.espeakVoice, wpm: Math.round(150 * lang.voice.speed) }; // eSpeak words/min; ~155 keeps 58 s scripts under the 59 s cap
+  const espeak = {
+    voice: lang.voice.espeakVoice,
+    wpm: Math.round(150 * lang.voice.speed),
+  }; // eSpeak words/min; ~155 keeps 58 s scripts under the 59 s cap
   if (engine === "espeak") return { audio: await synthesizeEspeak(text, espeak), source: "espeak" };
   try {
-    const audio = await synthesizeSection(text, { voiceId: lang.voice.voiceId, speed: lang.voice.speed });
+    if (engine === "gemini") {
+      const audio = await synthesizeGemini(text, {
+        voice: lang.voice.voiceId,
+        style: lang.voice.style,
+        languageName: lang.label,
+      });
+      return { audio, source: "gemini" };
+    }
+    const audio = await synthesizeSection(text, {
+      voiceId: lang.voice.voiceId,
+      speed: lang.voice.speed,
+    });
     return { audio, source: "kokoro" };
   } catch (err) {
     if (mode === "auto" && (envBool("ALLOW_FALLBACK_VOICE") || envBool("ALLOW_PLACEHOLDER_VOICE"))) {
       // Offline machines: eSpeak ships inside node_modules, so speech stays real and intelligible.
-      if (!warnedFallback) log.warn(`Kokoro unavailable (${(err as Error).message.split("\n")[0]}). Using the bundled eSpeak voice — dry runs only.`);
+      if (!warnedFallback) log.warn(`${engine} voice unavailable (${(err as Error).message.split("\n")[0]}). Using the bundled eSpeak voice — dry runs only.`);
       warnedFallback = true;
       return { audio: await synthesizeEspeak(text, espeak), source: "espeak" };
     }
@@ -87,11 +102,11 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   // 1. Voice per section
   opts.onProgress?.("voice");
   const clips: PcmAudio[] = [];
-  let voiceSource: VoiceSource = "kokoro";
+  let voiceSource: VoiceSource = lang.voice.engine;
   const spoken = Object.fromEntries(SECTION_ORDER.map((k) => [k, sectionSpokenText(opts.script, k)])) as Record<(typeof SECTION_ORDER)[number], string>;
   for (const [i, key] of SECTION_ORDER.entries()) {
     const { audio, source } = await makeVoice(spoken[key], mode, i + 1);
-    if (source !== "kokoro") voiceSource = source;
+    voiceSource = source;
     clips.push(audio);
     await fs.writeFile(path.join(audioDir, `${key}.wav`), encodeWav(audio));
     log.info(`  ${key}: ${(audio.samples.length / audio.sampleRate).toFixed(1)}s`);
@@ -113,7 +128,14 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
     const t =
       voiceSource === "placeholder"
         ? { words: undefined, source: "estimated" as const }
-        : await timeSection({ text: spoken[key], audio: clip, model: lang.whisper.model, language: lang.whisper.language, workDir: audioDir, key });
+        : await timeSection({
+            text: spoken[key],
+            audio: clip,
+            model: lang.whisper.model,
+            language: lang.whisper.language,
+            workDir: audioDir,
+            key,
+          });
     if (t.source === "estimated") timingSource = "estimated";
     sections.push({ key, text: spoken[key], durationMs, words: t.words });
   }
@@ -192,14 +214,32 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   };
   const propsPath = path.join(dir, "video.json");
   await writeJsonAtomic(propsPath, props);
-  await writeJsonAtomic(path.join(dir, "timings.json"), { timingSource, voiceSource, sections: timeline.sections });
+  await writeJsonAtomic(path.join(dir, "timings.json"), {
+    timingSource,
+    voiceSource,
+    sections: timeline.sections,
+  });
 
   // 5. Render
   const videoPath = path.join(dir, "short.mp4");
   if (!opts.skipRender) {
     opts.onProgress?.("render");
-    await renderVideo({ compositionId: "Short", inputProps: props, outputPath: videoPath });
+    await renderVideo({
+      compositionId: "Short",
+      inputProps: props,
+      outputPath: videoPath,
+    });
   }
   log.info(`Short assembled: ${durationSeconds.toFixed(1)}s, voice=${voiceSource}, timings=${timingSource}`);
-  return { draftId: opts.draftId, dir, videoPath, propsPath, voicePath, durationSeconds, timeline, voiceSource, timingSource };
+  return {
+    draftId: opts.draftId,
+    dir,
+    videoPath,
+    propsPath,
+    voicePath,
+    durationSeconds,
+    timeline,
+    voiceSource,
+    timingSource,
+  };
 }

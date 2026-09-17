@@ -22,15 +22,18 @@ export function tokenizeWords(text: string): string[] {
 
 /** Letter count ignoring combining marks (Devanagari matras etc.), so Hindi words are not over-counted. */
 export function letterCount(w: string): number {
-  return w.normalize("NFD").replace(/\p{M}/gu, "").replace(/[^\p{L}\p{N}]/gu, "").length;
+  return w
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[^\p{L}\p{N}]/gu, "").length;
 }
 
-export function estimateSectionDurationMs(text: string): number {
+export function estimateSectionDurationMs(text: string, wordsPerSecond = WORDS_PER_SECOND): number {
   const words = tokenizeWords(text);
   const chars = words.reduce((n, w) => n + letterCount(w), 0);
-  // ~ 2.7 words/s, nudged by average word length; punctuation adds pauses.
-  const pauses = (text.match(/[.!?,;:]/g) ?? []).length * 180;
-  const base = (words.length / WORDS_PER_SECOND) * 1000;
+  // ~ 2.7 words/s for English Kokoro (2.2 for Hindi), nudged by average word length; punctuation adds pauses.
+  const pauses = (text.match(/[.!?,;:।॥]/g) ?? []).length * 180; // "।" is the Devanagari full stop
+  const base = (words.length / wordsPerSecond) * 1000;
   const lengthAdj = Math.max(0, chars / Math.max(1, words.length) - 4.5) * 40 * words.length;
   return Math.round(base + lengthAdj + pauses);
 }
@@ -44,7 +47,11 @@ export function estimateWordTimings(text: string, startMs: number, endMs: number
   let cursor = startMs;
   return words.map((w, i) => {
     const dur = (weights[i]! / total) * span;
-    const t: WordTiming = { text: w, startMs: Math.round(cursor), endMs: Math.round(cursor + dur) };
+    const t: WordTiming = {
+      text: w,
+      startMs: Math.round(cursor),
+      endMs: Math.round(cursor + dur),
+    };
     cursor += dur;
     return t;
   });

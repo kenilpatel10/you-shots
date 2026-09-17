@@ -5,14 +5,13 @@
 import { createLogger } from "../lib/logger";
 import { reviewScript } from "./reviewer";
 import { validateScript } from "./validate";
+import { currentLanguage } from "../config";
 import { writeScript } from "./writer";
 import type { Script, ScriptRecord, Topic } from "./schema";
 
 const log = createLogger("script");
 
-export type ProduceOutcome =
-  | { ok: true; record: ScriptRecord; attempts: number }
-  | { ok: false; reasons: string[]; attempts: number };
+export type ProduceOutcome = { ok: true; record: ScriptRecord; attempts: number } | { ok: false; reasons: string[]; attempts: number };
 
 export async function produceScript(topic: Topic, language: string): Promise<ProduceOutcome> {
   let feedback: string[] | undefined;
@@ -35,7 +34,9 @@ export async function produceScript(topic: Topic, language: string): Promise<Pro
       }
     }
 
-    const validation = validateScript(candidate);
+    const validation = validateScript(candidate, undefined, {
+      wordsPerSecond: currentLanguage().voice.wordsPerSecond,
+    });
     if (validation.ok) {
       return {
         ok: true,

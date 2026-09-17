@@ -39,7 +39,8 @@
         "engine": "kokoro",
         "voiceId": "af_heart",
         "speed": 1.06,
-        "espeakVoice": "en-us+f3"
+        "espeakVoice": "en-us+f3",
+        "wordsPerSecond": 2.7
       },
       "whisper": {
         "model": "base.en",
@@ -70,10 +71,12 @@
       "label": "हिन्दी",
       "catchphrase": "जिज्ञासु रहो, दोस्तों!",
       "voice": {
-        "engine": "espeak",
-        "voiceId": "af_heart",
-        "speed": 1.15,
-        "espeakVoice": "hi+f3"
+        "engine": "gemini",
+        "voiceId": "Leda",
+        "speed": 1.0,
+        "espeakVoice": "hi+f3",
+        "style": "warm, cheerful and clear, like an energetic storyteller for small children, at a lively natural pace, never slow or drawn out",
+        "wordsPerSecond": 1.9
       },
       "whisper": {
         "model": "base",
@@ -98,7 +101,27 @@
         "experiment": "घर पर आज़माओ",
         "reveal": "जवाब है…",
         "question": "सवाल"
-      }
+      },
+      "channelName": "बोल्ट और पिप",
+      "handle": "@BoltPipHindi",
+      "shortTags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "shorts"
+      ],
+      "longTags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "compilation"
+      ]
     }
   },
   "music": {

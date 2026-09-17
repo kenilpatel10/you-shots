@@ -1,6 +1,7 @@
 import { en, type PromptContext, type PromptSet } from "./en";
 import { hi } from "./hi";
 import { currentLanguage, loadBannedWords, loadChannelConfig } from "../../config";
+import { totalWordsFor, wordLimitsFor } from "../validate";
 
 /** Add a language by exporting a PromptSet and registering it here (see docs/HINDI.md). */
 const registry: Record<string, PromptSet> = { en, hi };
@@ -22,6 +23,8 @@ export function promptContext(): PromptContext {
     askGrownUp: lang.askGrownUp,
     bannedWords: banned.banned.filter((w) => !w.includes(" ")).slice(0, 80),
     hazardWords: banned.bannedInExperiment,
+    wordLimits: wordLimitsFor(lang.voice.wordsPerSecond),
+    totalWords: totalWordsFor(lang.voice.wordsPerSecond),
   };
 }
 

@@ -49,16 +49,22 @@ export const DraftSchema = z.object({
 });
 export type Draft = z.infer<typeof DraftSchema>;
 
-export const StateSchema = z.object({
-  version: z.literal(1),
+/** Per-language bookkeeping: each language is its own channel with its own topic history. */
+export const LanguageStateSchema = z.object({
   usedTopicIds: z.array(z.string()).default([]),
   /** Topics the reviewer asked to regenerate (via /redo). Picked first on the next generate run. */
   redoTopicIds: z.array(z.string()).default([]),
   usedFallbackScripts: z.array(z.string()).default([]),
-  drafts: z.array(DraftSchema).default([]),
-  lastTelegramUpdateId: z.number().nullable().default(null),
   /** ISO week keys that already have a weekly compilation draft. */
   weeklyCompiled: z.array(z.string()).default([]),
+});
+export type LanguageState = z.infer<typeof LanguageStateSchema>;
+
+export const StateSchema = z.object({
+  version: z.literal(2),
+  perLanguage: z.record(z.string(), LanguageStateSchema).default({}),
+  drafts: z.array(DraftSchema).default([]),
+  lastTelegramUpdateId: z.number().nullable().default(null),
   lastRuns: z
     .object({
       generate: iso.optional(),
@@ -69,14 +75,69 @@ export const StateSchema = z.object({
 });
 export type State = z.infer<typeof StateSchema>;
 
+/** v1 kept one channel's topic history at the top level; v2 keys it by language. */
+const StateV1Schema = z.object({
+  version: z.literal(1),
+  usedTopicIds: z.array(z.string()).default([]),
+  redoTopicIds: z.array(z.string()).default([]),
+  usedFallbackScripts: z.array(z.string()).default([]),
+  drafts: z.array(DraftSchema).default([]),
+  lastTelegramUpdateId: z.number().nullable().default(null),
+  weeklyCompiled: z.array(z.string()).default([]),
+  lastRuns: z
+    .object({
+      generate: iso.optional(),
+      publish: iso.optional(),
+      weekly: iso.optional(),
+    })
+    .default({}),
+});
+
+export function migrateState(raw: unknown): State {
+  const version = (raw as { version?: number } | null)?.version;
+  if (version === 1) {
+    const v1 = StateV1Schema.parse(raw);
+    const language = v1.drafts[0]?.language ?? "en";
+    return StateSchema.parse({
+      version: 2,
+      perLanguage: {
+        [language]: {
+          usedTopicIds: v1.usedTopicIds,
+          redoTopicIds: v1.redoTopicIds,
+          usedFallbackScripts: v1.usedFallbackScripts,
+          weeklyCompiled: v1.weeklyCompiled,
+        },
+      },
+      drafts: v1.drafts,
+      lastTelegramUpdateId: v1.lastTelegramUpdateId,
+      lastRuns: v1.lastRuns,
+    });
+  }
+  return StateSchema.parse(raw);
+}
+
 export function emptyState(): State {
-  return StateSchema.parse({ version: 1 });
+  return StateSchema.parse({ version: 2 });
+}
+
+export function langState(state: State, language: string): LanguageState {
+  return state.perLanguage[language] ?? LanguageStateSchema.parse({});
+}
+
+export function withLangState(state: State, language: string, patch: Partial<LanguageState>): State {
+  return {
+    ...state,
+    perLanguage: {
+      ...state.perLanguage,
+      [language]: { ...langState(state, language), ...patch },
+    },
+  };
 }
 
 export async function loadState(file = STATE_FILE): Promise<State> {
   try {
     const raw = JSON.parse(await fs.readFile(file, "utf8"));
-    return StateSchema.parse(raw);
+    return migrateState(raw);
   } catch (err) {
     if ((err as NodeJS.ErrnoException).code === "ENOENT") return emptyState();
     throw err;
@@ -110,10 +171,18 @@ export function transition(state: State, draftId: string, to: DraftStatus, patch
   if (!ALLOWED[draft.status].includes(to)) {
     throw new TransitionError(`Draft ${draftId} cannot go from ${draft.status} to ${to}`);
   }
-  const updated: Draft = { ...draft, ...patch, status: to, updatedAt: now.toISOString() };
+  const updated: Draft = {
+    ...draft,
+    ...patch,
+    status: to,
+    updatedAt: now.toISOString(),
+  };
   if (to === "approved") updated.approvedAt = now.toISOString();
   if (to === "uploaded") updated.uploadedAt = now.toISOString();
-  return { ...state, drafts: state.drafts.map((d) => (d.id === draftId ? updated : d)) };
+  return {
+    ...state,
+    drafts: state.drafts.map((d) => (d.id === draftId ? updated : d)),
+  };
 }
 
 export function upsertDraft(state: State, draft: Draft): State {
@@ -128,10 +197,11 @@ export function draftsByStatus(state: State, status: DraftStatus, kind?: Draft["
   return state.drafts.filter((d) => d.status === status && (kind === undefined || d.kind === kind));
 }
 
-export function draftForDate(state: State, date: string, kind: Draft["kind"] = "short"): Draft | undefined {
-  return state.drafts.find((d) => d.kind === kind && d.date === date && d.status !== "rejected");
+export function draftForDate(state: State, date: string, kind: Draft["kind"] = "short", language?: string): Draft | undefined {
+  return state.drafts.find((d) => d.kind === kind && d.date === date && d.status !== "rejected" && (language === undefined || d.language === language));
 }
 
-export function makeDraftId(kind: Draft["kind"], date: string, topicId: string): string {
-  return kind === "short" ? `short-${date}-${topicId}` : `weekly-${date}`;
+/** Ids carry the language so two channels can cover the same topic on the same day. */
+export function makeDraftId(kind: Draft["kind"], date: string, topicId: string, language = "en"): string {
+  return kind === "short" ? `short-${date}-${language}-${topicId}` : `weekly-${date}-${language}`;
 }

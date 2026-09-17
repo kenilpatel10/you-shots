@@ -9,7 +9,7 @@
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import { Command } from "commander";
-import { currentLanguage, loadChannelConfig } from "../config";
+import { channelIdentity, currentLanguage, loadChannelConfig } from "../config";
 import { fallbackTopic, pickFallbackScript } from "../content/fallback";
 import { produceScript } from "../content/produceScript";
 import { ScriptRecordSchema, TopicsFileSchema, type ScriptRecord, type Topic } from "../content/schema";
@@ -25,7 +25,7 @@ import { todayInZone } from "../lib/time";
 import { assembleShort, type AssembleResult } from "../pipeline/assemble";
 import { releasesConfigured, storeDraft } from "../publish/releases";
 import { formatDraftMessage, notifyFailure, sendMessage, sendVideo, telegramConfigured, TELEGRAM_UPLOAD_LIMIT_BYTES } from "../publish/telegram";
-import { draftForDate, loadState, makeDraftId, saveState, upsertDraft, type Draft, type State } from "../state/state";
+import { draftForDate, langState, loadState, makeDraftId, saveState, upsertDraft, withLangState, type Draft, type State } from "../state/state";
 import { renderVideo } from "../video/render";
 
 const log = createLogger("generate");
@@ -33,14 +33,22 @@ const log = createLogger("generate");
 const program = new Command()
   .option("--dry-run", "run everything locally; no Telegram, no release upload, no state change", false)
   .option("--topic <id>", "force a topic id from data/topics.json")
-  .option("--voice <engine>", "kokoro | espeak (bundled, offline) | placeholder (babble, tests only); default: config engine")
+  .option("--voice <engine>", "kokoro | gemini | espeak (bundled, offline) | placeholder (babble, tests only); default: config engine")
   .option("--placeholder-voice", "alias for --voice placeholder (dry runs only)", false)
   .option("--skip-render", "stop after audio + props (no MP4)", false)
   .option("--force", "generate even if today already has a draft", false)
   .option("--fallback", "skip the LLM and use a hand-written fallback script", false)
   .parse(process.argv);
 
-type Opts = { dryRun: boolean; topic?: string; voice?: "kokoro" | "espeak" | "placeholder"; placeholderVoice: boolean; skipRender: boolean; force: boolean; fallback: boolean };
+type Opts = {
+  dryRun: boolean;
+  topic?: string;
+  voice?: "kokoro" | "gemini" | "espeak" | "placeholder";
+  placeholderVoice: boolean;
+  skipRender: boolean;
+  force: boolean;
+  fallback: boolean;
+};
 const opts = program.opts<Opts>();
 
 async function loadTopics(): Promise<Topic[]> {
@@ -54,10 +62,17 @@ async function produce(state: State, topics: Topic[], language: string): Promise
   const forced = opts.topic ? topics.find((t) => t.id === opts.topic) : undefined;
   if (opts.topic && !forced) throw new Error(`Unknown topic id ${opts.topic}`);
 
+  const ls = langState(state, language);
   if (!useFallback) {
-    const excluded = [...state.usedTopicIds];
+    const excluded = [...ls.usedTopicIds];
     for (let i = 0; i < 3; i++) {
-      const topic = forced ?? pickTopic({ topics, usedTopicIds: excluded, redoTopicIds: state.redoTopicIds });
+      const topic =
+        forced ??
+        pickTopic({
+          topics,
+          usedTopicIds: excluded,
+          redoTopicIds: ls.redoTopicIds,
+        });
       if (!topic) throw new Error("No unused topics left in data/topics.json");
       try {
         const out = await produceScript(topic, language);
@@ -75,11 +90,21 @@ async function produce(state: State, topics: Topic[], language: string): Promise
     }
   }
 
-  const fb = await pickFallbackScript(state.usedFallbackScripts, state.usedTopicIds, opts.topic, language);
+  const fb = await pickFallbackScript(ls.usedFallbackScripts, ls.usedTopicIds, opts.topic, language);
   if (!fb) throw new Error("No LLM available and all fallback scripts have been used. Add API keys (docs/SETUP_AI_KEYS.md) or more scripts to data/fallback-scripts/.");
   log.warn(`Using fallback script ${fb.file}`);
-  const record = ScriptRecordSchema.parse({ ...fb.script, language, source: "fallback", reviewerNotes: ["Hand-checked fallback script (no LLM available)"], createdAt: new Date().toISOString() });
-  return { record, topic: fallbackTopic(fb.script, topics), fallbackFile: fb.file };
+  const record = ScriptRecordSchema.parse({
+    ...fb.script,
+    language,
+    source: "fallback",
+    reviewerNotes: ["Hand-checked fallback script (no LLM available)"],
+    createdAt: new Date().toISOString(),
+  });
+  return {
+    record,
+    topic: fallbackTopic(fb.script, topics),
+    fallbackFile: fb.file,
+  };
 }
 
 async function main() {
@@ -89,9 +114,9 @@ async function main() {
   const topics = await loadTopics();
 
   if (!opts.dryRun && !opts.force) {
-    const existing = draftForDate(state, today);
+    const existing = draftForDate(state, today, "short", cfg.language);
     if (existing) {
-      log.info(`A draft already exists for ${today} (${existing.id}, ${existing.status}). Nothing to do.`);
+      log.info(`A ${cfg.language} draft already exists for ${today} (${existing.id}, ${existing.status}). Nothing to do.`);
       return;
     }
   }
@@ -103,7 +128,7 @@ async function main() {
   }
 
   const { record, topic, fallbackFile } = await produce(state, topics, cfg.language);
-  const draftId = opts.dryRun ? `dryrun-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id);
+  const draftId = opts.dryRun ? `dryrun-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id, cfg.language);
   log.info(`Draft ${draftId}: "${record.title}" (${record.source}${record.model ? `, ${record.model}` : ""})`);
 
   const result: AssembleResult = await assembleShort({
@@ -144,8 +169,8 @@ async function main() {
 
   if (releasesConfigured()) {
     const stored = await storeDraft({
-      tag: `draft-${today}`,
-      title: `Draft ${today}: ${record.title}`,
+      tag: `draft-${today}-${cfg.language}`,
+      title: `Draft ${today} (${cfg.language}): ${record.title}`,
       notes: `Automated draft for review. Topic: ${topic.question}\n\nApprove or reject via Telegram.`,
       video: result.videoPath,
       script: path.join(result.dir, "script.json"),
@@ -156,7 +181,13 @@ async function main() {
       ...draft,
       releaseTag: stored.release.tag_name,
       releaseUrl: stored.release.html_url,
-      assets: { video: stored.video.url, videoPublic: stored.video.browser_download_url, script: stored.script.url, audio: stored.audio?.url, props: stored.props?.url },
+      assets: {
+        video: stored.video.url,
+        videoPublic: stored.video.browser_download_url,
+        script: stored.script.url,
+        audio: stored.audio?.url,
+        props: stored.props?.url,
+      },
     };
   } else {
     log.warn("GITHUB_TOKEN/GITHUB_REPOSITORY not set: the draft is kept locally only (out/). publish.ts needs out/ on the same machine.");
@@ -168,9 +199,16 @@ async function main() {
     preview = path.join(result.dir, "preview.mp4");
     log.info("Rendering a smaller preview for Telegram");
     const props = await readJson<Record<string, unknown>>(result.propsPath);
-    await renderVideo({ compositionId: "Short", inputProps: props, outputPath: preview, scale: 0.5, crf: 30 });
+    await renderVideo({
+      compositionId: "Short",
+      inputProps: props,
+      outputPath: preview,
+      scale: 0.5,
+      crf: 30,
+    });
   }
-  await sendVideo(preview, `${record.title}\nDraft ${draftId} · ${result.durationSeconds.toFixed(0)}s`);
+  const identity = channelIdentity(cfg, cfg.language);
+  await sendVideo(preview, `${record.title}\n${identity.name} · Draft ${draftId} · ${result.durationSeconds.toFixed(0)}s`);
   const messageId = await sendMessage(
     formatDraftMessage(draft, record, {
       reviewerNotes: record.reviewerNotes,
@@ -179,19 +217,20 @@ async function main() {
       durationSeconds: result.durationSeconds,
       timingSource: result.timingSource,
       assetUrl: draft.assets.videoPublic,
+      channelLabel: `${identity.name} (${identity.label})`,
     }),
     { html: true },
   );
   draft.telegramMessageId = messageId;
 
   let next = upsertDraft(state, draft);
-  next = {
-    ...next,
-    usedTopicIds: next.usedTopicIds.includes(topic.id) ? next.usedTopicIds : [...next.usedTopicIds, topic.id],
-    redoTopicIds: next.redoTopicIds.filter((id) => id !== topic.id),
-    usedFallbackScripts: fallbackFile ? [...next.usedFallbackScripts, fallbackFile] : next.usedFallbackScripts,
-    lastRuns: { ...next.lastRuns, generate: now },
-  };
+  const ls = langState(next, cfg.language);
+  next = withLangState(next, cfg.language, {
+    usedTopicIds: ls.usedTopicIds.includes(topic.id) ? ls.usedTopicIds : [...ls.usedTopicIds, topic.id],
+    redoTopicIds: ls.redoTopicIds.filter((id) => id !== topic.id),
+    usedFallbackScripts: fallbackFile ? [...ls.usedFallbackScripts, fallbackFile] : ls.usedFallbackScripts,
+  });
+  next = { ...next, lastRuns: { ...next.lastRuns, generate: now } };
   await saveState(next);
   log.info(`Draft ${draftId} sent for review.`);
 }

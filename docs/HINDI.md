@@ -1,23 +1,33 @@
-# Hindi (implemented) and adding other languages
+# Hindi (implemented, own channel) and adding other languages
 
-**Status: Hindi works end to end** — `CHANNEL_LANGUAGE=hi npm run generate -- --dry-run --fallback`
-renders a Devanagari Short with a Hindi voice. What is in place:
+**Status: Hindi runs as a second channel from the same repo.** Set the repository variable
+`CHANNEL_LANGUAGES=["en","hi"]` and add the secret `YOUTUBE_REFRESH_TOKEN_HI`
+(`docs/SETUP_YOUTUBE.md → 6`): the daily and weekly workflows then run one job per language,
+each draft is labelled with its channel in Telegram, and uploads go to the Hindi channel's token
+only. What is in place:
 
 | Concern | Where | hi |
 | --- | --- | --- |
+| Channel name, handle, tags | `config/channel.json → languages.hi.channelName / handle / shortTags / longTags` | ✅ |
 | Catchphrase, "बड़ों से मदद लो", feeling labels, weekly titles, font | `config/channel.json → languages.hi` | ✅ |
 | Writer / reviewer prompts | `src/content/prompts/hi.ts` (English instructions, Hindi output rules) | ✅ |
 | Banned / hazard / handling words in Hindi | `config/banned-words.json` | ✅ |
 | Devanagari font | Baloo 2 (OFL) in `public/fonts/`, loaded next to Fredoka | ✅ |
 | Hand-written fallback scripts | `data/fallback-scripts/hi/` (2, validator-tested) | ✅ |
-| Voice | eSpeak-NG `hi+f3` via `text2wav` (offline, robotic but clear) | ✅ default |
-| Natural voice | Piper Hindi voices — see below | optional upgrade |
-| Word timings | whisper `base` multilingual, `language: hi` | ✅ config |
-| Topics | `data/topics.json` questions are English; the LLM writes the Hindi script from them | ✅ (translate later if you want Hindi topic titles in state) |
+| **Voice** | **Gemini TTS** (`src/audio/geminiTts.ts`, engine `gemini`, voice `Leda`, free tier) | ✅ default |
+| Offline voice | eSpeak-NG `hi+f3` via `text2wav` (robotic but clear) — `--voice espeak` or `ALLOW_FALLBACK_VOICE=1` | ✅ fallback |
+| Word timings | whisper `base` multilingual, `language: hi`; estimated timings if the model is unavailable | ✅ config |
+| Topic history, redo list, weekly keys | `data/state.json → perLanguage.hi` (separate from English) | ✅ |
+| Topics | `data/topics.json` questions are English; the LLM writes the Hindi script from them | ✅ |
 
-Switch the channel: set repository variable `CHANNEL_LANGUAGE=hi` (or `language: "hi"` in
-`config/channel.json`). Run one channel per language: state, drafts and topics are shared, so a
-second channel should be a second fork with its own state.
+### Why Gemini TTS for Hindi
+
+kokoro-js only ships English voices (its phonemizer is English-only), and the Hindi Piper/MMS
+voices need a native runtime. The Gemini API's TTS models (`gemini-3.1-flash-tts-preview`, fallback
+`gemini-2.5-flash-preview-tts`) speak Hindi naturally, return 24 kHz PCM, and sit inside the same
+free tier already used for scripts: five requests per Short. The delivery style lives in
+`languages.hi.voice.style`; change the voice with `voiceId` (`Leda`, `Kore`, `Aoede`, `Zephyr`, …).
+If Google retires a model, set the variable `GEMINI_TTS_MODEL`.
 
 ---
 

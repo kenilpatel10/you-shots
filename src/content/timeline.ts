@@ -15,7 +15,10 @@ export type SectionInput = {
   words?: WordTiming[];
 };
 
-export type ExpressionCue = { section: SectionKey; expression: "curious" | "happy" | "surprised" | "thinking" | "excited" };
+export type ExpressionCue = {
+  section: SectionKey;
+  expression: "curious" | "happy" | "surprised" | "thinking" | "excited";
+};
 
 const DEFAULT_POSE: Record<SectionKey, SectionTiming["pose"]> = {
   hook: "idle",
@@ -72,7 +75,12 @@ export function buildTimeline(opts: {
   const lastEnd = sections.length ? sections[sections.length - 1]!.endMs : 0;
   const tail = opts.tailFrames ?? SIGNOFF_TAIL_FRAMES;
   const totalFrames = Math.ceil((lastEnd / 1000) * opts.fps) + tail;
-  const timeline: Timeline = { fps: opts.fps, totalFrames, sections, timingSource: opts.timingSource ?? "estimated" };
+  const timeline: Timeline = {
+    fps: opts.fps,
+    totalFrames,
+    sections,
+    timingSource: opts.timingSource ?? "estimated",
+  };
   if (opts.guessPauseMs) {
     const hook = sections.find((s) => s.key === "hook");
     const answer = sections.find((s) => s.key === "answer");
@@ -82,7 +90,15 @@ export function buildTimeline(opts: {
 }
 
 /** Timeline with purely estimated durations (no audio yet). */
-export function estimateTimeline(script: Record<SectionKey, string> & { guess?: { prompt: string } | undefined }, fps: number, cues?: ExpressionCue[], grownUp = false): Timeline {
+export function estimateTimeline(
+  script: Record<SectionKey, string> & {
+    guess?: { prompt: string } | undefined;
+  },
+  fps: number,
+  cues?: ExpressionCue[],
+  grownUp = false,
+  wordsPerSecond?: number,
+): Timeline {
   return buildTimeline({
     fps,
     expressionCues: cues,
@@ -90,7 +106,11 @@ export function estimateTimeline(script: Record<SectionKey, string> & { guess?: 
     guessPauseMs: script.guess ? GUESS_PAUSE_MS : 0,
     sections: SECTION_ORDER.map((key) => {
       const text = sectionSpokenText(script, key);
-      return { key, text, durationMs: estimateSectionDurationMs(text) };
+      return {
+        key,
+        text,
+        durationMs: estimateSectionDurationMs(text, wordsPerSecond),
+      };
     }),
   });
 }

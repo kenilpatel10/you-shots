@@ -8,12 +8,23 @@ const LanguageConfig = z.object({
   label: z.string(),
   catchphrase: z.string().min(3),
   voice: z.object({
-    engine: z.enum(["kokoro", "espeak"]),
+    /** kokoro (local neural, English) · gemini (Gemini API TTS, any language) · espeak (bundled, offline). */
+    engine: z.enum(["kokoro", "gemini", "espeak"]),
+    /** Kokoro voice id (af_heart …) or Gemini prebuilt voice name (Leda, Kore, Aoede …). */
     voiceId: z.string(),
     speed: z.number().min(0.7).max(1.4),
     /** eSpeak voice used when engine is espeak or as the offline fallback (e.g. "en-us+f3", "hi+f3"). */
     espeakVoice: z.string().default("en-us"),
+    /** Delivery instructions for the gemini engine. */
+    style: z.string().optional(),
+    /** Measured speaking rate of this voice; scales the writer's word budget and the validator's length estimate. */
+    wordsPerSecond: z.number().min(1).max(5).default(2.7),
   }),
+  /** Per-language YouTube identity; defaults to the top-level name/handle/tags. */
+  channelName: z.string().optional(),
+  handle: z.string().optional(),
+  shortTags: z.array(z.string()).optional(),
+  longTags: z.array(z.string()).optional(),
   whisper: z.object({
     model: z.enum(["tiny", "tiny.en", "base", "base.en", "small", "small.en", "medium", "medium.en", "large-v3-turbo"]),
     language: z.string(),
@@ -79,6 +90,12 @@ export type BannedWords = z.infer<typeof BannedWordsSchema>;
 
 let cached: ChannelConfig | null = null;
 
+/** The language written in config/channel.json (ignores CHANNEL_LANGUAGE): owns the un-suffixed secrets. */
+export function defaultLanguage(): string {
+  const raw = JSON.parse(readFileSync(path.join(CONFIG_DIR, "channel.json"), "utf8")) as { language?: string };
+  return raw.language ?? "en";
+}
+
 export function loadChannelConfig(): ChannelConfig {
   if (cached) return cached;
   const raw = JSON.parse(readFileSync(path.join(CONFIG_DIR, "channel.json"), "utf8"));
@@ -93,6 +110,47 @@ export function loadChannelConfig(): ChannelConfig {
 
 export function currentLanguage(cfg = loadChannelConfig()): LanguageConfig {
   return cfg.languages[cfg.language]!;
+}
+
+export function languageConfig(cfg: ChannelConfig, language: string): LanguageConfig {
+  const lang = cfg.languages[language];
+  if (!lang) throw new Error(`Language "${language}" has no entry in config/channel.json → languages`);
+  return lang;
+}
+
+/** All languages the pipeline runs (CHANNEL_LANGUAGES='["en","hi"]' or a comma list); default: the current one. */
+export function configuredLanguages(cfg = loadChannelConfig()): string[] {
+  const raw = env("CHANNEL_LANGUAGES");
+  if (!raw) return [cfg.language];
+  const list = raw.trim().startsWith("[")
+    ? (JSON.parse(raw) as string[])
+    : raw
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+  for (const l of list) languageConfig(cfg, l);
+  return list;
+}
+
+/** YouTube identity for a language: its own channel name/handle/tags, or the top-level defaults. */
+export function channelIdentity(
+  cfg: ChannelConfig,
+  language: string,
+): {
+  name: string;
+  handle: string;
+  shortTags: string[];
+  longTags: string[];
+  label: string;
+} {
+  const lang = languageConfig(cfg, language);
+  return {
+    name: lang.channelName ?? cfg.name,
+    handle: lang.handle ?? cfg.handle,
+    shortTags: lang.shortTags ?? cfg.youtube.shortTags,
+    longTags: lang.longTags ?? cfg.youtube.longTags,
+    label: lang.label,
+  };
 }
 
 export function loadBannedWords(): BannedWords {

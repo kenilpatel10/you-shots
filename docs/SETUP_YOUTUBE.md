@@ -77,6 +77,23 @@ and run the command again (Google only issues a refresh token on the first conse
 Repository **Settings → Secrets and variables → Actions**: `YOUTUBE_CLIENT_ID`,
 `YOUTUBE_CLIENT_SECRET`, `YOUTUBE_REFRESH_TOKEN`.
 
+## 6. A second channel in another language (e.g. Hindi)
+
+The same OAuth client serves every channel; only the refresh token differs.
+
+1. On youtube.com (same Google account) → profile → **Switch account → View all channels →
+   Create a channel**. Name it (e.g. `बोल्ट और पिप`), note the handle, and put both into
+   `config/channel.json → languages.hi.channelName / handle`.
+2. `npm run auth:youtube -- --language hi` → open the URL → on the chooser pick the **new brand
+   channel** → the terminal prints `YOUTUBE_REFRESH_TOKEN_HI=…`.
+3. Add it as the repository secret `YOUTUBE_REFRESH_TOKEN_HI` and reference it in
+   `.github/workflows/publish.yml` (a line for `_HI` is already there; copy it for other languages).
+4. Set the repository variable `CHANNEL_LANGUAGES` to `["en","hi"]`. The next daily run produces one
+   draft per language, each labelled with its channel name in Telegram.
+
+`npm run auth:youtube -- --whoami --language hi` prints which channel the stored Hindi token belongs
+to. A language without its own token is refused at upload time, never sent to another channel.
+
 ## What the upload sets (and why)
 
 | Field | Value | Reason |

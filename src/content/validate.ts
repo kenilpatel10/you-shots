@@ -3,7 +3,7 @@
  * Every rule here fails loudly with a reason; nothing is silently "fixed".
  */
 import { loadBannedWords, type BannedWords } from "../config";
-import { estimateSectionDurationMs, tokenizeWords, SECTION_GAP_MS } from "../audio/estimateTimings";
+import { estimateSectionDurationMs, tokenizeWords, SECTION_GAP_MS, WORDS_PER_SECOND } from "../audio/estimateTimings";
 import { CATEGORIES, ScriptSchema, sectionSpokenText, type Script } from "./schema";
 import { GUESS_PAUSE_MS } from "../../remotion/schema";
 
@@ -19,6 +19,22 @@ export const WORD_LIMITS = {
 } as const;
 
 export const TARGET_SECONDS = { min: 44, max: 58 } as const;
+
+export type WordLimits = Record<keyof typeof WORD_LIMITS, readonly [number, number]>;
+
+/** Word windows scaled to a voice's speaking rate: a slower voice (Hindi ≈ 2.2 w/s) gets a smaller budget. */
+export function wordLimitsFor(wordsPerSecond = WORDS_PER_SECOND): WordLimits {
+  const k = wordsPerSecond / WORDS_PER_SECOND;
+  const out = {} as Record<string, readonly [number, number]>;
+  for (const [key, [min, max]] of Object.entries(WORD_LIMITS)) out[key] = [Math.max(2, Math.round(min * k)), Math.max(4, Math.round(max * k))];
+  return out as WordLimits;
+}
+
+/** Total spoken words that land inside TARGET_SECONDS at this rate (used in the writer prompt). */
+export function totalWordsFor(wordsPerSecond = WORDS_PER_SECOND): readonly [number, number] {
+  const k = wordsPerSecond / WORDS_PER_SECOND;
+  return [Math.round(115 * k), Math.round(150 * k)];
+}
 export const MAX_ONSCREEN_CHARS = 48;
 export const MAX_TITLE_CHARS = 60;
 
@@ -50,10 +66,10 @@ export function hasGrownUpPhrase(experiment: string, rules: BannedWords["require
   return rules.required.some((r) => lower.includes(r));
 }
 
-export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "wowFact" | "experiment" | "signOff"> & { guess?: Script["guess"] }): number {
+export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "wowFact" | "experiment" | "signOff"> & { guess?: Script["guess"] }, wordsPerSecond = WORDS_PER_SECOND): number {
   const keys = ["hook", "answer", "wowFact", "experiment", "signOff"] as const;
   const ms =
-    keys.reduce((a, k) => a + estimateSectionDurationMs(sectionSpokenText(script, k)), 0) +
+    keys.reduce((a, k) => a + estimateSectionDurationMs(sectionSpokenText(script, k), wordsPerSecond), 0) +
     4 * SECTION_GAP_MS +
     (script.guess ? GUESS_PAUSE_MS : 0) +
     800 + // lead-in (jingle)
@@ -65,20 +81,28 @@ const ENGAGEMENT_BAIT = [/watch (till|until) the end/i, /don'?t (skip|scroll)/i,
 const STATS = [/\b\d+(\.\d+)?\s?(%|percent)/i, /\bstud(y|ies)\b/i, /\bscientists (say|found|discovered)/i, /\bresearch(ers)?\b/i, /\baccording to\b/i];
 const URLS = [/https?:\/\//i, /\bwww\./i, /\.com\b/i, /\bapp\b/i];
 
-export function validateScript(input: unknown, banned: BannedWords = loadBannedWords()): ValidationResult {
+export type ValidateOptions = { wordsPerSecond?: number };
+
+export function validateScript(input: unknown, banned: BannedWords = loadBannedWords(), options: ValidateOptions = {}): ValidationResult {
   const reasons: string[] = [];
+  const wps = options.wordsPerSecond ?? WORDS_PER_SECOND;
+  const limits = wordLimitsFor(wps);
   const parsed = ScriptSchema.safeParse(input);
   if (!parsed.success) {
-    return { ok: false, reasons: parsed.error.issues.map((i) => `schema: ${i.path.join(".")} ${i.message}`), estimatedSeconds: 0 };
+    return {
+      ok: false,
+      reasons: parsed.error.issues.map((i) => `schema: ${i.path.join(".")} ${i.message}`),
+      estimatedSeconds: 0,
+    };
   }
   const s = parsed.data;
 
-  for (const [key, [min, max]] of Object.entries(WORD_LIMITS) as [keyof typeof WORD_LIMITS, readonly [number, number]][]) {
+  for (const [key, [min, max]] of Object.entries(limits) as [keyof typeof WORD_LIMITS, readonly [number, number]][]) {
     const n = tokenizeWords(s[key]).length;
     if (n < min || n > max) reasons.push(`${key}: ${n} words (allowed ${min}–${max})`);
   }
 
-  const estimatedSeconds = estimateScriptSeconds(s);
+  const estimatedSeconds = estimateScriptSeconds(s, wps);
   if (estimatedSeconds < TARGET_SECONDS.min || estimatedSeconds > TARGET_SECONDS.max) {
     reasons.push(`estimated length ${estimatedSeconds.toFixed(1)}s (target ${TARGET_SECONDS.min}–${TARGET_SECONDS.max}s)`);
   }

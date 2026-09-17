@@ -108,7 +108,12 @@ export async function sendPhoto(file: string, caption: string): Promise<number> 
 
 export type TelegramUpdate = {
   update_id: number;
-  message?: { message_id: number; text?: string; chat: { id: number; type: string }; from?: { id: number; username?: string } };
+  message?: {
+    message_id: number;
+    text?: string;
+    chat: { id: number; type: string };
+    from?: { id: number; username?: string };
+  };
 };
 
 export async function getUpdates(offset: number | null): Promise<TelegramUpdate[]> {
@@ -122,12 +127,7 @@ export async function getUpdates(offset: number | null): Promise<TelegramUpdate[
 
 /* ---------- commands (pure, unit-tested) ---------- */
 
-export type Command =
-  | { kind: "approve"; draftId: string }
-  | { kind: "reject"; draftId: string; reason: string }
-  | { kind: "redo"; draftId: string }
-  | { kind: "status" }
-  | { kind: "help" };
+export type Command = { kind: "approve"; draftId: string } | { kind: "reject"; draftId: string; reason: string } | { kind: "redo"; draftId: string } | { kind: "status" } | { kind: "help" };
 
 export function parseCommand(text: string | undefined): Command | null {
   if (!text) return null;
@@ -139,7 +139,13 @@ export function parseCommand(text: string | undefined): Command | null {
     case "/approve":
       return rest[0] ? { kind: "approve", draftId: rest[0] } : null;
     case "/reject":
-      return rest[0] ? { kind: "reject", draftId: rest[0], reason: rest.slice(1).join(" ") || "no reason given" } : null;
+      return rest[0]
+        ? {
+            kind: "reject",
+            draftId: rest[0],
+            reason: rest.slice(1).join(" ") || "no reason given",
+          }
+        : null;
     case "/redo":
       return rest[0] ? { kind: "redo", draftId: rest[0] } : null;
     case "/status":
@@ -164,10 +170,31 @@ export const HELP_TEXT = `Commands:
 /redo <draftId> — regenerate the same topic tomorrow
 /status — pending drafts and scheduled uploads`;
 
-export function formatDraftMessage(draft: Draft, script: { title: string; hook: string; answer: string; wowFact: string; experiment: string; signOff: string; description: string; tags: string[] }, extra: { reviewerNotes: string[]; source: string; model?: string; durationSeconds: number; timingSource: string; assetUrl?: string }): string {
+export function formatDraftMessage(
+  draft: Draft,
+  script: {
+    title: string;
+    hook: string;
+    answer: string;
+    wowFact: string;
+    experiment: string;
+    signOff: string;
+    description: string;
+    tags: string[];
+  },
+  extra: {
+    reviewerNotes: string[];
+    source: string;
+    model?: string;
+    durationSeconds: number;
+    timingSource: string;
+    assetUrl?: string;
+    channelLabel?: string;
+  },
+): string {
   const notes = extra.reviewerNotes.length ? extra.reviewerNotes.map((n) => `• ${escapeHtml(n)}`).join("\n") : "• none";
   return [
-    `🤖 <b>New draft</b> — ${escapeHtml(draft.date)}`,
+    `🤖 <b>New draft</b> — ${escapeHtml(draft.date)}${extra.channelLabel ? ` · ${escapeHtml(extra.channelLabel)}` : ""}`,
     `<b>${escapeHtml(script.title)}</b>`,
     `Draft ID: <code>${escapeHtml(draft.id)}</code>`,
     `Length: ${extra.durationSeconds.toFixed(1)}s · source: ${escapeHtml(extra.source)}${extra.model ? ` (${escapeHtml(extra.model)})` : ""} · captions: ${escapeHtml(extra.timingSource)}`,

@@ -14,6 +14,11 @@ Without any key the pipeline still works: it uses the 14 hand-checked scripts in
 4. Optional: set `GEMINI_MODEL` (default `gemini-3.6-flash`; `gemini-2.5-flash` is no longer offered to new keys). Any model listed as available on
    the free tier in AI Studio works; flash models are fast and cheap. Check the current list in
    AI Studio's model picker — names change over time.
+5. **Free-tier quota is per model** (about 20 requests/day on `gemini-3.6-flash`, and ~10 TTS
+   requests/minute). The pipeline walks a chain of models when one is exhausted:
+   `GEMINI_FALLBACK_MODELS` (default `gemini-3.5-flash,gemini-3.5-flash-lite,gemini-3.1-flash-lite`).
+   Two channels use 4–12 requests a day in total, so the chain gives comfortable headroom. Hindi
+   speech uses `GEMINI_TTS_MODEL` (default `gemini-3.1-flash-tts-preview`), a separate quota.
 
 Keep the AI Studio project **without billing enabled**: then it cannot cost anything. Free-tier
 rate limits (requests per minute/day) are documented on <https://ai.google.dev/gemini-api/docs/rate-limits>;
@@ -31,7 +36,7 @@ the pipeline retries on `429` with backoff and falls back to Groq if Gemini keep
 - Locally: `.env`.
 - GitHub Actions: repository **Settings → Secrets and variables → Actions**:
   secrets `GEMINI_API_KEY`, `GROQ_API_KEY`; optional *variables* (not secrets) `GEMINI_MODEL`,
-  `GROQ_MODEL`, `CHANNEL_LANGUAGE`.
+  `GEMINI_FALLBACK_MODELS`, `GEMINI_TTS_MODEL`, `GROQ_MODEL`, `CHANNEL_LANGUAGES`.
 
 ## Test
 
