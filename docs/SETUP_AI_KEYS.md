@@ -11,7 +11,7 @@ Without any key the pipeline still works: it uses the 14 hand-checked scripts in
 1. Go to <https://aistudio.google.com/apikey> and sign in with a Google account.
 2. **Create API key** (choose or create a project; the default is fine).
 3. Copy it into `GEMINI_API_KEY`.
-4. Optional: set `GEMINI_MODEL` (default `gemini-2.5-flash`). Any model listed as available on
+4. Optional: set `GEMINI_MODEL` (default `gemini-3.6-flash`; `gemini-2.5-flash` is no longer offered to new keys). Any model listed as available on
    the free tier in AI Studio works; flash models are fast and cheap. Check the current list in
    AI Studio's model picker — names change over time.
 

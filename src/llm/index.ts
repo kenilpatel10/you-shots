@@ -13,7 +13,7 @@ import { LlmUnavailableError, type LlmProvider, type LlmRequest } from "./types"
 
 const log = createLogger("llm");
 
-export const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash";
+export const DEFAULT_GEMINI_MODEL = "gemini-3.6-flash"; // gemini-2.5-flash is closed to new API keys (verified 2026-09-17)
 export const DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile";
 
 let providers: LlmProvider[] | null = null;

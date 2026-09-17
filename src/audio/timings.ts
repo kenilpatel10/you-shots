@@ -37,6 +37,13 @@ async function setupWhisper(model: WhisperModel): Promise<Whisper | null> {
     log.info(`Ensuring whisper.cpp ${WHISPER_CPP_VERSION} in ${to} …`);
     await installWhisperCpp({ version: WHISPER_CPP_VERSION, to, printOutput: false });
     await downloadWhisperModel({ model, folder: modelFolder, printOutput: false });
+    // A blocked/failed download can leave a tiny error page where the model should be.
+    const modelFile = path.join(modelFolder, `ggml-${model}.bin`);
+    const size = (await fs.stat(modelFile).catch(() => ({ size: 0 }))).size;
+    if (size < 1_000_000) {
+      await fs.rm(modelFile, { force: true });
+      throw new Error(`whisper model ${model} did not download (got ${size} bytes)`);
+    }
     return { whisperPath: to, modelFolder, model };
   } catch (err) {
     log.warn(`whisper.cpp unavailable (${(err as Error).message.split("\n")[0]}); using estimated word timings`);
