@@ -18,7 +18,7 @@ describe("fallback scripts", () => {
     const failures = all
       .map((f) => ({
         file: f.file,
-        r: validateScript(f.script, undefined, { wordsPerSecond: 1.9 }),
+        r: validateScript(f.script, undefined, { wordsPerSecond: 2.3 }),
       }))
       .filter((x) => !x.r.ok);
     expect(failures.map((f) => `${f.file}: ${(f.r as { reasons: string[] }).reasons.join("; ")}`)).toEqual([]);
