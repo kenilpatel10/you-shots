@@ -29,10 +29,20 @@ Time needed: 15–20 minutes, once.
 While the consent screen is in **Testing**, refresh tokens expire after **7 days** and uploads
 will start failing with `invalid_grant`. For personal use, switch it to **In production**:
 
-- **OAuth consent screen → Publishing status → Publish app → Confirm.**
-- Google shows a warning about verification. You do **not** need to submit for verification for
-  your own use; the app simply shows an "unverified app" screen when *you* authorise it
-  (click *Advanced → Go to Bolt Shorts (unsafe)*). Refresh tokens then last until revoked.
+Google now requires a public **homepage URL** and **privacy policy URL** on an authorised
+domain before it lets an External app go to production. This repo ships both pages in
+`docs/` (`index.html`, `privacy.html`) so GitHub Pages can host them for free:
+
+1. GitHub → repo **Settings → Pages → Build and deployment**: Source *Deploy from a branch*,
+   branch = your default branch, folder **/docs** → Save. Wait a minute, then check
+   `https://<user>.github.io/<repo>/` and `https://<user>.github.io/<repo>/privacy.html`.
+2. Google Auth Platform → **Branding**: App name `Bolt & Pip`, user support email, no logo,
+   **Application home page** = the Pages URL, **Application privacy policy link** = the
+   privacy URL, **Authorised domains** → add `<user>.github.io`, developer contact email → Save.
+3. **Audience → Publish app → Confirm.**
+4. Google shows a warning about verification. You do **not** need to submit for verification for
+   your own use; the app simply shows an "unverified app" screen when *you* authorise it
+   (click *Advanced → Go to Bolt & Pip (unsafe)*). Refresh tokens then last until revoked.
 
 ## 3. Create OAuth client credentials
 
