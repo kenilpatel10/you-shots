@@ -1,4 +1,27 @@
-# Adding Hindi (or any other language)
+# Hindi (implemented) and adding other languages
+
+**Status: Hindi works end to end** — `CHANNEL_LANGUAGE=hi npm run generate -- --dry-run --fallback`
+renders a Devanagari Short with a Hindi voice. What is in place:
+
+| Concern | Where | hi |
+| --- | --- | --- |
+| Catchphrase, "बड़ों से मदद लो", feeling labels, weekly titles, font | `config/channel.json → languages.hi` | ✅ |
+| Writer / reviewer prompts | `src/content/prompts/hi.ts` (English instructions, Hindi output rules) | ✅ |
+| Banned / hazard / handling words in Hindi | `config/banned-words.json` | ✅ |
+| Devanagari font | Baloo 2 (OFL) in `public/fonts/`, loaded next to Fredoka | ✅ |
+| Hand-written fallback scripts | `data/fallback-scripts/hi/` (2, validator-tested) | ✅ |
+| Voice | eSpeak-NG `hi+f3` via `text2wav` (offline, robotic but clear) | ✅ default |
+| Natural voice | Piper Hindi voices — see below | optional upgrade |
+| Word timings | whisper `base` multilingual, `language: hi` | ✅ config |
+| Topics | `data/topics.json` questions are English; the LLM writes the Hindi script from them | ✅ (translate later if you want Hindi topic titles in state) |
+
+Switch the channel: set repository variable `CHANNEL_LANGUAGE=hi` (or `language: "hi"` in
+`config/channel.json`). Run one channel per language: state, drafts and topics are shared, so a
+second channel should be a second fork with its own state.
+
+---
+
+## Adding another language
 
 Everything language-specific is keyed by `CHANNEL_LANGUAGE` / `config/channel.json → language`:
 
@@ -14,7 +37,7 @@ Everything language-specific is keyed by `CHANNEL_LANGUAGE` / `config/channel.js
 | Font | `remotion/fonts.ts`, `public/fonts/` | add a Devanagari font such as **Baloo 2** or **Noto Sans Devanagari** (OFL) and put it first in `theme.fonts.family` when `language === "hi"` |
 | Captions | `remotion/components/Captions.tsx` | paging is by word/character count and works for Devanagari; check 4-word pages still fit at 60 px |
 
-## Voice: kokoro-js does not support Hindi
+## Voice: why Hindi uses eSpeak by default (and how to get a natural voice)
 
 Researched at build time (kokoro-js 1.2.1): the `VOICES` table only contains American (`af_*`,
 `am_*`) and British (`bf_*`, `bm_*`) English voices, and the phonemizer it bundles is English-only
