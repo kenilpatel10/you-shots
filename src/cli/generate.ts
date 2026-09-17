@@ -19,6 +19,7 @@ import { LlmUnavailableError } from "../llm/types";
 import { envBool } from "../lib/env";
 import { readJson } from "../lib/fs";
 import { createLogger } from "../lib/logger";
+import { runCli } from "../lib/cli";
 import { TOPICS_FILE } from "../lib/paths";
 import { todayInZone } from "../lib/time";
 import { assembleShort, type AssembleResult } from "../pipeline/assemble";
@@ -192,8 +193,6 @@ async function main() {
   log.info(`Draft ${draftId} sent for review.`);
 }
 
-main().catch(async (err) => {
-  log.error(String(err?.stack ?? err));
+runCli("generate", main, async (err) => {
   if (!opts.dryRun && !envBool("SKIP_FAILURE_ALERT")) await notifyFailure("generate", err);
-  process.exit(1);
 });

@@ -18,6 +18,7 @@ import { ensureMusic } from "../audio/music";
 import { envBool } from "../lib/env";
 import { ensureDir, exists, readJson, writeJsonAtomic } from "../lib/fs";
 import { createLogger } from "../lib/logger";
+import { runCli } from "../lib/cli";
 import { draftDir, publicDraftDir } from "../lib/paths";
 import { addDays, formatYmd, isoWeekKey, parseYmd, todayInZone } from "../lib/time";
 import { assembleShort } from "../pipeline/assemble";
@@ -175,8 +176,6 @@ async function main() {
   log.info(`Weekly draft ${draftId} sent for review.`);
 }
 
-main().catch(async (err) => {
-  log.error(String(err?.stack ?? err));
+runCli("weekly", main, async (err) => {
   if (!opts.dryRun && !envBool("SKIP_FAILURE_ALERT")) await notifyFailure("weekly", err);
-  process.exit(1);
 });

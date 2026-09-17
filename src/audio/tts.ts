@@ -28,7 +28,7 @@ async function loadEngine(): Promise<Engine> {
   const transformers = await import("@huggingface/transformers");
   transformers.env.cacheDir = hfCacheDir();
   transformers.env.allowLocalModels = false;
-  const { KokoroTTS } = await import("kokoro-js");
+  const { KokoroTTS, TextSplitterStream } = await import("kokoro-js");
   const dtype = (env("KOKORO_DTYPE") as "fp32" | "q8" | "fp16" | "q4" | "q4f16" | undefined) ?? "q8";
   log.info(`Loading Kokoro (${dtype}) from cache ${hfCacheDir()} …`);
   const tts = await KokoroTTS.from_pretrained(KOKORO_MODEL_ID, { dtype, device: "cpu" });
@@ -36,8 +36,13 @@ async function loadEngine(): Promise<Engine> {
   return {
     async synthesize(text, opts) {
       // stream() splits on sentences: generate() would silently truncate long sections at 510 tokens.
+      // Drive the splitter ourselves: kokoro-js never closes the one it creates for a plain string,
+      // so the iterator waits forever after the last sentence and Node exits 0 with no audio.
+      const splitter = new TextSplitterStream();
+      splitter.push(text);
+      splitter.close();
       const chunks: Float32Array[] = [];
-      for await (const { audio } of tts.stream(text, { voice: opts.voiceId as "af_heart", speed: opts.speed })) {
+      for await (const { audio } of tts.stream(splitter, { voice: opts.voiceId as "af_heart", speed: opts.speed })) {
         const samples = trimSilence(new Float32Array(audio.audio), audio.sampling_rate, 0.008, 40);
         chunks.push(fadeEdges(samples, audio.sampling_rate), silence(140, audio.sampling_rate));
         if (audio.sampling_rate !== KOKORO_SAMPLE_RATE) throw new Error(`Unexpected Kokoro sample rate ${audio.sampling_rate}`);

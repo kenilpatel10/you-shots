@@ -11,6 +11,7 @@ import { loadChannelConfig } from "../config";
 import { env, envBool } from "../lib/env";
 import { exists, readJson } from "../lib/fs";
 import { createLogger } from "../lib/logger";
+import { runCli } from "../lib/cli";
 import { draftDir } from "../lib/paths";
 import { formatInZone } from "../lib/time";
 import { downloadAsset, releasesConfigured } from "../publish/releases";
@@ -191,8 +192,6 @@ async function main() {
   log.info("Publish run complete");
 }
 
-main().catch(async (err) => {
-  log.error(String(err?.stack ?? err));
+runCli("publish", main, async (err) => {
   if (!opts.dryRun && !envBool("SKIP_FAILURE_ALERT") && env("TELEGRAM_BOT_TOKEN")) await notifyFailure("publish", err);
-  process.exit(1);
 });
