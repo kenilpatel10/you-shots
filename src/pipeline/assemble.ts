@@ -59,7 +59,7 @@ async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{
   const lang = currentLanguage();
   if (mode === "placeholder") return { audio: placeholderVoice(text, seed), source: "placeholder" };
   const engine = mode === "auto" ? lang.voice.engine : mode;
-  const espeak = { voice: lang.voice.espeakVoice, wpm: Math.round(145 * lang.voice.speed) };
+  const espeak = { voice: lang.voice.espeakVoice, wpm: Math.round(130 * lang.voice.speed) }; // ~130 wpm reads comfortably for ages 5–9
   if (engine === "espeak") return { audio: await synthesizeEspeak(text, espeak), source: "espeak" };
   try {
     const audio = await synthesizeSection(text, { voiceId: lang.voice.voiceId, speed: lang.voice.speed });

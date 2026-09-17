@@ -8,6 +8,9 @@ Shorts into a 5–8 minute landscape video, also approval-gated.
 - **Cost: ₹0 / $0 per month.** Free API tiers, open-source tools, GitHub Actions on a public repo.
 - **Stack:** TypeScript · Node 20+ · React · Remotion · kokoro-js (TTS) · whisper.cpp (captions) ·
   Gemini/Groq (scripts) · Telegram Bot API · YouTube Data API v3 · GitHub Actions + Releases.
+- **The cast:** Bolt plus **Pip**, his tiny yellow bird friend who guesses wrong, giggles and cheers —
+  a duo, a signature jingle, a clumsy "oops" wobble and named feelings: the traits the most-loved
+  kids' cartoons share, all original and hand-built.
 - **Not a content farm:** one consistent character, voice and look; varied topics with no repeats;
   independent AI review + deterministic safety validation; a human approval before anything is public;
   at most one Short per day.
@@ -120,9 +123,9 @@ docs/              SETUP_*, CONTENT_POLICY, DECISIONS, HINDI, TOOL_EVALUATION, P
 
 ## Languages
 
-English is built in. Everything language-specific (voice, prompts, catchphrase, font, whisper
-model) is keyed by `CHANNEL_LANGUAGE`; `docs/HINDI.md` explains what adding Hindi needs and why
-kokoro-js cannot voice it today (Piper is the free alternative).
+English and **Hindi** are built in: `CHANNEL_LANGUAGE=hi` switches prompts, catchphrase, safety
+word lists, the Devanagari font (Baloo 2) and the voice (eSpeak-NG Hindi offline; Piper for a
+natural voice — `docs/HINDI.md`). Everything language-specific is keyed by `CHANNEL_LANGUAGE`.
 
 ## Environment variables
 

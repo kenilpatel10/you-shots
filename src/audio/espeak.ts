@@ -16,7 +16,8 @@ export async function synthesizeEspeak(text: string, opts: EspeakOptions = {}): 
   const warn = console.warn;
   console.warn = () => undefined; // text2wav logs a harmless "wasm streaming compile failed" fallback
   try {
-    const out = await text2wav(text, { voice: opts.voice ?? "en-us", speed: opts.wpm ?? 145, pitch: opts.pitch ?? 55, amplitude: 100, wordGap: opts.wordgap ?? 2 });
+    // NOTE: passing `amplitude` makes text2wav 0.0.14 emit silence — leave it at its default.
+    const out = await text2wav(text, { voice: opts.voice ?? "en-us", speed: opts.wpm ?? 145, pitch: opts.pitch ?? 55, wordGap: opts.wordgap ?? 2 });
     const wav = decodeWav(Buffer.from(out));
     const r = resample(wav, 24000);
     return { samples: fadeEdges(trimSilence(r.samples, r.sampleRate, 0.005, 60), r.sampleRate), sampleRate: r.sampleRate };

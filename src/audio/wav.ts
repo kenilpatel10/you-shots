@@ -43,7 +43,10 @@ export function decodeWav(buf: Buffer): PcmAudio {
       sampleRate = buf.readUInt32LE(body + 4);
       bits = buf.readUInt16LE(body + 14);
     } else if (id === "data") {
-      const frames = Math.floor(size / (channels * (bits / 8)));
+      // Streaming encoders (eSpeak) write 0 or 0xFFFFFFFF here; trust the real byte length then.
+      const available = buf.length - body;
+      const dataBytes = size === 0 || size > available ? available : size;
+      const frames = Math.floor(dataBytes / (channels * (bits / 8)));
       const out = new Float32Array(frames);
       for (let i = 0; i < frames; i++) {
         let acc = 0;

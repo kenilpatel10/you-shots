@@ -24,6 +24,15 @@ describe("audio utilities", () => {
     for (const v of loud) expect(Math.abs(v)).toBeLessThanOrEqual(0.95 + 1e-6);
   });
 
+  it("decodes WAVs whose data chunk declares an unknown length (streaming encoders)", () => {
+    const a = tone(0.2, 0.5);
+    const wav = encodeWav(a);
+    wav.writeUInt32LE(0, 40); // data size = 0 → use the actual bytes
+    expect(decodeWav(wav).samples.length).toBe(a.samples.length);
+    wav.writeUInt32LE(0xffffffff, 40);
+    expect(decodeWav(wav).samples.length).toBe(a.samples.length);
+  });
+
   it("resamples to 16 kHz", () => {
     const r = resample(tone(1, 0.5), 16000);
     expect(r.sampleRate).toBe(16000);
