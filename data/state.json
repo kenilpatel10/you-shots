@@ -1,10 +1,15 @@
 {
-  "version": 1,
-  "usedTopicIds": [
-    "ocean-002"
-  ],
-  "redoTopicIds": [],
-  "usedFallbackScripts": [],
+  "version": 2,
+  "perLanguage": {
+    "en": {
+      "usedTopicIds": [
+        "ocean-002"
+      ],
+      "redoTopicIds": [],
+      "usedFallbackScripts": [],
+      "weeklyCompiled": []
+    }
+  },
   "drafts": [
     {
       "id": "short-2026-09-18-ocean-002",
@@ -46,9 +51,8 @@
     }
   ],
   "lastTelegramUpdateId": 171672819,
-  "weeklyCompiled": [],
   "lastRuns": {
     "generate": "2026-09-17T18:58:45.720Z",
-    "publish": "2026-09-17T19:10:07.531Z"
+    "publish": "2026-09-17T21:18:53.871Z"
   }
 }
