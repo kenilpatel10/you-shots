@@ -1,6 +1,6 @@
 {
-  "name": "Bolt Asks Why",
-  "handle": "@BoltAsksWhy",
+  "name": "Bolt & Pip",
+  "handle": "@boltandpip",
   "characterName": "Bolt",
   "language": "en",
   "timezone": "Asia/Kolkata",
@@ -17,7 +17,8 @@
       "learning",
       "science for kids",
       "why questions",
-      "Bolt Asks Why",
+      "Bolt & Pip",
+      "bolt and pip",
       "shorts"
     ],
     "longTags": [
@@ -25,7 +26,8 @@
       "learning",
       "science for kids",
       "why questions",
-      "Bolt Asks Why",
+      "Bolt & Pip",
+      "bolt and pip",
       "compilation"
     ]
   },
@@ -44,7 +46,7 @@
         "language": "en"
       },
       "askGrownUp": "Ask a grown-up",
-      "weeklyTitle": "Bolt's Big Week",
+      "weeklyTitle": "Bolt & Pip's Big Week",
       "weeklyOutro": "See you next week!",
       "font": "Fredoka",
       "feelings": {
@@ -86,7 +88,7 @@
         "excited": "बोल्ट उत्साहित है"
       },
       "sidekickName": "पिप",
-      "weeklyTitle": "बोल्ट का बड़ा हफ़्ता",
+      "weeklyTitle": "बोल्ट और पिप का बड़ा हफ़्ता",
       "weeklyOutro": "अगले हफ़्ते मिलते हैं!",
       "font": "Baloo 2",
       "labels": {

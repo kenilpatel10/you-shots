@@ -1,4 +1,4 @@
-# Bolt Asks Why
+# Bolt & Pip
 
 A free, human-reviewed pipeline that makes **one original 45–58 second kids' YouTube Short per
 day**, starring **Bolt** — a small, friendly, hand-built SVG robot — and sends every draft to you

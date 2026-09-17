@@ -1,5 +1,5 @@
 /**
- * Visual identity for Bolt Asks Why. Everything visual reads from here so the
+ * Visual identity for Bolt & Pip. Everything visual reads from here so the
  * channel looks identical in every video.
  */
 export const colors = {
