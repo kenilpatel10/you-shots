@@ -1,10 +1,49 @@
 {
   "version": 1,
-  "usedTopicIds": [],
+  "usedTopicIds": [
+    "ocean-002"
+  ],
   "redoTopicIds": [],
   "usedFallbackScripts": [],
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "short-2026-09-18-ocean-002",
+      "kind": "short",
+      "topicId": "ocean-002",
+      "date": "2026-09-18",
+      "language": "en",
+      "title": "Why do waves crash on the beach",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-09-17T18:58:45.720Z",
+      "updatedAt": "2026-09-17T18:58:45.720Z",
+      "durationSeconds": 44.9,
+      "releaseTag": "draft-2026-09-18",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-18",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/570897048",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-18/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/570898048",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/570898068",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/570898096"
+      },
+      "description": "Learn why ocean waves trip over themselves and crash as they reach the beach! Bolt explains wave motion in a fun and simple way for kids. Perfect for curious young explorers who love the ocean.",
+      "tags": [
+        "ocean",
+        "waves",
+        "science for kids",
+        "bolt and pip",
+        "nature",
+        "kids learning"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 5,
+      "includes": []
+    }
+  ],
   "lastTelegramUpdateId": null,
   "weeklyCompiled": [],
-  "lastRuns": {}
+  "lastRuns": {
+    "generate": "2026-09-17T18:58:45.720Z"
+  }
 }
