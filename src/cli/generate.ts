@@ -98,7 +98,7 @@ async function main() {
   if (voiceMode === "placeholder" && !opts.dryRun) throw new Error("--placeholder-voice is only allowed with --dry-run");
 
   const { record, topic, fallbackFile } = await produce(state, topics, cfg.language);
-  const draftId = opts.dryRun ? `dryrun-${today}-${topic.id}` : makeDraftId("short", today, topic.id);
+  const draftId = opts.dryRun ? `dryrun-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id);
   log.info(`Draft ${draftId}: "${record.title}" (${record.source}${record.model ? `, ${record.model}` : ""})`);
 
   const result: AssembleResult = await assembleShort({

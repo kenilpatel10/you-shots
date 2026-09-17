@@ -57,7 +57,7 @@ async function loudness(file: string, spans: [number, number][]): Promise<string
 }
 
 async function main() {
-  const shortFile = arg("--short") ?? (await findLatest(/^dryrun-|^short-/, "short.mp4"));
+  const shortFiles = arg("--short") ? [arg("--short")!] : await findAll(/^dryrun-|^short-/, "short.mp4");
   const longFile = arg("--long") ?? path.join(ROOT, "out", "weekly-dryrun", "long.mp4");
   const imgDir = path.join(ROOT, "docs", "images", "proof");
   await ensureDir(imgDir);
@@ -70,8 +70,9 @@ async function main() {
     "",
   ];
 
-  if (shortFile && (await exists(shortFile))) {
+  for (const shortFile of shortFiles) {
     const dir = path.dirname(shortFile);
+    const langTag = path.basename(dir).split("-")[1] ?? "en";
     const props = (await readJson(path.join(dir, "video.json"))) as ShortProps;
     const t = props.timeline;
     const hook = t.sections[0]!;
@@ -79,7 +80,7 @@ async function main() {
     const wow = t.sections[2]!;
     const exp = t.sections[3]!;
     const sign = t.sections[4]!;
-    lines.push("## Short (1080×1920)", "", "```", await probe(shortFile), "```", "");
+    lines.push(`## Short — ${langTag} (1080×1920)`, "", "```", await probe(shortFile), "```", "");
     lines.push(`- Title: **${props.script.title}** · sections: hook ${(hook.endMs - hook.startMs) / 1000}s, answer ${((answer.endMs - answer.startMs) / 1000).toFixed(1)}s, wow ${((wow.endMs - wow.startMs) / 1000).toFixed(1)}s, experiment ${((exp.endMs - exp.startMs) / 1000).toFixed(1)}s, sign-off ${((sign.endMs - sign.startMs) / 1000).toFixed(1)}s · total ${(t.totalFrames / t.fps).toFixed(1)}s (hard max 59s)`);
     lines.push(`- Captions source: ${t.timingSource}; guess beat: ${t.guess ? `${((t.guess.endMs - t.guess.startMs) / 1000).toFixed(1)}s pause` : "none"}`);
     const gapA = hook.endMs / 1000 + 0.1;
@@ -101,21 +102,20 @@ async function main() {
     ];
     lines.push("| Beat | Time | Frame |", "| --- | --- | --- |");
     for (const [label, sec] of shots) {
-      const name = `short-${label.replace(/[^a-z]+/gi, "-").toLowerCase()}.png`;
+      const name = `short-${langTag}-${label.replace(/[^a-z]+/gi, "-").toLowerCase()}.png`;
       await frame(shortFile, sec, path.join(imgDir, name));
       lines.push(`| ${label} | ${sec.toFixed(1)}s | ![${label}](images/proof/${name}) |`);
     }
     // Lip-sync evidence: 8 consecutive frames during speech.
     const strip: string[] = [];
     for (let i = 0; i < 8; i++) {
-      const name = `short-mouth-${i}.png`;
+      const name = `short-${langTag}-mouth-${i}.png`;
       await frame(shortFile, answer.startMs / 1000 + 2 + i / t.fps, path.join(imgDir, name), "180:-1");
       strip.push(`![m${i}](images/proof/${name})`);
     }
     lines.push("", "Eight consecutive frames (1/30 s apart) during speech — the mouth follows the syllables:", "", strip.join(" "), "");
-  } else {
-    lines.push("## Short", "", "_No rendered Short found in out/. Run `npm run generate -- --dry-run`._", "");
   }
+  if (!shortFiles.length) lines.push("## Short", "", "_No rendered Short found in out/. Run `npm run generate -- --dry-run`._", "");
 
   if (await exists(longFile)) {
     const meta = (await readJson(path.join(path.dirname(longFile), "meta.json"))) as { chapters: string; durationSeconds: number };
@@ -140,20 +140,23 @@ async function main() {
     lines.push("## Weekly compilation", "", "_No rendered weekly video found. Run `npm run weekly -- --dry-run`._", "");
   }
 
-  lines.push("## Design sheet", "", "![Bolt design sheet](images/bolt-showcase.png)", "", "## Checks", "", "- `npm test` (unit tests: picker, validator, aligner, state, scheduling, Telegram commands, captions, chapters)", "- `npm run typecheck`, `npm run lint`", "- `npx remotion compositions remotion/index.ts` lists Short, LongVideo, Thumbnail, BoltShowcase", "");
+  const sheet = path.join(ROOT, "out", "showcase", "bolt-showcase.png");
+  if (await exists(sheet)) await fs.copyFile(sheet, path.join(ROOT, "docs", "images", "bolt-showcase.png"));
+  lines.push("## Design sheet (Bolt + Pip)", "", "![Bolt design sheet](images/bolt-showcase.png)", "", "## Checks", "", "- `npm test` (unit tests: picker, validator, aligner, state, scheduling, Telegram commands, captions, chapters)", "- `npm run typecheck`, `npm run lint`", "- `npx remotion compositions remotion/index.ts` lists Short, LongVideo, Thumbnail, BoltShowcase", "");
   await writeFileAtomic(path.join(ROOT, "docs", "PROOF.md"), lines.join("\n") + "\n");
   log.info("Wrote docs/PROOF.md");
 }
 
-async function findLatest(dirPattern: RegExp, file: string): Promise<string | undefined> {
+async function findAll(dirPattern: RegExp, file: string): Promise<string[]> {
   const out = path.join(ROOT, "out");
-  if (!(await exists(out))) return undefined;
-  const dirs = (await fs.readdir(out)).filter((d) => dirPattern.test(d)).sort().reverse();
+  if (!(await exists(out))) return [];
+  const dirs = (await fs.readdir(out)).filter((d) => dirPattern.test(d)).sort();
+  const found: string[] = [];
   for (const d of dirs) {
     const f = path.join(out, d, file);
-    if (await exists(f)) return f;
+    if (await exists(f)) found.push(f);
   }
-  return undefined;
+  return found;
 }
 
 main().catch((err) => {
