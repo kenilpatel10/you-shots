@@ -23,7 +23,7 @@ export const colors = {
 } as const;
 
 export const fonts = {
-  family: "Fredoka, 'Baloo 2', 'Nunito', 'Arial Rounded MT Bold', 'Segoe UI', sans-serif",
+  family: "Fredoka, 'Baloo 2', 'Nunito', 'Arial Rounded MT Bold', 'Segoe UI', sans-serif", // Baloo 2 supplies Devanagari
   weightRegular: 400,
   weightSemi: 600,
   weightBold: 700,

@@ -74,7 +74,7 @@ async function produce(state: State, topics: Topic[], language: string): Promise
     }
   }
 
-  const fb = await pickFallbackScript(state.usedFallbackScripts, state.usedTopicIds, opts.topic);
+  const fb = await pickFallbackScript(state.usedFallbackScripts, state.usedTopicIds, opts.topic, language);
   if (!fb) throw new Error("No LLM available and all fallback scripts have been used. Add API keys (docs/SETUP_AI_KEYS.md) or more scripts to data/fallback-scripts/.");
   log.warn(`Using fallback script ${fb.file}`);
   const record = ScriptRecordSchema.parse({ ...fb.script, language, source: "fallback", reviewerNotes: ["Hand-checked fallback script (no LLM available)"], createdAt: new Date().toISOString() });

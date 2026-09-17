@@ -22,6 +22,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@fontsource/baloo-2": "^5.3.0",
     "@fontsource/fredoka": "^5.3.0",
     "@google/genai": "^2.22.0",
     "@huggingface/transformers": "^3.8.1",
@@ -36,10 +37,10 @@
     "googleapis": "^160.0.0",
     "groq-sdk": "^1.6.0",
     "kokoro-js": "^1.2.1",
-    "mespeak": "^2.0.2",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "remotion": "4.0.525",
+    "text2wav": "^0.0.14",
     "zod": "4.5.4"
   },
   "devDependencies": {

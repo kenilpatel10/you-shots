@@ -62,6 +62,8 @@ export const ChannelPropsZ = z.object({
   catchphrase: z.string(),
   askGrownUp: z.string(),
   language: z.string(),
+  feelings: z.record(z.string(), z.string()).default({}),
+  sidekickName: z.string().default("Pip"),
 });
 export type ChannelProps = z.infer<typeof ChannelPropsZ>;
 
@@ -73,7 +75,7 @@ export const AudioPropsZ = z.object({
   duckedVolume: z.number().min(0).max(1).default(0.045),
   fadeSeconds: z.number().min(0).default(1.5),
   /** Optional soft chimes (public-relative paths). */
-  sfx: z.object({ ding: z.string(), pop: z.string() }).optional(),
+  sfx: z.object({ ding: z.string(), pop: z.string(), jingle: z.string().optional() }).optional(),
 });
 
 export const ShortPropsZ = z.object({

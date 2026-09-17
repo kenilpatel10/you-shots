@@ -38,13 +38,30 @@ function pop(): Float32Array {
   return out;
 }
 
-export type SfxPaths = { ding: string; pop: string };
+/** Four-note signature motif (C5 E5 G5 C6) with a soft bell tone — ~1.1 s. */
+function jingle(): Float32Array {
+  const n = Math.round(1.6 * SR);
+  const out = new Float32Array(n);
+  const notes = [523.25, 659.25, 783.99, 1046.5];
+  notes.forEach((f, k) => {
+    const start = Math.round(k * 0.16 * SR);
+    for (let i = start; i < n; i++) {
+      const t = (i - start) / SR;
+      const env = Math.exp(-t * (k === 3 ? 2.2 : 4.5)) * Math.min(1, t * 300);
+      out[i]! += 0.28 * env * (Math.sin(2 * Math.PI * f * t) + 0.25 * Math.sin(2 * Math.PI * f * 2 * t) * Math.exp(-t * 8) + 0.12 * Math.sin(2 * Math.PI * f * 3 * t) * Math.exp(-t * 12));
+    }
+  });
+  return out;
+}
+
+export type SfxPaths = { ding: string; pop: string; jingle: string };
 
 export async function ensureSfx(): Promise<SfxPaths> {
   const dir = path.join(PUBLIC_DIR, "sfx");
   await ensureDir(dir);
-  const files: SfxPaths = { ding: "sfx/ding.wav", pop: "sfx/pop.wav" };
+  const files: SfxPaths = { ding: "sfx/ding.wav", pop: "sfx/pop.wav", jingle: "sfx/jingle.wav" };
   if (!(await exists(path.join(dir, "ding.wav")))) await fs.writeFile(path.join(dir, "ding.wav"), encodeWav({ samples: bell(), sampleRate: SR }));
   if (!(await exists(path.join(dir, "pop.wav")))) await fs.writeFile(path.join(dir, "pop.wav"), encodeWav({ samples: pop(), sampleRate: SR }));
+  if (!(await exists(path.join(dir, "jingle.wav")))) await fs.writeFile(path.join(dir, "jingle.wav"), encodeWav({ samples: jingle(), sampleRate: SR }));
   return files;
 }

@@ -6,7 +6,8 @@
 import { concat, normalizeLoudness, silence, type PcmAudio } from "./wav";
 import { SECTION_GAP_MS } from "./estimateTimings";
 
-export const LEAD_IN_MS = 250;
+/** Room for the 1-second signature jingle before Bolt starts talking. */
+export const LEAD_IN_MS = 800;
 
 export type MixedVoice = {
   track: PcmAudio;

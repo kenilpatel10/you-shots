@@ -80,13 +80,13 @@ async function main() {
   const state = await loadState();
   const today = todayInZone(cfg.timezone);
   const week = opts.week ? { key: opts.week, start: "", end: "" } : weekRange(today);
-  const channel = { name: cfg.name, handle: cfg.handle, characterName: cfg.characterName, catchphrase: lang.catchphrase, askGrownUp: lang.askGrownUp, language: cfg.language };
+  const channel = { name: cfg.name, handle: cfg.handle, characterName: cfg.characterName, catchphrase: lang.catchphrase, askGrownUp: lang.askGrownUp, language: cfg.language, feelings: lang.feelings, sidekickName: lang.sidekickName };
 
   let episodes: LongEpisode[];
   let includes: string[] = [];
   const draftId = opts.dryRun ? "weekly-dryrun" : `weekly-${week.key}`;
   if (opts.dryRun) {
-    const samples = (await listFallbackScripts()).slice(0, 5);
+    const samples = (await listFallbackScripts(cfg.language)).slice(0, 5);
     episodes = [];
     for (const [i, s] of samples.entries()) {
       const id = `weekly-sample-${i + 1}`;

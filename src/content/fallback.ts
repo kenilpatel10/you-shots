@@ -9,19 +9,30 @@ import { ScriptSchema, type Script, type Topic } from "./schema";
 
 export type FallbackScript = { file: string; script: Script };
 
-export async function listFallbackScripts(): Promise<FallbackScript[]> {
-  const files = (await fs.readdir(FALLBACK_DIR)).filter((f) => f.endsWith(".json")).sort();
+/** English scripts live in data/fallback-scripts/, other languages in data/fallback-scripts/<lang>/. */
+export function fallbackDirFor(language: string): string {
+  return language === "en" ? FALLBACK_DIR : path.join(FALLBACK_DIR, language);
+}
+
+export async function listFallbackScripts(language = "en"): Promise<FallbackScript[]> {
+  const dir = fallbackDirFor(language);
+  let files: string[] = [];
+  try {
+    files = (await fs.readdir(dir)).filter((f) => f.endsWith(".json")).sort();
+  } catch {
+    return [];
+  }
   const out: FallbackScript[] = [];
   for (const file of files) {
-    const raw = JSON.parse(await fs.readFile(path.join(FALLBACK_DIR, file), "utf8"));
-    out.push({ file, script: ScriptSchema.parse(raw) });
+    const raw = JSON.parse(await fs.readFile(path.join(dir, file), "utf8"));
+    out.push({ file: language === "en" ? file : `${language}/${file}`, script: ScriptSchema.parse(raw) });
   }
   return out;
 }
 
 /** Pick an unused fallback script, preferring one whose topic has not been used yet. */
-export async function pickFallbackScript(usedFiles: string[], usedTopicIds: string[], preferTopicId?: string): Promise<FallbackScript | null> {
-  const all = await listFallbackScripts();
+export async function pickFallbackScript(usedFiles: string[], usedTopicIds: string[], preferTopicId?: string, language = "en"): Promise<FallbackScript | null> {
+  const all = await listFallbackScripts(language);
   const unused = all.filter((f) => !usedFiles.includes(f.file));
   if (preferTopicId) {
     const exact = unused.find((f) => f.script.topicId === preferTopicId);

@@ -2,6 +2,8 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { Bolt } from "../character/Bolt";
 import { AnimatedBolt } from "../character/AnimatedBolt";
+import { AnimatedPip } from "../character/AnimatedPip";
+import type { PipMood } from "../character/Pip";
 import { EXPRESSION_LIST } from "../character/expressions";
 import { POSE_LIST } from "../character/poses";
 import { colors, fonts } from "../theme";
@@ -61,6 +63,13 @@ export const BoltShowcase: React.FC = () => {
         ))}
         <div style={{ ...label, width: 120 }}>talking</div>
         <Bolt expression="curious" mouthOpen={0.5 + 0.5 * Math.sin((frame / fps) * 14)} antennaGlow={0.4} size={150} idPrefix="talk" />
+        <div style={{ ...label, width: 100 }}>Pip</div>
+        {(["happy", "curious", "surprised", "cheeky", "sleepy"] as PipMood[]).map((m) => (
+          <div key={m} style={{ textAlign: "center" }}>
+            <AnimatedPip mood={m} excitement={m === "happy" ? 1 : 0} talking={m === "cheeky"} size={120} idPrefix={`pip-${m}`} />
+            <div style={{ ...label, fontSize: 20 }}>{m}</div>
+          </div>
+        ))}
       </div>
     </AbsoluteFill>
   );

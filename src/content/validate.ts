@@ -56,7 +56,7 @@ export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "
     keys.reduce((a, k) => a + estimateSectionDurationMs(sectionSpokenText(script, k)), 0) +
     4 * SECTION_GAP_MS +
     (script.guess ? GUESS_PAUSE_MS : 0) +
-    250 + // lead-in
+    800 + // lead-in (jingle)
     2000; // sign-off tail
   return ms / 1000;
 }

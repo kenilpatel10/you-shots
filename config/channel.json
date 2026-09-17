@@ -12,19 +12,75 @@
     "categoryId": "27",
     "containsSyntheticMedia": true,
     "notifySubscribers": true,
-    "shortTags": ["kids", "learning", "science for kids", "why questions", "Bolt Asks Why", "shorts"],
-    "longTags": ["kids", "learning", "science for kids", "why questions", "Bolt Asks Why", "compilation"]
+    "shortTags": [
+      "kids",
+      "learning",
+      "science for kids",
+      "why questions",
+      "Bolt Asks Why",
+      "shorts"
+    ],
+    "longTags": [
+      "kids",
+      "learning",
+      "science for kids",
+      "why questions",
+      "Bolt Asks Why",
+      "compilation"
+    ]
   },
   "languages": {
     "en": {
       "label": "English",
       "catchphrase": "Stay curious, friends!",
-      "voice": { "engine": "kokoro", "voiceId": "af_heart", "speed": 1.06 },
-      "whisper": { "model": "base.en", "language": "en" },
+      "voice": {
+        "engine": "kokoro",
+        "voiceId": "af_heart",
+        "speed": 1.06,
+        "espeakVoice": "en-us+f3"
+      },
+      "whisper": {
+        "model": "base.en",
+        "language": "en"
+      },
       "askGrownUp": "Ask a grown-up",
       "weeklyTitle": "Bolt's Big Week",
       "weeklyOutro": "See you next week!",
-      "font": "Fredoka"
+      "font": "Fredoka",
+      "feelings": {
+        "curious": "Bolt feels curious",
+        "happy": "Bolt feels happy",
+        "surprised": "Bolt feels surprised",
+        "thinking": "Bolt is thinking",
+        "excited": "Bolt feels excited"
+      },
+      "sidekickName": "Pip"
+    },
+    "hi": {
+      "label": "हिन्दी",
+      "catchphrase": "जिज्ञासु रहो, दोस्तों!",
+      "voice": {
+        "engine": "espeak",
+        "voiceId": "af_heart",
+        "speed": 1.0,
+        "espeakVoice": "hi+f3"
+      },
+      "whisper": {
+        "model": "base",
+        "language": "hi"
+      },
+      "askGrownUp": "बड़ों से मदद लो",
+      "feelings": {
+        "curious": "बोल्ट को जिज्ञासा है",
+        "happy": "बोल्ट खुश है",
+        "surprised": "बोल्ट हैरान है",
+        "thinking": "बोल्ट सोच रहा है",
+        "excited": "बोल्ट उत्साहित है"
+      },
+      "sidekickName": "पिप",
+      "weeklyTitle": "बोल्ट का बड़ा हफ़्ता",
+      "weeklyOutro": "अगले हफ़्ते मिलते हैं!",
+      "font": "Baloo 2"
     }
   },
   "music": {

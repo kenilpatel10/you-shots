@@ -10,4 +10,11 @@ describe("fallback scripts", () => {
     expect(failures.map((f) => `${f.file}: ${(f.r as { reasons: string[] }).reasons.join("; ")}`)).toEqual([]);
     expect(new Set(all.map((f) => f.script.topicId)).size).toBe(all.length);
   });
+
+  it("ships Hindi scripts that pass the validator too", async () => {
+    const all = await listFallbackScripts("hi");
+    expect(all.length).toBeGreaterThanOrEqual(2);
+    const failures = all.map((f) => ({ file: f.file, r: validateScript(f.script) })).filter((x) => !x.r.ok);
+    expect(failures.map((f) => `${f.file}: ${(f.r as { reasons: string[] }).reasons.join("; ")}`)).toEqual([]);
+  });
 });

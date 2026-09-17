@@ -1,10 +1,10 @@
 {
   "topicId": "weather-nature-002",
   "title": "Why does it rain?",
-  "hook": "Hello friends! Drip, drop, splash! Where does rain come from, and why does it fall?",
+  "hook": "Hello friends! Drip, drop, splash! Where does rain come from?",
   "answer": "The Sun warms water on the ground, and some of it floats up into the sky as an invisible mist. High up, the air is colder, so the mist turns back into tiny drops that make clouds. The drops bump together and grow, like little snowballs, until they are too heavy to float.",
   "wowFact": "Here is a wow fact! The rain falling on you today might be the same water a dinosaur splashed in long ago!",
-  "experiment": "Try this! Ask a grown-up to help you put a cup of water on a sunny windowsill. Mark the water line. Look again tomorrow. Did some water float away?",
+  "experiment": "Try this! Ask a grown-up to help you put a cup of water on a sunny windowsill and mark the water line. Look again tomorrow. Did some water float away?",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
     "hook": "Why does it RAIN?",

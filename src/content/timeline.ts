@@ -43,9 +43,10 @@ export function buildTimeline(opts: {
   tailFrames?: number;
   /** Extra silence after the hook for the guess bubbles (0 when the script has no guess). */
   guessPauseMs?: number;
+  leadInMs?: number;
 }): Timeline {
   const gap = opts.gapMs ?? SECTION_GAP_MS;
-  let cursor = 0;
+  let cursor = opts.leadInMs ?? 800;
   const sections: SectionTiming[] = [];
   for (const s of opts.sections) {
     const startMs = cursor;

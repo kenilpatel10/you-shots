@@ -11,12 +11,17 @@ const LanguageConfig = z.object({
     engine: z.enum(["kokoro", "espeak"]),
     voiceId: z.string(),
     speed: z.number().min(0.7).max(1.4),
+    /** eSpeak voice used when engine is espeak or as the offline fallback (e.g. "en-us+f3", "hi+f3"). */
+    espeakVoice: z.string().default("en-us"),
   }),
   whisper: z.object({
     model: z.enum(["tiny", "tiny.en", "base", "base.en", "small", "small.en", "medium", "medium.en", "large-v3-turbo"]),
     language: z.string(),
   }),
   askGrownUp: z.string(),
+  /** Labels for the feeling chip shown when Bolt's expression changes. */
+  feelings: z.record(z.string(), z.string()).default({}),
+  sidekickName: z.string().default("Pip"),
   weeklyTitle: z.string(),
   weeklyOutro: z.string(),
   font: z.string(),

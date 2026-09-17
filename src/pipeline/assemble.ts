@@ -59,7 +59,8 @@ async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{
   const lang = currentLanguage();
   if (mode === "placeholder") return { audio: placeholderVoice(text, seed), source: "placeholder" };
   const engine = mode === "auto" ? lang.voice.engine : mode;
-  if (engine === "espeak") return { audio: synthesizeEspeak(text), source: "espeak" };
+  const espeak = { voice: lang.voice.espeakVoice, wpm: Math.round(145 * lang.voice.speed) };
+  if (engine === "espeak") return { audio: await synthesizeEspeak(text, espeak), source: "espeak" };
   try {
     const audio = await synthesizeSection(text, { voiceId: lang.voice.voiceId, speed: lang.voice.speed });
     return { audio, source: "kokoro" };
@@ -68,7 +69,7 @@ async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{
       // Offline machines: eSpeak ships inside node_modules, so speech stays real and intelligible.
       if (!warnedFallback) log.warn(`Kokoro unavailable (${(err as Error).message.split("\n")[0]}). Using the bundled eSpeak voice — dry runs only.`);
       warnedFallback = true;
-      return { audio: synthesizeEspeak(text), source: "espeak" };
+      return { audio: await synthesizeEspeak(text, espeak), source: "espeak" };
     }
     throw new Error(`Text-to-speech failed: ${(err as Error).message}. Set ALLOW_FALLBACK_VOICE=1 for an offline test render with the bundled eSpeak voice.`);
   }
@@ -154,6 +155,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   await fs.copyFile(voicePath, path.join(pub, "voice.wav"));
   const music = await ensureMusic(cfg.music.file, cfg.music.enabled);
   const sfx = await ensureSfx();
+  const feelingLabels = lang.feelings;
   const props: ShortProps = {
     script: {
       topicId: opts.script.topicId,
@@ -174,6 +176,8 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       catchphrase: lang.catchphrase,
       askGrownUp: lang.askGrownUp,
       language: cfg.language,
+      feelings: feelingLabels,
+      sidekickName: lang.sidekickName,
     },
     timeline,
     audio: {

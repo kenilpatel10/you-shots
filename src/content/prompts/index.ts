@@ -1,8 +1,9 @@
 import { en, type PromptContext, type PromptSet } from "./en";
+import { hi } from "./hi";
 import { currentLanguage, loadBannedWords, loadChannelConfig } from "../../config";
 
 /** Add a language by exporting a PromptSet and registering it here (see docs/HINDI.md). */
-const registry: Record<string, PromptSet> = { en };
+const registry: Record<string, PromptSet> = { en, hi };
 
 export function getPrompts(language = loadChannelConfig().language): PromptSet {
   const p = registry[language];

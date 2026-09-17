@@ -17,6 +17,8 @@ export const sampleChannel: ChannelProps = {
   catchphrase: lang.catchphrase,
   askGrownUp: lang.askGrownUp,
   language: channel.language,
+  feelings: lang.feelings,
+  sidekickName: lang.sidekickName,
 };
 
 export const sampleShortProps: ShortProps = {

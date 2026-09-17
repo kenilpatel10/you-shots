@@ -2,6 +2,9 @@ import React from "react";
 import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Background } from "../backgrounds/Background";
 import { AnimatedBolt } from "../character/AnimatedBolt";
+import { AnimatedPip } from "../character/AnimatedPip";
+import type { PipMood } from "../character/Pip";
+import { FeelingChip } from "../components/FeelingChip";
 import { Captions } from "../components/Captions";
 import { ProgressBar } from "../components/ProgressBar";
 import { longLayout, shortLayout } from "../layout";
@@ -17,7 +20,7 @@ export type EpisodeProps = {
   /** public-relative voice path; empty = silent. */
   voice: string;
   variant: "short" | "long";
-  sfx?: { ding: string; pop: string } | undefined;
+  sfx?: { ding: string; pop: string; jingle?: string | undefined } | undefined;
 };
 
 const toFrame = (ms: number, fps: number) => Math.round((ms / 1000) * fps);
@@ -50,11 +53,20 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
   const glow = inGuess ? 0.45 + 0.45 * Math.sin((frame / fps) * Math.PI * 2 * 1.3) : glowBase;
   const pose = inGuess ? "think" : current.pose;
   const expression = inGuess ? "thinking" : current.expression;
+  const L = variant === "short" ? shortLayout : longLayout;
   const wowStart = sections.find((s) => s.key === "wowFact");
   const answerStart = sections.find((s) => s.key === "answer");
+  // Clumsy gag: when the antenna lights up on the wow fact, Bolt wobbles for half a second ("oops!").
+  const wobble = current.key === "wowFact" && sinceStart < 16 ? Math.sin((sinceStart / 16) * Math.PI * 3) * 6 * (1 - sinceStart / 16) : 0;
+  const revealing = current.key === "answer" && sinceStart < 42 && Boolean(script.guess);
+  const pipMood: PipMood = inGuess ? "cheeky" : revealing || current.key === "wowFact" ? "surprised" : current.key === "hook" ? "curious" : current.key === "signOff" ? "happy" : "happy";
+  const pipExcited = revealing || current.key === "signOff" ? 1 : current.key === "experiment" ? 0.4 : 0;
+  const pipTalking = inGuess && sinceStart % 40 < 12;
+  const pipSize = variant === "short" ? 150 : 130;
+  const pipPos = variant === "short" ? { left: L.bolt.centerX + L.bolt.size * 0.36, top: L.bolt.top + L.bolt.size * 0.98 } : { left: L.bolt.centerX + L.bolt.size * 0.4, top: L.bolt.top + L.bolt.size * 0.9 };
+  const feeling = channel.feelings?.[expression];
   const speakingNow = sections.some((s) => ms >= s.startMs && ms <= s.endMs);
   const mouthOpen = speakingNow ? mouth(frame) : 0;
-  const L = variant === "short" ? shortLayout : longLayout;
   const sceneLayout = variant === "short" ? shortLayout : { card: longLayout.card, badge: longLayout.badge, signoff: { left: longLayout.captions.left, top: longLayout.captions.top, width: longLayout.captions.width } };
   const maxFontSize = variant === "short" ? 84 : 72;
 
@@ -78,6 +90,11 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
           <GuessScene section={current} script={script} channel={channel} layout={sceneLayout} durationInFrames={1} maxFontSize={maxFontSize} />
         </Sequence>
       ) : null}
+      {sfx?.jingle ? (
+        <Sequence from={0} durationInFrames={45} name="sfx-jingle">
+          <Audio src={staticFile(sfx.jingle)} volume={0.32} />
+        </Sequence>
+      ) : null}
       {sfx && wowStart ? (
         <Sequence from={toFrame(wowStart.startMs, fps)} durationInFrames={30} name="sfx-ding">
           <Audio src={staticFile(sfx.ding)} volume={0.28} />
@@ -88,9 +105,13 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
           <Audio src={staticFile(sfx.pop)} volume={0.35} />
         </Sequence>
       ) : null}
-      <div style={{ position: "absolute", left: L.bolt.centerX - L.bolt.size / 2, top: L.bolt.top + hopY }}>
+      <div style={{ position: "absolute", left: L.bolt.centerX - L.bolt.size / 2, top: L.bolt.top + hopY, transform: `rotate(${wobble}deg)`, transformOrigin: "50% 90%" }}>
         <AnimatedBolt pose={pose} expression={expression} mouthOpen={mouthOpen} antennaGlow={glow} size={L.bolt.size} seed={`ep-${script.topicId}`} idPrefix={`bolt-${script.topicId}`} />
       </div>
+      <div style={{ position: "absolute", left: pipPos.left, top: pipPos.top }}>
+        <AnimatedPip mood={pipMood} excitement={pipExcited} talking={pipTalking} size={pipSize} idPrefix={`pip-${script.topicId}`} />
+      </div>
+      {feeling && sinceStart < 50 && !inGuess ? <FeelingChip text={feeling} left={L.bolt.centerX - L.bolt.size / 2 - 10} top={L.bolt.top + 20} enterFrame={0} frame={sinceStart} /> : null}
       <Captions wordGroups={sections.map((s) => s.words)} box={L.captions} fontSize={variant === "short" ? 60 : 52} />
       <ProgressBar sections={sections} box={L.progress} />
     </AbsoluteFill>

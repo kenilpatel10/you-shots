@@ -20,9 +20,14 @@ export function tokenizeWords(text: string): string[] {
     .filter((w) => w.length > 0);
 }
 
+/** Letter count ignoring combining marks (Devanagari matras etc.), so Hindi words are not over-counted. */
+export function letterCount(w: string): number {
+  return w.normalize("NFD").replace(/\p{M}/gu, "").replace(/[^\p{L}\p{N}]/gu, "").length;
+}
+
 export function estimateSectionDurationMs(text: string): number {
   const words = tokenizeWords(text);
-  const chars = words.reduce((n, w) => n + w.length, 0);
+  const chars = words.reduce((n, w) => n + letterCount(w), 0);
   // ~ 2.7 words/s, nudged by average word length; punctuation adds pauses.
   const pauses = (text.match(/[.!?,;:]/g) ?? []).length * 180;
   const base = (words.length / WORDS_PER_SECOND) * 1000;
@@ -33,7 +38,7 @@ export function estimateSectionDurationMs(text: string): number {
 export function estimateWordTimings(text: string, startMs: number, endMs: number): WordTiming[] {
   const words = tokenizeWords(text);
   if (words.length === 0) return [];
-  const weights = words.map((w) => w.replace(/[^\p{L}\p{N}]/gu, "").length + 2.5 + (/[.!?,]$/.test(w) ? 1.5 : 0));
+  const weights = words.map((w) => letterCount(w) + 2.5 + (/[.!?,]$/.test(w) ? 1.5 : 0));
   const total = weights.reduce((a, b) => a + b, 0);
   const span = endMs - startMs;
   let cursor = startMs;
