@@ -38,11 +38,13 @@ const program = new Command()
   .option("--skip-render", "stop after audio + props (no MP4)", false)
   .option("--force", "generate even if today already has a draft", false)
   .option("--fallback", "skip the LLM and use a hand-written fallback script", false)
+  .option("--script <file>", "skip the LLM and render this script JSON (e.g. a saved out/<draft>/script.json)")
   .parse(process.argv);
 
 type Opts = {
   dryRun: boolean;
   topic?: string;
+  script?: string;
   voice?: "kokoro" | "gemini" | "espeak" | "placeholder";
   placeholderVoice: boolean;
   skipRender: boolean;
@@ -58,6 +60,12 @@ async function loadTopics(): Promise<Topic[]> {
 type Produced = { record: ScriptRecord; topic: Topic; fallbackFile?: string };
 
 async function produce(state: State, topics: Topic[], language: string): Promise<Produced> {
+  if (opts.script) {
+    const raw = await readJson<Record<string, unknown>>(opts.script);
+    const record = ScriptRecordSchema.parse({ language, source: "llm", reviewerNotes: [], createdAt: new Date().toISOString(), ...raw });
+    log.info(`Using script from ${opts.script}`);
+    return { record, topic: topics.find((t) => t.id === record.topicId) ?? fallbackTopic(record, topics) };
+  }
   const useFallback = opts.fallback || !hasLlm();
   const forced = opts.topic ? topics.find((t) => t.id === opts.topic) : undefined;
   if (opts.topic && !forced) throw new Error(`Unknown topic id ${opts.topic}`);

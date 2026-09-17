@@ -27,7 +27,8 @@ voices need a native runtime. The Gemini API's TTS models (`gemini-3.1-flash-tts
 `gemini-2.5-flash-preview-tts`) speak Hindi naturally, return 24 kHz PCM, and sit inside the same
 free tier already used for scripts: five requests per Short. The delivery style lives in
 `languages.hi.voice.style`; change the voice with `voiceId` (`Leda`, `Kore`, `Aoede`, `Zephyr`, …).
-If Google retires a model, set the variable `GEMINI_TTS_MODEL`.
+The free tier allows about 10 TTS requests per day **per model**; a Short needs 5, so the engine
+walks `GEMINI_TTS_MODELS` (three models by default) and skips any whose day is spent.
 
 ---
 

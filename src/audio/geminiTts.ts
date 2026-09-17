@@ -10,9 +10,13 @@ import { fadeEdges, trimSilence, type PcmAudio } from "./wav";
 
 const log = createLogger("gemini-tts");
 
-export const DEFAULT_GEMINI_TTS_MODEL = "gemini-3.1-flash-tts-preview";
-/** Older preview kept as a fallback if the default is retired. */
-export const FALLBACK_GEMINI_TTS_MODEL = "gemini-2.5-flash-preview-tts";
+/**
+ * TTS models tried in order. The free tier caps each one separately (about 10 requests per day
+ * per model, verified 2026-09-17), so a chain of three covers a daily Short (5 requests) with
+ * room for retries. Override with GEMINI_TTS_MODEL (first) / GEMINI_TTS_MODELS (full list).
+ */
+export const DEFAULT_GEMINI_TTS_MODELS = ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts"];
+export const DEFAULT_GEMINI_TTS_MODEL = DEFAULT_GEMINI_TTS_MODELS[0]!;
 
 export type GeminiTtsOptions = {
   /** Prebuilt voice name, e.g. "Leda", "Kore", "Aoede". */
@@ -23,8 +27,21 @@ export type GeminiTtsOptions = {
   languageName?: string;
 };
 
-export function geminiTtsModel(): string {
-  return env("GEMINI_TTS_MODEL") ?? DEFAULT_GEMINI_TTS_MODEL;
+export function geminiTtsModels(): string[] {
+  const list =
+    env("GEMINI_TTS_MODELS")
+      ?.split(",")
+      .map((m) => m.trim())
+      .filter(Boolean) ?? DEFAULT_GEMINI_TTS_MODELS;
+  const first = env("GEMINI_TTS_MODEL");
+  return first ? [first, ...list.filter((m) => m !== first)] : list;
+}
+
+/** Models whose daily quota is spent in this process: skipped for the rest of the run. */
+const exhausted = new Set<string>();
+
+function isDailyQuota(message: string): boolean {
+  return /PerDay|per day/i.test(message);
 }
 
 /** Parse "audio/L16;codec=pcm;rate=24000" style mime types. */
@@ -76,7 +93,11 @@ async function request(model: string, prompt: string, voice: string): Promise<{ 
       }),
     });
     const json = (await res.json().catch(() => ({}))) as GenerateResponse;
-    if (!res.ok) throw new HttpError(res.status, `Gemini TTS ${model}: ${res.status} ${json.error?.message ?? ""}`.trim());
+    if (!res.ok) {
+      // Keep the quota ids (…PerDay… / …PerMinute…) so the caller can tell a spent day from a busy minute.
+      const ids = (JSON.stringify(json.error ?? {}).match(/"quotaId":"([^"]+)"/g) ?? []).map((m) => m.slice(11, -1)).join(",");
+      throw new HttpError(res.status, `Gemini TTS ${model}: ${res.status} ${json.error?.message ?? ""}${ids ? ` [${ids}]` : ""}`.trim());
+    }
     const part = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
     if (!part?.inlineData) throw new Error(`Gemini TTS ${model} returned no audio`);
     return {
@@ -88,7 +109,9 @@ async function request(model: string, prompt: string, voice: string): Promise<{ 
     try {
       return await attempt();
     } catch (err) {
-      if (n >= 5 || !(err instanceof HttpError) || (err.status !== 429 && err.status < 500)) throw err;
+      if (!(err instanceof HttpError) || (err.status !== 429 && err.status < 500)) throw err;
+      if (err.status === 429 && isDailyQuota(err.message)) throw err; // no point waiting: the caller moves to the next model
+      if (n >= 3) throw err;
       const wait = err.status === 429 ? (retryAfterMs(err.message) ?? 15_000) : 3000 * 2 ** n;
       log.warn(`${model} ${err.status}; retry ${n + 1} in ${Math.round(wait / 1000)}s`);
       await sleep(wait);
@@ -99,18 +122,30 @@ async function request(model: string, prompt: string, voice: string): Promise<{ 
 export async function synthesizeGemini(text: string, opts: GeminiTtsOptions): Promise<PcmAudio> {
   const style = opts.style ?? "warm, cheerful and clear, for young children, at a relaxed pace";
   const prompt = `Read the following ${opts.languageName ? `${opts.languageName} ` : ""}text aloud exactly as written, ${style}. Do not add or skip words.\n\n${text}`;
-  let model = geminiTtsModel();
-  let out: { mime: string; data: Buffer };
-  try {
-    out = await request(model, prompt, opts.voice);
-  } catch (err) {
-    if (err instanceof HttpError && err.status === 404 && model !== FALLBACK_GEMINI_TTS_MODEL) {
-      log.warn(`${model} not available (404); falling back to ${FALLBACK_GEMINI_TTS_MODEL}`);
-      model = FALLBACK_GEMINI_TTS_MODEL;
-      out = await request(model, prompt, opts.voice);
-    } else throw err;
+  const causes: string[] = [];
+  for (const model of geminiTtsModels()) {
+    if (exhausted.has(model)) continue;
+    try {
+      const out = await request(model, prompt, opts.voice);
+      const sampleRate = parseL16Rate(out.mime);
+      const samples = trimSilence(decodeL16(out.data), sampleRate, 0.008, 40);
+      return { samples: fadeEdges(samples, sampleRate), sampleRate };
+    } catch (err) {
+      const msg = (err as Error).message;
+      const status = err instanceof HttpError ? err.status : 0;
+      if (status === 404 || (status === 429 && isDailyQuota(msg))) {
+        exhausted.add(model);
+        log.warn(`${model} ${status === 404 ? "not available" : "daily quota spent"}; trying the next TTS model`);
+        causes.push(`${model}: ${msg.split("\n")[0]!.slice(0, 160)}`);
+        continue;
+      }
+      if (status === 429) {
+        // Per-minute limit still busy after the waits: give the next model a go rather than fail the run.
+        causes.push(`${model}: ${msg.split("\n")[0]!.slice(0, 160)}`);
+        continue;
+      }
+      throw err;
+    }
   }
-  const sampleRate = parseL16Rate(out.mime);
-  const samples = trimSilence(decodeL16(out.data), sampleRate, 0.008, 40);
-  return { samples: fadeEdges(samples, sampleRate), sampleRate };
+  throw new Error(`Gemini TTS: every model failed or is out of quota for today. ${causes.join(" | ")}`);
 }

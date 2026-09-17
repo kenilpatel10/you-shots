@@ -39,6 +39,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CHANNEL_LANGUAGE: ${{ matrix.language }}
       GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL }}
+      GEMINI_TTS_MODELS: ${{ vars.GEMINI_TTS_MODELS }}
       REMOTION_PREFER_DOWNLOADED_BROWSER: "1"
       REMOTION_CONCURRENCY: "2"
     steps:
