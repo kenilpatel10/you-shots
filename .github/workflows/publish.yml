@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci --omit=optional
+      - run: if [ -f package-lock.json ]; then npm ci --omit=optional; else npm install --no-audit --no-fund; fi
       - name: Process Telegram commands and upload approved drafts
         run: npm run publish
       - name: Commit state
