@@ -7,6 +7,7 @@ type Props = {
   options: string[];
   answer: number;
   mode: "ask" | "reveal";
+  revealLabel?: string | undefined;
   box: { left: number; top: number; width: number };
   compact?: boolean;
 };
@@ -18,7 +19,7 @@ const LETTERS = ["A", "B", "C"];
  * The "What do you think?" beat: three big answer bubbles. In `ask` mode they pop in one after
  * another; in `reveal` mode the right one grows with a tick and the others fade.
  */
-export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, box, compact }) => {
+export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, revealLabel, box, compact }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const fontSize = compact ? 38 : 44;
@@ -34,7 +35,7 @@ export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, b
           opacity: mode === "ask" ? interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" }) : interpolate(frame, [0, 10], [1, 0.35], { extrapolateRight: "clamp" }),
         }}
       >
-        {mode === "ask" ? prompt : "The answer is…"}
+        {mode === "ask" ? prompt : (revealLabel ?? "The answer is…")}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: compact ? 8 : 10 }}>
         {options.map((opt, i) => {

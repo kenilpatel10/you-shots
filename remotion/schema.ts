@@ -64,6 +64,7 @@ export const ChannelPropsZ = z.object({
   language: z.string(),
   feelings: z.record(z.string(), z.string()).default({}),
   sidekickName: z.string().default("Pip"),
+  labels: z.record(z.string(), z.string()).default({}),
 });
 export type ChannelProps = z.infer<typeof ChannelPropsZ>;
 

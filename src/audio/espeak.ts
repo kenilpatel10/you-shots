@@ -7,7 +7,7 @@ import { createRequire } from "node:module";
 import { decodeWav, fadeEdges, resample, trimSilence, type PcmAudio } from "./wav";
 
 const require = createRequire(import.meta.url);
-type Text2Wav = (text: string, opts: { voice?: string; speed?: number; pitch?: number; amplitude?: number; wordGap?: number }) => Promise<Uint8Array>;
+type Text2Wav = (text: string, opts: { voice?: string; speed?: string; pitch?: string; amplitude?: string; wordGap?: string }) => Promise<Uint8Array>;
 
 export type EspeakOptions = { voice?: string; wpm?: number; pitch?: number; wordgap?: number };
 
@@ -16,8 +16,9 @@ export async function synthesizeEspeak(text: string, opts: EspeakOptions = {}): 
   const warn = console.warn;
   console.warn = () => undefined; // text2wav logs a harmless "wasm streaming compile failed" fallback
   try {
-    // NOTE: passing `amplitude` makes text2wav 0.0.14 emit silence — leave it at its default.
-    const out = await text2wav(text, { voice: opts.voice ?? "en-us", speed: opts.wpm ?? 145, pitch: opts.pitch ?? 55, wordGap: opts.wordgap ?? 2 });
+    // text2wav forwards option values straight into the WASM argv: numbers are mangled (speed is
+    // ignored, amplitude yields silence), so every value must be passed as a string.
+    const out = await text2wav(text, { voice: opts.voice ?? "en-us", speed: String(opts.wpm ?? 140), pitch: String(opts.pitch ?? 55), amplitude: "100", wordGap: String(opts.wordgap ?? 2) });
     const wav = decodeWav(Buffer.from(out));
     const r = resample(wav, 24000);
     return { samples: fadeEdges(trimSilence(r.samples, r.sampleRate, 0.005, 60), r.sampleRate), sampleRate: r.sampleRate };

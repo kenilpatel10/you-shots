@@ -80,7 +80,7 @@ async function main() {
   const state = await loadState();
   const today = todayInZone(cfg.timezone);
   const week = opts.week ? { key: opts.week, start: "", end: "" } : weekRange(today);
-  const channel = { name: cfg.name, handle: cfg.handle, characterName: cfg.characterName, catchphrase: lang.catchphrase, askGrownUp: lang.askGrownUp, language: cfg.language, feelings: lang.feelings, sidekickName: lang.sidekickName };
+  const channel = { name: cfg.name, handle: cfg.handle, characterName: cfg.characterName, catchphrase: lang.catchphrase, askGrownUp: lang.askGrownUp, language: cfg.language, feelings: lang.feelings, sidekickName: lang.sidekickName, labels: lang.labels };
 
   let episodes: LongEpisode[];
   let includes: string[] = [];

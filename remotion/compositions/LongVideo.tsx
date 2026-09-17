@@ -12,7 +12,7 @@ export const calculateLongMetadata: CalculateMetadataFunction<LongVideoProps> = 
   durationInFrames: planLongVideo(props).totalFrames,
 });
 
-const Card: React.FC<{ title: string; subtitle?: string; category?: string; pose?: "wave" | "point" | "jump" | "idle"; index?: number }> = ({ title, subtitle, category, pose = "wave", index }) => {
+const Card: React.FC<{ title: string; subtitle?: string; category?: string; pose?: "wave" | "point" | "jump" | "idle"; index?: number; questionWord?: string }> = ({ title, subtitle, category, pose = "wave", index, questionWord = "Question" }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const pal = categoryPalettes[category ?? "everyday-things"] ?? categoryPalettes["everyday-things"]!;
@@ -28,7 +28,7 @@ const Card: React.FC<{ title: string; subtitle?: string; category?: string; pose
       <div style={{ display: "flex", alignItems: "center", gap: 60, transform: `scale(${interpolate(s, [0, 1], [0.9, 1])})`, opacity: s }}>
         <AnimatedBolt pose={pose} expression="excited" antennaGlow={0.6} size={360} seed={`card-${title}`} idPrefix={`card-${index ?? 0}`} />
         <div style={{ maxWidth: 1000 }}>
-          {index !== undefined ? <div style={{ fontSize: 40, fontWeight: fonts.weightSemi, color: dark ? colors.accent : colors.primary }}>Question {index}</div> : null}
+          {index !== undefined ? <div style={{ fontSize: 40, fontWeight: fonts.weightSemi, color: dark ? colors.accent : colors.primary }}>{questionWord} {index}</div> : null}
           <div style={{ fontSize: title.length > 26 ? 84 : 104, fontWeight: fonts.weightBold, color: textColor, lineHeight: 1.05, textWrap: "balance" }}>{title}</div>
           {subtitle ? <div style={{ fontSize: 44, fontWeight: fonts.weightSemi, color: textColor, opacity: 0.75, marginTop: 16 }}>{subtitle}</div> : null}
         </div>
@@ -54,7 +54,7 @@ export const LongVideo: React.FC<LongVideoProps> = (props) => {
         return (
           <React.Fragment key={ep.draftId}>
             <Sequence from={p.chapterFrom} durationInFrames={CHAPTER_CARD_FRAMES} name={`chapter-${i + 1}`}>
-              <Card title={ep.chapterTitle} category={ep.script.background} pose="point" index={i + 1} />
+              <Card title={ep.chapterTitle} category={ep.script.background} pose="point" index={i + 1} questionWord={props.channel.labels?.question} />
             </Sequence>
             <Sequence from={p.from} durationInFrames={p.durationInFrames} name={`episode-${i + 1}`}>
               <Episode script={ep.script} channel={props.channel} timeline={ep.timeline} voice={ep.audio.voice} variant="long" sfx={ep.audio.sfx} />

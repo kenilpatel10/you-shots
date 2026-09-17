@@ -54,7 +54,15 @@
         "thinking": "Bolt is thinking",
         "excited": "Bolt feels excited"
       },
-      "sidekickName": "Pip"
+      "sidekickName": "Pip",
+      "labels": {
+        "hook": "Big question",
+        "answer": "Here's why",
+        "wowFact": "Wow fact!",
+        "experiment": "Try this at home",
+        "reveal": "The answer is…",
+        "question": "Question"
+      }
     },
     "hi": {
       "label": "हिन्दी",
@@ -62,7 +70,7 @@
       "voice": {
         "engine": "espeak",
         "voiceId": "af_heart",
-        "speed": 1.0,
+        "speed": 1.2,
         "espeakVoice": "hi+f3"
       },
       "whisper": {
@@ -80,7 +88,15 @@
       "sidekickName": "पिप",
       "weeklyTitle": "बोल्ट का बड़ा हफ़्ता",
       "weeklyOutro": "अगले हफ़्ते मिलते हैं!",
-      "font": "Baloo 2"
+      "font": "Baloo 2",
+      "labels": {
+        "hook": "बड़ा सवाल",
+        "answer": "इसलिए!",
+        "wowFact": "मज़ेदार बात!",
+        "experiment": "घर पर आज़माओ",
+        "reveal": "जवाब है…",
+        "question": "सवाल"
+      }
     }
   },
   "music": {

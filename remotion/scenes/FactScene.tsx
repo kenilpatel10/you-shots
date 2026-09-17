@@ -5,14 +5,14 @@ import { colors } from "../theme";
 import type { SceneProps } from "./common";
 
 /** Wow fact: card plus a few soft sparkles drifting up around the card. Slow, no flashing. */
-export const FactScene: React.FC<SceneProps> = ({ script, layout, maxFontSize }) => {
+export const FactScene: React.FC<SceneProps> = ({ script, channel, layout, maxFontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
   const sparkles = [0.08, 0.3, 0.55, 0.78, 0.95];
   return (
     <>
-      <TitleCard text={script.onScreenText.wowFact} tag="Wow fact!" tagColor={colors.accent} box={layout.card} maxFontSize={maxFontSize} />
+      <TitleCard text={script.onScreenText.wowFact} tag={channel.labels?.wowFact ?? "Wow fact!"} tagColor={colors.accent} box={layout.card} maxFontSize={maxFontSize} />
       <svg style={{ position: "absolute", left: layout.card.left - 40, top: layout.card.top - 60, pointerEvents: "none" }} width={layout.card.width + 80} height={420}>
         {sparkles.map((fx, i) => {
           const y = 380 - ((t * 40 + i * 90) % 400);

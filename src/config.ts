@@ -22,6 +22,8 @@ const LanguageConfig = z.object({
   /** Labels for the feeling chip shown when Bolt's expression changes. */
   feelings: z.record(z.string(), z.string()).default({}),
   sidekickName: z.string().default("Pip"),
+  /** On-screen UI labels (section tags, reveal, chapter word). */
+  labels: z.record(z.string(), z.string()).default({}),
   weeklyTitle: z.string(),
   weeklyOutro: z.string(),
   font: z.string(),
