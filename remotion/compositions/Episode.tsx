@@ -111,7 +111,7 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
       <div style={{ position: "absolute", left: pipPos.left, top: pipPos.top }}>
         <AnimatedPip mood={pipMood} excitement={pipExcited} talking={pipTalking} size={pipSize} idPrefix={`pip-${script.topicId}`} />
       </div>
-      {feeling && sinceStart < 50 && !inGuess ? <FeelingChip text={feeling} left={L.bolt.centerX - L.bolt.size / 2 - 10} top={L.bolt.top + 20} enterFrame={0} frame={sinceStart} /> : null}
+      {feeling && sinceStart < 50 && !inGuess && !revealing ? <FeelingChip text={feeling} left={L.bolt.centerX - L.bolt.size / 2 - 10} top={L.bolt.top + 20} enterFrame={0} frame={sinceStart} /> : null}
       <Captions wordGroups={sections.map((s) => s.words)} box={L.captions} fontSize={variant === "short" ? 60 : 52} />
       <ProgressBar sections={sections} box={L.progress} />
     </AbsoluteFill>
