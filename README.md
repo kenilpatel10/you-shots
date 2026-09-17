@@ -134,7 +134,7 @@ See `.env.example`. Locally, copy it to `.env`. In Actions, add the same names a
 | Symptom | Fix |
 | --- | --- |
 | `Failed to launch the browser process` | Set `REMOTION_BROWSER_EXECUTABLE` to a Chrome/Chromium binary, or unset `REMOTION_PREFER_DOWNLOADED_BROWSER` and let Remotion download its headless shell. |
-| `Text-to-speech failed … Forbidden access to file: https://huggingface.co/…` | The machine cannot reach Hugging Face. Check the network/proxy; for an offline visual test use `--dry-run --placeholder-voice`. |
+| `Text-to-speech failed … Forbidden access to file: https://huggingface.co/…` | The machine cannot reach Hugging Face. Check the network/proxy; for an offline test render use `--dry-run --voice espeak` (bundled eSpeak-NG: robotic but clear) or set `ALLOW_FALLBACK_VOICE=1`. |
 | `whisper.cpp unavailable … using estimated word timings` | Install `git` and `cmake` (Linux/macOS); captions still work with estimated timings. |
 | Telegram `Bad Request: chat not found` | Press *Start* in the bot chat first; check `TELEGRAM_CHAT_ID`. |
 | YouTube `invalid_grant` after a week | Publish the OAuth consent screen (`docs/SETUP_YOUTUBE.md`), re-run `npm run auth:youtube`. |

@@ -66,7 +66,7 @@ async function main() {
     "",
     `Generated ${new Date().toISOString()} by \`npm run proof\` from the files in \`out/\`. Everything below was measured or extracted from the actual rendered MP4s — nothing is mocked.`,
     "",
-    "> Voice note: renders made in an environment without Hugging Face access use the clearly-labelled placeholder robot-babble voice (`voice=placeholder` in the log). The amplitude envelope is speech-like, so lip sync, captions, ducking and timing are exercised identically; on your machine or GitHub Actions the Kokoro voice is used and `generate` refuses to publish a placeholder-voiced draft.",
+    "> Voice note: renders made in an environment without Hugging Face access use the bundled **eSpeak-NG** voice (`voice=espeak` in the log) — real, intelligible speech with a robotic timbre. On your machine or GitHub Actions the natural **Kokoro** voice is used, and `generate` refuses to publish audio that does not come from the configured engine.",
     "",
   ];
 
