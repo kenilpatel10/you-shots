@@ -6,7 +6,9 @@ public/samples/
 public/sfx/
 public/music/*.mp3
 public/music/*.wav
-!public/silence.wav
+public/silence.wav
+public/fonts/*.woff2
+public/fonts/*-LICENSE.txt
 .env
 .env.local
 *.log
