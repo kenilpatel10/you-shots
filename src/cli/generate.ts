@@ -97,6 +97,10 @@ async function main() {
   }
   const voiceMode = opts.placeholderVoice ? "placeholder" : (opts.voice ?? "auto");
   if (voiceMode === "placeholder" && !opts.dryRun) throw new Error("--placeholder-voice is only allowed with --dry-run");
+  // Check delivery config before spending ~8 minutes on voice + render.
+  if (!opts.dryRun && !telegramConfigured()) {
+    throw new Error("Telegram is not configured (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID); use --dry-run for local runs");
+  }
 
   const { record, topic, fallbackFile } = await produce(state, topics, cfg.language);
   const draftId = opts.dryRun ? `dryrun-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id);
@@ -117,7 +121,6 @@ async function main() {
   }
   const engine = currentLanguage(cfg).voice.engine;
   if (result.voiceSource !== engine) throw new Error(`Refusing to publish: voice was ${result.voiceSource}, config engine is ${engine}`);
-  if (!telegramConfigured()) throw new Error("Telegram is not configured (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID); use --dry-run for local runs");
 
   const now = new Date().toISOString();
   let draft: Draft = {
