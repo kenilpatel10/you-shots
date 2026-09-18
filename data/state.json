@@ -8,6 +8,14 @@
       "redoTopicIds": [],
       "usedFallbackScripts": [],
       "weeklyCompiled": []
+    },
+    "hi": {
+      "usedTopicIds": [
+        "dinosaurs-004"
+      ],
+      "redoTopicIds": [],
+      "usedFallbackScripts": [],
+      "weeklyCompiled": []
     }
   },
   "drafts": [
@@ -48,11 +56,49 @@
       "scheduledFor": "2026-09-18T11:30:00.000Z",
       "uploadedAt": "2026-09-17T19:10:07.056Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-18-hi-dinosaurs-004",
+      "kind": "short",
+      "topicId": "dinosaurs-004",
+      "date": "2026-09-18",
+      "language": "hi",
+      "title": "डायनासोर किस रंग के थे",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-09-18T03:45:23.369Z",
+      "updatedAt": "2026-09-18T03:45:23.369Z",
+      "durationSeconds": 45.86666666666667,
+      "releaseTag": "draft-2026-09-18-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-18-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/571739055",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-18-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/571739085",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/571739092",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/571739112"
+      },
+      "description": "क्या आप जानते हैं कि डायनासोर सिर्फ हरे या भूरे नहीं थे? वैज्ञानिकों को पता चला है कि वे बहुत रंग-बिरंगे थे! अपने बच्चों के साथ इस मजेदार वीडियो को देखें और डायनासोर की सुंदर दुनिया के बारे में जानें.",
+      "tags": [
+        "dinosaurs",
+        "dinosaur colors",
+        "kids science",
+        "hindi shorts",
+        "bolt and pip",
+        "educational",
+        "डायनासोर",
+        "विज्ञान"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The experiment involves handling drawing materials (paper and colors), so it must literally include the words 'बड़ों से मदद लो' (ask a grown-up to help) to comply with the safety rules."
+      ],
+      "telegramMessageId": 12,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672819,
   "lastRuns": {
-    "generate": "2026-09-17T18:58:45.720Z",
+    "generate": "2026-09-18T03:45:23.369Z",
     "publish": "2026-09-18T00:13:49.883Z"
   }
 }
