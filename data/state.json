@@ -64,10 +64,10 @@
       "date": "2026-09-18",
       "language": "hi",
       "title": "डायनासोर किस रंग के थे",
-      "status": "drafted",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-18T03:45:23.369Z",
-      "updatedAt": "2026-09-18T03:45:23.369Z",
+      "updatedAt": "2026-09-18T04:43:32.183Z",
       "durationSeconds": 45.86666666666667,
       "releaseTag": "draft-2026-09-18-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-18-hi",
@@ -92,13 +92,17 @@
       "reviewerIssues": [
         "[attempt 1] The experiment involves handling drawing materials (paper and colors), so it must literally include the words 'बड़ों से मदद लो' (ask a grown-up to help) to comply with the safety rules."
       ],
+      "approvedAt": "2026-09-18T04:43:29.283Z",
       "telegramMessageId": 12,
+      "youtubeVideoId": "xJeMsgdMYzc",
+      "scheduledFor": "2026-09-18T11:30:00.000Z",
+      "uploadedAt": "2026-09-18T04:43:32.183Z",
       "includes": []
     }
   ],
-  "lastTelegramUpdateId": 171672819,
+  "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-18T03:45:23.369Z",
-    "publish": "2026-09-18T00:13:49.883Z"
+    "publish": "2026-09-18T04:43:32.494Z"
   }
 }
