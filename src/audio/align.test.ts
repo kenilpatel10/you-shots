@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { alignWords, mergeTokens } from "./align";
+import { alignWords, mergeTokens, normalizeWord, segmentWords, tokensLookGarbled } from "./align";
 
 describe("whisper alignment", () => {
   it("merges sub-word tokens into words", () => {
@@ -46,11 +46,40 @@ describe("whisper alignment", () => {
   });
 
   it("keeps timings monotonic", () => {
-    const { words } = alignWords("one two three", [
-      { text: " one", startMs: 0, endMs: 500 },
-      { text: " two", startMs: 300, endMs: 400 },
-      { text: " three", startMs: 380, endMs: 900 },
-    ], 0, 1000);
+    const { words } = alignWords(
+      "one two three",
+      [
+        { text: " one", startMs: 0, endMs: 500 },
+        { text: " two", startMs: 300, endMs: 400 },
+        { text: " three", startMs: 380, endMs: 900 },
+      ],
+      0,
+      1000,
+    );
     for (let i = 1; i < words.length; i++) expect(words[i]!.startMs).toBeGreaterThanOrEqual(words[i - 1]!.endMs);
+  });
+
+  it("keeps Devanagari vowel signs when normalising", () => {
+    expect(normalizeWord("डायनासोर!")).toBe("डायनासोर");
+    expect(normalizeWord("किस")).not.toBe(normalizeWord("कस"));
+  });
+
+  it("aligns Hindi from segment text when token pieces are garbled bytes", () => {
+    const script = "क्या डायनासोर रंग-बिरंगे होते थे?";
+    const garbled = [
+      { text: "\uFFFD\uFFFD", startMs: 0, endMs: 300 },
+      { text: "\uFFFD", startMs: 300, endMs: 600 },
+      { text: "\uFFFD\uFFFD\uFFFD", startMs: 600, endMs: 1200 },
+    ];
+    expect(tokensLookGarbled(garbled)).toBe(true);
+    expect(alignWords(script, garbled, 0, 3000).matched).toBe(0);
+    const bySegment = segmentWords([{ text: " क्या डायनासोर रंग-बिरंगे होते थे?", offsets: { from: 120, to: 2900 } }]);
+    expect(bySegment.map((t) => t.text.trim())).toEqual(["क्या", "डायनासोर", "रंग-बिरंगे", "होते", "थे?"]);
+    expect(bySegment[0]!.startMs).toBe(120);
+    expect(bySegment[4]!.endMs).toBe(2900);
+    const r = alignWords(script, bySegment, 0, 3000);
+    expect(r.matched).toBe(5);
+    expect(r.words[1]!.text).toBe("डायनासोर");
+    expect(r.words[1]!.startMs).toBeGreaterThan(r.words[0]!.startMs);
   });
 });

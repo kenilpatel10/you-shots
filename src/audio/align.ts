@@ -11,7 +11,41 @@ export function normalizeWord(w: string): string {
   return w
     .toLowerCase()
     .replace(/[‘’']/g, "")
-    .replace(/[^\p{L}\p{N}]+/gu, "");
+    .replace(/[^\p{L}\p{N}\p{M}]+/gu, ""); // keep combining marks: Devanagari vowel signs are \p{M}
+}
+
+/**
+ * whisper.cpp emits token-level text as byte pieces, so multi-byte scripts (Devanagari, …) arrive
+ * as U+FFFD fragments. Segment text is intact, so for those we spread each segment's words over
+ * the segment's time span instead of trusting the token pieces.
+ */
+export function segmentWords(segments: { text: string; offsets: { from: number; to: number } }[]): Token[] {
+  const out: Token[] = [];
+  for (const seg of segments) {
+    const words = seg.text
+      .trim()
+      .split(/\s+/)
+      .filter((w) => normalizeWord(w).length > 0);
+    if (!words.length) continue;
+    const span = Math.max(1, seg.offsets.to - seg.offsets.from);
+    const weights = words.map((w) => normalizeWord(w).length + 1);
+    const total = weights.reduce((a, b) => a + b, 0);
+    let cursor = seg.offsets.from;
+    words.forEach((w, i) => {
+      const dur = (weights[i]! / total) * span;
+      // Leading space: mergeTokens() treats it as a word boundary, like whisper's own tokens.
+      out.push({ text: ` ${w}`, startMs: Math.round(cursor), endMs: Math.round(cursor + dur) });
+      cursor += dur;
+    });
+  }
+  return out;
+}
+
+/** True when token text carries replacement characters, i.e. the byte pieces did not form whole characters. */
+export function tokensLookGarbled(tokens: Token[]): boolean {
+  if (!tokens.length) return false;
+  const bad = tokens.filter((t) => /\uFFFD/.test(t.text)).length;
+  return bad / tokens.length > 0.2;
 }
 
 /** Merge sub-word tokens (whisper emits " grown" "-" "up") into whitespace-delimited words. */

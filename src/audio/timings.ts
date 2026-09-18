@@ -11,7 +11,7 @@ import { CACHE_DIR } from "../lib/paths";
 import { env } from "../lib/env";
 import { createLogger } from "../lib/logger";
 import { ensureDir } from "../lib/fs";
-import { alignWords } from "./align";
+import { alignWords, segmentWords, tokensLookGarbled } from "./align";
 import { estimateWordTimings } from "./estimateTimings";
 import { encodeWav, resample, type PcmAudio } from "./wav";
 
@@ -81,8 +81,22 @@ export async function timeSection(opts: { text: string; audio: PcmAudio; model: 
       printOutput: false,
     });
     const { captions } = toCaptions({ whisperCppOutput: json });
-    const tokens = captions.map((c) => ({ text: c.text, startMs: c.startMs, endMs: c.endMs }));
-    const { words, matched } = alignWords(opts.text, tokens, 0, durationMs);
+    let tokens = captions.map((c) => ({ text: c.text, startMs: c.startMs, endMs: c.endMs }));
+    let result = alignWords(opts.text, tokens, 0, durationMs);
+    if (result.matched < total * 0.5 || tokensLookGarbled(tokens)) {
+      // Non-Latin scripts: token pieces are bytes; fall back to segment text spread over the segment.
+      const bySegment = segmentWords(json.transcription.map((t) => ({ text: t.text, offsets: t.offsets })));
+      const alt = alignWords(opts.text, bySegment, 0, durationMs);
+      if (alt.matched > result.matched) {
+        tokens = bySegment;
+        result = alt;
+      }
+    }
+    const { words, matched } = result;
+    if (matched === 0) {
+      log.warn(`whisper matched no words for ${opts.key}; using estimated timings`);
+      return { words: estimateWordTimings(opts.text, 0, durationMs), source: "estimated", total };
+    }
     if (matched < total * 0.5) log.warn(`Only ${matched}/${total} words matched for ${opts.key}; interpolating the rest`);
     return { words, source: "whisper", matched, total };
   } catch (err) {
