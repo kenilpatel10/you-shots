@@ -25,6 +25,12 @@ const LanguageConfig = z.object({
   handle: z.string().optional(),
   shortTags: z.array(z.string()).optional(),
   longTags: z.array(z.string()).optional(),
+  /** Appended to every video description (YouTube shows the first three above the title). */
+  hashtags: z.array(z.string()).default([]),
+  /** One line under the channel name on the banner and in the channel "about" text. */
+  tagline: z.string().default(""),
+  /** Channel "about" text (npm run branding writes it next to the avatar and banner). */
+  about: z.string().default(""),
   whisper: z.object({
     model: z.enum(["tiny", "tiny.en", "base", "base.en", "small", "small.en", "medium", "medium.en", "large-v3-turbo"]),
     language: z.string(),
@@ -133,16 +139,7 @@ export function configuredLanguages(cfg = loadChannelConfig()): string[] {
 }
 
 /** YouTube identity for a language: its own channel name/handle/tags, or the top-level defaults. */
-export function channelIdentity(
-  cfg: ChannelConfig,
-  language: string,
-): {
-  name: string;
-  handle: string;
-  shortTags: string[];
-  longTags: string[];
-  label: string;
-} {
+export function channelIdentity(cfg: ChannelConfig, language: string): { name: string; handle: string; shortTags: string[]; longTags: string[]; label: string; hashtags: string[]; tagline: string; about: string } {
   const lang = languageConfig(cfg, language);
   return {
     name: lang.channelName ?? cfg.name,
@@ -150,7 +147,16 @@ export function channelIdentity(
     shortTags: lang.shortTags ?? cfg.youtube.shortTags,
     longTags: lang.longTags ?? cfg.youtube.longTags,
     label: lang.label,
+    hashtags: lang.hashtags,
+    tagline: lang.tagline,
+    about: lang.about,
   };
+}
+
+/** Video description as uploaded: the script's text, then hashtags and the channel name. */
+export function finishDescription(description: string, identity: { name: string; hashtags: string[] }): string {
+  const tail = [identity.hashtags.join(" "), identity.name].filter(Boolean).join("\n");
+  return `${description.trim()}\n\n${tail}`.trim();
 }
 
 export function loadBannedWords(): BannedWords {

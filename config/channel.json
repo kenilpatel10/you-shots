@@ -65,7 +65,16 @@
         "experiment": "Try this at home",
         "reveal": "The answer is…",
         "question": "Question"
-      }
+      },
+      "hashtags": [
+        "#Shorts",
+        "#kids",
+        "#science",
+        "#learning",
+        "#whyquestions"
+      ],
+      "tagline": "Short, safe science answers for curious kids",
+      "about": "Bolt is a friendly robot and Pip is his little bird friend. Every day they answer one big “why?” question in under a minute: why is the sky blue, why do cats purr, why does ice float, and hundreds more.\n\nEvery video is original, made for kids, reviewed by a real person before it goes up, and ends with a safe thing to try at home (ask a grown-up first!). No ads inside the videos, no links, no asking for likes.\n\nNew Short every day at 5 pm IST. Stay curious, friends!"
     },
     "hi": {
       "label": "हिन्दी",
@@ -121,7 +130,16 @@
         "bolt aur pip",
         "hindi kids",
         "compilation"
-      ]
+      ],
+      "hashtags": [
+        "#Shorts",
+        "#बच्चे",
+        "#विज्ञान",
+        "#hindi",
+        "#क्यों"
+      ],
+      "tagline": "जिज्ञासु बच्चों के लिए छोटे, सुरक्षित विज्ञान के जवाब",
+      "about": "बोल्ट एक प्यारा रोबोट है और पिप उसका नन्हा दोस्त। हर दिन वे एक बड़े “क्यों?” का जवाब एक मिनट से कम में देते हैं: आसमान नीला क्यों है, बिल्ली घुरघुर क्यों करती है, बर्फ़ पानी पर क्यों तैरती है, और सैकड़ों सवाल।\n\nहर वीडियो मौलिक है, बच्चों के लिए बना है, अपलोड से पहले एक इंसान देखता है, और अंत में घर पर आज़माने की एक सुरक्षित चीज़ बताता है (पहले बड़ों से मदद लो!)। वीडियो के अंदर कोई विज्ञापन नहीं, कोई लिंक नहीं, लाइक माँगना नहीं।\n\nरोज़ शाम 5 बजे नया शॉर्ट। जिज्ञासु रहो, दोस्तों!"
     }
   },
   "music": {

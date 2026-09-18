@@ -11,7 +11,7 @@ import { Command } from "commander";
 import { chapterList, planLongVideo } from "../../remotion/long/plan";
 import { FPS } from "../../remotion/theme";
 import type { LongEpisode, LongVideoProps, ShortProps, ThumbnailProps } from "../../remotion/schema";
-import { channelIdentity, currentLanguage, loadChannelConfig } from "../config";
+import { channelIdentity, currentLanguage, finishDescription, loadChannelConfig } from "../config";
 import { listFallbackScripts } from "../content/fallback";
 import { ScriptRecordSchema } from "../content/schema";
 import { ensureMusic } from "../audio/music";
@@ -175,7 +175,7 @@ async function main() {
     .map((e) => e.chapterTitle.replace(/\?$/, ""))
     .slice(0, 2)
     .join(" · ")}${episodes.length > 2 ? " and more" : ""}`.slice(0, 100);
-  const description = `${cfg.characterName} answers ${episodes.length} big questions this week.\n\n${chapters}\n\n${episodes.map((e) => `• ${e.chapterTitle}`).join("\n")}`;
+  const description = finishDescription(`${cfg.characterName} answers ${episodes.length} big questions this week.\n\n${chapters}\n\n${episodes.map((e) => `• ${e.chapterTitle}`).join("\n")}`, identity);
   await writeJsonAtomic(path.join(dir, "meta.json"), {
     title,
     description,

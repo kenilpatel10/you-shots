@@ -21,7 +21,8 @@ Shorts into a 5–8 minute landscape video, also approval-gated.
 (Gemini script → independent review → Kokoro voice → whisper captions → Remotion render →
 Telegram `/approve` → YouTube upload) is scheduled on
 [youtube.com/@BoltPip-f5k](https://www.youtube.com/@BoltPip-f5k). Day-to-day operation is
-described in [docs/RUNBOOK.md](docs/RUNBOOK.md).
+described in [docs/RUNBOOK.md](docs/RUNBOOK.md); `npm run branding` renders each channel's avatar,
+banner and about text.
 
 ## How it works
 

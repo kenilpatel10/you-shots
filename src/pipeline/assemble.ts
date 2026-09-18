@@ -13,7 +13,7 @@ import { ensureMusic } from "../audio/music";
 import { ensureSfx } from "../audio/sfx";
 import { placeholderVoice } from "../audio/placeholder";
 import { synthesizeEspeak } from "../audio/espeak";
-import { synthesizeGemini } from "../audio/geminiTts";
+import { currentGeminiTtsModel, synthesizeGemini } from "../audio/geminiTts";
 import { timeSection } from "../audio/timings";
 import { synthesizeSection } from "../audio/tts";
 import { encodeWav, type PcmAudio } from "../audio/wav";
@@ -101,16 +101,32 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
 
   // 1. Voice per section
   opts.onProgress?.("voice");
-  const clips: PcmAudio[] = [];
+  let clips: PcmAudio[] = [];
   let voiceSource: VoiceSource = lang.voice.engine;
   const spoken = Object.fromEntries(SECTION_ORDER.map((k) => [k, sectionSpokenText(opts.script, k)])) as Record<(typeof SECTION_ORDER)[number], string>;
-  for (const [i, key] of SECTION_ORDER.entries()) {
-    const { audio, source } = await makeVoice(spoken[key], mode, i + 1);
-    voiceSource = source;
-    clips.push(audio);
-    await fs.writeFile(path.join(audioDir, `${key}.wav`), encodeWav(audio));
-    log.info(`  ${key}: ${(audio.samples.length / audio.sampleRate).toFixed(1)}s`);
+  // One voice per video: if the Gemini engine had to switch model mid-way (quota), start over so
+  // every section is spoken by the same model. Bounded by the number of models in the chain.
+  for (let pass = 0; pass < 4; pass++) {
+    clips = [];
+    let modelAtStart: string | null = null;
+    let restart = false;
+    for (const [i, key] of SECTION_ORDER.entries()) {
+      const { audio, source } = await makeVoice(spoken[key], mode, i + 1);
+      voiceSource = source;
+      const model = source === "gemini" ? currentGeminiTtsModel() : null;
+      if (i === 0) modelAtStart = model;
+      else if (model !== modelAtStart) {
+        log.warn(`Voice model changed from ${modelAtStart} to ${model} at "${key}"; re-voicing all sections with ${model}`);
+        restart = true;
+        break;
+      }
+      clips.push(audio);
+      await fs.writeFile(path.join(audioDir, `${key}.wav`), encodeWav(audio));
+      log.info(`  ${key}: ${(audio.samples.length / audio.sampleRate).toFixed(1)}s`);
+    }
+    if (!restart) break;
   }
+  if (clips.length !== SECTION_ORDER.length) throw new Error("Text-to-speech could not keep one voice for the whole video (model kept changing)");
 
   // 2. Normalise + concatenate (extra silence after the hook when there is a guess beat)
   const guessPause = opts.script.guess ? GUESS_PAUSE_MS : 0;

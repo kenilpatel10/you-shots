@@ -39,6 +39,12 @@ export function geminiTtsModels(): string[] {
 
 /** Models whose daily quota is spent in this process: skipped for the rest of the run. */
 const exhausted = new Set<string>();
+/** Model that produced the most recent audio: the assembler re-voices earlier sections if it changes. */
+let lastModel: string | null = null;
+
+export function currentGeminiTtsModel(): string | null {
+  return lastModel;
+}
 
 function isDailyQuota(message: string): boolean {
   return /PerDay|per day/i.test(message);
@@ -127,6 +133,7 @@ export async function synthesizeGemini(text: string, opts: GeminiTtsOptions): Pr
     if (exhausted.has(model)) continue;
     try {
       const out = await request(model, prompt, opts.voice);
+      lastModel = model;
       const sampleRate = parseL16Rate(out.mime);
       const samples = trimSilence(decodeL16(out.data), sampleRate, 0.008, 40);
       return { samples: fadeEdges(samples, sampleRate), sampleRate };

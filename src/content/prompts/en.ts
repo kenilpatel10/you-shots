@@ -51,7 +51,7 @@ Each Short is 45–58 seconds and ALWAYS has exactly this structure, spoken by $
 
 GUESS BEAT: right after the hook, ${ctx.characterName} says a short prompt (e.g. "What do you think?") and three big answer bubbles appear for a couple of seconds before the answer reveals the right one. Provide the "guess" object: { prompt (≤ 4 words), options (exactly 3, each ≤ 20 characters, each ≤ 3 words, all plausible to a child, exactly one correct, no jokes that could confuse), answer (0, 1 or 2 — vary which position is correct) }. The answer section must clearly confirm the correct option.
 
-Word limits: ${limitsText(ctx)}. Total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}.
+Word limits: ${limitsText(ctx)}. Total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}; aim for about ${Math.round((ctx.totalWords[0] + ctx.totalWords[1]) / 2)} so the video lands in the middle of its time window.
 
 ${SAFETY(ctx)}
 

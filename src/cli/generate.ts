@@ -9,7 +9,7 @@
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import { Command } from "commander";
-import { channelIdentity, currentLanguage, loadChannelConfig } from "../config";
+import { channelIdentity, currentLanguage, finishDescription, loadChannelConfig } from "../config";
 import { fallbackTopic, pickFallbackScript } from "../content/fallback";
 import { produceScript } from "../content/produceScript";
 import { ScriptRecordSchema, TopicsFileSchema, type ScriptRecord, type Topic } from "../content/schema";
@@ -137,6 +137,7 @@ async function main() {
 
   const { record, topic, fallbackFile } = await produce(state, topics, cfg.language);
   const draftId = opts.dryRun ? `dryrun-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id, cfg.language);
+  const identity = channelIdentity(cfg, cfg.language);
   log.info(`Draft ${draftId}: "${record.title}" (${record.source}${record.model ? `, ${record.model}` : ""})`);
 
   const result: AssembleResult = await assembleShort({
@@ -171,7 +172,7 @@ async function main() {
     assets: {},
     reviewerIssues: record.reviewerNotes,
     includes: [],
-    description: record.description,
+    description: finishDescription(record.description, identity),
     tags: record.tags,
   };
 
@@ -215,7 +216,6 @@ async function main() {
       crf: 30,
     });
   }
-  const identity = channelIdentity(cfg, cfg.language);
   await sendVideo(preview, `${record.title}\n${identity.name} · Draft ${draftId} · ${result.durationSeconds.toFixed(0)}s`);
   const messageId = await sendMessage(
     formatDraftMessage(draft, record, {

@@ -10,7 +10,7 @@ const HINDI_RULES = (ctx: PromptContext) =>
     ctx.wordLimits,
   )
     .map(([k, [a, b]]) => `${k}: ${a}–${b}`)
-    .join("; ")}; total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}. When anything is poured, filled or handled, the experiment must literally include "बड़ों से मदद लो". tags may be in Hindi or English.`;
+    .join("; ")}; total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}, aim for about ${Math.round((ctx.totalWords[0] + ctx.totalWords[1]) / 2)}. Prefer few short sentences over many. When anything is poured, filled or handled, the experiment must literally include "बड़ों से मदद लो". tags may be in Hindi or English.`;
 
 export const hi: PromptSet = {
   writerSystem: (ctx) => `${en.writerSystem(ctx)}\n\n${HINDI_RULES(ctx)}`,

@@ -56,6 +56,17 @@ npm run generate -- --dry-run      # full local render (needs Hugging Face acces
 | Telegram video missing, only text arrives | File over 50 MB | Shorts are ~12 MB; the weekly video is sent at 720p to stay under the limit. The link to the Release is always included. |
 | No draft today | A draft already exists for the date (`/status` shows it) | `/reject` it, then run *Generate* manually, or wait for tomorrow. |
 
+## Channel branding (once per channel)
+
+```bash
+npm run branding      # out/branding/<lang>/avatar.png, banner.png, about.txt
+```
+
+YouTube Studio → **Customisation → Branding**: upload `avatar.png` as the picture and `banner.png`
+as the banner image (its text sits inside the 1235×338 safe area every device shows). Paste
+`about.txt` into **Basic info → Description**. Tagline, hashtags and about text live in
+`config/channel.json → languages.<lang>`.
+
 ## Changing the show
 
 All tuning is in `config/channel.json` (voice speed, upload time, catchphrase, labels, tags) and

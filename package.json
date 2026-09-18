@@ -17,6 +17,7 @@
     "auth:youtube": "tsx src/cli/authYoutube.ts",
     "smoke": "tsx src/cli/smoke.ts",
     "proof": "tsx src/cli/proof.ts",
+    "branding": "tsx src/cli/branding.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
