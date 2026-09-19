@@ -19,7 +19,18 @@ async function main() {
   for (const language of configuredLanguages(cfg)) {
     const lang = languageConfig(cfg, language);
     const id = channelIdentity(cfg, language);
-    const channel = { name: id.name, handle: id.handle, characterName: cfg.characterName, catchphrase: lang.catchphrase, askGrownUp: lang.askGrownUp, language, feelings: lang.feelings, sidekickName: lang.sidekickName, labels: lang.labels };
+    const channel = {
+      name: id.name,
+      handle: id.handle,
+      brand: cfg.brand,
+      characterName: cfg.characterName,
+      catchphrase: lang.catchphrase,
+      askGrownUp: lang.askGrownUp,
+      language,
+      feelings: lang.feelings,
+      sidekickName: lang.sidekickName,
+      labels: lang.labels,
+    };
     const dir = path.join(OUT_DIR, "branding", language);
     await ensureDir(dir);
     const props = { channel, tagline: id.tagline };

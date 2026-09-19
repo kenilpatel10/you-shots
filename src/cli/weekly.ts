@@ -101,6 +101,7 @@ async function main() {
   const channel = {
     name: identity.name,
     handle: identity.handle,
+    brand: cfg.brand,
     characterName: cfg.characterName,
     catchphrase: lang.catchphrase,
     askGrownUp: lang.askGrownUp,
@@ -112,7 +113,7 @@ async function main() {
 
   let episodes: LongEpisode[];
   let includes: string[] = [];
-  const draftId = opts.dryRun ? "weekly-dryrun" : makeDraftId("weekly", week.key, "", cfg.language);
+  const draftId = opts.dryRun ? "weekly-dryrun" : makeDraftId("weekly", week.key, "", cfg.language, cfg.persona);
   if (opts.dryRun) {
     const samples = (await listFallbackScripts(cfg.language)).slice(0, 5);
     episodes = [];
@@ -140,11 +141,13 @@ async function main() {
       });
     }
   } else {
-    if (langState(state, cfg.language).weeklyCompiled.includes(week.key)) {
+    if (langState(state, cfg.language, cfg.persona).weeklyCompiled.includes(week.key)) {
       log.info(`Week ${week.key} (${cfg.language}) already compiled. Nothing to do.`);
       return;
     }
-    const inWeek = state.drafts.filter((d) => d.kind === "short" && d.language === cfg.language && (d.status === "approved" || d.status === "uploaded") && (!week.start || (d.date >= week.start && d.date <= week.end)));
+    const inWeek = state.drafts.filter(
+      (d) => d.kind === "short" && d.language === cfg.language && d.persona === cfg.persona && (d.status === "approved" || d.status === "uploaded") && (!week.start || (d.date >= week.start && d.date <= week.end)),
+    );
     if (inWeek.length < cfg.weeklyMinApproved) {
       log.info(`Only ${inWeek.length} approved ${cfg.language} Shorts in ${week.key} (need ${cfg.weeklyMinApproved}). Skipping.`);
       return;
@@ -216,6 +219,7 @@ async function main() {
     topicId: week.key,
     date: today,
     language: cfg.language,
+    persona: cfg.persona,
     title,
     status: "drafted",
     source: "llm",

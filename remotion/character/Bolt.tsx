@@ -20,26 +20,32 @@ export type BoltProps = {
   style?: React.CSSProperties;
   /** Unique id prefix so several Bolts on one page don't share gradient ids. */
   idPrefix?: string;
+  /** Body colour override (brand kits). Default: Bolt blue. */
+  bodyColor?: string;
 };
 
 const clamp01 = (n: number) => Math.max(0, Math.min(1, n));
+
+/** Darken (negative) or lighten a #rrggbb colour by a fraction. */
+export function shade(hex: string, amount: number): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+  if (!m) return hex;
+  const n = parseInt(m[1]!, 16);
+  const ch = (v: number) => Math.round(Math.max(0, Math.min(255, amount < 0 ? v * (1 + amount) : v + (255 - v) * amount)));
+  const r = ch((n >> 16) & 255);
+  const g = ch((n >> 8) & 255);
+  const b = ch(n & 255);
+  return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, "0")}`;
+}
 
 /**
  * Bolt — a small, round, friendly robot. Pure SVG, no hooks, fully deterministic
  * from props so he looks identical in every video.
  */
-export const Bolt: React.FC<BoltProps> = ({
-  pose = "idle",
-  expression = "happy",
-  mouthOpen = 0,
-  antennaGlow = 0,
-  blink = false,
-  armWaveDeg = 0,
-  bob = 0,
-  size = 400,
-  style,
-  idPrefix = "bolt",
-}) => {
+export const Bolt: React.FC<BoltProps> = ({ pose = "idle", expression = "happy", mouthOpen = 0, antennaGlow = 0, blink = false, armWaveDeg = 0, bob = 0, size = 400, style, idPrefix = "bolt", bodyColor }) => {
+  const body = bodyColor ?? colors.boltBody;
+  const bodyDark = bodyColor ? shade(bodyColor, -0.22) : colors.boltBodyDark;
+
   const p = poses[pose];
   const e = expressions[expression];
   const open = clamp01(mouthOpen);
@@ -71,12 +77,7 @@ export const Bolt: React.FC<BoltProps> = ({
         <circle cx={px} cy={py + 2} r={16} fill={colors.ink} />
         <circle cx={px - 6} cy={py - 6} r={6} fill={colors.white} />
         <circle cx={px + 6} cy={py + 6} r={2.6} fill={colors.white} opacity={0.9} />
-        {e.sparkle ? (
-          <path
-            d={side === "l" ? "M -22 -30 l 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" : "M 22 -30 l 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"}
-            fill={colors.boltAccent}
-          />
-        ) : null}
+        {e.sparkle ? <path d={side === "l" ? "M -22 -30 l 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" : "M 22 -30 l 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"} fill={colors.boltAccent} /> : null}
       </g>
     );
   };
@@ -104,10 +105,10 @@ export const Bolt: React.FC<BoltProps> = ({
     const thinkHand = p.handToChin && side === "r";
     return (
       <g transform={`translate(${sx} ${sy}) rotate(${shoulder})`}>
-        <rect x={-15} y={-10} width={30} height={upper + 10} rx={15} fill={colors.boltBody} stroke={colors.ink} strokeWidth={5} />
-        <circle cx={0} cy={0} r={11} fill={colors.boltBodyDark} />
+        <rect x={-15} y={-10} width={30} height={upper + 10} rx={15} fill={body} stroke={colors.ink} strokeWidth={5} />
+        <circle cx={0} cy={0} r={11} fill={bodyDark} />
         <g transform={`translate(0 ${upper}) rotate(${elbow})`}>
-          <rect x={-13} y={-8} width={26} height={fore + 8} rx={13} fill={colors.boltBody} stroke={colors.ink} strokeWidth={5} />
+          <rect x={-13} y={-8} width={26} height={fore + 8} rx={13} fill={body} stroke={colors.ink} strokeWidth={5} />
           {p.pointing && side === "r" ? (
             <g transform={`translate(0 ${fore + 6})`}>
               <circle cx={0} cy={0} r={19} fill={colors.boltBelly} stroke={colors.ink} strokeWidth={5} />
@@ -137,7 +138,7 @@ export const Bolt: React.FC<BoltProps> = ({
         </radialGradient>
         <linearGradient id={`${g}-body`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#5C93FF" />
-          <stop offset="100%" stopColor={colors.boltBody} />
+          <stop offset="100%" stopColor={body} />
         </linearGradient>
         <clipPath id={`${g}-bodyclip`}>
           <ellipse cx={cx} cy={bodyCy} rx={126} ry={138} />
@@ -158,8 +159,8 @@ export const Bolt: React.FC<BoltProps> = ({
 
         {/* feet */}
         <g>
-          <rect x={cx - 100} y={feetY} width={78} height={36} rx={18} fill={colors.boltBodyDark} stroke={colors.ink} strokeWidth={5} />
-          <rect x={cx + 22} y={feetY} width={78} height={36} rx={18} fill={colors.boltBodyDark} stroke={colors.ink} strokeWidth={5} />
+          <rect x={cx - 100} y={feetY} width={78} height={36} rx={18} fill={bodyDark} stroke={colors.ink} strokeWidth={5} />
+          <rect x={cx + 22} y={feetY} width={78} height={36} rx={18} fill={bodyDark} stroke={colors.ink} strokeWidth={5} />
         </g>
 
         {/* left arm behind body for a cleaner silhouette */}
@@ -168,13 +169,13 @@ export const Bolt: React.FC<BoltProps> = ({
         {/* body */}
         <ellipse cx={cx} cy={bodyCy} rx={126} ry={138} fill={`url(#${g}-body)`} stroke={colors.ink} strokeWidth={6} />
         <g clipPath={`url(#${g}-bodyclip)`}>
-          <ellipse cx={cx} cy={bodyCy + 118} rx={150} ry={62} fill={colors.boltBodyDark} opacity={0.55} />
+          <ellipse cx={cx} cy={bodyCy + 118} rx={150} ry={62} fill={bodyDark} opacity={0.55} />
           <ellipse cx={cx - 62} cy={bodyCy - 78} rx={40} ry={26} fill={colors.white} opacity={0.32} transform={`rotate(-28 ${cx - 62} ${bodyCy - 78})`} />
         </g>
 
         {/* side bolts (ears) */}
-        <circle cx={cx - 124} cy={bodyCy - 30} r={15} fill={colors.boltBodyDark} stroke={colors.ink} strokeWidth={5} />
-        <circle cx={cx + 124} cy={bodyCy - 30} r={15} fill={colors.boltBodyDark} stroke={colors.ink} strokeWidth={5} />
+        <circle cx={cx - 124} cy={bodyCy - 30} r={15} fill={bodyDark} stroke={colors.ink} strokeWidth={5} />
+        <circle cx={cx + 124} cy={bodyCy - 30} r={15} fill={bodyDark} stroke={colors.ink} strokeWidth={5} />
         <circle cx={cx - 124} cy={bodyCy - 30} r={5} fill={colors.boltAccent} />
         <circle cx={cx + 124} cy={bodyCy - 30} r={5} fill={colors.boltAccent} />
 
@@ -190,9 +191,7 @@ export const Bolt: React.FC<BoltProps> = ({
         <Brow x={cx - eyeDx} index={0} />
         <Brow x={cx + eyeDx} index={1} />
         <path d={mouthPath} fill={colors.ink} stroke={colors.ink} strokeWidth={6} strokeLinejoin="round" />
-        {open > 0.35 ? (
-          <ellipse cx={cx} cy={mouthY + 12 * smile + h * 0.72} rx={w * 0.45} ry={Math.max(2, h * 0.22)} fill={colors.boltCheek} opacity={Math.min(1, (open - 0.35) * 2.2)} />
-        ) : null}
+        {open > 0.35 ? <ellipse cx={cx} cy={mouthY + 12 * smile + h * 0.72} rx={w * 0.45} ry={Math.max(2, h * 0.22)} fill={colors.boltCheek} opacity={Math.min(1, (open - 0.35) * 2.2)} /> : null}
 
         {/* right arm in front */}
         <Arm side="r" />

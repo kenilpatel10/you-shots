@@ -9,7 +9,7 @@
  */
 import { createReadStream } from "node:fs";
 import { google } from "googleapis";
-import { defaultLanguage } from "../config";
+import { DEFAULT_PERSONA, defaultLanguage } from "../config";
 import { env } from "../lib/env";
 import { createLogger } from "../lib/logger";
 
@@ -23,18 +23,20 @@ export const LOCAL_REDIRECT = "http://localhost:5173/oauth2callback";
  * `language`) uses YOUTUBE_REFRESH_TOKEN; every other language needs its own suffixed secret
  * (YOUTUBE_REFRESH_TOKEN_HI) so a Hindi draft can never land on the English channel by accident.
  */
-export function refreshTokenVar(language?: string): string {
+export function refreshTokenVar(language?: string, persona: string = DEFAULT_PERSONA): string {
+  const up = (s: string) => s.toUpperCase().replace(/[^A-Z0-9]/g, "_");
+  if (persona !== DEFAULT_PERSONA) return `YOUTUBE_REFRESH_TOKEN_${up(persona)}_${up(language ?? defaultLanguage())}`;
   if (!language || language === defaultLanguage()) return "YOUTUBE_REFRESH_TOKEN";
-  return `YOUTUBE_REFRESH_TOKEN_${language.toUpperCase().replace(/[^A-Z0-9]/g, "_")}`;
+  return `YOUTUBE_REFRESH_TOKEN_${up(language)}`;
 }
 
-export function youtubeConfigured(language?: string): boolean {
-  return Boolean(env("YOUTUBE_CLIENT_ID") && env("YOUTUBE_CLIENT_SECRET") && env(refreshTokenVar(language)));
+export function youtubeConfigured(language?: string, persona?: string): boolean {
+  return Boolean(env("YOUTUBE_CLIENT_ID") && env("YOUTUBE_CLIENT_SECRET") && env(refreshTokenVar(language, persona)));
 }
 
-export function oauthClient(withRefresh = true, language?: string) {
+export function oauthClient(withRefresh = true, language?: string, persona?: string) {
   const client = new google.auth.OAuth2(env("YOUTUBE_CLIENT_ID"), env("YOUTUBE_CLIENT_SECRET"), LOCAL_REDIRECT);
-  if (withRefresh) client.setCredentials({ refresh_token: env(refreshTokenVar(language)) });
+  if (withRefresh) client.setCredentials({ refresh_token: env(refreshTokenVar(language, persona)) });
   return client;
 }
 
@@ -46,6 +48,8 @@ export type UploadInput = {
   publishAt: Date;
   categoryId: string;
   language: string;
+  persona?: string;
+  madeForKids: boolean;
   containsSyntheticMedia: boolean;
   notifySubscribers: boolean;
 };
@@ -71,7 +75,7 @@ export async function uploadVideo(input: UploadInput): Promise<{ videoId: string
       status: {
         privacyStatus: "private",
         publishAt: input.publishAt.toISOString(),
-        selfDeclaredMadeForKids: true,
+        selfDeclaredMadeForKids: input.madeForKids,
         containsSyntheticMedia: input.containsSyntheticMedia,
         license: "youtube",
         embeddable: true,
@@ -84,11 +88,8 @@ export async function uploadVideo(input: UploadInput): Promise<{ videoId: string
   return { videoId };
 }
 
-export async function setThumbnail(videoId: string, file: string, language?: string): Promise<void> {
-  const youtube = google.youtube({
-    version: "v3",
-    auth: oauthClient(true, language),
-  });
+export async function setThumbnail(videoId: string, file: string, language?: string, persona?: string): Promise<void> {
+  const youtube = google.youtube({ version: "v3", auth: oauthClient(true, language, persona) });
   await youtube.thumbnails.set({
     videoId,
     media: { mimeType: "image/png", body: createReadStream(file) },

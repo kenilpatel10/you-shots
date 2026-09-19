@@ -60,3 +60,14 @@ describe("script validator", () => {
     expect(validateScript({ ...sample, title: "Why is the sky blue?? 😱" }).ok).toBe(false);
   });
 });
+
+describe("audience modes", () => {
+  it("only demands 'ask a grown-up' for the kids audience", () => {
+    const script = { ...sample, experiment: "Try this! Fill a cup with water and drop in a coin. Watch the tiny waves wobble around. Do the waves get smaller as they spread out? Count how many rings you can see." };
+    const kids = validateScript(script, undefined, { audience: "kids" });
+    const general = validateScript(script, undefined, { audience: "general" });
+    expect(kids.ok).toBe(false);
+    expect((kids as { reasons: string[] }).reasons.join(" ")).toMatch(/grown-up/);
+    expect(general.ok || !(general as { reasons: string[] }).reasons.join(" ").includes("grown-up")).toBe(true);
+  });
+});

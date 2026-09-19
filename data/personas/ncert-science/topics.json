@@ -1,0 +1,392 @@
+[
+  {
+    "id": "c6-food-01",
+    "question": "Why do we need different kinds of food?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-food-02",
+    "question": "How can you test if a food has starch?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-fibre-01",
+    "question": "How does cotton become cloth?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-mat-01",
+    "question": "Why do some things float and others sink?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-sep-01",
+    "question": "How do we separate salt from sea water?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-chg-01",
+    "question": "Which changes can be undone and which cannot?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-plant-01",
+    "question": "Why do plant roots grow downwards?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-plant-02",
+    "question": "What do the different parts of a flower do?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-body-01",
+    "question": "How do our bones and muscles move us?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-liv-01",
+    "question": "What makes something living?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-mot-01",
+    "question": "Why do we measure length in metres?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-light-01",
+    "question": "Why do shadows form?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-light-02",
+    "question": "How does a pinhole camera work?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "c6-elec-01",
+    "question": "Why does a bulb glow only when the circuit is closed?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-mag-01",
+    "question": "Why does a compass needle point north?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-water-01",
+    "question": "Where does rain come from?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-air-01",
+    "question": "What is air made of?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c6-garb-01",
+    "question": "What is compost and why is it useful?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-nut-01",
+    "question": "How do plants make their own food?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-nut-02",
+    "question": "Why do we chew food?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-heat-01",
+    "question": "Why does a metal spoon in hot tea get hot?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-heat-02",
+    "question": "Why do we wear woollen clothes in winter?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-acid-01",
+    "question": "How do you know if something is an acid or a base?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-pchg-01",
+    "question": "Why does iron rust?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-wea-01",
+    "question": "What is the difference between weather and climate?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-wind-01",
+    "question": "Why does wind blow?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-wind-02",
+    "question": "How does a cyclone form?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "c7-soil-01",
+    "question": "Why are there different kinds of soil?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-resp-01",
+    "question": "Why do we breathe faster after running?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-trans-01",
+    "question": "Why does the heart beat?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-rep-01",
+    "question": "How do seeds travel to new places?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-mot7-01",
+    "question": "What is speed?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-elec7-01",
+    "question": "Why does a wire get hot when current flows?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-elec7-02",
+    "question": "How does an electromagnet work?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "c7-light7-01",
+    "question": "Why does a spoon show your image upside down?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "c7-water7-01",
+    "question": "Why is groundwater going down?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-forest-01",
+    "question": "Why are forests called green lungs?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c7-waste-01",
+    "question": "Where does the water from your sink go?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-crop-01",
+    "question": "Why do farmers plough the field?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-micro-01",
+    "question": "What are microorganisms?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-micro-02",
+    "question": "How does curd form from milk?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-fib8-01",
+    "question": "Why is plastic hard to get rid of?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-met-01",
+    "question": "Why do metals shine and ring?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-coal-01",
+    "question": "How was coal formed?",
+    "category": "weather-nature",
+    "difficulty": 2
+  },
+  {
+    "id": "c8-comb-01",
+    "question": "Why does a candle need air to burn?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-comb-02",
+    "question": "Why does water put out fire?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-cons-01",
+    "question": "What is an endangered species?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-cell-01",
+    "question": "What is a cell?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-rep8-01",
+    "question": "Why do some animals lay eggs and others give birth?",
+    "category": "animals",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-adol-01",
+    "question": "Why do teenagers grow so fast?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-force-01",
+    "question": "What is pressure?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-force-02",
+    "question": "Why does a sharp knife cut better?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-fric-01",
+    "question": "Why do we slip on a wet floor?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-fric-02",
+    "question": "Why are ball bearings used in wheels?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "c8-sound-01",
+    "question": "How does sound travel?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-sound-02",
+    "question": "Why can we not hear in space?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-chem-01",
+    "question": "How does electroplating work?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "c8-phen-01",
+    "question": "What causes lightning?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-phen-02",
+    "question": "What causes an earthquake?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-light8-01",
+    "question": "Why can we see things?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-light8-02",
+    "question": "Why do we see many images in two mirrors?",
+    "category": "how-things-work",
+    "difficulty": 2
+  },
+  {
+    "id": "c8-star-01",
+    "question": "Why do stars appear to move at night?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-star-02",
+    "question": "What is a constellation?",
+    "category": "space",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-poll-01",
+    "question": "What is the greenhouse effect?",
+    "category": "weather-nature",
+    "difficulty": 1
+  },
+  {
+    "id": "c8-poll-02",
+    "question": "Why is the Taj Mahal turning yellow?",
+    "category": "weather-nature",
+    "difficulty": 2
+  }
+]

@@ -13,6 +13,7 @@ const lang = channel.languages[channel.language as keyof typeof channel.language
 export const sampleChannel: ChannelProps = {
   name: channel.name,
   handle: channel.handle,
+  brand: {},
   characterName: channel.characterName,
   catchphrase: lang.catchphrase,
   askGrownUp: lang.askGrownUp,

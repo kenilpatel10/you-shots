@@ -1,0 +1,177 @@
+{
+  "audience": "general",
+  "audienceDescription": "school students aged 11–16 (classes 6–10), their parents and teachers",
+  "characterBio": "a small, friendly, round robot who loves science, explains like a favourite teacher, is a little clumsy and never sarcastic",
+  "characterVoice": "in first person, clearly and cheerfully, like an older sibling helping before an exam",
+  "experimentGuide": "one exam tip: how this concept is usually asked in a class test and the one-line answer to remember. Start with \"Exam tip!\"",
+  "extraRules": [
+    "Stay strictly within what NCERT textbooks for classes 6–10 say; use the textbook's own terms once, then explain them plainly.",
+    "Every answer must name the chapter concept in one line the student can write in an exam."
+  ],
+  "topicsFile": "data/personas/ncert-science/topics.json",
+  "fallbackDir": "data/personas/ncert-science/fallback-scripts",
+  "bannedWordsFile": "config/banned-words-general.json",
+  "brand": {
+    "primary": "#2FA36B",
+    "accent": "#FFB627"
+  },
+  "name": "Science in 60 Seconds",
+  "handle": "@science60s",
+  "characterName": "Bolt",
+  "language": "hi",
+  "timezone": "Asia/Kolkata",
+  "uploadTime": "18:00",
+  "maxShortsPerDay": 1,
+  "reminderAfterHours": 48,
+  "weeklyMinApproved": 5,
+  "youtube": {
+    "categoryId": "27",
+    "containsSyntheticMedia": true,
+    "notifySubscribers": true,
+    "shortTags": [
+      "ncert",
+      "class 6 science",
+      "class 7 science",
+      "class 8 science",
+      "science in hindi",
+      "exam tips",
+      "shorts"
+    ],
+    "longTags": [
+      "ncert",
+      "science",
+      "class 6",
+      "class 7",
+      "class 8",
+      "revision",
+      "hindi"
+    ]
+  },
+  "languages": {
+    "hi": {
+      "label": "हिन्दी",
+      "catchphrase": "समझ आया? तो याद रहेगा!",
+      "voice": {
+        "engine": "gemini",
+        "voiceId": "Leda",
+        "speed": 1.0,
+        "espeakVoice": "hi+f3",
+        "style": "warm, cheerful and clear, like an energetic storyteller for small children, at a lively natural pace, never slow or drawn out",
+        "wordsPerSecond": 2.3
+      },
+      "whisper": {
+        "model": "base",
+        "language": "hi"
+      },
+      "askGrownUp": "बड़ों से मदद लो",
+      "feelings": {
+        "curious": "बोल्ट सोच में है",
+        "happy": "बोल्ट खुश है",
+        "surprised": "बोल्ट हैरान है",
+        "thinking": "बोल्ट सोच रहा है",
+        "excited": "बोल्ट उत्साहित है"
+      },
+      "sidekickName": "पिप",
+      "weeklyTitle": "इस हफ़्ते का विज्ञान रिवीज़न",
+      "weeklyOutro": "अगले हफ़्ते फिर मिलेंगे!",
+      "font": "Baloo 2",
+      "labels": {
+        "hook": "सवाल",
+        "answer": "कॉन्सेप्ट",
+        "wowFact": "मज़ेदार तथ्य",
+        "experiment": "परीक्षा टिप",
+        "reveal": "जवाब है…",
+        "question": "सवाल"
+      },
+      "channelName": "60 सेकंड विज्ञान",
+      "handle": "@vigyan60s",
+      "shortTags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "shorts"
+      ],
+      "longTags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "compilation"
+      ],
+      "hashtags": [
+        "#Shorts",
+        "#NCERT",
+        "#विज्ञान",
+        "#class8",
+        "#examtips"
+      ],
+      "tagline": "NCERT विज्ञान, एक कॉन्सेप्ट, 60 सेकंड में",
+      "about": "बोल्ट हर दिन NCERT कक्षा 6–10 विज्ञान का एक कॉन्सेप्ट 60 सेकंड में समझाता है, एक परीक्षा टिप के साथ। सरल हिंदी, सही तथ्य, कोई बकवास नहीं।\n\nरोज़ शाम 6 बजे नया शॉर्ट। हर रविवार पूरे हफ़्ते का रिवीज़न वीडियो।"
+    },
+    "en": {
+      "label": "English",
+      "catchphrase": "Got it? Then you'll remember it!",
+      "voice": {
+        "engine": "kokoro",
+        "voiceId": "af_heart",
+        "speed": 1.06,
+        "espeakVoice": "en-us+f3",
+        "wordsPerSecond": 2.7
+      },
+      "whisper": {
+        "model": "base.en",
+        "language": "en"
+      },
+      "askGrownUp": "Ask a grown-up",
+      "weeklyTitle": "This Week's Science Revision",
+      "weeklyOutro": "See you next week!",
+      "font": "Fredoka",
+      "feelings": {
+        "curious": "Bolt feels curious",
+        "happy": "Bolt feels happy",
+        "surprised": "Bolt feels surprised",
+        "thinking": "Bolt is thinking",
+        "excited": "Bolt feels excited"
+      },
+      "sidekickName": "Pip",
+      "labels": {
+        "hook": "Question",
+        "answer": "The concept",
+        "wowFact": "Fun fact",
+        "experiment": "Exam tip",
+        "reveal": "The answer is…",
+        "question": "Question"
+      },
+      "hashtags": [
+        "#Shorts",
+        "#NCERT",
+        "#science",
+        "#class8",
+        "#examtips"
+      ],
+      "tagline": "One NCERT science concept, 60 seconds, one exam tip",
+      "about": "Bolt explains one concept from NCERT science (classes 6–10) every day in 60 seconds, with the exam tip that goes with it. Simple words, correct facts, no fluff.\n\nNew Short every day at 6 pm IST. Every Sunday, the whole week's revision in one video.",
+      "channelName": "Science in 60 Seconds",
+      "handle": "@science60s"
+    }
+  },
+  "music": {
+    "enabled": true,
+    "file": "music/bolt-theme.mp3",
+    "volume": 0.14,
+    "duckedVolume": 0.045,
+    "fadeSeconds": 1.5
+  },
+  "colors": {
+    "primary": "#3C7DFF",
+    "accent": "#FFB627",
+    "highlight": "#FF6B6B",
+    "ink": "#1E2A44",
+    "paper": "#FFFDF7"
+  }
+}

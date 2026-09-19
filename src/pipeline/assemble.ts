@@ -6,7 +6,7 @@ import path from "node:path";
 import { promises as fs } from "node:fs";
 import { FPS } from "../../remotion/theme";
 import { GUESS_PAUSE_MS, SIGNOFF_TAIL_FRAMES, type ShortProps, type Timeline } from "../../remotion/schema";
-import { currentLanguage, loadChannelConfig } from "../config";
+import { channelIdentity, currentLanguage, loadChannelConfig } from "../config";
 import { SECTION_ORDER } from "../audio/estimateTimings";
 import { mixSections } from "../audio/mix";
 import { ensureMusic } from "../audio/music";
@@ -93,6 +93,7 @@ async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{
 export async function assembleShort(opts: AssembleOptions): Promise<AssembleResult> {
   const cfg = loadChannelConfig();
   const lang = currentLanguage(cfg);
+  const identity = channelIdentity(cfg, cfg.language);
   const mode = opts.voiceMode ?? "auto";
   const dir = draftDir(opts.draftId);
   const audioDir = path.join(dir, "audio");
@@ -161,7 +162,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
     fps: FPS,
     sections,
     expressionCues: opts.script.expressionCues,
-    grownUp: needsGrownUp(opts.script.experiment),
+    grownUp: cfg.audience === "kids" && needsGrownUp(opts.script.experiment),
     timingSource,
     gapMs: 0,
   });
@@ -208,8 +209,9 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       guess: opts.script.guess,
     },
     channel: {
-      name: cfg.name,
-      handle: cfg.handle,
+      name: identity.name,
+      handle: identity.handle,
+      brand: cfg.brand,
       characterName: cfg.characterName,
       catchphrase: lang.catchphrase,
       askGrownUp: lang.askGrownUp,

@@ -5,7 +5,7 @@
 import { createLogger } from "../lib/logger";
 import { reviewScript } from "./reviewer";
 import { validateScript } from "./validate";
-import { currentLanguage } from "../config";
+import { currentLanguage, loadChannelConfig } from "../config";
 import { writeScript } from "./writer";
 import type { Script, ScriptRecord, Topic } from "./schema";
 
@@ -49,9 +49,7 @@ export async function produceScript(topic: Topic, language: string): Promise<Pro
       }
     }
 
-    const validation = validateScript(candidate, undefined, {
-      wordsPerSecond: currentLanguage().voice.wordsPerSecond,
-    });
+    const validation = validateScript(candidate, undefined, { wordsPerSecond: wps, audience: loadChannelConfig().audience });
     if (validation.ok) {
       return {
         ok: true,

@@ -23,8 +23,11 @@ jobs:
       YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
       YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
       YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-      # One extra line per additional channel language (secret name = YOUTUBE_REFRESH_TOKEN_<LANG>).
+      # One extra line per additional channel: YOUTUBE_REFRESH_TOKEN_<LANG> for the default persona,
+      # YOUTUBE_REFRESH_TOKEN_<PERSONA>_<LANG> for others (see docs/PERSONAS.md).
       YOUTUBE_REFRESH_TOKEN_HI: ${{ secrets.YOUTUBE_REFRESH_TOKEN_HI }}
+      YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_HI: ${{ secrets.YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_HI }}
+      YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_EN: ${{ secrets.YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_EN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CHANNEL_LANGUAGE: ${{ vars.CHANNEL_LANGUAGE }}
     steps:

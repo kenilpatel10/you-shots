@@ -18,9 +18,9 @@ import { hasLlm } from "../llm";
 import { LlmUnavailableError } from "../llm/types";
 import { envBool } from "../lib/env";
 import { readJson } from "../lib/fs";
+import { ROOT } from "../lib/paths";
 import { createLogger } from "../lib/logger";
 import { runCli } from "../lib/cli";
-import { TOPICS_FILE } from "../lib/paths";
 import { todayInZone } from "../lib/time";
 import { assembleShort, type AssembleResult } from "../pipeline/assemble";
 import { releasesConfigured, storeDraft } from "../publish/releases";
@@ -54,7 +54,7 @@ type Opts = {
 const opts = program.opts<Opts>();
 
 async function loadTopics(): Promise<Topic[]> {
-  return TopicsFileSchema.parse(await readJson(TOPICS_FILE));
+  return TopicsFileSchema.parse(await readJson(path.resolve(ROOT, loadChannelConfig().topicsFile)));
 }
 
 type Produced = { record: ScriptRecord; topic: Topic; fallbackFile?: string };
@@ -70,7 +70,7 @@ async function produce(state: State, topics: Topic[], language: string): Promise
   const forced = opts.topic ? topics.find((t) => t.id === opts.topic) : undefined;
   if (opts.topic && !forced) throw new Error(`Unknown topic id ${opts.topic}`);
 
-  const ls = langState(state, language);
+  const ls = langState(state, language, loadChannelConfig().persona);
   if (!useFallback) {
     const excluded = [...ls.usedTopicIds];
     for (let i = 0; i < 3; i++) {
@@ -122,9 +122,9 @@ async function main() {
   const topics = await loadTopics();
 
   if (!opts.dryRun && !opts.force) {
-    const existing = draftForDate(state, today, "short", cfg.language);
+    const existing = draftForDate(state, today, "short", cfg.language, cfg.persona);
     if (existing) {
-      log.info(`A ${cfg.language} draft already exists for ${today} (${existing.id}, ${existing.status}). Nothing to do.`);
+      log.info(`A ${cfg.persona}/${cfg.language} draft already exists for ${today} (${existing.id}, ${existing.status}). Nothing to do.`);
       return;
     }
   }
@@ -136,7 +136,7 @@ async function main() {
   }
 
   const { record, topic, fallbackFile } = await produce(state, topics, cfg.language);
-  const draftId = opts.dryRun ? `dryrun-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id, cfg.language);
+  const draftId = opts.dryRun ? `dryrun-${cfg.persona}-${cfg.language}-${today}-${topic.id}` : makeDraftId("short", today, topic.id, cfg.language, cfg.persona);
   const identity = channelIdentity(cfg, cfg.language);
   log.info(`Draft ${draftId}: "${record.title}" (${record.source}${record.model ? `, ${record.model}` : ""})`);
 
@@ -163,6 +163,7 @@ async function main() {
     topicId: topic.id,
     date: today,
     language: cfg.language,
+    persona: cfg.persona,
     title: record.title,
     status: "drafted",
     source: record.source,
@@ -178,8 +179,8 @@ async function main() {
 
   if (releasesConfigured()) {
     const stored = await storeDraft({
-      tag: `draft-${today}-${cfg.language}`,
-      title: `Draft ${today} (${cfg.language}): ${record.title}`,
+      tag: `draft-${today}-${cfg.persona === "bolt-pip" ? cfg.language : `${cfg.persona}-${cfg.language}`}`,
+      title: `Draft ${today} (${cfg.persona}/${cfg.language}): ${record.title}`,
       notes: `Automated draft for review. Topic: ${topic.question}\n\nApprove or reject via Telegram.`,
       video: result.videoPath,
       script: path.join(result.dir, "script.json"),
@@ -232,12 +233,17 @@ async function main() {
   draft.telegramMessageId = messageId;
 
   let next = upsertDraft(state, draft);
-  const ls = langState(next, cfg.language);
-  next = withLangState(next, cfg.language, {
-    usedTopicIds: ls.usedTopicIds.includes(topic.id) ? ls.usedTopicIds : [...ls.usedTopicIds, topic.id],
-    redoTopicIds: ls.redoTopicIds.filter((id) => id !== topic.id),
-    usedFallbackScripts: fallbackFile ? [...ls.usedFallbackScripts, fallbackFile] : ls.usedFallbackScripts,
-  });
+  const ls = langState(next, cfg.language, cfg.persona);
+  next = withLangState(
+    next,
+    cfg.language,
+    {
+      usedTopicIds: ls.usedTopicIds.includes(topic.id) ? ls.usedTopicIds : [...ls.usedTopicIds, topic.id],
+      redoTopicIds: ls.redoTopicIds.filter((id) => id !== topic.id),
+      usedFallbackScripts: fallbackFile ? [...ls.usedFallbackScripts, fallbackFile] : ls.usedFallbackScripts,
+    },
+    cfg.persona,
+  );
   next = { ...next, lastRuns: { ...next.lastRuns, generate: now } };
   await saveState(next);
   log.info(`Draft ${draftId} sent for review.`);

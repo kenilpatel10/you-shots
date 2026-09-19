@@ -4,18 +4,19 @@
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { FALLBACK_DIR } from "../lib/paths";
+import { FALLBACK_DIR, ROOT } from "../lib/paths";
+import { loadChannelConfig } from "../config";
 import { ScriptSchema, type Script, type Topic } from "./schema";
 
 export type FallbackScript = { file: string; script: Script };
 
 /** English scripts live in data/fallback-scripts/, other languages in data/fallback-scripts/<lang>/. */
-export function fallbackDirFor(language: string): string {
-  return language === "en" ? FALLBACK_DIR : path.join(FALLBACK_DIR, language);
+export function fallbackDirFor(language: string, baseDir = FALLBACK_DIR): string {
+  return language === "en" ? baseDir : path.join(baseDir, language);
 }
 
-export async function listFallbackScripts(language = "en"): Promise<FallbackScript[]> {
-  const dir = fallbackDirFor(language);
+export async function listFallbackScripts(language = "en", baseDir?: string): Promise<FallbackScript[]> {
+  const dir = fallbackDirFor(language, baseDir ?? path.resolve(ROOT, loadChannelConfig().fallbackDir));
   let files: string[] = [];
   try {
     files = (await fs.readdir(dir)).filter((f) => f.endsWith(".json")).sort();
@@ -31,8 +32,8 @@ export async function listFallbackScripts(language = "en"): Promise<FallbackScri
 }
 
 /** Pick an unused fallback script, preferring one whose topic has not been used yet. */
-export async function pickFallbackScript(usedFiles: string[], usedTopicIds: string[], preferTopicId?: string, language = "en"): Promise<FallbackScript | null> {
-  const all = await listFallbackScripts(language);
+export async function pickFallbackScript(usedFiles: string[], usedTopicIds: string[], preferTopicId?: string, language = "en", baseDir?: string): Promise<FallbackScript | null> {
+  const all = await listFallbackScripts(language, baseDir);
   const unused = all.filter((f) => !usedFiles.includes(f.file));
   if (preferTopicId) {
     const exact = unused.find((f) => f.script.topicId === preferTopicId);

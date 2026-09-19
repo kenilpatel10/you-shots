@@ -2,6 +2,7 @@
  * One-time local helper: obtain a YouTube OAuth refresh token.
  *   npm run auth:youtube                    # default language's channel → YOUTUBE_REFRESH_TOKEN
  *   npm run auth:youtube -- --language hi   # the Hindi channel → YOUTUBE_REFRESH_TOKEN_HI
+ *   npm run auth:youtube -- --persona ncert-science --language hi   # another persona → YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_HI
  *   npm run auth:youtube -- --whoami [--language hi]   # which channel the stored token uploads to
  * Opens a consent URL, listens on http://localhost:5173/oauth2callback, prints the refresh token.
  */
@@ -28,7 +29,9 @@ if (!clientId || !clientSecret) {
 
 const langFlag = process.argv.indexOf("--language");
 const language = langFlag >= 0 ? process.argv[langFlag + 1] : undefined;
-const tokenVar = refreshTokenVar(language);
+const personaFlag = process.argv.indexOf("--persona");
+const persona = personaFlag >= 0 ? process.argv[personaFlag + 1] : undefined;
+const tokenVar = refreshTokenVar(language, persona);
 
 if (process.argv.includes("--whoami")) {
   const rt = env(tokenVar);

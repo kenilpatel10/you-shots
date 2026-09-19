@@ -81,7 +81,7 @@ const ENGAGEMENT_BAIT = [/watch (till|until) the end/i, /don'?t (skip|scroll)/i,
 const STATS = [/\b\d+(\.\d+)?\s?(%|percent)/i, /\bstud(y|ies)\b/i, /\bscientists (say|found|discovered)/i, /\bresearch(ers)?\b/i, /\baccording to\b/i];
 const URLS = [/https?:\/\//i, /\bwww\./i, /\.com\b/i, /\bapp\b/i];
 
-export type ValidateOptions = { wordsPerSecond?: number };
+export type ValidateOptions = { wordsPerSecond?: number; audience?: "kids" | "general" };
 
 export function validateScript(input: unknown, banned: BannedWords = loadBannedWords(), options: ValidateOptions = {}): ValidationResult {
   const reasons: string[] = [];
@@ -130,7 +130,7 @@ export function validateScript(input: unknown, banned: BannedWords = loadBannedW
   for (const re of STATS) if (re.test(spoken)) reasons.push(`invented statistics/studies: ${re.source}`);
   for (const re of URLS) if (re.test(everything)) reasons.push(`online reference: ${re.source}`);
 
-  if (needsGrownUp(s.experiment, banned.requiredWhenHandling) && !hasGrownUpPhrase(s.experiment, banned.requiredWhenHandling)) {
+  if ((options.audience ?? "kids") === "kids" && needsGrownUp(s.experiment, banned.requiredWhenHandling) && !hasGrownUpPhrase(s.experiment, banned.requiredWhenHandling)) {
     reasons.push('experiment involves pouring/handling but does not say "ask a grown-up"');
   }
   if (/\b(eat|eating|taste|tasting|lick|drink|drinking|swallow)\b|\b(in|into|near) (your|the|their) (mouth|eyes?|ears?|nose)\b/i.test(s.experiment)) {

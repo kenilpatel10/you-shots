@@ -1,0 +1,74 @@
+[
+  {
+    "id": "study-001",
+    "question": "How do I remember formulas?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "study-002",
+    "question": "Why does sleep help memory?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "study-003",
+    "question": "How do I stop wasting time on my phone while studying?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "study-004",
+    "question": "How should I revise the night before an exam?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "study-005",
+    "question": "Why is writing notes by hand better?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "study-006",
+    "question": "How do toppers make a timetable?",
+    "category": "everyday-things",
+    "difficulty": 1
+  },
+  {
+    "id": "study-007",
+    "question": "How do I read a chapter faster?",
+    "category": "how-things-work",
+    "difficulty": 1
+  },
+  {
+    "id": "study-008",
+    "question": "What should I eat before an exam?",
+    "category": "food",
+    "difficulty": 1
+  },
+  {
+    "id": "study-009",
+    "question": "How do I stop panicking in the exam hall?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "study-010",
+    "question": "Why do I forget what I studied yesterday?",
+    "category": "human-body",
+    "difficulty": 1
+  },
+  {
+    "id": "study-011",
+    "question": "How do I study when I don't feel like it?",
+    "category": "feelings-friendship",
+    "difficulty": 1
+  },
+  {
+    "id": "study-012",
+    "question": "How do I use old question papers?",
+    "category": "how-things-work",
+    "difficulty": 1
+  }
+]

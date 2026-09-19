@@ -128,6 +128,14 @@ docs/              SETUP_*, CONTENT_POLICY, DECISIONS, HINDI, TOOL_EVALUATION, P
 - Uploads are always `private` + `publishAt`, `selfDeclaredMadeForKids: true`, with the synthetic
   content disclosure set (`config/channel.json → youtube`).
 
+## Personas: one pipeline, any channel
+
+A persona is a full channel definition (character, audience, tone, topics, word lists, colours,
+logo, YouTube identity). `bolt-pip` is the default; `config/personas/` ships `ncert-science`
+(NCERT class 6–10 science, general audience, exam tips) and `demo-coaching` (a client brand kit
+for the explainer-video service). `CHANNELS=["bolt-pip/en","ncert-science/hi"]` runs any mix.
+See [docs/PERSONAS.md](docs/PERSONAS.md).
+
 ## Languages and channels
 
 English and **Hindi** are built in, and each language is its own YouTube channel run from the same

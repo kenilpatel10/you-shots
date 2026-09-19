@@ -26,7 +26,7 @@ export const SignOffScene: React.FC<SceneProps> = ({ section, channel, layout, m
         }}
       >
         <div style={{ fontSize: 84, fontWeight: fonts.weightBold, color: colors.ink, lineHeight: 1.05 }}>{channel.name}</div>
-        <div style={{ fontSize: 44, fontWeight: fonts.weightSemi, color: colors.primary, marginTop: 10 }}>{channel.handle}</div>
+        <div style={{ fontSize: 44, fontWeight: fonts.weightSemi, color: channel.brand?.primary ?? colors.primary, marginTop: 10 }}>{channel.handle}</div>
       </div>
     </>
   );

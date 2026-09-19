@@ -3,6 +3,8 @@ import { promises as fs } from "node:fs";
 import { STATE_FILE } from "../lib/paths";
 import { writeJsonAtomic } from "../lib/fs";
 
+const DEFAULT_PERSONA = "bolt-pip";
+
 export const DRAFT_STATUSES = ["drafted", "approved", "rejected", "uploaded", "failed"] as const;
 export type DraftStatus = (typeof DRAFT_STATUSES)[number];
 
@@ -14,6 +16,7 @@ export const DraftSchema = z.object({
   topicId: z.string(),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   language: z.string().default("en"),
+  persona: z.string().default("bolt-pip"),
   title: z.string(),
   status: z.enum(DRAFT_STATUSES),
   source: z.enum(["llm", "fallback"]).default("llm"),
@@ -61,8 +64,9 @@ export const LanguageStateSchema = z.object({
 export type LanguageState = z.infer<typeof LanguageStateSchema>;
 
 export const StateSchema = z.object({
-  version: z.literal(2),
-  perLanguage: z.record(z.string(), LanguageStateSchema).default({}),
+  version: z.literal(3),
+  /** Keyed by "persona/lang" (see channelKey). */
+  perChannel: z.record(z.string(), LanguageStateSchema).default({}),
   drafts: z.array(DraftSchema).default([]),
   lastTelegramUpdateId: z.number().nullable().default(null),
   lastRuns: z
@@ -75,7 +79,7 @@ export const StateSchema = z.object({
 });
 export type State = z.infer<typeof StateSchema>;
 
-/** v1 kept one channel's topic history at the top level; v2 keys it by language. */
+/** v1 kept one channel's topic history at the top level; v2 keyed it by language; v3 by persona/language. */
 const StateV1Schema = z.object({
   version: z.literal(1),
   usedTopicIds: z.array(z.string()).default([]),
@@ -93,45 +97,49 @@ const StateV1Schema = z.object({
     .default({}),
 });
 
+const StateV2Schema = z.object({
+  version: z.literal(2),
+  perLanguage: z.record(z.string(), LanguageStateSchema).default({}),
+  drafts: z.array(DraftSchema).default([]),
+  lastTelegramUpdateId: z.number().nullable().default(null),
+  lastRuns: z.object({ generate: iso.optional(), publish: iso.optional(), weekly: iso.optional() }).default({}),
+});
+
 export function migrateState(raw: unknown): State {
   const version = (raw as { version?: number } | null)?.version;
   if (version === 1) {
     const v1 = StateV1Schema.parse(raw);
     const language = v1.drafts[0]?.language ?? "en";
-    return StateSchema.parse({
+    return migrateState({
       version: 2,
-      perLanguage: {
-        [language]: {
-          usedTopicIds: v1.usedTopicIds,
-          redoTopicIds: v1.redoTopicIds,
-          usedFallbackScripts: v1.usedFallbackScripts,
-          weeklyCompiled: v1.weeklyCompiled,
-        },
-      },
+      perLanguage: { [language]: { usedTopicIds: v1.usedTopicIds, redoTopicIds: v1.redoTopicIds, usedFallbackScripts: v1.usedFallbackScripts, weeklyCompiled: v1.weeklyCompiled } },
       drafts: v1.drafts,
       lastTelegramUpdateId: v1.lastTelegramUpdateId,
       lastRuns: v1.lastRuns,
     });
   }
+  if (version === 2) {
+    const v2 = StateV2Schema.parse(raw);
+    const perChannel = Object.fromEntries(Object.entries(v2.perLanguage).map(([lang, ls]) => [`${DEFAULT_PERSONA}/${lang}`, ls]));
+    return StateSchema.parse({ version: 3, perChannel, drafts: v2.drafts, lastTelegramUpdateId: v2.lastTelegramUpdateId, lastRuns: v2.lastRuns });
+  }
   return StateSchema.parse(raw);
 }
 
 export function emptyState(): State {
-  return StateSchema.parse({ version: 2 });
+  return StateSchema.parse({ version: 3 });
 }
 
-export function langState(state: State, language: string): LanguageState {
-  return state.perLanguage[language] ?? LanguageStateSchema.parse({});
+const keyOf = (persona: string, language: string) => `${persona}/${language}`;
+
+/** Bookkeeping for one channel (persona + language). */
+export function langState(state: State, language: string, persona = DEFAULT_PERSONA): LanguageState {
+  return state.perChannel[keyOf(persona, language)] ?? LanguageStateSchema.parse({});
 }
 
-export function withLangState(state: State, language: string, patch: Partial<LanguageState>): State {
-  return {
-    ...state,
-    perLanguage: {
-      ...state.perLanguage,
-      [language]: { ...langState(state, language), ...patch },
-    },
-  };
+export function withLangState(state: State, language: string, patch: Partial<LanguageState>, persona = DEFAULT_PERSONA): State {
+  const k = keyOf(persona, language);
+  return { ...state, perChannel: { ...state.perChannel, [k]: { ...langState(state, language, persona), ...patch } } };
 }
 
 export async function loadState(file = STATE_FILE): Promise<State> {
@@ -197,11 +205,12 @@ export function draftsByStatus(state: State, status: DraftStatus, kind?: Draft["
   return state.drafts.filter((d) => d.status === status && (kind === undefined || d.kind === kind));
 }
 
-export function draftForDate(state: State, date: string, kind: Draft["kind"] = "short", language?: string): Draft | undefined {
-  return state.drafts.find((d) => d.kind === kind && d.date === date && d.status !== "rejected" && (language === undefined || d.language === language));
+export function draftForDate(state: State, date: string, kind: Draft["kind"] = "short", language?: string, persona?: string): Draft | undefined {
+  return state.drafts.find((d) => d.kind === kind && d.date === date && d.status !== "rejected" && (language === undefined || d.language === language) && (persona === undefined || d.persona === persona));
 }
 
-/** Ids carry the language so two channels can cover the same topic on the same day. */
-export function makeDraftId(kind: Draft["kind"], date: string, topicId: string, language = "en"): string {
-  return kind === "short" ? `short-${date}-${language}-${topicId}` : `weekly-${date}-${language}`;
+/** Ids carry the channel (persona for non-default personas, then language) so channels never collide. */
+export function makeDraftId(kind: Draft["kind"], date: string, topicId: string, language = "en", persona = DEFAULT_PERSONA): string {
+  const ch = persona === DEFAULT_PERSONA ? language : `${persona}-${language}`;
+  return kind === "short" ? `short-${date}-${ch}-${topicId}` : `weekly-${date}-${ch}`;
 }

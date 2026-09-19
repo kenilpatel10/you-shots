@@ -14,10 +14,11 @@ Everything runs on GitHub Actions. Your only recurring job is to answer one Tele
 
 Other commands: `/status` (pipeline state), `/help`.
 
-**Several channels (languages):** the daily run produces one draft per language listed in the
-`CHANNEL_LANGUAGES` variable, each Telegram message names its channel, and the draft id carries the
-language (`short-2026-09-19-hi-ocean-002`). Commands are identical; each channel has its own upload
-slot per day and its own token (`YOUTUBE_REFRESH_TOKEN_HI`).
+**Several channels:** the daily run produces one draft per entry in the `CHANNELS` variable
+(`["bolt-pip/en","bolt-pip/hi","ncert-science/hi"]`), each Telegram message names its channel, and
+the draft id carries the channel (`short-2026-09-19-ncert-science-hi-c8-comb-01`). Commands are
+identical; each channel has its own upload slot per day and its own token
+(`YOUTUBE_REFRESH_TOKEN_HI`, `YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_HI`). Personas: `docs/PERSONAS.md`.
 
 ## Where things live
 

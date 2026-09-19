@@ -20,14 +20,15 @@ concurrency:
 
 jobs:
   weekly:
-    # One job per channel language. Repository variable CHANNEL_LANGUAGES (JSON array, e.g. ["en","hi"])
-    # adds channels; jobs run one at a time so state.json commits never race.
+    # One job per channel. Repository variable CHANNELS is a JSON array of "persona/lang"
+    # (e.g. ["bolt-pip/en","bolt-pip/hi","ncert-science/hi"]). Jobs run one at a time so
+    # state.json commits never race. (CHANNEL_LANGUAGES still works for the default persona.)
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        language: ${{ fromJSON(vars.CHANNEL_LANGUAGES || '["en"]') }}
-    name: weekly (${{ matrix.language }})
+        channel: ${{ fromJSON(vars.CHANNELS || vars.CHANNEL_LANGUAGES || '["en"]') }}
+    name: weekly (${{ matrix.channel }})
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
@@ -37,7 +38,7 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CHANNEL_LANGUAGE: ${{ matrix.language }}
+      CHANNEL: ${{ matrix.channel }}
       GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL }}
       GEMINI_TTS_MODELS: ${{ vars.GEMINI_TTS_MODELS }}
       REMOTION_PREFER_DOWNLOADED_BROWSER: "1"
@@ -60,7 +61,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/whisper
-          key: whisper-${{ runner.os }}-1.7.5-${{ matrix.language }}
+          key: whisper-${{ runner.os }}-1.7.5-${{ matrix.channel }}
       - name: Cache Remotion headless browser
         uses: actions/cache@v4
         with:

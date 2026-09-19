@@ -1,0 +1,167 @@
+{
+  "audience": "general",
+  "audienceDescription": "students aged 14–18 preparing for board exams, and their parents",
+  "characterBio": "Sharma Coaching's friendly round robot mascot who gives study tips like a calm, encouraging senior",
+  "characterVoice": "in first person, calm and encouraging, never preachy",
+  "experimentGuide": "one concrete thing the student can do today (a 5-minute habit, a checklist, a mnemonic). Start with \"Try this today!\"",
+  "extraRules": [
+    "Never promise marks or results.",
+    "Mention the institute name at most once, in the sign-off only."
+  ],
+  "topicsFile": "data/personas/demo-coaching/topics.json",
+  "fallbackDir": "data/personas/demo-coaching/fallback-scripts",
+  "bannedWordsFile": "config/banned-words-general.json",
+  "brand": {
+    "primary": "#7B2CBF",
+    "accent": "#FFB627",
+    "logo": "brands/demo-coaching/logo.svg"
+  },
+  "name": "Sharma Coaching Classes",
+  "handle": "@sharmacoaching",
+  "characterName": "Vidya",
+  "language": "hi",
+  "timezone": "Asia/Kolkata",
+  "uploadTime": "19:00",
+  "maxShortsPerDay": 1,
+  "reminderAfterHours": 48,
+  "weeklyMinApproved": 4,
+  "youtube": {
+    "categoryId": "27",
+    "containsSyntheticMedia": true,
+    "notifySubscribers": true,
+    "shortTags": [
+      "study tips",
+      "board exam",
+      "coaching",
+      "shorts"
+    ],
+    "longTags": [
+      "study tips",
+      "board exam",
+      "coaching"
+    ]
+  },
+  "languages": {
+    "hi": {
+      "label": "हिन्दी",
+      "catchphrase": "पढ़ो समझ के, शर्मा कोचिंग के साथ!",
+      "voice": {
+        "engine": "gemini",
+        "voiceId": "Leda",
+        "speed": 1.0,
+        "espeakVoice": "hi+f3",
+        "style": "warm, cheerful and clear, like an energetic storyteller for small children, at a lively natural pace, never slow or drawn out",
+        "wordsPerSecond": 2.3
+      },
+      "whisper": {
+        "model": "base",
+        "language": "hi"
+      },
+      "askGrownUp": "बड़ों से मदद लो",
+      "feelings": {
+        "curious": "बोल्ट को जिज्ञासा है",
+        "happy": "बोल्ट खुश है",
+        "surprised": "बोल्ट हैरान है",
+        "thinking": "बोल्ट सोच रहा है",
+        "excited": "बोल्ट उत्साहित है"
+      },
+      "sidekickName": "पिप",
+      "weeklyTitle": "इस हफ़्ते के स्टडी टिप्स",
+      "weeklyOutro": "अगले हफ़्ते मिलते हैं!",
+      "font": "Baloo 2",
+      "labels": {
+        "hook": "सवाल",
+        "answer": "जवाब",
+        "wowFact": "जानते हो?",
+        "experiment": "आज यह करो",
+        "reveal": "जवाब है…",
+        "question": "सवाल"
+      },
+      "channelName": "शर्मा कोचिंग क्लासेस",
+      "handle": "@sharmacoaching",
+      "shortTags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "shorts"
+      ],
+      "longTags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "compilation"
+      ],
+      "hashtags": [
+        "#Shorts",
+        "#studytips",
+        "#boardexam"
+      ],
+      "tagline": "रोज़ एक स्टडी टिप",
+      "about": "शर्मा कोचिंग क्लासेस का रोज़ का स्टडी टिप।"
+    },
+    "en": {
+      "label": "English",
+      "catchphrase": "Study smart, with Sharma Coaching!",
+      "voice": {
+        "engine": "kokoro",
+        "voiceId": "af_heart",
+        "speed": 1.06,
+        "espeakVoice": "en-us+f3",
+        "wordsPerSecond": 2.7
+      },
+      "whisper": {
+        "model": "base.en",
+        "language": "en"
+      },
+      "askGrownUp": "Ask a grown-up",
+      "weeklyTitle": "This Week's Study Tips",
+      "weeklyOutro": "See you next week!",
+      "font": "Fredoka",
+      "feelings": {
+        "curious": "Bolt feels curious",
+        "happy": "Bolt feels happy",
+        "surprised": "Bolt feels surprised",
+        "thinking": "Bolt is thinking",
+        "excited": "Bolt feels excited"
+      },
+      "sidekickName": "Pip",
+      "labels": {
+        "hook": "Question",
+        "answer": "Answer",
+        "wowFact": "Did you know?",
+        "experiment": "Do this today",
+        "reveal": "The answer is…",
+        "question": "Question"
+      },
+      "hashtags": [
+        "#Shorts",
+        "#studytips",
+        "#boardexam"
+      ],
+      "tagline": "One study tip a day",
+      "about": "A daily study tip from Sharma Coaching Classes.",
+      "channelName": "Sharma Coaching Classes",
+      "handle": "@sharmacoaching"
+    }
+  },
+  "music": {
+    "enabled": true,
+    "file": "music/bolt-theme.mp3",
+    "volume": 0.14,
+    "duckedVolume": 0.045,
+    "fadeSeconds": 1.5
+  },
+  "colors": {
+    "primary": "#3C7DFF",
+    "accent": "#FFB627",
+    "highlight": "#FF6B6B",
+    "ink": "#1E2A44",
+    "paper": "#FFFDF7"
+  }
+}

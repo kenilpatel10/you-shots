@@ -11,6 +11,7 @@ const base: Draft = {
   topicId: "animals-001",
   date: "2026-09-16",
   language: "en",
+  persona: "bolt-pip",
   title: "Why do cats purr?",
   status: "drafted",
   source: "llm",
@@ -78,7 +79,7 @@ describe("state transitions", () => {
       lastTelegramUpdateId: 7,
     };
     const s = migrateState(v1);
-    expect(s.version).toBe(2);
+    expect(s.version).toBe(3);
     expect(langState(s, "en")).toEqual({
       usedTopicIds: ["a"],
       redoTopicIds: ["b"],
@@ -99,8 +100,19 @@ describe("state transitions", () => {
     expect(draftForDate(upsertDraft(s, base), "2026-09-16", "short", "en")?.id).toBe(base.id);
   });
 
-  it("puts the language into draft ids", () => {
+  it("puts the language (and non-default persona) into draft ids", () => {
     expect(makeDraftId("short", "2026-09-19", "ocean-002", "hi")).toBe("short-2026-09-19-hi-ocean-002");
     expect(makeDraftId("weekly", "2026-W38", "", "en")).toBe("weekly-2026-W38-en");
+    expect(makeDraftId("short", "2026-09-19", "c6-01", "hi", "ncert-science")).toBe("short-2026-09-19-ncert-science-hi-c6-01");
+  });
+
+  it("migrates v2 per-language bookkeeping under the default persona", () => {
+    const v2 = { version: 2, perLanguage: { en: { usedTopicIds: ["a"] }, hi: { usedTopicIds: ["b"] } }, drafts: [base], lastTelegramUpdateId: 3 };
+    const s = migrateState(v2);
+    expect(s.version).toBe(3);
+    expect(langState(s, "en").usedTopicIds).toEqual(["a"]);
+    expect(langState(s, "hi", "bolt-pip").usedTopicIds).toEqual(["b"]);
+    expect(langState(s, "hi", "ncert-science").usedTopicIds).toEqual([]);
+    expect(s.drafts[0]?.persona).toBe("bolt-pip");
   });
 });

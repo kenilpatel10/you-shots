@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Img, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Background } from "../backgrounds/Background";
 import { AnimatedBolt } from "../character/AnimatedBolt";
 import { AnimatedPip } from "../character/AnimatedPip";
@@ -106,14 +106,15 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
         </Sequence>
       ) : null}
       <div style={{ position: "absolute", left: L.bolt.centerX - L.bolt.size / 2, top: L.bolt.top + hopY, transform: `rotate(${wobble}deg)`, transformOrigin: "50% 90%" }}>
-        <AnimatedBolt pose={pose} expression={expression} mouthOpen={mouthOpen} antennaGlow={glow} size={L.bolt.size} seed={`ep-${script.topicId}`} idPrefix={`bolt-${script.topicId}`} />
+        <AnimatedBolt pose={pose} expression={expression} mouthOpen={mouthOpen} antennaGlow={glow} size={L.bolt.size} seed={`ep-${script.topicId}`} idPrefix={`bolt-${script.topicId}`} bodyColor={channel.brand?.primary} />
       </div>
       <div style={{ position: "absolute", left: pipPos.left, top: pipPos.top }}>
         <AnimatedPip mood={pipMood} excitement={pipExcited} talking={pipTalking} size={pipSize} idPrefix={`pip-${script.topicId}`} />
       </div>
       {feeling && sinceStart < 50 && !inGuess && !revealing ? <FeelingChip text={feeling} left={L.bolt.centerX - L.bolt.size / 2 - 10} top={L.bolt.top + 20} enterFrame={0} frame={sinceStart} /> : null}
       <Captions wordGroups={sections.map((s) => s.words)} box={L.captions} fontSize={variant === "short" ? 60 : 52} />
-      <ProgressBar sections={sections} box={L.progress} />
+      <ProgressBar sections={sections} box={L.progress} color={channel.brand?.accent} />
+      {channel.brand?.logo ? <Img src={staticFile(channel.brand.logo)} style={{ position: "absolute", right: L.progress.left, top: L.progress.top - 96, height: 72, opacity: 0.92 }} /> : null}
     </AbsoluteFill>
   );
 };

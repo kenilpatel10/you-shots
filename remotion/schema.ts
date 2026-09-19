@@ -55,9 +55,18 @@ export const ScriptZ = z.object({
 });
 export type ScriptProps = z.infer<typeof ScriptZ>;
 
+export const BrandPropsZ = z.object({
+  primary: z.string().optional(),
+  accent: z.string().optional(),
+  /** Path under public/ (staticFile) of a corner logo. */
+  logo: z.string().optional(),
+});
+export type BrandProps = z.infer<typeof BrandPropsZ>;
+
 export const ChannelPropsZ = z.object({
   name: z.string(),
   handle: z.string(),
+  brand: BrandPropsZ.default({}),
   characterName: z.string(),
   catchphrase: z.string(),
   askGrownUp: z.string(),

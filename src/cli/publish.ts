@@ -7,7 +7,7 @@
  */
 import path from "node:path";
 import { Command } from "commander";
-import { channelIdentity, loadChannelConfig, type ChannelConfig } from "../config";
+import { channelIdentity, loadChannelConfig, loadPersonaConfig, type ChannelConfig } from "../config";
 import { env, envBool } from "../lib/env";
 import { exists, readJson } from "../lib/fs";
 import { createLogger } from "../lib/logger";
@@ -17,7 +17,7 @@ import { formatInZone } from "../lib/time";
 import { downloadAsset, releasesConfigured } from "../publish/releases";
 import { nextFreeSlot } from "../publish/schedule";
 import { chatId, escapeHtml, getUpdates, HELP_TEXT, isAuthorized, notifyFailure, parseCommand, sendMessage, telegramConfigured } from "../publish/telegram";
-import { classifyYoutubeError, setThumbnail, uploadVideo, youtubeConfigured } from "../publish/youtube";
+import { classifyYoutubeError, refreshTokenVar, setThumbnail, uploadVideo, youtubeConfigured } from "../publish/youtube";
 import { draftsByStatus, findDraft, langState, loadState, saveState, transition, TransitionError, withLangState, type Draft, type State } from "../state/state";
 
 const log = createLogger("publish");
@@ -28,11 +28,22 @@ const say = async (text: string) => {
   else await sendMessage(text, { html: true });
 };
 
-function labelFor(cfg: ChannelConfig, language: string): string {
+/** Config of the channel a draft belongs to (its persona + language); falls back to the running config. */
+function configFor(cfg: ChannelConfig, d: { persona: string; language: string }): ChannelConfig {
   try {
-    return channelIdentity(cfg, language).label;
+    return loadPersonaConfig(d.persona, d.language);
   } catch {
-    return language;
+    return cfg;
+  }
+}
+
+function labelFor(cfg: ChannelConfig, d: { persona: string; language: string }): string {
+  try {
+    const c = configFor(cfg, d);
+    const id = channelIdentity(c, d.language);
+    return d.persona === "bolt-pip" ? id.label : `${id.name} · ${id.label}`;
+  } catch {
+    return `${d.persona}/${d.language}`;
   }
 }
 
@@ -41,8 +52,8 @@ function statusText(state: State, timezone: string, cfg: ChannelConfig): string 
   const approved = draftsByStatus(state, "approved");
   const failed = draftsByStatus(state, "failed");
   const scheduled = state.drafts.filter((d) => d.status === "uploaded" && d.scheduledFor && new Date(d.scheduledFor) > new Date());
-  const multi = new Set(state.drafts.map((d) => d.language)).size > 1;
-  const line = (d: Draft) => `• <code>${escapeHtml(d.id)}</code> — ${escapeHtml(d.title)}${multi ? ` [${escapeHtml(labelFor(cfg, d.language))}]` : ""}`;
+  const multi = new Set(state.drafts.map((d) => `${d.persona}/${d.language}`)).size > 1;
+  const line = (d: Draft) => `• <code>${escapeHtml(d.id)}</code> — ${escapeHtml(d.title)}${multi ? ` [${escapeHtml(labelFor(cfg, d))}]` : ""}`;
   return [
     `<b>Waiting for your review (${pending.length})</b>`,
     ...(pending.length ? pending.map(line) : ["• none"]),
@@ -146,21 +157,23 @@ async function uploadApproved(state: State): Promise<State> {
   if (!queue.length) return next;
   const stopped = new Set<string>();
   for (const d of queue) {
-    if (stopped.has(d.language)) continue;
-    if (!youtubeConfigured(d.language)) {
+    const channel = `${d.persona}/${d.language}`;
+    if (stopped.has(channel)) continue;
+    if (!youtubeConfigured(d.language, d.persona)) {
       await say(
-        `⚠️ Draft <code>${escapeHtml(d.id)}</code> is approved but YouTube is not configured for ${escapeHtml(d.language)}. Add YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN${d.language === "en" ? "" : `_${escapeHtml(d.language.toUpperCase())}`} as secrets (docs/SETUP_YOUTUBE.md).`,
+        `⚠️ Draft <code>${escapeHtml(d.id)}</code> is approved but YouTube is not configured for ${escapeHtml(channel)}. Add YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET and the secret <code>${escapeHtml(refreshTokenVar(d.language, d.persona))}</code> (docs/SETUP_YOUTUBE.md).`,
       );
-      stopped.add(d.language);
+      stopped.add(channel);
       continue;
     }
-    const identity = channelIdentity(cfg, d.language);
-    // One slot per day per channel: only this language's uploads block a day.
-    const taken = next.drafts.filter((x) => x.scheduledFor && x.status === "uploaded" && x.language === d.language).map((x) => x.scheduledFor!);
+    const dcfg = configFor(cfg, d);
+    const identity = channelIdentity(dcfg, d.language);
+    // One slot per day per channel: only this channel's uploads block a day.
+    const taken = next.drafts.filter((x) => x.scheduledFor && x.status === "uploaded" && x.language === d.language && x.persona === d.persona).map((x) => x.scheduledFor!);
     const publishAt = nextFreeSlot({
       now: new Date(),
-      timezone: cfg.timezone,
-      uploadTime: cfg.uploadTime,
+      timezone: dcfg.timezone,
+      uploadTime: dcfg.uploadTime,
       taken,
     });
     if (opts.dryRun) {
@@ -177,10 +190,12 @@ async function uploadApproved(state: State): Promise<State> {
         description,
         tags: d.tags.length ? d.tags : d.kind === "weekly" ? identity.longTags : identity.shortTags,
         publishAt,
-        categoryId: cfg.youtube.categoryId,
+        categoryId: dcfg.youtube.categoryId,
         language: d.language,
-        containsSyntheticMedia: cfg.youtube.containsSyntheticMedia,
-        notifySubscribers: cfg.youtube.notifySubscribers,
+        persona: d.persona,
+        madeForKids: dcfg.audience === "kids",
+        containsSyntheticMedia: dcfg.youtube.containsSyntheticMedia,
+        notifySubscribers: dcfg.youtube.notifySubscribers,
       });
       if (d.kind === "weekly") {
         const thumb = path.join(draftDir(d.id), "thumbnail.png");
@@ -188,7 +203,7 @@ async function uploadApproved(state: State): Promise<State> {
         if (!thumbFile && d.assets.thumbnail && releasesConfigured()) thumbFile = await downloadAsset(d.assets.thumbnail, thumb);
         if (thumbFile) {
           try {
-            await setThumbnail(videoId, thumbFile, d.language);
+            await setThumbnail(videoId, thumbFile, d.language, d.persona);
           } catch (err) {
             log.warn(`Thumbnail upload failed (custom thumbnails need a verified account): ${(err as Error).message}`);
           }
@@ -205,7 +220,7 @@ async function uploadApproved(state: State): Promise<State> {
       log.error(`Upload of ${d.id} failed (${c.kind}): ${c.message}`);
       if (c.kind === "quota" || c.kind === "auth") {
         await say(`⛔ Upload stopped (${c.kind}) for ${escapeHtml(identity.name)}. Draft <code>${escapeHtml(d.id)}</code> stays queued.\n<b>Fix:</b> ${escapeHtml(c.fix)}\n<pre>${escapeHtml(c.message.slice(0, 500))}</pre>`);
-        stopped.add(d.language); // keep this channel's queue; other channels may still succeed
+        stopped.add(channel); // keep this channel's queue; other channels may still succeed
         continue;
       }
       next = transition(next, d.id, "failed", {

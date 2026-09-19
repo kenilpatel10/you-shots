@@ -7,5 +7,7 @@ describe("refreshTokenVar", () => {
     expect(refreshTokenVar("en")).toBe("YOUTUBE_REFRESH_TOKEN");
     expect(refreshTokenVar("hi")).toBe("YOUTUBE_REFRESH_TOKEN_HI");
     expect(refreshTokenVar("pt-br")).toBe("YOUTUBE_REFRESH_TOKEN_PT_BR");
+    expect(refreshTokenVar("hi", "ncert-science")).toBe("YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_HI");
+    expect(refreshTokenVar("en", "ncert-science")).toBe("YOUTUBE_REFRESH_TOKEN_NCERT_SCIENCE_EN");
   });
 });

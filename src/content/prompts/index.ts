@@ -1,6 +1,6 @@
 import { en, type PromptContext, type PromptSet } from "./en";
 import { hi } from "./hi";
-import { currentLanguage, loadBannedWords, loadChannelConfig } from "../../config";
+import { channelIdentity, currentLanguage, loadBannedWords, loadChannelConfig } from "../../config";
 import { totalWordsFor, wordLimitsFor } from "../validate";
 
 /** Add a language by exporting a PromptSet and registering it here (see docs/HINDI.md). */
@@ -16,9 +16,17 @@ export function promptContext(): PromptContext {
   const cfg = loadChannelConfig();
   const lang = currentLanguage(cfg);
   const banned = loadBannedWords();
+  const identity = channelIdentity(cfg, cfg.language);
   return {
     characterName: cfg.characterName,
-    channelName: cfg.name,
+    channelName: identity.name,
+    characterBio: cfg.characterBio,
+    characterVoice: cfg.characterVoice,
+    audience: cfg.audience,
+    audienceDescription: cfg.audienceDescription,
+    experimentGuide: cfg.experimentGuide,
+    experimentLabel: lang.labels.experiment ?? "Try this",
+    extraRules: cfg.extraRules,
     catchphrase: lang.catchphrase,
     askGrownUp: lang.askGrownUp,
     bannedWords: banned.banned.filter((w) => !w.includes(" ")).slice(0, 80),
