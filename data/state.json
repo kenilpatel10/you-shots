@@ -1,7 +1,7 @@
 {
-  "version": 2,
-  "perLanguage": {
-    "en": {
+  "version": 3,
+  "perChannel": {
+    "bolt-pip/en": {
       "usedTopicIds": [
         "ocean-002"
       ],
@@ -9,7 +9,7 @@
       "usedFallbackScripts": [],
       "weeklyCompiled": []
     },
-    "hi": {
+    "bolt-pip/hi": {
       "usedTopicIds": [
         "dinosaurs-004"
       ],
@@ -25,6 +25,7 @@
       "topicId": "ocean-002",
       "date": "2026-09-18",
       "language": "en",
+      "persona": "bolt-pip",
       "title": "Why do waves crash on the beach",
       "status": "uploaded",
       "source": "llm",
@@ -63,6 +64,7 @@
       "topicId": "dinosaurs-004",
       "date": "2026-09-18",
       "language": "hi",
+      "persona": "bolt-pip",
       "title": "डायनासोर किस रंग के थे",
       "status": "uploaded",
       "source": "llm",
@@ -103,6 +105,6 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-18T03:45:23.369Z",
-    "publish": "2026-09-19T00:17:27.668Z"
+    "publish": "2026-09-19T05:49:48.433Z"
   }
 }
