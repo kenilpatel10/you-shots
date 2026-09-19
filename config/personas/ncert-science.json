@@ -57,7 +57,7 @@
         "speed": 1.0,
         "espeakVoice": "hi+f3",
         "style": "warm, cheerful and clear, like an energetic storyteller for small children, at a lively natural pace, never slow or drawn out",
-        "wordsPerSecond": 2.3
+        "wordsPerSecond": 2.15
       },
       "whisper": {
         "model": "base",

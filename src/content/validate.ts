@@ -22,12 +22,25 @@ export const TARGET_SECONDS = { min: 44, max: 58 } as const;
 
 export type WordLimits = Record<keyof typeof WORD_LIMITS, readonly [number, number]>;
 
-/** Word windows scaled to a voice's speaking rate: a slower voice (Hindi ≈ 2.2 w/s) gets a smaller budget. */
+/**
+ * Word windows scaled to a voice's speaking rate: a slower voice (Hindi ≈ 2.2 w/s) gets a smaller
+ * budget. Maxima are also squeezed so that their sum equals the total budget's maximum: writers fill
+ * every section to its cap, and unsqueezed caps add up to a script 15–20 s too long.
+ */
 export function wordLimitsFor(wordsPerSecond = WORDS_PER_SECOND): WordLimits {
   const k = wordsPerSecond / WORDS_PER_SECOND;
-  const out = {} as Record<string, readonly [number, number]>;
-  for (const [key, [min, max]] of Object.entries(WORD_LIMITS)) out[key] = [Math.max(2, Math.round(min * k)), Math.max(4, Math.round(max * k))];
-  return out as WordLimits;
+  const [, totalMax] = totalWordsFor(wordsPerSecond);
+  const scaled = Object.fromEntries(Object.entries(WORD_LIMITS).map(([key, [min, max]]) => [key, [Math.max(2, Math.round(min * k)), Math.round(max * k)] as [number, number]]));
+  // Squeeze only the three long sections; the hook and sign-off are too short to matter.
+  const big = ["answer", "wowFact", "experiment"] as const;
+  const fixed = scaled.hook![1] + scaled.signOff![1];
+  const sumBig = big.reduce((a, key) => a + scaled[key]![1], 0);
+  const squeeze = Math.min(1, (totalMax * 1.04 - fixed) / sumBig);
+  for (const key of big) {
+    const [lo, hi] = scaled[key]!;
+    scaled[key] = [lo, Math.max(lo + 4, Math.round(hi * squeeze))];
+  }
+  return scaled as unknown as WordLimits;
 }
 
 /** Total spoken words that land inside TARGET_SECONDS at this rate (used in the writer prompt). */
