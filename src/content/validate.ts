@@ -35,7 +35,7 @@ export function wordLimitsFor(wordsPerSecond = WORDS_PER_SECOND): WordLimits {
   const big = ["answer", "wowFact", "experiment"] as const;
   const fixed = scaled.hook![1] + scaled.signOff![1];
   const sumBig = big.reduce((a, key) => a + scaled[key]![1], 0);
-  const squeeze = Math.min(1, (totalMax * 1.04 - fixed) / sumBig);
+  const squeeze = Math.min(1, (totalMax * 1.2 - fixed) / sumBig);
   for (const key of big) {
     const [lo, hi] = scaled[key]!;
     scaled[key] = [lo, Math.max(lo + 4, Math.round(hi * squeeze))];
@@ -43,10 +43,16 @@ export function wordLimitsFor(wordsPerSecond = WORDS_PER_SECOND): WordLimits {
   return scaled as unknown as WordLimits;
 }
 
-/** Total spoken words that land inside TARGET_SECONDS at this rate (used in the writer prompt). */
+/**
+ * Total spoken words that land inside TARGET_SECONDS at this rate, derived from the same constants
+ * the estimator uses: fixed overheads (section gaps, guess pause, lead-in, sign-off tail) come off
+ * the window first, and roughly one punctuation pause per nine words is allowed for.
+ */
 export function totalWordsFor(wordsPerSecond = WORDS_PER_SECOND): readonly [number, number] {
-  const k = wordsPerSecond / WORDS_PER_SECOND;
-  return [Math.round(115 * k), Math.round(150 * k)];
+  const overheadSec = (4 * SECTION_GAP_MS + GUESS_PAUSE_MS + 800 + 2000) / 1000;
+  const pausePerWordSec = 0.18 / 9;
+  const words = (sec: number) => Math.round(((sec - overheadSec) * wordsPerSecond) / (1 + pausePerWordSec * wordsPerSecond));
+  return [words(TARGET_SECONDS.min + 2), words(TARGET_SECONDS.max - 1)];
 }
 export const MAX_ONSCREEN_CHARS = 48;
 export const MAX_TITLE_CHARS = 60;
