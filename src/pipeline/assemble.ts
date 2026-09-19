@@ -197,6 +197,10 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       w.startMs += offset;
       w.endMs += offset;
     }
+    if (s.gag) {
+      s.gag.startMs += offset;
+      s.gag.endMs += offset;
+    }
   });
   const lastEnd = timeline.sections[timeline.sections.length - 1]!.endMs;
   timeline.totalFrames = Math.ceil((lastEnd / 1000) * FPS) + SIGNOFF_TAIL_FRAMES;
