@@ -27,6 +27,8 @@ export function promptContext(): PromptContext {
     experimentGuide: cfg.experimentGuide,
     experimentLabel: lang.labels.experiment ?? "Try this",
     extraRules: cfg.extraRules,
+    language: cfg.language,
+    gags: cfg.gags,
     catchphrase: lang.catchphrase,
     askGrownUp: lang.askGrownUp,
     bannedWords: banned.banned.filter((w) => !w.includes(" ")).slice(0, 80),

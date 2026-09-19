@@ -6,18 +6,7 @@ export type SectionKey = (typeof SECTION_KEYS)[number];
 export const EXPRESSIONS = ["curious", "happy", "surprised", "thinking", "excited"] as const;
 export type Expression = (typeof EXPRESSIONS)[number];
 
-export const CATEGORIES = [
-  "animals",
-  "space",
-  "human-body",
-  "weather-nature",
-  "everyday-things",
-  "food",
-  "ocean",
-  "dinosaurs",
-  "how-things-work",
-  "feelings-friendship",
-] as const;
+export const CATEGORIES = ["animals", "space", "human-body", "weather-nature", "everyday-things", "food", "ocean", "dinosaurs", "how-things-work", "feelings-friendship"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 const nonEmpty = z.string().trim().min(1);
@@ -28,8 +17,19 @@ export const GuessSchema = z.object({
   /** Three short answer bubbles (≤ 20 characters each), one correct. */
   options: z.array(z.string().trim().min(1).max(20)).length(3),
   answer: z.union([z.literal(0), z.literal(1), z.literal(2)]),
+  /** The deliberately silly (but harmless) option that Pip picks; must differ from `answer`. */
+  silly: z.union([z.literal(0), z.literal(1), z.literal(2)]).optional(),
 });
 export type Guess = z.infer<typeof GuessSchema>;
+
+export const GAG_REACTIONS = ["laugh", "oops", "wow"] as const;
+/** Comedy beat: a guest character (chosen by topic category) says one funny line after the wow fact. */
+export const GagSchema = z.object({
+  line: z.string().trim().min(2).max(120),
+  /** How Bolt reacts on screen. */
+  reaction: z.enum(GAG_REACTIONS),
+});
+export type Gag = z.infer<typeof GagSchema>;
 
 export const ScriptSchema = z.object({
   topicId: nonEmpty,
@@ -55,6 +55,7 @@ export const ScriptSchema = z.object({
     .min(1),
   background: z.enum(CATEGORIES),
   guess: GuessSchema.optional(),
+  gag: GagSchema.optional(),
   description: nonEmpty,
   tags: z.array(z.string().trim().min(1)).min(1).max(20),
 });
@@ -88,8 +89,9 @@ export type Topic = z.infer<typeof TopicSchema>;
 export const TopicsFileSchema = z.array(TopicSchema);
 
 /** Text actually spoken for a section: the hook also speaks the guess prompt when present. */
-export function sectionSpokenText(script: Pick<Script, SectionKey> & { guess?: Pick<Guess, "prompt"> | undefined }, key: SectionKey): string {
+export function sectionSpokenText(script: Pick<Script, SectionKey> & { guess?: Pick<Guess, "prompt"> | undefined; gag?: Pick<Gag, "line"> | undefined }, key: SectionKey): string {
   if (key === "hook" && script.guess) return `${script.hook} ${script.guess.prompt}`;
+  if (key === "wowFact" && script.gag) return `${script.wowFact} ${script.gag.line}`;
   return script[key];
 }
 

@@ -3,8 +3,8 @@
   "title": "Why is the sky blue?",
   "hook": "Hey friends! Have you ever wondered why the sky is blue?",
   "answer": "Sunlight looks white, but it is really all the colours of the rainbow mixed together. When sunlight reaches Earth, it bumps into tiny bits of air. Blue light is bouncy, like a little rubber ball, so it bounces all over the sky. That is why the sky looks blue!",
-  "wowFact": "Here is a wow fact! At sunset, sunlight travels through much more air, so the blue bounces away and the sky turns orange and pink.",
-  "experiment": "Try this! Ask a grown-up to help you fill a clear glass with water and add one tiny drop of milk. Shine a torch through it. Can you see a soft blue glow?",
+  "wowFact": "Here is a wow fact! At sunset, sunlight travels through much more air, so the blue bounces away and the sky turns orange.",
+  "experiment": "Try this! Ask a grown-up to help you fill a glass with water and add one drop of milk. Shine a torch through it. See a soft blue glow?",
   "signOff": "Stay curious, friends!",
   "onScreenText": {
     "hook": "Why is the sky BLUE?",
@@ -42,7 +42,8 @@
       "Blue light bounces",
       "Air is blue glass"
     ],
-    "answer": 1
+    "answer": 1,
+    "silly": 2
   },
   "description": "Bolt finds out why the sky looks blue during the day and orange at sunset. Then he tries a tiny sky experiment at home with water, a drop of milk and a torch.",
   "tags": [
@@ -51,5 +52,9 @@
     "light",
     "sunset",
     "kids learning"
-  ]
+  ],
+  "gag": {
+    "line": "I fall through ALL those colours daily!",
+    "reaction": "wow"
+  }
 }

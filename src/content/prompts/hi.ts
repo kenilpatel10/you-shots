@@ -12,7 +12,7 @@ const HINDI_RULES = (ctx: PromptContext) =>
     .map(([k, [a, b]]) => `${k}: ${a}–${b}`)
     .join(
       "; ",
-    )}; total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}, aim for about ${Math.round((ctx.totalWords[0] + ctx.totalWords[1]) / 2)}. Prefer few short sentences over many. ${ctx.audience === "kids" ? 'When anything is poured, filled or handled, the experiment must literally include "बड़ों से मदद लो".' : ""} tags may be in Hindi or English.`;
+    )}; total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}, aim for about ${Math.round((ctx.totalWords[0] + ctx.totalWords[1]) / 2)}. Prefer few short sentences over many. ${ctx.audience === "kids" ? 'When anything is poured, filled or handled, the experiment must literally include "बड़ों से मदद लो".' : ""} tags may be in Hindi or English. The gag line and the silly guess option must also be in Hindi.`;
 
 export const hi: PromptSet = {
   writerSystem: (ctx) => `${en.writerSystem(ctx)}\n\n${HINDI_RULES(ctx)}`,

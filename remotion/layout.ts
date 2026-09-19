@@ -14,6 +14,7 @@ export const shortLayout = {
   safe: { top: safeTop, bottom: safeBottom, left, right: safeRight },
   card: { left, top: safeTop + 20, width },
   bolt: { centerX: 430, top: 598, size: 520 },
+  guest: { left: 700, top: 690, size: 300 },
   captions: { left, top: 1170, width, height: 230 },
   progress: { left, top: safeBottom - 24, width },
   badge: { left: 590, top: 1062 },
@@ -23,6 +24,7 @@ export const shortLayout = {
 /** 1920×1080 landscape layout: Bolt on the left, text and captions on the right. */
 export const longLayout = {
   bolt: { centerX: 400, top: 250, size: 520 },
+  guest: { left: 560, top: 380, size: 240 },
   card: { left: 760, top: 150, width: 1040 },
   captions: { left: 760, top: 640, width: 1040, height: 220 },
   badge: { left: 760, top: 540 },

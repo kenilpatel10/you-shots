@@ -17,6 +17,15 @@ Shorts into a 5–8 minute landscape video, also approval-gated.
 
 <p align="center"><img src="docs/images/bolt-showcase.png" width="720" alt="Bolt design sheet"></p>
 
+**Comedy beats.** Every Short has two built-in gags: one of the three guess bubbles is deliberately
+silly and Pip picks it (and is wrong), and a **guest character** chosen by topic category pops in
+after the wow fact with a one-liner in its own voice while Bolt reacts (laugh / oops / wow). The
+guest cast is original and hand-built, one per category:
+
+<p align="center"><img src="docs/images/guest-cast.png" width="720" alt="Guest cast: one character per topic category"></p>
+
+Personas can switch the gags off (`"gags": false`), which the client brand-kit example does.
+
 **Status: live.** The first Short produced entirely by this pipeline on GitHub Actions
 (Gemini script → independent review → Kokoro voice → whisper captions → Remotion render →
 Telegram `/approve` → YouTube upload) is scheduled on

@@ -16,9 +16,10 @@ import { synthesizeEspeak } from "../audio/espeak";
 import { currentGeminiTtsModel, synthesizeGemini } from "../audio/geminiTts";
 import { timeSection } from "../audio/timings";
 import { synthesizeSection } from "../audio/tts";
-import { encodeWav, type PcmAudio } from "../audio/wav";
+import { concat, encodeWav, silence, type PcmAudio } from "../audio/wav";
 import { buildTimeline, type SectionInput } from "../content/timeline";
 import { sectionSpokenText, type ScriptRecord } from "../content/schema";
+import { guestFor, guestName } from "../../remotion/guests";
 import { needsGrownUp } from "../content/validate";
 import { envBool } from "../lib/env";
 import { ensureDir, writeJsonAtomic } from "../lib/fs";
@@ -56,27 +57,38 @@ export type AssembleOptions = {
 
 let warnedFallback = false;
 
-async function makeVoice(text: string, mode: VoiceMode, seed: number): Promise<{ audio: PcmAudio; source: VoiceSource }> {
+type VoiceOverride = { guest?: boolean };
+
+/** Second voice for the guest character, per engine, unless the config names one. */
+function guestVoice(lang: ReturnType<typeof currentLanguage>, engine: string): string {
+  if (lang.voice.guestVoiceId) return lang.voice.guestVoiceId;
+  if (engine === "kokoro") return "am_puck";
+  if (engine === "gemini") return "Puck";
+  return lang.voice.espeakVoice.replace(/\+.*$/, "") + "+m3";
+}
+
+async function makeVoice(text: string, mode: VoiceMode, seed: number, override: VoiceOverride = {}): Promise<{ audio: PcmAudio; source: VoiceSource }> {
   const lang = currentLanguage();
   if (mode === "placeholder") return { audio: placeholderVoice(text, seed), source: "placeholder" };
   const engine = mode === "auto" ? lang.voice.engine : mode;
+  const voiceId = override.guest ? guestVoice(lang, engine) : lang.voice.voiceId;
   const espeak = {
-    voice: lang.voice.espeakVoice,
+    voice: override.guest ? guestVoice(lang, "espeak") : lang.voice.espeakVoice,
     wpm: Math.round(150 * lang.voice.speed),
   }; // eSpeak words/min; ~155 keeps 58 s scripts under the 59 s cap
   if (engine === "espeak") return { audio: await synthesizeEspeak(text, espeak), source: "espeak" };
   try {
     if (engine === "gemini") {
       const audio = await synthesizeGemini(text, {
-        voice: lang.voice.voiceId,
-        style: lang.voice.style,
+        voice: voiceId,
+        style: override.guest ? (lang.voice.guestStyle ?? "as a playful, squeaky cartoon character, quick and cheeky") : lang.voice.style,
         languageName: lang.label,
       });
       return { audio, source: "gemini" };
     }
     const audio = await synthesizeSection(text, {
-      voiceId: lang.voice.voiceId,
-      speed: lang.voice.speed,
+      voiceId,
+      speed: override.guest ? lang.voice.speed * 1.08 : lang.voice.speed,
     });
     return { audio, source: "kokoro" };
   } catch (err) {
@@ -103,6 +115,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
   // 1. Voice per section
   opts.onProgress?.("voice");
   let clips: PcmAudio[] = [];
+  let gagOffsetMs: number | undefined;
   let voiceSource: VoiceSource = lang.voice.engine;
   const spoken = Object.fromEntries(SECTION_ORDER.map((k) => [k, sectionSpokenText(opts.script, k)])) as Record<(typeof SECTION_ORDER)[number], string>;
   // One voice per video: if the Gemini engine had to switch model mid-way (quota), start over so
@@ -112,7 +125,16 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
     let modelAtStart: string | null = null;
     let restart = false;
     for (const [i, key] of SECTION_ORDER.entries()) {
-      const { audio, source } = await makeVoice(spoken[key], mode, i + 1);
+      const narrated = await makeVoice(key === "wowFact" && opts.script.gag ? opts.script.wowFact : spoken[key], mode, i + 1);
+      const source = narrated.source;
+      let audio = narrated.audio;
+      if (key === "wowFact" && opts.script.gag) {
+        // Comedy beat: the guest's line in a second voice, after a short beat of silence.
+        const guest = await makeVoice(opts.script.gag.line, mode, 99, { guest: true });
+        const gapMs = 300;
+        gagOffsetMs = Math.round((audio.samples.length / audio.sampleRate) * 1000) + gapMs;
+        audio = { sampleRate: audio.sampleRate, samples: concat([audio.samples, silence(gapMs, audio.sampleRate), guest.audio.samples]) };
+      }
       voiceSource = source;
       const model = source === "gemini" ? currentGeminiTtsModel() : null;
       if (i === 0) modelAtStart = model;
@@ -154,7 +176,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
             key,
           });
     if (t.source === "estimated") timingSource = "estimated";
-    sections.push({ key, text: spoken[key], durationMs, words: t.words });
+    sections.push({ key, text: spoken[key], durationMs, words: t.words, ...(key === "wowFact" && gagOffsetMs !== undefined ? { gagOffsetMs } : {}) });
   }
 
   // Sections are positioned by the mixer's actual starts (lead-in + gaps + normalised lengths).
@@ -207,6 +229,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       onScreenText: opts.script.onScreenText,
       background: opts.script.background,
       guess: opts.script.guess,
+      ...(opts.script.gag ? { gag: { line: opts.script.gag.line, reaction: opts.script.gag.reaction, guest: guestFor(opts.script.background).kind, guestName: guestName(opts.script.background, cfg.language) } } : {}),
     },
     channel: {
       name: identity.name,

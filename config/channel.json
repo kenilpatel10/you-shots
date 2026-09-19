@@ -64,7 +64,8 @@
         "wowFact": "Wow fact!",
         "experiment": "Try this at home",
         "reveal": "The answer is…",
-        "question": "Question"
+        "question": "Question",
+        "oops": "oops!"
       },
       "hashtags": [
         "#Shorts",
@@ -109,7 +110,8 @@
         "wowFact": "मज़ेदार बात!",
         "experiment": "घर पर आज़माओ",
         "reveal": "जवाब है…",
-        "question": "सवाल"
+        "question": "सवाल",
+        "oops": "अरे!"
       },
       "channelName": "बोल्ट और पिप",
       "handle": "@बोलटऔरपिप",

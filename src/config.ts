@@ -19,6 +19,10 @@ const LanguageConfig = z.object({
     style: z.string().optional(),
     /** Measured speaking rate of this voice; scales the writer's word budget and the validator's length estimate. */
     wordsPerSecond: z.number().min(1).max(5).default(2.7),
+    /** Second voice for the guest character's gag line (kokoro id, Gemini voice name, or eSpeak voice). */
+    guestVoiceId: z.string().optional(),
+    /** Delivery instructions for the guest line (gemini engine). */
+    guestStyle: z.string().optional(),
   }),
   /** Per-language YouTube identity; defaults to the top-level name/handle/tags. */
   channelName: z.string().optional(),
@@ -74,6 +78,8 @@ export const ChannelConfigSchema = z.object({
   experimentGuide: z.string().default('one safe thing to try or notice at home. Start with "Try this!"'),
   /** Extra writer rules for this persona (one per line). */
   extraRules: z.array(z.string()).default([]),
+  /** Comedy beats: a guest character's one-liner after the wow fact and Pip picking a silly guess. */
+  gags: z.boolean().default(true),
   /** Files this persona reads (relative to the repo root). */
   topicsFile: z.string().default("data/topics.json"),
   fallbackDir: z.string().default("data/fallback-scripts"),

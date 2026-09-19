@@ -75,7 +75,8 @@
         "wowFact": "जानते हो?",
         "experiment": "आज यह करो",
         "reveal": "जवाब है…",
-        "question": "सवाल"
+        "question": "सवाल",
+        "oops": "अरे!"
       },
       "channelName": "शर्मा कोचिंग क्लासेस",
       "handle": "@sharmacoaching",
@@ -137,7 +138,8 @@
         "wowFact": "Did you know?",
         "experiment": "Do this today",
         "reveal": "The answer is…",
-        "question": "Question"
+        "question": "Question",
+        "oops": "oops!"
       },
       "hashtags": [
         "#Shorts",
@@ -163,5 +165,6 @@
     "highlight": "#FF6B6B",
     "ink": "#1E2A44",
     "paper": "#FFFDF7"
-  }
+  },
+  "gags": false
 }

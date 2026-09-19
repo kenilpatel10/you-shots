@@ -9,7 +9,9 @@ import { sampleChannel } from "./sampleProps";
 
 const lang = channel.languages[channel.language as keyof typeof channel.languages];
 
-const episode = (s: typeof s1, i: number): LongEpisode => ({
+type SampleScript = typeof s3 & { gag?: { line: string; reaction: string }; guess: typeof s3.guess & { silly?: number } };
+
+const episode = (s: SampleScript, i: number): LongEpisode => ({
   draftId: `sample-${i}`,
   chapterTitle: s.title,
   script: { topicId: s.topicId, title: s.title, hook: s.hook, answer: s.answer, wowFact: s.wowFact, experiment: s.experiment, signOff: s.signOff, onScreenText: s.onScreenText, background: s.background, guess: s.guess },

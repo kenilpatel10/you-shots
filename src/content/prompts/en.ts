@@ -1,4 +1,5 @@
 import type { Topic } from "../schema";
+import { guestFor } from "../../../remotion/guests";
 import type { WORD_LIMITS } from "../validate";
 import { wordLimitsFor, totalWordsFor, type WordLimits } from "../validate";
 
@@ -19,6 +20,9 @@ export type PromptContext = {
   experimentGuide: string;
   experimentLabel: string;
   extraRules: string[];
+  language: string;
+  /** Comedy beats on (guest gag line + Pip's silly guess). */
+  gags: boolean;
   catchphrase: string;
   bannedWords: string[];
   hazardWords: string[];
@@ -66,7 +70,15 @@ Each Short is 45–58 seconds and ALWAYS has exactly this structure, spoken by $
 
 GUESS BEAT: right after the hook, ${ctx.characterName} says a short prompt (e.g. "What do you think?") and three big answer bubbles appear for a couple of seconds before the answer reveals the right one. Provide the "guess" object: { prompt (≤ 4 words), options (exactly 3, each ≤ 20 characters, each ≤ 3 words, all plausible to the audience, exactly one correct, no jokes that could confuse), answer (0, 1 or 2 — vary which position is correct) }. The answer section must clearly confirm the correct option.
 
-Word limits: ${limitsText(ctx)}. Total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]}; aim for about ${Math.round((ctx.totalWords[0] + ctx.totalWords[1]) / 2)} so the video lands in the middle of its time window.
+${
+  ctx.gags
+    ? `COMEDY BEATS (the show's humour is silly and kind, never sarcastic, never mocking anyone):
+- One of the three guess options must be obviously silly but harmless (e.g. "because cats eat rainbows"); give its index as guess.silly (never the correct one). ${ctx.characterName}'s friend Pip picks it and is wrong.
+- A GUEST CHARACTER (named in the request) appears right after the wow fact and says ONE funny line (≤ 12 words): a silly complaint, a boast, or a cute misunderstanding about the fact, in character. Provide "gag": { line, reaction } where reaction is how ${ctx.characterName} reacts: "laugh" | "oops" | "wow".`
+    : ""
+}
+
+Word limits: ${limitsText(ctx)}. Total spoken words ${ctx.totalWords[0]}–${ctx.totalWords[1]} (the gag line counts); aim for about ${Math.round((ctx.totalWords[0] + ctx.totalWords[1]) / 2)} so the video lands in the middle of its time window.
 
 ${SAFETY(ctx)}
 
@@ -77,7 +89,7 @@ OUTPUT: Reply with ONLY a JSON object (no markdown) with these fields:
 - onScreenText: { hook, answer, wowFact, experiment } — each ≤ 45 characters, big-text summaries (e.g. "Why is the sky BLUE?")
 - expressionCues: one entry per section: { section: "hook"|"answer"|"wowFact"|"experiment"|"signOff", expression: "curious"|"happy"|"surprised"|"thinking"|"excited" }
 - background: the topic category key exactly as given
-- guess: { prompt: string, options: [string, string, string], answer: 0|1|2 }
+- guess: { prompt: string, options: [string, string, string], answer: 0|1|2${ctx.gags ? ", silly: 0|1|2" : ""} }${ctx.gags ? '\n- gag: { line: string, reaction: "laugh"|"oops"|"wow" }' : ""}
 - description: 2–3 plain sentences for the YouTube description${ctx.audience === "kids" ? ", written for parents" : ""}; no links, no hashtags
 - tags: 5–10 short lowercase search tags`,
 
@@ -87,7 +99,7 @@ topicId: ${topic.id}
 question: ${topic.question}
 category (background key): ${topic.category}
 difficulty: ${topic.difficulty} (1 = simplest)
-character: ${ctx.characterName}
+character: ${ctx.characterName}${ctx.gags ? `\nguest character for the gag line: ${guestFor(topic.category).name[ctx.language] ?? guestFor(topic.category).name.en}, ${guestFor(topic.category).personality[ctx.language] ?? guestFor(topic.category).personality.en}` : ""}
 sign-off phrase: ${ctx.catchphrase}${feedback?.length ? `\n\nAn editor rejected the previous draft for these reasons. Fix every one of them:\n- ${feedback.join("\n- ")}` : ""}`,
 
   reviewerSystem: (
@@ -99,7 +111,7 @@ Check, in this order:
 2. SAFETY: ${SAFETY(ctx)}
 3. AUDIENCE FIT: vocabulary and sentence length suitable for ${ctx.audienceDescription}; the comparison in the answer must be concrete.
 4. STRUCTURE: word limits — ${limitsText(ctx)}; signOff exactly "${ctx.catchphrase}"; onScreenText each ≤ 45 characters; title ≤ 60 characters without emoji or clickbait; guess has exactly 3 short options (≤ 20 characters), exactly one correct and consistent with the answer.
-5. TONE: warm, kind, never sarcastic, no engagement bait, no talking down.
+5. TONE: warm, kind, never sarcastic, no engagement bait, no talking down. If there is a "gag" line or a silly guess option, it must be harmless, understandable by the audience, and never mock a person or group.
 
 OUTPUT: Reply with ONLY a JSON object: { "approved": boolean, "issues": string[], "fixedScript"?: <script object with the same fields as the input> }.
 - If the script is fine, return approved=true and issues=[].

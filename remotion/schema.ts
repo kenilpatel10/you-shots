@@ -27,6 +27,8 @@ export const SectionTimingZ = z.object({
   expression: ExpressionZ,
   /** Show the "ask a grown-up" badge (experiment only). */
   grownUp: z.boolean().default(false),
+  /** Guest gag window inside the wow-fact section (absolute ms on the voice track). */
+  gag: z.object({ startMs: z.number(), endMs: z.number() }).optional(),
 });
 export type SectionTiming = z.infer<typeof SectionTimingZ>;
 
@@ -51,7 +53,17 @@ export const ScriptZ = z.object({
   signOff: z.string(),
   onScreenText: z.object({ hook: z.string(), answer: z.string(), wowFact: z.string(), experiment: z.string() }),
   background: z.string(),
-  guess: z.object({ prompt: z.string(), options: z.array(z.string()).length(3), answer: z.number().int().min(0).max(2) }).optional(),
+  guess: z
+    .object({
+      prompt: z.string(),
+      options: z.array(z.string()).length(3),
+      answer: z.number().int().min(0).max(2),
+      /** Index of the deliberately silly option that Pip "picks" (comedy beat). */
+      silly: z.number().int().min(0).max(2).optional(),
+    })
+    .optional(),
+  /** One funny line a guest character says right after the wow fact (comedy beat). */
+  gag: z.object({ line: z.string(), reaction: z.enum(["laugh", "oops", "wow"]), guest: z.string(), guestName: z.string() }).optional(),
 });
 export type ScriptProps = z.infer<typeof ScriptZ>;
 

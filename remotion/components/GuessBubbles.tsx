@@ -1,6 +1,7 @@
 import React from "react";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { colors, fonts } from "../theme";
+import { Pip } from "../character/Pip";
 
 type Props = {
   prompt: string;
@@ -10,6 +11,9 @@ type Props = {
   revealLabel?: string | undefined;
   box: { left: number; top: number; width: number };
   compact?: boolean;
+  /** Index of the silly option Pip picks (comedy beat). */
+  silly?: number | undefined;
+  oopsLabel?: string | undefined;
 };
 
 const BUBBLE_COLORS = ["#3C7DFF", "#FF8FA3", "#2FA36B"];
@@ -19,7 +23,7 @@ const LETTERS = ["A", "B", "C"];
  * The "What do you think?" beat: three big answer bubbles. In `ask` mode they pop in one after
  * another; in `reveal` mode the right one grows with a tick and the others fade.
  */
-export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, revealLabel, box, compact }) => {
+export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, revealLabel, box, compact, silly, oopsLabel }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const fontSize = compact ? 38 : 44;
@@ -80,6 +84,21 @@ export const GuessBubbles: React.FC<Props> = ({ prompt, options, answer, mode, r
                 {mode === "reveal" && correct ? "✓" : LETTERS[i]}
               </span>
               {opt}
+              {silly === i ? (
+                <span
+                  style={{
+                    marginLeft: "auto",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    flexShrink: 0,
+                    opacity: mode === "ask" ? interpolate(frame, [14 + i * 7, 22 + i * 7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1,
+                  }}
+                >
+                  {mode === "reveal" ? <span style={{ fontSize: compact ? 24 : 28, color: "#FF6B6B", fontWeight: fonts.weightBold }}>{oopsLabel ?? "oops!"}</span> : null}
+                  <Pip mood={mode === "reveal" ? "sleepy" : "cheeky"} size={compact ? 46 : 54} facing="right" idPrefix={`pick-${i}`} tilt={mode === "reveal" ? Math.sin(frame * 0.9) * 8 : 0} />
+                </span>
+              ) : null}
             </div>
           );
         })}

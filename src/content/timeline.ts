@@ -13,6 +13,8 @@ export type SectionInput = {
   durationMs: number;
   /** Word timings relative to the section start (optional → estimated). */
   words?: WordTiming[];
+  /** Guest gag inside this section: where the guest's line starts, relative to the section start. */
+  gagOffsetMs?: number;
 };
 
 export type ExpressionCue = {
@@ -68,6 +70,7 @@ export function buildTimeline(opts: {
       pose: DEFAULT_POSE[s.key],
       expression: cue?.expression ?? DEFAULT_EXPRESSION[s.key],
       grownUp: s.key === "experiment" && (opts.grownUp ?? false),
+      ...(s.gagOffsetMs !== undefined ? { gag: { startMs: startMs + s.gagOffsetMs, endMs } } : {}),
     });
     cursor = endMs + gap;
     if (s.key === "hook" && opts.guessPauseMs) cursor += opts.guessPauseMs;
@@ -93,6 +96,7 @@ export function buildTimeline(opts: {
 export function estimateTimeline(
   script: Record<SectionKey, string> & {
     guess?: { prompt: string } | undefined;
+    gag?: { line: string } | undefined;
   },
   fps: number,
   cues?: ExpressionCue[],

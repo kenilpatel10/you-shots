@@ -13,7 +13,17 @@ export const AnswerScene: React.FC<SceneProps> = ({ script, channel, layout, max
     <>
       {hasGuess && frame < REVEAL_FRAMES ? (
         <Sequence from={0} durationInFrames={REVEAL_FRAMES} name="reveal">
-          <GuessBubbles prompt={script.guess!.prompt} options={script.guess!.options} answer={script.guess!.answer} mode="reveal" revealLabel={channel.labels?.reveal} box={layout.card} compact={(maxFontSize ?? 84) < 84} />
+          <GuessBubbles
+            prompt={script.guess!.prompt}
+            options={script.guess!.options}
+            answer={script.guess!.answer}
+            mode="reveal"
+            silly={script.guess!.silly}
+            oopsLabel={channel.labels?.oops}
+            revealLabel={channel.labels?.reveal}
+            box={layout.card}
+            compact={(maxFontSize ?? 84) < 84}
+          />
         </Sequence>
       ) : (
         <TitleCard text={script.onScreenText.answer} tag={channel.labels?.answer ?? "Here's why"} tagColor="#2FA36B" box={layout.card} maxFontSize={maxFontSize} enterFrame={hasGuess ? REVEAL_FRAMES : 0} />

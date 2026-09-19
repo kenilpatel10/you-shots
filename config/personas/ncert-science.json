@@ -81,7 +81,8 @@
         "wowFact": "मज़ेदार तथ्य",
         "experiment": "परीक्षा टिप",
         "reveal": "जवाब है…",
-        "question": "सवाल"
+        "question": "सवाल",
+        "oops": "अरे!"
       },
       "channelName": "60 सेकंड विज्ञान",
       "handle": "@vigyan60s",
@@ -145,7 +146,8 @@
         "wowFact": "Fun fact",
         "experiment": "Exam tip",
         "reveal": "The answer is…",
-        "question": "Question"
+        "question": "Question",
+        "oops": "oops!"
       },
       "hashtags": [
         "#Shorts",

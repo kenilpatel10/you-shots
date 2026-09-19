@@ -8,6 +8,7 @@ export type SceneProps = {
     card: { left: number; top: number; width: number };
     badge: { left: number; top: number };
     signoff: { left: number; top: number; width: number };
+    guest?: { left: number; top: number; size: number };
   };
   /** Frames this scene stays on screen (for exit timing). */
   durationInFrames: number;

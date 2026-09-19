@@ -85,12 +85,13 @@ export function hasGrownUpPhrase(experiment: string, rules: BannedWords["require
   return rules.required.some((r) => lower.includes(r));
 }
 
-export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "wowFact" | "experiment" | "signOff"> & { guess?: Script["guess"] }, wordsPerSecond = WORDS_PER_SECOND): number {
+export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "wowFact" | "experiment" | "signOff"> & { guess?: Script["guess"]; gag?: Script["gag"] }, wordsPerSecond = WORDS_PER_SECOND): number {
   const keys = ["hook", "answer", "wowFact", "experiment", "signOff"] as const;
   const ms =
     keys.reduce((a, k) => a + estimateSectionDurationMs(sectionSpokenText(script, k), wordsPerSecond), 0) +
     4 * SECTION_GAP_MS +
     (script.guess ? GUESS_PAUSE_MS : 0) +
+    (script.gag ? 300 : 0) + // beat of silence before the guest's line
     800 + // lead-in (jingle)
     2000; // sign-off tail
   return ms / 1000;
@@ -135,10 +136,16 @@ export function validateScript(input: unknown, banned: BannedWords = loadBannedW
   }
 
   const spoken = [s.hook, s.answer, s.wowFact, s.experiment, s.signOff].join(" ");
-  const everything = [spoken, s.title, s.description, ...Object.values(s.onScreenText), ...s.tags, ...(s.guess ? [s.guess.prompt, ...s.guess.options] : [])].join(" ");
+  const everything = [spoken, s.title, s.description, ...Object.values(s.onScreenText), ...s.tags, ...(s.guess ? [s.guess.prompt, ...s.guess.options] : []), ...(s.gag ? [s.gag.line] : [])].join(" ");
   if (s.guess) {
     if (tokenizeWords(s.guess.prompt).length > 5) reasons.push("guess.prompt longer than 5 words");
     if (new Set(s.guess.options.map((o) => o.toLowerCase())).size !== 3) reasons.push("guess options must be three different answers");
+    if (s.guess.silly !== undefined && s.guess.silly === s.guess.answer) reasons.push("guess.silly must not be the correct option");
+  }
+  if (s.gag) {
+    const n = tokenizeWords(s.gag.line).length;
+    if (n > 14) reasons.push(`gag.line: ${n} words (allowed up to 14)`);
+    if (/[!?]{2,}/.test(s.gag.line)) reasons.push("gag.line: no double punctuation");
   }
   const hits = findBannedWords(everything, banned.banned);
   if (hits.length) reasons.push(`banned words: ${hits.join(", ")}`);
