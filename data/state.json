@@ -3,7 +3,8 @@
   "perChannel": {
     "bolt-pip/en": {
       "usedTopicIds": [
-        "ocean-002"
+        "ocean-002",
+        "dinosaurs-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -100,11 +101,50 @@
       "scheduledFor": "2026-09-18T11:30:00.000Z",
       "uploadedAt": "2026-09-18T04:43:32.183Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-19-en-dinosaurs-004",
+      "kind": "short",
+      "topicId": "dinosaurs-004",
+      "date": "2026-09-19",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "What Colour Were Dinosaurs?",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-09-19T06:22:40.932Z",
+      "updatedAt": "2026-09-19T06:22:40.932Z",
+      "durationSeconds": 45.666666666666664,
+      "releaseTag": "draft-2026-09-19-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-19-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/574224020",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-19-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/574224039",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/574224047",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/574224060"
+      },
+      "description": "Find out what colour dinosaurs really were with Bolt! Learn how fossils show us their beautiful feather patterns. Perfect for curious young minds.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dinosaurs",
+        "dinosaur colours",
+        "science for kids",
+        "bolt and pip",
+        "educational",
+        "fossils"
+      ],
+      "reviewerIssues": [
+        "[validator 1] invented statistics/studies: \\bscientists (say|found|discovered)",
+        "[attempt 2] Sinosauropteryx was a small dinosaur (about the size of a raccoon or small cat), so calling it a 'giant, fluffy raccoon' is factually misleading for children.",
+        "[attempt 2] The title 'What colour were dinosaurs' is missing a question mark and proper capitalization."
+      ],
+      "telegramMessageId": 17,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-18T03:45:23.369Z",
+    "generate": "2026-09-19T06:22:40.932Z",
     "publish": "2026-09-19T05:49:48.433Z"
   }
 }
