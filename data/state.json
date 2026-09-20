@@ -4,7 +4,8 @@
     "bolt-pip/en": {
       "usedTopicIds": [
         "ocean-002",
-        "dinosaurs-004"
+        "dinosaurs-004",
+        "food-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -140,11 +141,47 @@
       ],
       "telegramMessageId": 17,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-20-en-food-006",
+      "kind": "short",
+      "topicId": "food-006",
+      "date": "2026-09-20",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does ice cream melt",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-09-20T06:41:32.227Z",
+      "updatedAt": "2026-09-20T06:41:32.227Z",
+      "durationSeconds": 37.266666666666666,
+      "releaseTag": "draft-2026-09-20-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-20-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/576290937",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-20-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/576290953",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/576290959",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/576290980"
+      },
+      "description": "Bolt explains why warm air turns cold ice cream into a melty liquid treat. Children learn about temperature changes and the history of waffle cones. A fun at-home observation activity helps kids see melting in action.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "bolt and pip",
+        "ice cream",
+        "science for kids",
+        "melting",
+        "food science",
+        "kids learning",
+        "fun facts"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 22,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-19T06:22:40.932Z",
+    "generate": "2026-09-20T06:41:32.227Z",
     "publish": "2026-09-20T06:11:16.086Z"
   }
 }
