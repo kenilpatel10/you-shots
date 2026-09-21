@@ -140,6 +140,7 @@
         "[attempt 2] Sinosauropteryx was a small dinosaur (about the size of a raccoon or small cat), so calling it a 'giant, fluffy raccoon' is factually misleading for children.",
         "[attempt 2] The title 'What colour were dinosaurs' is missing a question mark and proper capitalization."
       ],
+      "reminderSentAt": "2026-09-21T10:39:29.697Z",
       "telegramMessageId": 17,
       "includes": []
     },
@@ -217,6 +218,6 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-21T06:53:34.890Z",
-    "publish": "2026-09-21T04:55:35.332Z"
+    "publish": "2026-09-21T10:39:29.697Z"
   }
 }
