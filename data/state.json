@@ -5,7 +5,8 @@
       "usedTopicIds": [
         "ocean-002",
         "dinosaurs-004",
-        "food-006"
+        "food-006",
+        "feelings-friendship-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -177,11 +178,45 @@
       "reviewerIssues": [],
       "telegramMessageId": 22,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-21-en-feelings-friendship-004",
+      "kind": "short",
+      "topicId": "feelings-friendship-004",
+      "date": "2026-09-21",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we laugh",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-09-21T06:53:34.890Z",
+      "updatedAt": "2026-09-21T06:53:34.890Z",
+      "durationSeconds": 37.86666666666667,
+      "releaseTag": "draft-2026-09-21-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-21-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/578451946",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-21-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/578451985",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/578451999",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/578452016"
+      },
+      "description": "Discover why we laugh and how it helps us connect with our friends. Learn a fun fact about how laughter spreads and try a simple tickle test at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "why we laugh",
+        "laughter for kids",
+        "feelings for kids",
+        "science of laughing",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 27,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-20T06:41:32.227Z",
+    "generate": "2026-09-21T06:53:34.890Z",
     "publish": "2026-09-21T04:55:35.332Z"
   }
 }
