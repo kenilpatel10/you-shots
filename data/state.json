@@ -6,7 +6,8 @@
         "ocean-002",
         "dinosaurs-004",
         "food-006",
-        "feelings-friendship-004"
+        "feelings-friendship-004",
+        "everyday-things-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -213,11 +214,46 @@
       "reviewerIssues": [],
       "telegramMessageId": 27,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-22-en-everyday-things-001",
+      "kind": "short",
+      "topicId": "everyday-things-001",
+      "date": "2026-09-22",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does soap make bubbles",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-09-22T06:37:17.925Z",
+      "updatedAt": "2026-09-22T06:37:17.925Z",
+      "durationSeconds": 42.46666666666667,
+      "releaseTag": "draft-2026-09-22-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-22-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/580749448",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-22-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/580749466",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/580749474",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/580749493"
+      },
+      "description": "Bolt explains how soap stretches water to create floating bubbles. Learn the fun science behind soap bubbles and try a simple bubble activity at home. Perfect for curious young minds!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "bubbles",
+        "soap bubbles",
+        "kids science",
+        "bolt and pip",
+        "everyday science",
+        "fun facts for kids"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 33,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-21T06:53:34.890Z",
+    "generate": "2026-09-22T06:37:17.925Z",
     "publish": "2026-09-22T04:49:02.423Z"
   }
 }
