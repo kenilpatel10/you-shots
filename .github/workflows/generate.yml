@@ -2,8 +2,9 @@ name: Generate daily Short
 
 on:
   schedule:
-    # 01:30 UTC = 07:00 IST. Change here and in config/channel.json (timezone/uploadTime).
-    - cron: "30 1 * * *"
+    # 00:47 UTC = 06:17 IST nominal; GitHub often runs schedules 1–5 h late, so this still lands in
+    # the morning. Change here and in config/channel.json (timezone/uploadTime).
+    - cron: "47 0 * * *"
   workflow_dispatch:
     inputs:
       topicId:
@@ -54,6 +55,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # The branch tip, not the commit that started the run: a later matrix job must see the
+          # state the earlier one committed.
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:

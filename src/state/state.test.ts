@@ -42,6 +42,15 @@ describe("state transitions", () => {
     expect(() => transition(s, "nope", "approved")).toThrow(TransitionError);
   });
 
+  it("uploaded videos can be vetoed (rejected) but never re-approved", () => {
+    let s = upsertDraft(emptyState(), base);
+    s = transition(s, base.id, "approved");
+    s = transition(s, base.id, "uploaded", { youtubeVideoId: "v" });
+    s = transition(s, base.id, "rejected", { rejectReason: "veto" });
+    expect(s.drafts[0]?.status).toBe("rejected");
+    expect(() => transition(s, base.id, "approved")).toThrow(TransitionError);
+  });
+
   it("failed uploads can be re-approved", () => {
     let s = upsertDraft(emptyState(), base);
     s = transition(s, base.id, "approved");

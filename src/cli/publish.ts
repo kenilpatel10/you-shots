@@ -17,7 +17,7 @@ import { formatInZone } from "../lib/time";
 import { downloadAsset, releasesConfigured } from "../publish/releases";
 import { nextFreeSlot } from "../publish/schedule";
 import { chatId, escapeHtml, getUpdates, HELP_TEXT, isAuthorized, notifyFailure, parseCommand, sendMessage, telegramConfigured } from "../publish/telegram";
-import { classifyYoutubeError, refreshTokenVar, setThumbnail, uploadVideo, youtubeConfigured } from "../publish/youtube";
+import { classifyYoutubeError, deleteVideo, refreshTokenVar, setThumbnail, uploadVideo, youtubeConfigured } from "../publish/youtube";
 import { draftsByStatus, findDraft, langState, loadState, saveState, transition, TransitionError, withLangState, type Draft, type State } from "../state/state";
 
 const log = createLogger("publish");
@@ -104,9 +104,18 @@ export async function processUpdates(state: State, timezone: string, cfg: Channe
         next = transition(next, draft.id, "approved");
         await say(`✅ Approved <code>${escapeHtml(draft.id)}</code>. It will be uploaded (private, scheduled) on the next publish run.`);
       } else if (cmd.kind === "reject") {
-        next = transition(next, draft.id, "rejected", {
-          rejectReason: cmd.reason,
-        });
+        if (draft.status === "uploaded") {
+          // Veto: only while the video is still private and scheduled.
+          if (!draft.scheduledFor || new Date(draft.scheduledFor) <= new Date()) {
+            await say(`⚠️ <code>${escapeHtml(draft.id)}</code> is already public; remove it in YouTube Studio if needed.`);
+            continue;
+          }
+          if (draft.youtubeVideoId && !opts.dryRun) await deleteVideo(draft.youtubeVideoId, draft.language, draft.persona);
+          next = transition(next, draft.id, "rejected", { rejectReason: cmd.reason });
+          await say(`🗑 Pulled <code>${escapeHtml(draft.id)}</code> from YouTube before it went public: ${escapeHtml(cmd.reason)}`);
+          continue;
+        }
+        next = transition(next, draft.id, "rejected", { rejectReason: cmd.reason });
         await say(`🗑 Rejected <code>${escapeHtml(draft.id)}</code>: ${escapeHtml(cmd.reason)}`);
       } else if (cmd.kind === "redo") {
         next = transition(next, draft.id, "rejected", {
@@ -122,6 +131,18 @@ export async function processUpdates(state: State, timezone: string, cfg: Channe
       if (err instanceof TransitionError) await say(`⚠️ ${escapeHtml(err.message)} (current status: ${draft.status})`);
       else throw err;
     }
+  }
+  return next;
+}
+
+/** Channels with autoApprove: a draft still waiting after an hour (older code, or a manual run) is approved now. */
+async function autoApproveStale(state: State, cfg: ChannelConfig): Promise<State> {
+  let next = state;
+  const cutoff = Date.now() - 3_600_000;
+  for (const d of draftsByStatus(state, "drafted")) {
+    if (!configFor(cfg, d).autoApprove || new Date(d.createdAt).getTime() > cutoff) continue;
+    next = transition(next, d.id, "approved");
+    await say(`✅ Auto-approved <code>${escapeHtml(d.id)}</code> (${escapeHtml(d.title)}). It uploads now, private and scheduled. Reply <code>/reject ${escapeHtml(d.id)} reason</code> before it goes public to pull it.`);
   }
   return next;
 }
@@ -237,6 +258,7 @@ async function main() {
   if (!telegramConfigured()) throw new Error("Telegram is not configured (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID)");
   let state = await loadState();
   state = await processUpdates(state, cfg.timezone, cfg);
+  state = await autoApproveStale(state, cfg);
   state = await sendReminders(state, cfg.reminderAfterHours);
   state = await uploadApproved(state);
   state = {

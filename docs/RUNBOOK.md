@@ -14,6 +14,13 @@ Everything runs on GitHub Actions. Your only recurring job is to answer one Tele
 
 Other commands: `/status` (pipeline state), `/help`.
 
+**Auto-approve (default for Bolt & Pip and the NCERT persona).** A draft that passes the AI
+reviewer and the validator is approved the moment it is made: the Telegram message says
+"Auto-approved", the next hourly run uploads it (private, scheduled for the next free slot) and
+it goes public at the slot time. You keep a veto: `/reject <id> reason` any time before it goes
+public deletes it from YouTube; `/redo <id>` also queues a fresh topic. Set `"autoApprove": false`
+in the persona to go back to approve-first.
+
 **Several channels:** the daily run produces one draft per entry in the `CHANNELS` variable
 (`["bolt-pip/en","bolt-pip/hi","ncert-science/hi"]`), each Telegram message names its channel, and
 the draft id carries the channel (`short-2026-09-19-ncert-science-hi-c8-comb-01`). Commands are

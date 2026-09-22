@@ -166,5 +166,6 @@
     "ink": "#1E2A44",
     "paper": "#FFFDF7"
   },
-  "gags": false
+  "gags": false,
+  "autoApprove": false
 }

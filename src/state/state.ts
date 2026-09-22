@@ -163,7 +163,8 @@ const ALLOWED: Record<DraftStatus, DraftStatus[]> = {
   drafted: ["approved", "rejected", "failed"],
   approved: ["uploaded", "failed", "rejected"],
   rejected: [],
-  uploaded: [],
+  /** An uploaded-but-not-yet-public video can be vetoed (deleted from YouTube) with /reject. */
+  uploaded: ["rejected"],
   failed: ["approved", "rejected"],
 };
 

@@ -2,7 +2,8 @@
 
 A free, human-reviewed pipeline that makes **one original 45–58 second kids' YouTube Short per
 day**, starring **Bolt** — a small, friendly, hand-built SVG robot — and sends every draft to you
-on Telegram. Nothing is uploaded until you reply `/approve`. Once a week it compiles the approved
+on Telegram. Either nothing is uploaded until you reply `/approve`, or (auto-approve mode) every
+draft that passes the AI review is scheduled and you keep a `/reject` veto until it goes public. Once a week it compiles the approved
 Shorts into a 5–8 minute landscape video, also approval-gated.
 
 - **Cost: ₹0 / $0 per month.** Free API tiers, open-source tools, GitHub Actions on a public repo.

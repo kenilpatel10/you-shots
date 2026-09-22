@@ -46,6 +46,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # The branch tip, not the commit that started the run: a later matrix job must see the
+          # state the earlier one committed.
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:

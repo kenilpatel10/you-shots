@@ -175,5 +175,6 @@
     "highlight": "#FF6B6B",
     "ink": "#1E2A44",
     "paper": "#FFFDF7"
-  }
+  },
+  "autoApprove": true
 }

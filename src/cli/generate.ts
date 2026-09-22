@@ -165,7 +165,8 @@ async function main() {
     language: cfg.language,
     persona: cfg.persona,
     title: record.title,
-    status: "drafted",
+    status: cfg.autoApprove ? "approved" : "drafted",
+    ...(cfg.autoApprove ? { approvedAt: now } : {}),
     source: record.source,
     createdAt: now,
     updatedAt: now,
@@ -227,6 +228,7 @@ async function main() {
       timingSource: result.timingSource,
       assetUrl: draft.assets.videoPublic,
       channelLabel: `${identity.name} (${identity.label})`,
+      autoApproved: cfg.autoApprove,
     }),
     { html: true },
   );
@@ -246,7 +248,7 @@ async function main() {
   );
   next = { ...next, lastRuns: { ...next.lastRuns, generate: now } };
   await saveState(next);
-  log.info(`Draft ${draftId} sent for review.`);
+  log.info(`Draft ${draftId} ${cfg.autoApprove ? "auto-approved and announced" : "sent for review"}.`);
 }
 
 runCli("generate", main, async (err) => {

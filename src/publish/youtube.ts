@@ -88,6 +88,12 @@ export async function uploadVideo(input: UploadInput): Promise<{ videoId: string
   return { videoId };
 }
 
+/** Remove a private, scheduled video before it goes public (the /reject veto). */
+export async function deleteVideo(videoId: string, language?: string, persona?: string): Promise<void> {
+  const youtube = google.youtube({ version: "v3", auth: oauthClient(true, language, persona) });
+  await youtube.videos.delete({ id: videoId });
+}
+
 export async function setThumbnail(videoId: string, file: string, language?: string, persona?: string): Promise<void> {
   const youtube = google.youtube({ version: "v3", auth: oauthClient(true, language, persona) });
   await youtube.thumbnails.set({

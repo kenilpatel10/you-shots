@@ -94,7 +94,11 @@ export async function timeSection(opts: { text: string; audio: PcmAudio; model: 
     }
     const { words, matched } = result;
     if (matched === 0) {
-      log.warn(`whisper matched no words for ${opts.key}; using estimated timings`);
+      const heard = json.transcription
+        .map((t) => t.text.trim())
+        .join(" ")
+        .slice(0, 120);
+      log.warn(`whisper matched no words for ${opts.key}; using estimated timings (heard: "${heard}")`);
       return { words: estimateWordTimings(opts.text, 0, durationMs), source: "estimated", total };
     }
     if (matched < total * 0.5) log.warn(`Only ${matched}/${total} words matched for ${opts.key}; interpolating the rest`);

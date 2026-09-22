@@ -166,7 +166,7 @@ export function isAuthorized(update: TelegramUpdate, allowedChatId: string): boo
 
 export const HELP_TEXT = `Commands:
 /approve <draftId> — queue for upload (next hourly run)
-/reject <draftId> <reason> — never publish this draft
+/reject <draftId> <reason> — never publish this draft (also pulls an auto-approved video before it goes public)
 /redo <draftId> — regenerate the same topic tomorrow
 /status — pending drafts and scheduled uploads`;
 
@@ -190,6 +190,7 @@ export function formatDraftMessage(
     timingSource: string;
     assetUrl?: string;
     channelLabel?: string;
+    autoApproved?: boolean;
   },
 ): string {
   const notes = extra.reviewerNotes.length ? extra.reviewerNotes.map((n) => `• ${escapeHtml(n)}`).join("\n") : "• none";
@@ -211,7 +212,9 @@ export function formatDraftMessage(
     `<b>Reviewer notes:</b>\n${notes}`,
     extra.assetUrl ? `\nFull-quality file: ${escapeHtml(extra.assetUrl)}` : "",
     "",
-    `Reply:\n<code>/approve ${escapeHtml(draft.id)}</code>\n<code>/reject ${escapeHtml(draft.id)} reason</code>\n<code>/redo ${escapeHtml(draft.id)}</code>`,
+    extra.autoApproved
+      ? `✅ <b>Auto-approved</b> (passed the AI review). It uploads on the next hourly run, private and scheduled for the next slot.\nTo stop it, reply before it goes public:\n<code>/reject ${escapeHtml(draft.id)} reason</code>\n<code>/redo ${escapeHtml(draft.id)}</code>`
+      : `Reply:\n<code>/approve ${escapeHtml(draft.id)}</code>\n<code>/reject ${escapeHtml(draft.id)} reason</code>\n<code>/redo ${escapeHtml(draft.id)}</code>`,
   ].join("\n");
 }
 

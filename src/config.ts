@@ -80,6 +80,12 @@ export const ChannelConfigSchema = z.object({
   extraRules: z.array(z.string()).default([]),
   /** Comedy beats: a guest character's one-liner after the wow fact and Pip picking a silly guess. */
   gags: z.boolean().default(true),
+  /**
+   * Drafts that pass the AI reviewer and the validator are approved automatically and uploaded
+   * (private, scheduled) on the next hourly run; /reject <id> before publish time pulls them.
+   * false = every draft waits for /approve.
+   */
+  autoApprove: z.boolean().default(false),
   /** Files this persona reads (relative to the repo root). */
   topicsFile: z.string().default("data/topics.json"),
   fallbackDir: z.string().default("data/fallback-scripts"),
