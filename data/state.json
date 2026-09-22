@@ -15,7 +15,8 @@
     },
     "bolt-pip/hi": {
       "usedTopicIds": [
-        "dinosaurs-004"
+        "dinosaurs-004",
+        "ocean-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -250,11 +251,47 @@
       "reviewerIssues": [],
       "telegramMessageId": 33,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-22-hi-ocean-005",
+      "kind": "short",
+      "topicId": "ocean-005",
+      "date": "2026-09-22",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "मछलियां कैसे सोती हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-22T17:11:48.390Z",
+      "updatedAt": "2026-09-22T17:11:48.390Z",
+      "durationSeconds": 41.666666666666664,
+      "releaseTag": "draft-2026-09-22-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-22-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/581861121",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-22-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/581861180",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/581861226",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/581861258"
+      },
+      "description": "जानिए कि मछलियां पानी में आंखें खुली रखकर कैसे सोती हैं। बच्चों के लिए एक मजेदार और आसान विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "fish sleeping",
+        "machli kaise soti hai",
+        "kids science hindi",
+        "bolt aur pip",
+        "ocean facts hindi",
+        "fun facts for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-22T17:11:48.390Z",
+      "telegramMessageId": 39,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-22T06:37:17.925Z",
+    "generate": "2026-09-22T17:11:48.390Z",
     "publish": "2026-09-22T14:49:14.295Z"
   }
 }
