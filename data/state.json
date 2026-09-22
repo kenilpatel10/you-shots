@@ -178,6 +178,7 @@
         "fun facts"
       ],
       "reviewerIssues": [],
+      "reminderSentAt": "2026-09-22T09:54:51.066Z",
       "telegramMessageId": 22,
       "includes": []
     },
@@ -254,6 +255,6 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-22T06:37:17.925Z",
-    "publish": "2026-09-22T04:49:02.423Z"
+    "publish": "2026-09-22T09:54:51.067Z"
   }
 }
