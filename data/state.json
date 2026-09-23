@@ -17,7 +17,8 @@
     "bolt-pip/hi": {
       "usedTopicIds": [
         "dinosaurs-004",
-        "ocean-005"
+        "ocean-005",
+        "food-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -343,11 +344,48 @@
       "approvedAt": "2026-09-23T05:18:12.179Z",
       "telegramMessageId": 50,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-23-hi-food-006",
+      "kind": "short",
+      "topicId": "food-006",
+      "date": "2026-09-23",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "आइसक्रीम क्यों पिघलती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-23T05:25:25.675Z",
+      "updatedAt": "2026-09-23T05:25:25.675Z",
+      "durationSeconds": 42,
+      "releaseTag": "draft-2026-09-23-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-23-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583047979",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-23-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583047999",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583048020",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583048057"
+      },
+      "description": "जानें कि गर्म मौसम में हमारी पसंदीदा आइसक्रीम क्यों पिघल जाती है. बोल्ट और पिप के साथ विज्ञान के इस मजेदार राज को समझें. घर पर बर्फ के साथ एक आसान प्रयोग भी करें.\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "ice cream melt",
+        "kids science hindi",
+        "bolt and pip",
+        "science for kids",
+        "आइसक्रीम क्यों पिघलती है",
+        "बच्चों के लिए विज्ञान",
+        "मजेदार तथ्य"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-23T05:25:25.675Z",
+      "telegramMessageId": 52,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-23T05:18:12.179Z",
+    "generate": "2026-09-23T05:25:25.675Z",
     "publish": "2026-09-23T00:28:02.260Z"
   }
 }
