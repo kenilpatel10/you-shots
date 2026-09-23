@@ -7,7 +7,8 @@
         "dinosaurs-004",
         "food-006",
         "feelings-friendship-004",
-        "everyday-things-001"
+        "everyday-things-001",
+        "human-body-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -306,11 +307,47 @@
       "scheduledFor": "2026-09-23T11:30:00.000Z",
       "uploadedAt": "2026-09-22T17:13:47.212Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-23-en-human-body-005",
+      "kind": "short",
+      "topicId": "human-body-005",
+      "date": "2026-09-23",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we blink",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-23T05:18:12.179Z",
+      "updatedAt": "2026-09-23T05:18:12.179Z",
+      "durationSeconds": 37.266666666666666,
+      "releaseTag": "draft-2026-09-23-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-23-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583037142",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-23-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583037152",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583037164",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/583037199"
+      },
+      "description": "Find out why we blink and how our eyelids act like tiny windshield wipers. Learn fun facts about the human body with Bolt!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "kids science",
+        "why do we blink",
+        "human body for kids",
+        "bolt and pip",
+        "science shorts",
+        "educational videos for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-23T05:18:12.179Z",
+      "telegramMessageId": 50,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-22T17:11:48.390Z",
+    "generate": "2026-09-23T05:18:12.179Z",
     "publish": "2026-09-23T00:28:02.260Z"
   }
 }
