@@ -317,10 +317,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we blink",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-23T05:18:12.179Z",
-      "updatedAt": "2026-09-23T05:18:12.179Z",
+      "updatedAt": "2026-09-23T05:56:06.223Z",
       "durationSeconds": 37.266666666666666,
       "releaseTag": "draft-2026-09-23-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-23-en",
@@ -343,6 +343,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-23T05:18:12.179Z",
       "telegramMessageId": 50,
+      "youtubeVideoId": "8nkj_SWRnhw",
+      "scheduledFor": "2026-09-27T11:30:00.000Z",
+      "uploadedAt": "2026-09-23T05:56:06.223Z",
       "includes": []
     },
     {
@@ -353,10 +356,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "आइसक्रीम क्यों पिघलती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-23T05:25:25.675Z",
-      "updatedAt": "2026-09-23T05:25:25.675Z",
+      "updatedAt": "2026-09-23T05:56:09.263Z",
       "durationSeconds": 42,
       "releaseTag": "draft-2026-09-23-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-23-hi",
@@ -380,12 +383,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-23T05:25:25.675Z",
       "telegramMessageId": 52,
+      "youtubeVideoId": "cJ6gnYEFVoo",
+      "scheduledFor": "2026-09-24T11:30:00.000Z",
+      "uploadedAt": "2026-09-23T05:56:09.263Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-23T05:25:25.675Z",
-    "publish": "2026-09-23T00:28:02.260Z"
+    "publish": "2026-09-23T05:56:09.580Z"
   }
 }
