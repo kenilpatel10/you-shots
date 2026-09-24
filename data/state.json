@@ -19,7 +19,8 @@
       "usedTopicIds": [
         "dinosaurs-004",
         "ocean-005",
-        "food-006"
+        "food-006",
+        "feelings-friendship-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -426,11 +427,48 @@
       "approvedAt": "2026-09-24T05:08:42.829Z",
       "telegramMessageId": 56,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-24-hi-feelings-friendship-004",
+      "kind": "short",
+      "topicId": "feelings-friendship-004",
+      "date": "2026-09-24",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हम क्यों हंसते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-24T05:20:27.155Z",
+      "updatedAt": "2026-09-24T05:20:27.155Z",
+      "durationSeconds": 41.666666666666664,
+      "releaseTag": "draft-2026-09-24-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-24-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585215944",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-24-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585215968",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585215977",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585215990"
+      },
+      "description": "क्या आप जानते हैं कि हम क्यों हंसते हैं? इस छोटे से वीडियो में बोल्ट से जानिए हंसी के पीछे का मजेदार कारण। यह बच्चों के लिए बेहद ज्ञानवर्धक है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "laughing",
+        "why do we laugh",
+        "kids science",
+        "feelings for kids",
+        "bolt and pip",
+        "हंसना",
+        "बच्चों के लिए"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-24T05:20:27.155Z",
+      "telegramMessageId": 58,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-24T05:08:42.829Z",
+    "generate": "2026-09-24T05:20:27.155Z",
     "publish": "2026-09-24T04:42:52.498Z"
   }
 }
