@@ -116,7 +116,7 @@ export type SectionTimingResult = { words: WordTiming[]; source: "whisper" | "es
 /**
  * Word timings (relative to the section start) for one section's audio.
  */
-export async function timeSection(opts: { text: string; audio: PcmAudio; model: WhisperModel; language: string; workDir: string; key: string }): Promise<SectionTimingResult> {
+export async function timeSection(opts: { text: string; audio: PcmAudio; model: WhisperModel; language: string; prompt?: boolean; workDir: string; key: string }): Promise<SectionTimingResult> {
   const durationMs = Math.round((opts.audio.samples.length / opts.audio.sampleRate) * 1000);
   const total = opts.text.trim().split(/\s+/).length;
   const whisper = await getWhisper(opts.model);
@@ -134,6 +134,8 @@ export async function timeSection(opts: { text: string; audio: PcmAudio; model: 
       tokenLevelTimestamps: true,
       language: opts.language as "en",
       printOutput: false,
+      // whisper.cpp keeps at most 224 prompt tokens; Devanagari is ~3 tokens per word, so cap it.
+      ...(opts.prompt ? { additionalArgs: ["--prompt", opts.text.split(/\s+/).slice(0, 60).join(" ")] } : {}),
     });
     const { captions } = toCaptions({ whisperCppOutput: json });
     let tokens = captions.map((c) => ({ text: c.text, startMs: c.startMs, endMs: c.endMs }));

@@ -38,6 +38,8 @@ const LanguageConfig = z.object({
   whisper: z.object({
     model: z.enum(["tiny", "tiny.en", "base", "base.en", "small", "small.en", "medium", "medium.en", "large-v3-turbo"]),
     language: z.string(),
+    /** Feed each section's expected text to whisper as its initial prompt; keeps small multilingual models in the right script (Hindi otherwise comes back as Urdu letters or an English translation). */
+    prompt: z.boolean().default(false),
   }),
   askGrownUp: z.string(),
   /** Labels for the feeling chip shown when Bolt's expression changes. */

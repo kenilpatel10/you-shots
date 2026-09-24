@@ -54,8 +54,9 @@
         "wordsPerSecond": 2.15
       },
       "whisper": {
-        "model": "base",
-        "language": "hi"
+        "model": "small",
+        "language": "hi",
+        "prompt": true
       },
       "askGrownUp": "बड़ों से मदद लो",
       "feelings": {

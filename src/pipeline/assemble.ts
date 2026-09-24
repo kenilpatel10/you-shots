@@ -172,6 +172,7 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
             audio: clip,
             model: lang.whisper.model,
             language: lang.whisper.language,
+            prompt: lang.whisper.prompt,
             workDir: audioDir,
             key,
           });

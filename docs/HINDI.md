@@ -16,7 +16,7 @@ only. What is in place:
 | Hand-written fallback scripts | `data/fallback-scripts/hi/` (2, validator-tested) | ✅ |
 | **Voice** | **Gemini TTS** (`src/audio/geminiTts.ts`, engine `gemini`, voice `Leda`, free tier) | ✅ default |
 | Offline voice | eSpeak-NG `hi+f3` via `text2wav` (robotic but clear) — `--voice espeak` or `ALLOW_FALLBACK_VOICE=1` | ✅ fallback |
-| Word timings | whisper `base` multilingual, `language: hi`; estimated timings if the model is unavailable | ✅ config |
+| Word timings | whisper `small` multilingual, `language: hi`, `prompt: true` (section text as the initial prompt so the model stays in Devanagari); estimated timings if the model is unavailable | ✅ config |
 | Topic history, redo list, weekly keys | `data/state.json → perLanguage.hi` (separate from English) | ✅ |
 | Topics | `data/topics.json` questions are English; the LLM writes the Hindi script from them | ✅ |
 
@@ -44,7 +44,7 @@ Everything language-specific is keyed by `CHANNEL_LANGUAGE` / `config/channel.js
 | Topics | `data/topics.json` (`question` text) | translate, or add a `question_hi` field and adapt the picker |
 | Fallback scripts | `data/fallback-scripts/*.json` | write Hindi ones (validator word counts are language-agnostic) |
 | Voice | `src/audio/tts.ts` | **needs a new engine — see below** |
-| Word timings | `config/channel.json → languages.hi.whisper` | use a multilingual model: `{ "model": "base", "language": "hi" }` (not `base.en`) |
+| Word timings | `config/channel.json → languages.hi.whisper` | use a multilingual model with the text prompt: `{ "model": "small", "language": "hi", "prompt": true }` (`base` hears Hindi as Urdu script or English; `base.en` is English-only) |
 | Font | `remotion/fonts.ts`, `public/fonts/` | add a Devanagari font such as **Baloo 2** or **Noto Sans Devanagari** (OFL) and put it first in `theme.fonts.family` when `language === "hi"` |
 | Captions | `remotion/components/Captions.tsx` | paging is by word/character count and works for Devanagari; check 4-word pages still fit at 60 px |
 
