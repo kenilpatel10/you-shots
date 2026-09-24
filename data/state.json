@@ -8,7 +8,8 @@
         "food-006",
         "feelings-friendship-004",
         "everyday-things-001",
-        "human-body-005"
+        "human-body-005",
+        "animals-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -387,11 +388,49 @@
       "scheduledFor": "2026-09-24T11:30:00.000Z",
       "uploadedAt": "2026-09-23T05:56:09.263Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-24-en-animals-001",
+      "kind": "short",
+      "topicId": "animals-001",
+      "date": "2026-09-24",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why Do Cats Purr",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-24T05:08:42.829Z",
+      "updatedAt": "2026-09-24T05:08:42.829Z",
+      "durationSeconds": 43.4,
+      "releaseTag": "draft-2026-09-24-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-24-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585198111",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-24-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585198140",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585198168",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/585198186"
+      },
+      "description": "Learn why cats purr and how their cozy vibrations work in this fun science video for kids. Bolt explains the science of animal sounds through friendly examples and simple home activities.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "cats",
+        "purring",
+        "pets",
+        "animals",
+        "science for kids",
+        "bolt and pip",
+        "cat sounds",
+        "biology"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-24T05:08:42.829Z",
+      "telegramMessageId": 56,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-23T05:25:25.675Z",
+    "generate": "2026-09-24T05:08:42.829Z",
     "publish": "2026-09-24T04:42:52.498Z"
   }
 }
