@@ -4,7 +4,10 @@
  * installed (no network, unsupported platform) so the pipeline never blocks on captions.
  */
 import path from "node:path";
+import os from "node:os";
 import { promises as fs } from "node:fs";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { downloadWhisperModel, installWhisperCpp, toCaptions, transcribe, type WhisperModel } from "@remotion/install-whisper-cpp";
 import type { WordTiming } from "../../remotion/schema";
 import { CACHE_DIR } from "../lib/paths";
@@ -19,9 +22,61 @@ const log = createLogger("timings");
 
 /** whisper.cpp release built from source on Linux/macOS (needs cmake+git), prebuilt on Windows. */
 export const WHISPER_CPP_VERSION = env("WHISPER_CPP_VERSION") ?? "1.7.5";
+const WHISPER_REPO = "https://github.com/ggerganov/whisper.cpp.git";
+const execFileAsync = promisify(execFile);
 
 export function whisperDir(): string {
   return env("WHISPER_DIR") ?? path.join(CACHE_DIR, "whisper");
+}
+
+/** `build/bin/whisper-cli` for whisper.cpp >= 1.7.4 (what @remotion/install-whisper-cpp expects). */
+export function whisperBinary(to: string): string {
+  return path.join(to, "build", "bin", process.platform === "win32" ? "whisper-cli.exe" : "whisper-cli");
+}
+
+async function run(bin: string, args: string[], cwd?: string): Promise<void> {
+  await execFileAsync(bin, args, { cwd, maxBuffer: 64 * 1024 * 1024 });
+}
+
+/**
+ * True when the binary starts at all. A whisper-cli compiled with -march=native on one machine and
+ * restored from cache on another dies with SIGILL before printing anything; a normal exit (any code)
+ * means the instructions are supported.
+ */
+export async function binaryRuns(bin: string): Promise<boolean> {
+  try {
+    await execFileAsync(bin, ["--help"]);
+    return true;
+  } catch (err) {
+    const e = err as { code?: unknown; signal?: string | null };
+    return typeof e.code === "number" && !e.signal;
+  }
+}
+
+/**
+ * Clone + cmake whisper.cpp without -march=native so the binary can be cached and reused on any
+ * x86-64/arm64 runner (AVX2/FMA stay on, AVX-512 off). Remotion's installer runs plain `make`,
+ * which tunes for the build host and crashes elsewhere.
+ */
+async function buildPortableWhisper(to: string): Promise<void> {
+  await fs.rm(to, { recursive: true, force: true });
+  await run("git", ["clone", "--depth", "1", "--branch", `v${WHISPER_CPP_VERSION}`, WHISPER_REPO, to]);
+  await run("cmake", ["-B", "build", "-DCMAKE_BUILD_TYPE=Release", "-DGGML_NATIVE=OFF", "-DGGML_AVX512=OFF", "-DWHISPER_BUILD_TESTS=OFF"], to);
+  await run("cmake", ["--build", "build", "--config", "Release", "--target", "whisper-cli", "-j", String(Math.max(1, os.availableParallelism()))], to);
+}
+
+async function ensureWhisperCpp(to: string): Promise<void> {
+  if (process.platform === "win32") {
+    await installWhisperCpp({ version: WHISPER_CPP_VERSION, to, printOutput: false });
+    return;
+  }
+  const bin = whisperBinary(to);
+  if (await binaryRuns(bin)) return;
+  const existed = await fs.stat(bin).then(() => true, () => false);
+  if (existed) log.warn("cached whisper-cli does not run on this CPU; rebuilding a portable binary");
+  else log.info("Building whisper.cpp (portable, no -march=native) …");
+  await buildPortableWhisper(to);
+  if (!(await binaryRuns(bin))) throw new Error("freshly built whisper-cli does not start");
 }
 
 type Whisper = { whisperPath: string; modelFolder: string; model: WhisperModel };
@@ -35,7 +90,7 @@ async function setupWhisper(model: WhisperModel): Promise<Whisper | null> {
   try {
     await ensureDir(modelFolder);
     log.info(`Ensuring whisper.cpp ${WHISPER_CPP_VERSION} in ${to} …`);
-    await installWhisperCpp({ version: WHISPER_CPP_VERSION, to, printOutput: false });
+    await ensureWhisperCpp(to);
     await downloadWhisperModel({ model, folder: modelFolder, printOutput: false });
     // A blocked/failed download can leave a tiny error page where the model should be.
     const modelFile = path.join(modelFolder, `ggml-${model}.bin`);

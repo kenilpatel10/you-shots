@@ -174,6 +174,7 @@ See `.env.example`. Locally, copy it to `.env`. In Actions, add the same names a
 | `Failed to launch the browser process` | Set `REMOTION_BROWSER_EXECUTABLE` to a Chrome/Chromium binary, or unset `REMOTION_PREFER_DOWNLOADED_BROWSER` and let Remotion download its headless shell. |
 | `Text-to-speech failed … Forbidden access to file: https://huggingface.co/…` | The machine cannot reach Hugging Face. Check the network/proxy; for an offline test render use `--dry-run --voice espeak` (bundled eSpeak-NG: robotic but clear) or set `ALLOW_FALLBACK_VOICE=1`. |
 | `whisper.cpp unavailable … using estimated word timings` | Install `git` and `cmake` (Linux/macOS); captions still work with estimated timings. |
+| `cached whisper-cli does not run on this CPU` / `SIGILL` | A cached whisper binary was built for another machine; the pipeline rebuilds it portably (`-DGGML_NATIVE=OFF`) on the spot. Delete `.cache/whisper/whisper.cpp` to force it. |
 | Telegram `Bad Request: chat not found` | Press *Start* in the bot chat first; check `TELEGRAM_CHAT_ID`. |
 | YouTube `invalid_grant` after a week | Publish the OAuth consent screen (`docs/SETUP_YOUTUBE.md`), re-run `npm run auth:youtube`. |
 | Upload landed on the wrong channel | The token was issued for the personal channel, not the brand channel. `npm run auth:youtube -- --whoami` shows which; re-run `npm run auth:youtube` and pick the brand channel on the chooser. |
