@@ -398,10 +398,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why Do Cats Purr",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-24T05:08:42.829Z",
-      "updatedAt": "2026-09-24T05:08:42.829Z",
+      "updatedAt": "2026-09-24T09:57:15.287Z",
       "durationSeconds": 43.4,
       "releaseTag": "draft-2026-09-24-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-24-en",
@@ -426,6 +426,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-24T05:08:42.829Z",
       "telegramMessageId": 56,
+      "youtubeVideoId": "U2_CQJda_jw",
+      "scheduledFor": "2026-09-28T11:30:00.000Z",
+      "uploadedAt": "2026-09-24T09:57:15.287Z",
       "includes": []
     },
     {
@@ -436,10 +439,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हम क्यों हंसते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-24T05:20:27.155Z",
-      "updatedAt": "2026-09-24T05:20:27.155Z",
+      "updatedAt": "2026-09-24T09:57:18.512Z",
       "durationSeconds": 41.666666666666664,
       "releaseTag": "draft-2026-09-24-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-24-hi",
@@ -463,12 +466,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-24T05:20:27.155Z",
       "telegramMessageId": 58,
+      "youtubeVideoId": "_5pQXFyH9-E",
+      "scheduledFor": "2026-09-25T11:30:00.000Z",
+      "uploadedAt": "2026-09-24T09:57:18.512Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-24T05:20:27.155Z",
-    "publish": "2026-09-24T04:42:52.498Z"
+    "publish": "2026-09-24T09:57:18.878Z"
   }
 }
