@@ -9,7 +9,8 @@
         "feelings-friendship-004",
         "everyday-things-001",
         "human-body-005",
-        "animals-001"
+        "animals-001",
+        "space-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -470,11 +471,48 @@
       "scheduledFor": "2026-09-25T11:30:00.000Z",
       "uploadedAt": "2026-09-24T09:57:18.512Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-25-en-space-004",
+      "kind": "short",
+      "topicId": "space-004",
+      "date": "2026-09-25",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why is it dark at night",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-25T05:30:52.260Z",
+      "updatedAt": "2026-09-25T05:30:52.260Z",
+      "durationSeconds": 36.1,
+      "releaseTag": "draft-2026-09-25-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-25-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587614549",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-25-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587614571",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587614586",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587614610"
+      },
+      "description": "Learn why night happens in this fun, simple video for kids! Bolt explains how Earth spins like a top to create day and night. Try a fun, safe activity at home to see it in action!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "space",
+        "science for kids",
+        "why is it dark",
+        "earth",
+        "day and night",
+        "bolt and pip",
+        "educational"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-25T05:30:52.260Z",
+      "telegramMessageId": 62,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-24T05:20:27.155Z",
+    "generate": "2026-09-25T05:30:52.260Z",
     "publish": "2026-09-25T01:27:18.915Z"
   }
 }
