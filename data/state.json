@@ -21,7 +21,8 @@
         "dinosaurs-004",
         "ocean-005",
         "food-006",
-        "feelings-friendship-004"
+        "feelings-friendship-004",
+        "everyday-things-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -508,11 +509,48 @@
       "approvedAt": "2026-09-25T05:30:52.260Z",
       "telegramMessageId": 62,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-25-hi-everyday-things-001",
+      "kind": "short",
+      "topicId": "everyday-things-001",
+      "date": "2026-09-25",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "साबुन से बुलबुले क्यों बनते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-25T05:39:21.504Z",
+      "updatedAt": "2026-09-25T05:39:21.504Z",
+      "durationSeconds": 44.13333333333333,
+      "releaseTag": "draft-2026-09-25-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-25-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587626225",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-25-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587626245",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587626254",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/587626264"
+      },
+      "description": "जानिए कि साबुन और पानी मिलकर सुंदर गोल बुलबुले कैसे बनाते हैं। बोल्ट के साथ बच्चों के लिए विज्ञान की एक मजेदार कहानी।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "soap bubbles",
+        "kids science hindi",
+        "bolt and pip",
+        "science for kids",
+        "everyday things"
+      ],
+      "reviewerIssues": [
+        "[validator 1] banned words: मार"
+      ],
+      "approvedAt": "2026-09-25T05:39:21.504Z",
+      "telegramMessageId": 64,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-25T05:30:52.260Z",
+    "generate": "2026-09-25T05:39:21.504Z",
     "publish": "2026-09-25T01:27:18.915Z"
   }
 }
