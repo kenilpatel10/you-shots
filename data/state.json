@@ -563,10 +563,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Where do rainbows come from",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-26T05:35:47.389Z",
-      "updatedAt": "2026-09-26T05:35:47.389Z",
+      "updatedAt": "2026-09-26T07:36:46.752Z",
       "durationSeconds": 43.333333333333336,
       "releaseTag": "draft-2026-09-26-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-26-en",
@@ -589,6 +589,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-26T05:35:47.389Z",
       "telegramMessageId": 68,
+      "youtubeVideoId": "9FbbcgPqvk0",
+      "scheduledFor": "2026-09-30T11:30:00.000Z",
+      "uploadedAt": "2026-09-26T07:36:46.752Z",
       "includes": []
     },
     {
@@ -599,10 +602,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हम पलकें क्यों झपकाते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-26T05:47:44.834Z",
-      "updatedAt": "2026-09-26T05:47:44.834Z",
+      "updatedAt": "2026-09-26T07:36:49.244Z",
       "durationSeconds": 43.13333333333333,
       "releaseTag": "draft-2026-09-26-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-26-hi",
@@ -629,12 +632,15 @@
       ],
       "approvedAt": "2026-09-26T05:47:44.834Z",
       "telegramMessageId": 70,
+      "youtubeVideoId": "ccdYcfN4M0g",
+      "scheduledFor": "2026-09-27T11:30:00.000Z",
+      "uploadedAt": "2026-09-26T07:36:49.244Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-26T05:47:44.834Z",
-    "publish": "2026-09-26T01:30:39.487Z"
+    "publish": "2026-09-26T07:36:49.535Z"
   }
 }
