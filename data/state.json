@@ -23,7 +23,8 @@
         "ocean-005",
         "food-006",
         "feelings-friendship-004",
-        "everyday-things-001"
+        "everyday-things-001",
+        "human-body-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -589,11 +590,51 @@
       "approvedAt": "2026-09-26T05:35:47.389Z",
       "telegramMessageId": 68,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-26-hi-human-body-005",
+      "kind": "short",
+      "topicId": "human-body-005",
+      "date": "2026-09-26",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हम पलकें क्यों झपकाते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-26T05:47:44.834Z",
+      "updatedAt": "2026-09-26T05:47:44.834Z",
+      "durationSeconds": 43.13333333333333,
+      "releaseTag": "draft-2026-09-26-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-26-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/590032761",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-26-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/590032773",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/590032781",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/590032797"
+      },
+      "description": "जानिए कि हम अपनी आँखें क्यों झपकाते हैं और यह हमारी आँखों को कैसे सुरक्षित रखता है। बच्चों के लिए एक मजेदार और आसान विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "human body",
+        "science for kids",
+        "blinking eyes",
+        "bolt and pip",
+        "hindi science",
+        "बच्चों का विज्ञान"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Total spoken word count is 71, which is below the required range of 81–104 words.",
+        "[validator 1] banned words: मार",
+        "[attempt 2] The total spoken word count was 73 words, which is below the required range of 81–104 words."
+      ],
+      "approvedAt": "2026-09-26T05:47:44.834Z",
+      "telegramMessageId": 70,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-26T05:35:47.389Z",
+    "generate": "2026-09-26T05:47:44.834Z",
     "publish": "2026-09-26T01:30:39.487Z"
   }
 }
