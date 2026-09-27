@@ -25,7 +25,8 @@
         "food-006",
         "feelings-friendship-004",
         "everyday-things-001",
-        "human-body-005"
+        "human-body-005",
+        "animals-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -673,11 +674,48 @@
       "approvedAt": "2026-09-27T05:52:56.779Z",
       "telegramMessageId": 74,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-27-hi-animals-001",
+      "kind": "short",
+      "topicId": "animals-001",
+      "date": "2026-09-27",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बिल्लियां घुरघुर क्यों करती हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-27T06:01:40.872Z",
+      "updatedAt": "2026-09-27T06:01:40.872Z",
+      "durationSeconds": 42.5,
+      "releaseTag": "draft-2026-09-27-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-27-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592271374",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-27-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592271389",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592271396",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592271408"
+      },
+      "description": "जानें कि बिल्लियां घुरघुर क्यों करती हैं और उनकी इस प्यारी आवाज़ का क्या मतलब होता है। बच्चों के लिए एक मजेदार और आसान विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "cats",
+        "purring",
+        "animals",
+        "science for kids",
+        "bolt and pip",
+        "बिल्ली",
+        "जानवर"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-27T06:01:40.872Z",
+      "telegramMessageId": 76,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-27T05:52:56.779Z",
+    "generate": "2026-09-27T06:01:40.872Z",
     "publish": "2026-09-27T01:23:38.525Z"
   }
 }
