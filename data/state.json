@@ -11,7 +11,8 @@
         "human-body-005",
         "animals-001",
         "space-004",
-        "weather-nature-003"
+        "weather-nature-003",
+        "how-things-work-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -636,11 +637,47 @@
       "scheduledFor": "2026-09-27T11:30:00.000Z",
       "uploadedAt": "2026-09-26T07:36:49.244Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-27-en-how-things-work-004",
+      "kind": "short",
+      "topicId": "how-things-work-004",
+      "date": "2026-09-27",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a car go",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-27T05:52:56.779Z",
+      "updatedAt": "2026-09-27T05:52:56.779Z",
+      "durationSeconds": 39.4,
+      "releaseTag": "draft-2026-09-27-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-27-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592259442",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-27-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592259475",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592259494",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/592259512"
+      },
+      "description": "Learn how cars move using an engine in this fun episode with Bolt. Discover how wheels turn and try a simple rolling experiment at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "cars",
+        "how cars work",
+        "engine",
+        "science for kids",
+        "bolt and pip",
+        "educational"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-27T05:52:56.779Z",
+      "telegramMessageId": 74,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-26T05:47:44.834Z",
+    "generate": "2026-09-27T05:52:56.779Z",
     "publish": "2026-09-27T01:23:38.525Z"
   }
 }
