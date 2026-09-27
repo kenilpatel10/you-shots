@@ -647,10 +647,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a car go",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-27T05:52:56.779Z",
-      "updatedAt": "2026-09-27T05:52:56.779Z",
+      "updatedAt": "2026-09-27T08:04:52.625Z",
       "durationSeconds": 39.4,
       "releaseTag": "draft-2026-09-27-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-27-en",
@@ -673,6 +673,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-27T05:52:56.779Z",
       "telegramMessageId": 74,
+      "youtubeVideoId": "nYXJ4ToSNHA",
+      "scheduledFor": "2026-10-01T11:30:00.000Z",
+      "uploadedAt": "2026-09-27T08:04:52.625Z",
       "includes": []
     },
     {
@@ -683,10 +686,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बिल्लियां घुरघुर क्यों करती हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-27T06:01:40.872Z",
-      "updatedAt": "2026-09-27T06:01:40.872Z",
+      "updatedAt": "2026-09-27T08:04:55.760Z",
       "durationSeconds": 42.5,
       "releaseTag": "draft-2026-09-27-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-27-hi",
@@ -710,12 +713,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-27T06:01:40.872Z",
       "telegramMessageId": 76,
+      "youtubeVideoId": "zd5aq4R-HJc",
+      "scheduledFor": "2026-09-28T11:30:00.000Z",
+      "uploadedAt": "2026-09-27T08:04:55.760Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-27T06:01:40.872Z",
-    "publish": "2026-09-27T01:23:38.525Z"
+    "publish": "2026-09-27T08:04:56.114Z"
   }
 }
