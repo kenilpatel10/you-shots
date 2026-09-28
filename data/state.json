@@ -728,10 +728,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does a ball bounce",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-28T05:58:08.602Z",
-      "updatedAt": "2026-09-28T05:58:08.602Z",
+      "updatedAt": "2026-09-28T06:48:38.122Z",
       "durationSeconds": 39.96666666666667,
       "releaseTag": "draft-2026-09-28-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-28-en",
@@ -754,6 +754,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-28T05:58:08.602Z",
       "telegramMessageId": 84,
+      "youtubeVideoId": "gUonqGq_nzg",
+      "scheduledFor": "2026-10-02T11:30:00.000Z",
+      "uploadedAt": "2026-09-28T06:48:38.122Z",
       "includes": []
     },
     {
@@ -764,10 +767,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "रात को अंधेरा क्यों होता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-28T06:07:11.815Z",
-      "updatedAt": "2026-09-28T06:07:11.815Z",
+      "updatedAt": "2026-09-28T06:48:41.014Z",
       "durationSeconds": 43.666666666666664,
       "releaseTag": "draft-2026-09-28-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-28-hi",
@@ -794,12 +797,15 @@
       ],
       "approvedAt": "2026-09-28T06:07:11.815Z",
       "telegramMessageId": 86,
+      "youtubeVideoId": "qKKoiFmyaGg",
+      "scheduledFor": "2026-09-29T11:30:00.000Z",
+      "uploadedAt": "2026-09-28T06:48:41.014Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-28T06:07:11.815Z",
-    "publish": "2026-09-28T00:41:15.572Z"
+    "publish": "2026-09-28T06:48:41.344Z"
   }
 }
