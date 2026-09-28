@@ -27,7 +27,8 @@
         "feelings-friendship-004",
         "everyday-things-001",
         "human-body-005",
-        "animals-001"
+        "animals-001",
+        "space-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -754,11 +755,51 @@
       "approvedAt": "2026-09-28T05:58:08.602Z",
       "telegramMessageId": 84,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-28-hi-space-004",
+      "kind": "short",
+      "topicId": "space-004",
+      "date": "2026-09-28",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "रात को अंधेरा क्यों होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-28T06:07:11.815Z",
+      "updatedAt": "2026-09-28T06:07:11.815Z",
+      "durationSeconds": 43.666666666666664,
+      "releaseTag": "draft-2026-09-28-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-28-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594657862",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-28-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594657892",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594657903",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594657914"
+      },
+      "description": "इस वीडियो में जानिए कि रात को अंधेरा क्यों होता है। बोल्ट आपको आसान तरीके से समझाएगा कि हमारी धरती कैसे घूमती है। घर पर करने के लिए एक मजेदार प्रयोग भी है!\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "space",
+        "kids science",
+        "hindi science",
+        "educational",
+        "why night is dark",
+        "bolt and pip",
+        "science for kids",
+        "बच्चों के लिए विज्ञान"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Total spoken word count is 80 words, which is below the required minimum of 81 words (target 81–104 words)."
+      ],
+      "approvedAt": "2026-09-28T06:07:11.815Z",
+      "telegramMessageId": 86,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-28T05:58:08.602Z",
+    "generate": "2026-09-28T06:07:11.815Z",
     "publish": "2026-09-28T00:41:15.572Z"
   }
 }
