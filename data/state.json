@@ -12,7 +12,8 @@
         "animals-001",
         "space-004",
         "weather-nature-003",
-        "how-things-work-004"
+        "how-things-work-004",
+        "everyday-things-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -717,11 +718,47 @@
       "scheduledFor": "2026-09-28T11:30:00.000Z",
       "uploadedAt": "2026-09-27T08:04:55.760Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-28-en-everyday-things-006",
+      "kind": "short",
+      "topicId": "everyday-things-006",
+      "date": "2026-09-28",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does a ball bounce",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-28T05:58:08.602Z",
+      "updatedAt": "2026-09-28T05:58:08.602Z",
+      "durationSeconds": 39.96666666666667,
+      "releaseTag": "draft-2026-09-28-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-28-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594643362",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-28-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594643393",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594643408",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/594643418"
+      },
+      "description": "Bolt explains how bouncing balls work using simple spring physics for young children. Learn why rubber balls squish and push back up in this fun science video.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "science for kids",
+        "why do balls bounce",
+        "bolt and pip",
+        "physics for kids",
+        "fun learning",
+        "kids questions"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-28T05:58:08.602Z",
+      "telegramMessageId": 84,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-27T06:01:40.872Z",
+    "generate": "2026-09-28T05:58:08.602Z",
     "publish": "2026-09-28T00:41:15.572Z"
   }
 }
