@@ -29,7 +29,8 @@
         "everyday-things-001",
         "human-body-005",
         "animals-001",
-        "space-004"
+        "space-004",
+        "weather-nature-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -840,11 +841,46 @@
       "approvedAt": "2026-09-29T06:28:26.955Z",
       "telegramMessageId": 90,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-29-hi-weather-nature-003",
+      "kind": "short",
+      "topicId": "weather-nature-003",
+      "date": "2026-09-29",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "इंद्रधनुष कहाँ से आते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-29T06:40:05.183Z",
+      "updatedAt": "2026-09-29T06:40:05.183Z",
+      "durationSeconds": 39.03333333333333,
+      "releaseTag": "draft-2026-09-29-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-29-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597485660",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-29-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597485689",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597485722",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597485739"
+      },
+      "description": "इस प्यारे वीडियो में जानिए कि आसमान में सुंदर इंद्रधनुष कैसे बनते हैं। घर पर बच्चों के साथ करने के लिए एक आसान और सुरक्षित प्रयोग भी है। अपने बच्चों के साथ विज्ञान का आनंद लें!\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "rainbow",
+        "science for kids",
+        "indradhanush",
+        "kids science in hindi",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-09-29T06:40:05.183Z",
+      "telegramMessageId": 92,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-29T06:28:26.955Z",
+    "generate": "2026-09-29T06:40:05.183Z",
     "publish": "2026-09-29T01:53:53.245Z"
   }
 }
