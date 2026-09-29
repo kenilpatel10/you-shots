@@ -13,7 +13,8 @@
         "space-004",
         "weather-nature-003",
         "how-things-work-004",
-        "everyday-things-006"
+        "everyday-things-006",
+        "human-body-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -801,11 +802,49 @@
       "scheduledFor": "2026-09-29T11:30:00.000Z",
       "uploadedAt": "2026-09-28T06:48:41.014Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-09-29-en-human-body-006",
+      "kind": "short",
+      "topicId": "human-body-006",
+      "date": "2026-09-29",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we need to sleep",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-29T06:28:26.955Z",
+      "updatedAt": "2026-09-29T06:28:26.955Z",
+      "durationSeconds": 35.53333333333333,
+      "releaseTag": "draft-2026-09-29-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-29-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597464601",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-29-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597464624",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597464634",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/597464647"
+      },
+      "description": "Join Bolt to discover why sleep is so important for growing bodies and minds. A fun and gentle learning video for children.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "sleep",
+        "human body",
+        "kids learning",
+        "science for kids",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [
+        "[validator 1] experiment: 16 words (allowed 18–35)",
+        "[validator 1] estimated length 42.7s (target 44–58s)"
+      ],
+      "approvedAt": "2026-09-29T06:28:26.955Z",
+      "telegramMessageId": 90,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-28T06:07:11.815Z",
+    "generate": "2026-09-29T06:28:26.955Z",
     "publish": "2026-09-29T01:53:53.245Z"
   }
 }
