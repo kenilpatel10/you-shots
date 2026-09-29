@@ -812,10 +812,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we need to sleep",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-29T06:28:26.955Z",
-      "updatedAt": "2026-09-29T06:28:26.955Z",
+      "updatedAt": "2026-09-29T08:24:46.771Z",
       "durationSeconds": 35.53333333333333,
       "releaseTag": "draft-2026-09-29-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-29-en",
@@ -840,6 +840,9 @@
       ],
       "approvedAt": "2026-09-29T06:28:26.955Z",
       "telegramMessageId": 90,
+      "youtubeVideoId": "MCGajLhYnCQ",
+      "scheduledFor": "2026-10-03T11:30:00.000Z",
+      "uploadedAt": "2026-09-29T08:24:46.771Z",
       "includes": []
     },
     {
@@ -850,10 +853,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "इंद्रधनुष कहाँ से आते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-29T06:40:05.183Z",
-      "updatedAt": "2026-09-29T06:40:05.183Z",
+      "updatedAt": "2026-09-29T08:24:49.044Z",
       "durationSeconds": 39.03333333333333,
       "releaseTag": "draft-2026-09-29-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-29-hi",
@@ -875,12 +878,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-29T06:40:05.183Z",
       "telegramMessageId": 92,
+      "youtubeVideoId": "1UaPjSc6e6c",
+      "scheduledFor": "2026-09-30T11:30:00.000Z",
+      "uploadedAt": "2026-09-29T08:24:49.044Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-29T06:40:05.183Z",
-    "publish": "2026-09-29T01:53:53.245Z"
+    "publish": "2026-09-29T08:24:49.357Z"
   }
 }
