@@ -893,10 +893,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How do fish sleep",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-30T06:07:41.009Z",
-      "updatedAt": "2026-09-30T06:07:41.009Z",
+      "updatedAt": "2026-09-30T06:39:51.919Z",
       "durationSeconds": 41.36666666666667,
       "releaseTag": "draft-2026-09-30-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-30-en",
@@ -919,6 +919,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-09-30T06:07:41.009Z",
       "telegramMessageId": 96,
+      "youtubeVideoId": "3QUrrS-0jkg",
+      "scheduledFor": "2026-10-04T11:30:00.000Z",
+      "uploadedAt": "2026-09-30T06:39:51.919Z",
       "includes": []
     },
     {
@@ -929,10 +932,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "कार कैसे चलती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-09-30T06:14:55.439Z",
-      "updatedAt": "2026-09-30T06:14:55.439Z",
+      "updatedAt": "2026-09-30T06:39:53.946Z",
       "durationSeconds": 42.766666666666666,
       "releaseTag": "draft-2026-09-30-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-30-hi",
@@ -956,12 +959,15 @@
       ],
       "approvedAt": "2026-09-30T06:14:55.439Z",
       "telegramMessageId": 98,
+      "youtubeVideoId": "5RxR9dBIiuE",
+      "scheduledFor": "2026-10-01T11:30:00.000Z",
+      "uploadedAt": "2026-09-30T06:39:53.946Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-09-30T06:14:55.439Z",
-    "publish": "2026-09-30T00:23:53.090Z"
+    "publish": "2026-09-30T06:39:54.238Z"
   }
 }
