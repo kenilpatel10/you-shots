@@ -31,7 +31,8 @@
         "human-body-005",
         "animals-001",
         "space-004",
-        "weather-nature-003"
+        "weather-nature-003",
+        "how-things-work-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -919,11 +920,48 @@
       "approvedAt": "2026-09-30T06:07:41.009Z",
       "telegramMessageId": 96,
       "includes": []
+    },
+    {
+      "id": "short-2026-09-30-hi-how-things-work-004",
+      "kind": "short",
+      "topicId": "how-things-work-004",
+      "date": "2026-09-30",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "कार कैसे चलती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-09-30T06:14:55.439Z",
+      "updatedAt": "2026-09-30T06:14:55.439Z",
+      "durationSeconds": 42.766666666666666,
+      "releaseTag": "draft-2026-09-30-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-09-30-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/600186780",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-09-30-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/600186807",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/600186830",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/600186866"
+      },
+      "description": "इस वीडियो में जानिए कि कार कैसे चलती है और इंजन पहियों को ताकत कैसे देता है। बच्चों के लिए विज्ञान की एक सरल और मजेदार जानकारी।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "science for kids",
+        "how cars work",
+        "bolt and pip",
+        "hindi science",
+        "kids learning"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The experiment section contains the forbidden word 'car' ('कार'). Replacing it with 'गाड़ी'."
+      ],
+      "approvedAt": "2026-09-30T06:14:55.439Z",
+      "telegramMessageId": 98,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-30T06:07:41.009Z",
+    "generate": "2026-09-30T06:14:55.439Z",
     "publish": "2026-09-30T00:23:53.090Z"
   }
 }
