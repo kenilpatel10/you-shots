@@ -33,7 +33,8 @@
         "animals-001",
         "space-004",
         "weather-nature-003",
-        "how-things-work-004"
+        "how-things-work-004",
+        "everyday-things-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1000,11 +1001,49 @@
       "approvedAt": "2026-10-01T06:39:47.694Z",
       "telegramMessageId": 102,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-01-hi-everyday-things-006",
+      "kind": "short",
+      "topicId": "everyday-things-006",
+      "date": "2026-10-01",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "गेंद क्यों उछलती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-01T06:48:01.472Z",
+      "updatedAt": "2026-10-01T06:48:01.472Z",
+      "durationSeconds": 40.7,
+      "releaseTag": "draft-2026-10-01-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-01-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602636056",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-01-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602636074",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602636087",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602636096"
+      },
+      "description": "जानिए कि गेंदें इतनी ऊंची क्यों उछलती हैं! रबर बैंड के इस मजेदार विज्ञान को अपने बच्चों के साथ घर पर आजमाएं।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "गेंद क्यों उछलती है",
+        "विज्ञान",
+        "बच्चों के लिए",
+        "bolt aur pip",
+        "science for kids",
+        "why balls bounce"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The experiment involves handling objects but is missing the required literal phrase 'बड़ों से मदद लो'."
+      ],
+      "approvedAt": "2026-10-01T06:48:01.472Z",
+      "telegramMessageId": 104,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-01T06:39:47.694Z",
+    "generate": "2026-10-01T06:48:01.472Z",
     "publish": "2026-10-01T02:06:08.889Z"
   }
 }
