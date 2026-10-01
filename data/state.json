@@ -974,10 +974,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why is popcorn puffy",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-01T06:39:47.694Z",
-      "updatedAt": "2026-10-01T06:39:47.694Z",
+      "updatedAt": "2026-10-01T08:50:44.123Z",
       "durationSeconds": 42.3,
       "releaseTag": "draft-2026-10-01-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-01-en",
@@ -1000,6 +1000,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-01T06:39:47.694Z",
       "telegramMessageId": 102,
+      "youtubeVideoId": "7cfruehIRS8",
+      "scheduledFor": "2026-10-05T11:30:00.000Z",
+      "uploadedAt": "2026-10-01T08:50:44.123Z",
       "includes": []
     },
     {
@@ -1010,10 +1013,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "गेंद क्यों उछलती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-01T06:48:01.472Z",
-      "updatedAt": "2026-10-01T06:48:01.472Z",
+      "updatedAt": "2026-10-01T08:50:46.921Z",
       "durationSeconds": 40.7,
       "releaseTag": "draft-2026-10-01-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-01-hi",
@@ -1038,12 +1041,15 @@
       ],
       "approvedAt": "2026-10-01T06:48:01.472Z",
       "telegramMessageId": 104,
+      "youtubeVideoId": "5QIt2y6aFlo",
+      "scheduledFor": "2026-10-02T11:30:00.000Z",
+      "uploadedAt": "2026-10-01T08:50:46.921Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-01T06:48:01.472Z",
-    "publish": "2026-10-01T02:06:08.889Z"
+    "publish": "2026-10-01T08:50:47.232Z"
   }
 }
