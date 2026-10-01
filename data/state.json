@@ -15,7 +15,8 @@
         "how-things-work-004",
         "everyday-things-006",
         "human-body-006",
-        "ocean-005"
+        "ocean-005",
+        "food-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -963,11 +964,47 @@
       "scheduledFor": "2026-10-01T11:30:00.000Z",
       "uploadedAt": "2026-09-30T06:39:53.946Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-01-en-food-001",
+      "kind": "short",
+      "topicId": "food-001",
+      "date": "2026-10-01",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why is popcorn puffy",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-01T06:39:47.694Z",
+      "updatedAt": "2026-10-01T06:39:47.694Z",
+      "durationSeconds": 42.3,
+      "releaseTag": "draft-2026-10-01-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-01-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602624894",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-01-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602624917",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602624927",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/602624943"
+      },
+      "description": "Bolt explains why popcorn pops into fluffy shapes when it warms up. Learn about the science inside popcorn kernels in a fun way. Perfect for curious young minds!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "popcorn",
+        "kids science",
+        "bolt and pip",
+        "fun facts",
+        "food science",
+        "why popcorn pops"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-01T06:39:47.694Z",
+      "telegramMessageId": 102,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-09-30T06:14:55.439Z",
+    "generate": "2026-10-01T06:39:47.694Z",
     "publish": "2026-10-01T02:06:08.889Z"
   }
 }
