@@ -16,7 +16,8 @@
         "everyday-things-006",
         "human-body-006",
         "ocean-005",
-        "food-001"
+        "food-001",
+        "space-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1045,11 +1046,48 @@
       "scheduledFor": "2026-10-02T11:30:00.000Z",
       "uploadedAt": "2026-10-01T08:50:46.921Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-02-en-space-003",
+      "kind": "short",
+      "topicId": "space-003",
+      "date": "2026-10-02",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do stars twinkle",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-02T06:17:49.720Z",
+      "updatedAt": "2026-10-02T06:17:49.720Z",
+      "durationSeconds": 39.2,
+      "releaseTag": "draft-2026-10-02-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-02-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604960101",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-02-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604960131",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604960145",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604960167"
+      },
+      "description": "Learn why stars seem to twinkle when we look up at the night sky. Bolt explains how moving air bends starlight like water in a pool.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "stars",
+        "space",
+        "starlight",
+        "science for kids",
+        "bolt and pip",
+        "astronomy",
+        "why do stars twinkle"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-02T06:17:49.720Z",
+      "telegramMessageId": 108,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-01T06:48:01.472Z",
+    "generate": "2026-10-02T06:17:49.720Z",
     "publish": "2026-10-02T01:39:36.117Z"
   }
 }
