@@ -35,7 +35,8 @@
         "space-004",
         "weather-nature-003",
         "how-things-work-004",
-        "everyday-things-006"
+        "everyday-things-006",
+        "human-body-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1083,11 +1084,48 @@
       "approvedAt": "2026-10-02T06:17:49.720Z",
       "telegramMessageId": 108,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-02-hi-human-body-006",
+      "kind": "short",
+      "topicId": "human-body-006",
+      "date": "2026-10-02",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हम रात को क्यों सोते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-02T06:27:18.452Z",
+      "updatedAt": "2026-10-02T06:27:18.452Z",
+      "durationSeconds": 40.5,
+      "releaseTag": "draft-2026-10-02-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-02-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604974515",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-02-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604974543",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604974555",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/604974575"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को आसान भाषा में समझाता है कि नींद हमारे शरीर के लिए क्यों ज़रूरी है। जानिए कैसे सोना हमारी ऊर्जा को वापस लाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "sleep for kids",
+        "human body",
+        "bolt and pip",
+        "science for kids",
+        "hindi stories",
+        "शरीर की जानकारी",
+        "बच्चों के सवाल"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-02T06:27:18.452Z",
+      "telegramMessageId": 110,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-02T06:17:49.720Z",
+    "generate": "2026-10-02T06:27:18.452Z",
     "publish": "2026-10-02T01:39:36.117Z"
   }
 }
