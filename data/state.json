@@ -1056,10 +1056,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do stars twinkle",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-02T06:17:49.720Z",
-      "updatedAt": "2026-10-02T06:17:49.720Z",
+      "updatedAt": "2026-10-02T08:26:57.053Z",
       "durationSeconds": 39.2,
       "releaseTag": "draft-2026-10-02-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-02-en",
@@ -1083,6 +1083,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-02T06:17:49.720Z",
       "telegramMessageId": 108,
+      "youtubeVideoId": "UAKX-SeUrMI",
+      "scheduledFor": "2026-10-06T11:30:00.000Z",
+      "uploadedAt": "2026-10-02T08:26:57.053Z",
       "includes": []
     },
     {
@@ -1093,10 +1096,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हम रात को क्यों सोते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-02T06:27:18.452Z",
-      "updatedAt": "2026-10-02T06:27:18.452Z",
+      "updatedAt": "2026-10-02T08:26:59.075Z",
       "durationSeconds": 40.5,
       "releaseTag": "draft-2026-10-02-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-02-hi",
@@ -1120,12 +1123,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-02T06:27:18.452Z",
       "telegramMessageId": 110,
+      "youtubeVideoId": "qFmz8LVc4qI",
+      "scheduledFor": "2026-10-03T11:30:00.000Z",
+      "uploadedAt": "2026-10-02T08:26:59.075Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-02T06:27:18.452Z",
-    "publish": "2026-10-02T01:39:36.117Z"
+    "publish": "2026-10-02T08:26:59.376Z"
   }
 }
