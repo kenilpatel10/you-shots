@@ -37,7 +37,8 @@
         "weather-nature-003",
         "how-things-work-004",
         "everyday-things-006",
-        "human-body-006"
+        "human-body-006",
+        "ocean-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1163,11 +1164,47 @@
       "approvedAt": "2026-10-03T05:51:02.147Z",
       "telegramMessageId": 114,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-03-hi-ocean-004",
+      "kind": "short",
+      "topicId": "ocean-004",
+      "date": "2026-10-03",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "केकड़े तिरछे क्यों चलते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-03T06:02:47.557Z",
+      "updatedAt": "2026-10-03T06:02:47.557Z",
+      "durationSeconds": 43.733333333333334,
+      "releaseTag": "draft-2026-10-03-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-03-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607258047",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-03-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607258075",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607258087",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607258115"
+      },
+      "description": "जानिए केकड़े सीधे चलने के बजाय हमेशा तिरछे क्यों चलते हैं। उनके पैरों की बनावट हमारे जोड़ों से बहुत अलग होती है! बच्चों के लिए एक मजेदार विज्ञान की जानकारी।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "crabs",
+        "science for kids",
+        "ocean life",
+        "hindi science",
+        "fun facts",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-03T06:02:47.557Z",
+      "telegramMessageId": 116,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-03T05:51:02.147Z",
+    "generate": "2026-10-03T06:02:47.557Z",
     "publish": "2026-10-03T00:27:19.969Z"
   }
 }
