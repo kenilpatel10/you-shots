@@ -1138,10 +1138,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a fridge stay cold",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-03T05:51:02.147Z",
-      "updatedAt": "2026-10-03T05:51:02.147Z",
+      "updatedAt": "2026-10-03T06:27:54.579Z",
       "durationSeconds": 40.63333333333333,
       "releaseTag": "draft-2026-10-03-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-03-en",
@@ -1163,6 +1163,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-03T05:51:02.147Z",
       "telegramMessageId": 114,
+      "youtubeVideoId": "msQa546cMqk",
+      "scheduledFor": "2026-10-07T11:30:00.000Z",
+      "uploadedAt": "2026-10-03T06:27:54.579Z",
       "includes": []
     },
     {
@@ -1173,10 +1176,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "केकड़े तिरछे क्यों चलते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-03T06:02:47.557Z",
-      "updatedAt": "2026-10-03T06:02:47.557Z",
+      "updatedAt": "2026-10-03T06:27:57.164Z",
       "durationSeconds": 43.733333333333334,
       "releaseTag": "draft-2026-10-03-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-03-hi",
@@ -1199,12 +1202,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-03T06:02:47.557Z",
       "telegramMessageId": 116,
+      "youtubeVideoId": "jzp-GnfnJvk",
+      "scheduledFor": "2026-10-04T11:30:00.000Z",
+      "uploadedAt": "2026-10-03T06:27:57.164Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-03T06:02:47.557Z",
-    "publish": "2026-10-03T00:27:19.969Z"
+    "publish": "2026-10-03T06:27:57.483Z"
   }
 }
