@@ -17,7 +17,8 @@
         "human-body-006",
         "ocean-005",
         "food-001",
-        "space-003"
+        "space-003",
+        "how-things-work-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1127,11 +1128,46 @@
       "scheduledFor": "2026-10-03T11:30:00.000Z",
       "uploadedAt": "2026-10-02T08:26:59.075Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-03-en-how-things-work-001",
+      "kind": "short",
+      "topicId": "how-things-work-001",
+      "date": "2026-10-03",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a fridge stay cold",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-03T05:51:02.147Z",
+      "updatedAt": "2026-10-03T05:51:02.147Z",
+      "durationSeconds": 40.63333333333333,
+      "releaseTag": "draft-2026-10-03-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-03-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607242638",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-03-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607242679",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607242694",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/607242724"
+      },
+      "description": "Learn how refrigerators keep your food cold and fresh. Bolt explains how liquid inside pipes carries heat away from inside the fridge.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "refrigerator",
+        "how things work",
+        "science for kids",
+        "cooling",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-03T05:51:02.147Z",
+      "telegramMessageId": 114,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-02T06:27:18.452Z",
+    "generate": "2026-10-03T05:51:02.147Z",
     "publish": "2026-10-03T00:27:19.969Z"
   }
 }
