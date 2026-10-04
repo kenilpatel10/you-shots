@@ -1217,10 +1217,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Did dinosaurs lay eggs",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-04T06:27:52.160Z",
-      "updatedAt": "2026-10-04T06:27:52.160Z",
+      "updatedAt": "2026-10-04T09:42:12.876Z",
       "durationSeconds": 42.63333333333333,
       "releaseTag": "draft-2026-10-04-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-04-en",
@@ -1244,6 +1244,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-04T06:27:52.160Z",
       "telegramMessageId": 120,
+      "youtubeVideoId": "qaP3Myyw23w",
+      "scheduledFor": "2026-10-08T11:30:00.000Z",
+      "uploadedAt": "2026-10-04T09:42:12.876Z",
       "includes": []
     },
     {
@@ -1254,10 +1257,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "पॉपकॉर्न इतने फूले हुए क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-04T06:35:16.544Z",
-      "updatedAt": "2026-10-04T06:35:16.544Z",
+      "updatedAt": "2026-10-04T09:42:15.901Z",
       "durationSeconds": 41.56666666666667,
       "releaseTag": "draft-2026-10-04-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-04-hi",
@@ -1280,12 +1283,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-04T06:35:16.544Z",
       "telegramMessageId": 122,
+      "youtubeVideoId": "7DJ4ZrTxi1E",
+      "scheduledFor": "2026-10-05T11:30:00.000Z",
+      "uploadedAt": "2026-10-04T09:42:15.901Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-04T06:35:16.544Z",
-    "publish": "2026-10-04T02:34:06.316Z"
+    "publish": "2026-10-04T09:42:16.270Z"
   }
 }
