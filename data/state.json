@@ -18,7 +18,8 @@
         "ocean-005",
         "food-001",
         "space-003",
-        "how-things-work-001"
+        "how-things-work-001",
+        "dinosaurs-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1206,11 +1207,48 @@
       "scheduledFor": "2026-10-04T11:30:00.000Z",
       "uploadedAt": "2026-10-03T06:27:57.164Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-04-en-dinosaurs-006",
+      "kind": "short",
+      "topicId": "dinosaurs-006",
+      "date": "2026-10-04",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Did dinosaurs lay eggs",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-04T06:27:52.160Z",
+      "updatedAt": "2026-10-04T06:27:52.160Z",
+      "durationSeconds": 42.63333333333333,
+      "releaseTag": "draft-2026-10-04-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-04-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609282118",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-04-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609282137",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609282142",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609282156"
+      },
+      "description": "Bolt explores whether dinosaurs laid eggs just like birds and reptiles do today. Learn how baby dinosaurs hatched from cozy nests long ago. A fun science video for curious kids.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dinosaurs",
+        "dinosaur eggs",
+        "science for kids",
+        "bolt and pip",
+        "nature for kids",
+        "fun facts",
+        "prehistoric"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-04T06:27:52.160Z",
+      "telegramMessageId": 120,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-03T06:02:47.557Z",
+    "generate": "2026-10-04T06:27:52.160Z",
     "publish": "2026-10-04T02:34:06.316Z"
   }
 }
