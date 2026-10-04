@@ -39,7 +39,8 @@
         "how-things-work-004",
         "everyday-things-006",
         "human-body-006",
-        "ocean-004"
+        "ocean-004",
+        "food-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1244,11 +1245,47 @@
       "approvedAt": "2026-10-04T06:27:52.160Z",
       "telegramMessageId": 120,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-04-hi-food-001",
+      "kind": "short",
+      "topicId": "food-001",
+      "date": "2026-10-04",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "पॉपकॉर्न इतने फूले हुए क्यों होते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-04T06:35:16.544Z",
+      "updatedAt": "2026-10-04T06:35:16.544Z",
+      "durationSeconds": 41.56666666666667,
+      "releaseTag": "draft-2026-10-04-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-04-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609291779",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-04-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609291804",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609291819",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/609291839"
+      },
+      "description": "जानिए पॉपकॉर्न के फूलने का मजेदार विज्ञान। बच्चों के लिए आसान और सुरक्षित गतिविधि।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "popcorn",
+        "kids science",
+        "hindi kids channel",
+        "bolt and pip",
+        "food science",
+        "मजेदार विज्ञान"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-04T06:35:16.544Z",
+      "telegramMessageId": 122,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-04T06:27:52.160Z",
+    "generate": "2026-10-04T06:35:16.544Z",
     "publish": "2026-10-04T02:34:06.316Z"
   }
 }
