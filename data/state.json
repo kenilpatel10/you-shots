@@ -19,7 +19,8 @@
         "food-001",
         "space-003",
         "how-things-work-001",
-        "dinosaurs-006"
+        "dinosaurs-006",
+        "weather-nature-002"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1287,11 +1288,48 @@
       "scheduledFor": "2026-10-05T11:30:00.000Z",
       "uploadedAt": "2026-10-04T09:42:15.901Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-05-en-weather-nature-002",
+      "kind": "short",
+      "topicId": "weather-nature-002",
+      "date": "2026-10-05",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does it rain",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-05T06:19:47.946Z",
+      "updatedAt": "2026-10-05T06:19:47.946Z",
+      "durationSeconds": 42.86666666666667,
+      "releaseTag": "draft-2026-10-05-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-05-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611705841",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-05-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611705871",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611705892",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611705920"
+      },
+      "description": "Bolt explains how clouds gather water drops until they get too heavy and fall down as rain. Learn why raindrops look like tiny hamburger buns and try a fun sponge experiment at home!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "rain",
+        "weather",
+        "clouds",
+        "science for kids",
+        "bolt and pip",
+        "nature",
+        "water cycle"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-05T06:19:47.946Z",
+      "telegramMessageId": 130,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-04T06:35:16.544Z",
+    "generate": "2026-10-05T06:19:47.946Z",
     "publish": "2026-10-05T01:56:51.172Z"
   }
 }
