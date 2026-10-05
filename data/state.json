@@ -1298,10 +1298,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does it rain",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-05T06:19:47.946Z",
-      "updatedAt": "2026-10-05T06:19:47.946Z",
+      "updatedAt": "2026-10-05T08:56:48.881Z",
       "durationSeconds": 42.86666666666667,
       "releaseTag": "draft-2026-10-05-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-05-en",
@@ -1325,6 +1325,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-05T06:19:47.946Z",
       "telegramMessageId": 130,
+      "youtubeVideoId": "Rf_suPJ7cO4",
+      "scheduledFor": "2026-10-09T11:30:00.000Z",
+      "uploadedAt": "2026-10-05T08:56:48.881Z",
       "includes": []
     },
     {
@@ -1335,10 +1338,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "तारे क्यों टिमटिमते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-05T06:27:00.209Z",
-      "updatedAt": "2026-10-05T06:27:00.209Z",
+      "updatedAt": "2026-10-05T08:56:55.782Z",
       "durationSeconds": 45.233333333333334,
       "releaseTag": "draft-2026-10-05-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-05-hi",
@@ -1361,12 +1364,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-05T06:27:00.209Z",
       "telegramMessageId": 132,
+      "youtubeVideoId": "j0eJwoVxqSw",
+      "scheduledFor": "2026-10-06T11:30:00.000Z",
+      "uploadedAt": "2026-10-05T08:56:55.782Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-05T06:27:00.209Z",
-    "publish": "2026-10-05T01:56:51.172Z"
+    "publish": "2026-10-05T08:56:56.383Z"
   }
 }
