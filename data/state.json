@@ -41,7 +41,8 @@
         "everyday-things-006",
         "human-body-006",
         "ocean-004",
-        "food-001"
+        "food-001",
+        "space-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1325,11 +1326,47 @@
       "approvedAt": "2026-10-05T06:19:47.946Z",
       "telegramMessageId": 130,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-05-hi-space-003",
+      "kind": "short",
+      "topicId": "space-003",
+      "date": "2026-10-05",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "तारे क्यों टिमटिमते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-05T06:27:00.209Z",
+      "updatedAt": "2026-10-05T06:27:00.209Z",
+      "durationSeconds": 45.233333333333334,
+      "releaseTag": "draft-2026-10-05-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-05-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611719710",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-05-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611719735",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611719747",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/611719774"
+      },
+      "description": "जानिए कि रात में तारे क्यों टिमटिमते दिखाई देते हैं। यह बच्चों के लिए एक मजेदार और आसान विज्ञान वीडियो है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "stars",
+        "twinkle",
+        "space",
+        "science for kids",
+        "hindi science",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-05T06:27:00.209Z",
+      "telegramMessageId": 132,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-05T06:19:47.946Z",
+    "generate": "2026-10-05T06:27:00.209Z",
     "publish": "2026-10-05T01:56:51.172Z"
   }
 }
