@@ -20,7 +20,8 @@
         "space-003",
         "how-things-work-001",
         "dinosaurs-006",
-        "weather-nature-002"
+        "weather-nature-002",
+        "animals-002"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1368,11 +1369,48 @@
       "scheduledFor": "2026-10-06T11:30:00.000Z",
       "uploadedAt": "2026-10-05T08:56:55.782Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-06-en-animals-002",
+      "kind": "short",
+      "topicId": "animals-002",
+      "date": "2026-10-06",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do dogs wag their tails",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-06T06:56:54.288Z",
+      "updatedAt": "2026-10-06T06:56:54.288Z",
+      "durationSeconds": 39.333333333333336,
+      "releaseTag": "draft-2026-10-06-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-06-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614765071",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-06-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614765115",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614765131",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614765167"
+      },
+      "description": "Bolt explains how dogs use their tails to communicate happiness and feelings to humans and other pets. Children learn to observe dog body language safely with a simple activity. Perfect for young animal lovers learning about pet behavior.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dogs",
+        "pets",
+        "animals",
+        "kids learning",
+        "bolt and pip",
+        "science for kids",
+        "dog body language"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-06T06:56:54.288Z",
+      "telegramMessageId": 136,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-05T06:27:00.209Z",
+    "generate": "2026-10-06T06:56:54.288Z",
     "publish": "2026-10-06T00:46:45.135Z"
   }
 }
