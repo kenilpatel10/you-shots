@@ -43,7 +43,8 @@
         "human-body-006",
         "ocean-004",
         "food-001",
-        "space-003"
+        "space-003",
+        "how-things-work-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1406,11 +1407,48 @@
       "approvedAt": "2026-10-06T06:56:54.288Z",
       "telegramMessageId": 136,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-06-hi-how-things-work-001",
+      "kind": "short",
+      "topicId": "how-things-work-001",
+      "date": "2026-10-06",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "फ्रिज अंदर से ठंडा कैसे रहता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-06T07:04:01.359Z",
+      "updatedAt": "2026-10-06T07:04:01.359Z",
+      "durationSeconds": 40.2,
+      "releaseTag": "draft-2026-10-06-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-06-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614778995",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-06-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614779030",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614779046",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/614779059"
+      },
+      "description": "जानिए कैसे फ्रिज हमारे खाने को ताजा और ठंडा रखता है। बच्चों के लिए विज्ञान की एक सरल और मजेदार बात।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "विज्ञान",
+        "फ्रिज",
+        "बच्चों के लिए",
+        "how things work",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The experiment involved handling/opening a household appliance without including the required phrase 'बड़ों से मदद लो'."
+      ],
+      "approvedAt": "2026-10-06T07:04:01.359Z",
+      "telegramMessageId": 138,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-06T06:56:54.288Z",
+    "generate": "2026-10-06T07:04:01.359Z",
     "publish": "2026-10-06T00:46:45.135Z"
   }
 }
