@@ -21,7 +21,8 @@
         "how-things-work-001",
         "dinosaurs-006",
         "weather-nature-002",
-        "animals-002"
+        "animals-002",
+        "feelings-friendship-007"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1450,11 +1451,49 @@
       "scheduledFor": "2026-10-07T11:30:00.000Z",
       "uploadedAt": "2026-10-06T07:31:15.923Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-07-en-feelings-friendship-007",
+      "kind": "short",
+      "topicId": "feelings-friendship-007",
+      "date": "2026-10-07",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we cry when we are sad",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-07T06:39:26.991Z",
+      "updatedAt": "2026-10-07T06:39:26.991Z",
+      "durationSeconds": 35,
+      "releaseTag": "draft-2026-10-07-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-07-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617828825",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-07-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617828864",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617828882",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617828903"
+      },
+      "description": "Join Bolt to learn why our bodies make tears when we feel sad. A gentle and kid-friendly explanation for young learners.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "feelings",
+        "crying",
+        "emotions",
+        "kids science",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The original experiment asks children to touch their cheek to find where tears come out, which is factually inaccurate (tears come from glands under the eyelid and drain near the nose) and poses a safety risk of children poking their eyes.",
+        "[attempt 1] The guess options can be improved to be clearer and more engaging for the target age group."
+      ],
+      "approvedAt": "2026-10-07T06:39:26.991Z",
+      "telegramMessageId": 142,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-06T07:04:01.359Z",
+    "generate": "2026-10-07T06:39:26.991Z",
     "publish": "2026-10-07T05:52:30.952Z"
   }
 }
