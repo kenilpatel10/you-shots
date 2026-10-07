@@ -1461,10 +1461,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we cry when we are sad",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-07T06:39:26.991Z",
-      "updatedAt": "2026-10-07T06:39:26.991Z",
+      "updatedAt": "2026-10-07T13:15:21.965Z",
       "durationSeconds": 35,
       "releaseTag": "draft-2026-10-07-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-07-en",
@@ -1489,6 +1489,9 @@
       ],
       "approvedAt": "2026-10-07T06:39:26.991Z",
       "telegramMessageId": 142,
+      "youtubeVideoId": "XDfWc7MSFt8",
+      "scheduledFor": "2026-10-11T11:30:00.000Z",
+      "uploadedAt": "2026-10-07T13:15:21.965Z",
       "includes": []
     },
     {
@@ -1499,10 +1502,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "क्या डायनासोर भी अंडे देते थे",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-07T06:50:28.714Z",
-      "updatedAt": "2026-10-07T06:50:28.714Z",
+      "updatedAt": "2026-10-07T13:15:25.318Z",
       "durationSeconds": 42.166666666666664,
       "releaseTag": "draft-2026-10-07-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-07-hi",
@@ -1526,12 +1529,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-07T06:50:28.714Z",
       "telegramMessageId": 144,
+      "youtubeVideoId": "-G4QBizRLyw",
+      "scheduledFor": "2026-10-08T11:30:00.000Z",
+      "uploadedAt": "2026-10-07T13:15:25.318Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-07T06:50:28.714Z",
-    "publish": "2026-10-07T05:52:30.952Z"
+    "publish": "2026-10-07T13:15:25.616Z"
   }
 }
