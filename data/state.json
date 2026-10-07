@@ -45,7 +45,8 @@
         "ocean-004",
         "food-001",
         "space-003",
-        "how-things-work-001"
+        "how-things-work-001",
+        "dinosaurs-006"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1489,11 +1490,48 @@
       "approvedAt": "2026-10-07T06:39:26.991Z",
       "telegramMessageId": 142,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-07-hi-dinosaurs-006",
+      "kind": "short",
+      "topicId": "dinosaurs-006",
+      "date": "2026-10-07",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "क्या डायनासोर भी अंडे देते थे",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-07T06:50:28.714Z",
+      "updatedAt": "2026-10-07T06:50:28.714Z",
+      "durationSeconds": 42.166666666666664,
+      "releaseTag": "draft-2026-10-07-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-07-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617851149",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-07-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617851192",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617851214",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/617851237"
+      },
+      "description": "क्या आप जानते हैं कि डायनासोर भी अंडे देते थे? इस वीडियो में वोल्ट के साथ डायनासोर के अंडों के बारे में मजेदार बातें जानिए। बच्चों के लिए एक सरल और ज्ञानवर्धक वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dinosaurs",
+        "dinosaur eggs",
+        "kids science",
+        "hindi science",
+        "bolt and pip",
+        "educational",
+        "डायनासोर"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-07T06:50:28.714Z",
+      "telegramMessageId": 144,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-07T06:39:26.991Z",
+    "generate": "2026-10-07T06:50:28.714Z",
     "publish": "2026-10-07T05:52:30.952Z"
   }
 }
