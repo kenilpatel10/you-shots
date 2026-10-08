@@ -22,7 +22,8 @@
         "dinosaurs-006",
         "weather-nature-002",
         "animals-002",
-        "feelings-friendship-007"
+        "feelings-friendship-007",
+        "weather-nature-008"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1533,11 +1534,48 @@
       "scheduledFor": "2026-10-08T11:30:00.000Z",
       "uploadedAt": "2026-10-07T13:15:25.318Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-08-en-weather-nature-008",
+      "kind": "short",
+      "topicId": "weather-nature-008",
+      "date": "2026-10-08",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do clouds float",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-08T06:47:47.258Z",
+      "updatedAt": "2026-10-08T06:47:47.258Z",
+      "durationSeconds": 41.666666666666664,
+      "releaseTag": "draft-2026-10-08-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-08-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621001024",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-08-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621001052",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621001072",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621001104"
+      },
+      "description": "Discover the wonderful science behind how giant clouds stay up in the sky. Bolt explains the secret of rising warm air and tiny water droplets in a simple way for children.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "clouds",
+        "weather",
+        "science for kids",
+        "how clouds float",
+        "nature facts",
+        "educational video",
+        "kids science"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-08T06:47:47.258Z",
+      "telegramMessageId": 148,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-07T06:50:28.714Z",
+    "generate": "2026-10-08T06:47:47.258Z",
     "publish": "2026-10-08T05:56:36.831Z"
   }
 }
