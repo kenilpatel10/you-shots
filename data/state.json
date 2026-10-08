@@ -1544,10 +1544,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do clouds float",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-08T06:47:47.258Z",
-      "updatedAt": "2026-10-08T06:47:47.258Z",
+      "updatedAt": "2026-10-08T13:22:00.259Z",
       "durationSeconds": 41.666666666666664,
       "releaseTag": "draft-2026-10-08-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-08-en",
@@ -1571,6 +1571,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-08T06:47:47.258Z",
       "telegramMessageId": 148,
+      "youtubeVideoId": "xofuaBI7Ayk",
+      "scheduledFor": "2026-10-12T11:30:00.000Z",
+      "uploadedAt": "2026-10-08T13:22:00.259Z",
       "includes": []
     },
     {
@@ -1581,10 +1584,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बारिश क्यों होती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-08T06:57:17.573Z",
-      "updatedAt": "2026-10-08T06:57:17.573Z",
+      "updatedAt": "2026-10-08T13:22:02.272Z",
       "durationSeconds": 44.06666666666667,
       "releaseTag": "draft-2026-10-08-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-08-hi",
@@ -1609,12 +1612,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-08T06:57:17.573Z",
       "telegramMessageId": 150,
+      "youtubeVideoId": "L5hRuXT_TiI",
+      "scheduledFor": "2026-10-09T11:30:00.000Z",
+      "uploadedAt": "2026-10-08T13:22:02.272Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-08T06:57:17.573Z",
-    "publish": "2026-10-08T05:56:36.831Z"
+    "publish": "2026-10-08T13:22:02.564Z"
   }
 }
