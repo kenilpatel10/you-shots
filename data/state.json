@@ -47,7 +47,8 @@
         "food-001",
         "space-003",
         "how-things-work-001",
-        "dinosaurs-006"
+        "dinosaurs-006",
+        "weather-nature-002"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1571,11 +1572,49 @@
       "approvedAt": "2026-10-08T06:47:47.258Z",
       "telegramMessageId": 148,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-08-hi-weather-nature-002",
+      "kind": "short",
+      "topicId": "weather-nature-002",
+      "date": "2026-10-08",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बारिश क्यों होती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-08T06:57:17.573Z",
+      "updatedAt": "2026-10-08T06:57:17.573Z",
+      "durationSeconds": 44.06666666666667,
+      "releaseTag": "draft-2026-10-08-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-08-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621022378",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-08-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621022429",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621022445",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/621022480"
+      },
+      "description": "इस मजेदार वीडियो में जानिए कि बारिश कैसे होती है। बच्चे एक आसान खेल और प्रयोग से इसके पीछे का विज्ञान सीखेंगे। घर पर इसे जरूर आजमाएं!\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "rain",
+        "weather",
+        "science for kids",
+        "hindi stories",
+        "kids experiment",
+        "bolt and pip",
+        "बारिश",
+        "विज्ञान"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-08T06:57:17.573Z",
+      "telegramMessageId": 150,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-08T06:47:47.258Z",
+    "generate": "2026-10-08T06:57:17.573Z",
     "publish": "2026-10-08T05:56:36.831Z"
   }
 }
