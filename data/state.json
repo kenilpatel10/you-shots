@@ -49,7 +49,8 @@
         "space-003",
         "how-things-work-001",
         "dinosaurs-006",
-        "weather-nature-002"
+        "weather-nature-002",
+        "animals-002"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1653,11 +1654,46 @@
       "approvedAt": "2026-10-09T06:51:42.849Z",
       "telegramMessageId": 154,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-09-hi-animals-002",
+      "kind": "short",
+      "topicId": "animals-002",
+      "date": "2026-10-09",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "कुत्ते अपनी पूंछ क्यों हिलाते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-09T06:58:05.975Z",
+      "updatedAt": "2026-10-09T06:58:05.975Z",
+      "durationSeconds": 39.96666666666667,
+      "releaseTag": "draft-2026-10-09-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-09-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624174600",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-09-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624174633",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624174645",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624174668"
+      },
+      "description": "जानिए कुत्ते अपनी पूंछ क्यों हिलाते हैं! बोल्ट और पिप के साथ जानवरों की इस अनोखी भाषा को समझें और मजेदार बातें सीखें।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dogs",
+        "animals",
+        "science for kids",
+        "bolt and pip",
+        "hindi facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-09T06:58:05.975Z",
+      "telegramMessageId": 156,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-09T06:51:42.849Z",
+    "generate": "2026-10-09T06:58:05.975Z",
     "publish": "2026-10-09T00:19:49.610Z"
   }
 }
