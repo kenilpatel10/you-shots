@@ -23,7 +23,8 @@
         "weather-nature-002",
         "animals-002",
         "feelings-friendship-007",
-        "weather-nature-008"
+        "weather-nature-008",
+        "ocean-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1616,11 +1617,47 @@
       "scheduledFor": "2026-10-09T11:30:00.000Z",
       "uploadedAt": "2026-10-08T13:22:02.272Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-09-en-ocean-004",
+      "kind": "short",
+      "topicId": "ocean-004",
+      "date": "2026-10-09",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do crabs walk sideways",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-09T06:51:42.849Z",
+      "updatedAt": "2026-10-09T06:51:42.849Z",
+      "durationSeconds": 41.666666666666664,
+      "releaseTag": "draft-2026-10-09-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-09-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624159798",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-09-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624159843",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624159861",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/624159883"
+      },
+      "description": "Learn why crabs walk sideways in this fun video for kids! Bolt explains how their legs work and shares a silly game you can play at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "kids science",
+        "crabs",
+        "ocean animals",
+        "why do crabs walk sideways",
+        "fun facts for kids",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-09T06:51:42.849Z",
+      "telegramMessageId": 154,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-08T06:57:17.573Z",
+    "generate": "2026-10-09T06:51:42.849Z",
     "publish": "2026-10-09T00:19:49.610Z"
   }
 }
