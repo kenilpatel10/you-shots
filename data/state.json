@@ -1627,10 +1627,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do crabs walk sideways",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-09T06:51:42.849Z",
-      "updatedAt": "2026-10-09T06:51:42.849Z",
+      "updatedAt": "2026-10-09T07:20:53.388Z",
       "durationSeconds": 41.666666666666664,
       "releaseTag": "draft-2026-10-09-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-09-en",
@@ -1653,6 +1653,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-09T06:51:42.849Z",
       "telegramMessageId": 154,
+      "youtubeVideoId": "GJOljLxxFU0",
+      "scheduledFor": "2026-10-13T11:30:00.000Z",
+      "uploadedAt": "2026-10-09T07:20:53.388Z",
       "includes": []
     },
     {
@@ -1663,10 +1666,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "कुत्ते अपनी पूंछ क्यों हिलाते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-09T06:58:05.975Z",
-      "updatedAt": "2026-10-09T06:58:05.975Z",
+      "updatedAt": "2026-10-09T07:20:56.405Z",
       "durationSeconds": 39.96666666666667,
       "releaseTag": "draft-2026-10-09-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-09-hi",
@@ -1688,12 +1691,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-09T06:58:05.975Z",
       "telegramMessageId": 156,
+      "youtubeVideoId": "JR6OEL4t23k",
+      "scheduledFor": "2026-10-10T11:30:00.000Z",
+      "uploadedAt": "2026-10-09T07:20:56.405Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-09T06:58:05.975Z",
-    "publish": "2026-10-09T00:19:49.610Z"
+    "publish": "2026-10-09T07:20:56.783Z"
   }
 }
