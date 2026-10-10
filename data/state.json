@@ -51,7 +51,8 @@
         "how-things-work-001",
         "dinosaurs-006",
         "weather-nature-002",
-        "animals-002"
+        "animals-002",
+        "feelings-friendship-007"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1732,11 +1733,50 @@
       "approvedAt": "2026-10-10T06:30:37.485Z",
       "telegramMessageId": 160,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-10-hi-feelings-friendship-007",
+      "kind": "short",
+      "topicId": "feelings-friendship-007",
+      "date": "2026-10-10",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हम उदाس होने पर क्यों रोते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-10T06:44:26.838Z",
+      "updatedAt": "2026-10-10T06:44:26.838Z",
+      "durationSeconds": 37.93333333333333,
+      "releaseTag": "draft-2026-10-10-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-10-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627231907",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-10-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627231945",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627231962",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627231974"
+      },
+      "description": "बॉट के साथ जानिए कि इंसान उदास होने पर क्यों रोते हैं और यह हमारे शरीर की मदद कैसे करता है। बच्चों के लिए एक प्यारी और सरल सीख।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "रोता",
+        "भावनाएँ",
+        "बच्चे",
+        "हिंदी",
+        "bolt and pip",
+        "feelings"
+      ],
+      "reviewerIssues": [
+        "[validator 1] answer: 24 words (allowed 28–47)",
+        "[validator 1] estimated length 41.3s (target 44–58s)"
+      ],
+      "approvedAt": "2026-10-10T06:44:26.838Z",
+      "telegramMessageId": 162,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-10T06:30:37.485Z",
+    "generate": "2026-10-10T06:44:26.838Z",
     "publish": "2026-10-10T00:46:18.938Z"
   }
 }
