@@ -24,7 +24,8 @@
         "animals-002",
         "feelings-friendship-007",
         "weather-nature-008",
-        "ocean-004"
+        "ocean-004",
+        "animals-007"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1695,11 +1696,47 @@
       "scheduledFor": "2026-10-10T11:30:00.000Z",
       "uploadedAt": "2026-10-09T07:20:56.405Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-10-en-animals-007",
+      "kind": "short",
+      "topicId": "animals-007",
+      "date": "2026-10-10",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do ducks float",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-10T06:30:37.485Z",
+      "updatedAt": "2026-10-10T06:30:37.485Z",
+      "durationSeconds": 41.46666666666667,
+      "releaseTag": "draft-2026-10-10-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-10-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627206388",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-10-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627206428",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627206439",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/627206459"
+      },
+      "description": "Learn why ducks float on water using special oily feathers. Bolt explains how waterproof feathers keep ducks floating like swimming arm floaties.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "ducks",
+        "floating",
+        "science for kids",
+        "animals",
+        "duck feathers",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-10T06:30:37.485Z",
+      "telegramMessageId": 160,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-09T06:58:05.975Z",
+    "generate": "2026-10-10T06:30:37.485Z",
     "publish": "2026-10-10T00:46:18.938Z"
   }
 }
