@@ -1706,10 +1706,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do ducks float",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-10T06:30:37.485Z",
-      "updatedAt": "2026-10-10T06:30:37.485Z",
+      "updatedAt": "2026-10-10T07:01:51.039Z",
       "durationSeconds": 41.46666666666667,
       "releaseTag": "draft-2026-10-10-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-10-en",
@@ -1732,6 +1732,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-10T06:30:37.485Z",
       "telegramMessageId": 160,
+      "youtubeVideoId": "ZdeFivlERTU",
+      "scheduledFor": "2026-10-14T11:30:00.000Z",
+      "uploadedAt": "2026-10-10T07:01:51.039Z",
       "includes": []
     },
     {
@@ -1742,10 +1745,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हम उदाس होने पर क्यों रोते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-10T06:44:26.838Z",
-      "updatedAt": "2026-10-10T06:44:26.838Z",
+      "updatedAt": "2026-10-10T07:01:53.720Z",
       "durationSeconds": 37.93333333333333,
       "releaseTag": "draft-2026-10-10-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-10-hi",
@@ -1771,12 +1774,15 @@
       ],
       "approvedAt": "2026-10-10T06:44:26.838Z",
       "telegramMessageId": 162,
+      "youtubeVideoId": "0rhY-XDvAb8",
+      "scheduledFor": "2026-10-11T11:30:00.000Z",
+      "uploadedAt": "2026-10-10T07:01:53.720Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-10T06:44:26.838Z",
-    "publish": "2026-10-10T00:46:18.938Z"
+    "publish": "2026-10-10T07:01:54.069Z"
   }
 }
