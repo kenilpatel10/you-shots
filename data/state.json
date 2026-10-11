@@ -25,7 +25,8 @@
         "feelings-friendship-007",
         "weather-nature-008",
         "ocean-004",
-        "animals-007"
+        "animals-007",
+        "everyday-things-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1778,11 +1779,49 @@
       "scheduledFor": "2026-10-11T11:30:00.000Z",
       "uploadedAt": "2026-10-10T07:01:53.720Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-11-en-everyday-things-003",
+      "kind": "short",
+      "topicId": "everyday-things-003",
+      "date": "2026-10-11",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does ice melt",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-11T06:32:49.694Z",
+      "updatedAt": "2026-10-11T06:32:49.694Z",
+      "durationSeconds": 41.666666666666664,
+      "releaseTag": "draft-2026-10-11-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-11-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/629996487",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-11-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/629996534",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/629996542",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/629996557"
+      },
+      "description": "Learn why ice turns into liquid water when it gets warm with Bolt the robot. A fun and simple science explanation created for young children.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "ice",
+        "science for kids",
+        "why ice melts",
+        "bolt and pip",
+        "kids science",
+        "learning for kids"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The wowFact claimed that ice stays frozen in deep ocean water, which is misleading because ice floats on top and deep ocean water is liquid."
+      ],
+      "approvedAt": "2026-10-11T06:32:49.694Z",
+      "telegramMessageId": 166,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-10T06:44:26.838Z",
+    "generate": "2026-10-11T06:32:49.694Z",
     "publish": "2026-10-11T01:50:05.230Z"
   }
 }
