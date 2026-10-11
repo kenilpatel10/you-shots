@@ -53,7 +53,8 @@
         "dinosaurs-006",
         "weather-nature-002",
         "animals-002",
-        "feelings-friendship-007"
+        "feelings-friendship-007",
+        "weather-nature-008"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1817,11 +1818,48 @@
       "approvedAt": "2026-10-11T06:32:49.694Z",
       "telegramMessageId": 166,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-11-hi-weather-nature-008",
+      "kind": "short",
+      "topicId": "weather-nature-008",
+      "date": "2026-10-11",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बादल आसमान में कैसे तैरते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-11T06:39:30.411Z",
+      "updatedAt": "2026-10-11T06:39:30.411Z",
+      "durationSeconds": 43.46666666666667,
+      "releaseTag": "draft-2026-10-11-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-11-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/630008348",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-11-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/630008359",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/630008371",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/630008405"
+      },
+      "description": "इस वीडियो में बच्चे जानेंगे कि बादल आसमान में कैसे तैरते हैं। सरल और मजेदार उदाहरणों से पानी के वाष्पीकरण की प्रक्रिया को समझाया गया है। बच्चों के साथ घर पर यह आसान प्रयोग जरूर करें।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "clouds",
+        "science for kids",
+        "hindi shorts",
+        "bolt and pip",
+        "weather science",
+        "kids experiments",
+        "learn hindi"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-11T06:39:30.411Z",
+      "telegramMessageId": 168,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-11T06:32:49.694Z",
+    "generate": "2026-10-11T06:39:30.411Z",
     "publish": "2026-10-11T01:50:05.230Z"
   }
 }
