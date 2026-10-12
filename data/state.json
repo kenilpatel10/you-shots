@@ -26,7 +26,8 @@
         "weather-nature-008",
         "ocean-004",
         "animals-007",
-        "everyday-things-003"
+        "everyday-things-003",
+        "dinosaurs-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1861,11 +1862,49 @@
       "scheduledFor": "2026-10-12T11:30:00.000Z",
       "uploadedAt": "2026-10-11T08:44:29.575Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-12-en-dinosaurs-003",
+      "kind": "short",
+      "topicId": "dinosaurs-003",
+      "date": "2026-10-12",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Did dinosaurs have feathers",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-12T06:41:04.719Z",
+      "updatedAt": "2026-10-12T06:41:04.719Z",
+      "durationSeconds": 44.833333333333336,
+      "releaseTag": "draft-2026-10-12-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-12-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632924601",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-12-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632924656",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632924673",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632924712"
+      },
+      "description": "Learn all about dinosaurs and their cozy feathers with Bolt and Pip. Discover how feathers helped dinosaurs stay warm just like birds today. A fun and educational video for curious young minds.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dinosaurs",
+        "dinosaur feathers",
+        "science for kids",
+        "bolt and pip",
+        "dino facts",
+        "fun learning"
+      ],
+      "reviewerIssues": [
+        "[validator 1] invented statistics/studies: \\bscientists (say|found|discovered)"
+      ],
+      "approvedAt": "2026-10-12T06:41:04.719Z",
+      "telegramMessageId": 176,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-11T06:39:30.411Z",
+    "generate": "2026-10-12T06:41:04.719Z",
     "publish": "2026-10-12T05:50:15.444Z"
   }
 }
