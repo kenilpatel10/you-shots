@@ -1872,10 +1872,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Did dinosaurs have feathers",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-12T06:41:04.719Z",
-      "updatedAt": "2026-10-12T06:41:04.719Z",
+      "updatedAt": "2026-10-12T15:15:09.260Z",
       "durationSeconds": 44.833333333333336,
       "releaseTag": "draft-2026-10-12-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-12-en",
@@ -1900,6 +1900,9 @@
       ],
       "approvedAt": "2026-10-12T06:41:04.719Z",
       "telegramMessageId": 176,
+      "youtubeVideoId": "f41Kqk4MCWo",
+      "scheduledFor": "2026-10-16T11:30:00.000Z",
+      "uploadedAt": "2026-10-12T15:15:09.260Z",
       "includes": []
     },
     {
@@ -1910,10 +1913,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "समुंदर का पानी नीला क्यों होता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-12T06:47:17.932Z",
-      "updatedAt": "2026-10-12T06:47:17.932Z",
+      "updatedAt": "2026-10-12T15:15:12.884Z",
       "durationSeconds": 41.2,
       "releaseTag": "draft-2026-10-12-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-12-hi",
@@ -1935,12 +1938,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-12T06:47:17.932Z",
       "telegramMessageId": 178,
+      "youtubeVideoId": "bi13NQXtUck",
+      "scheduledFor": "2026-10-13T11:30:00.000Z",
+      "uploadedAt": "2026-10-12T15:15:12.884Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-12T06:47:17.932Z",
-    "publish": "2026-10-12T05:50:15.444Z"
+    "publish": "2026-10-12T15:15:13.213Z"
   }
 }
