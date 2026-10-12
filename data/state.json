@@ -55,7 +55,8 @@
         "weather-nature-002",
         "animals-002",
         "feelings-friendship-007",
-        "weather-nature-008"
+        "weather-nature-008",
+        "ocean-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1900,11 +1901,46 @@
       "approvedAt": "2026-10-12T06:41:04.719Z",
       "telegramMessageId": 176,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-12-hi-ocean-003",
+      "kind": "short",
+      "topicId": "ocean-003",
+      "date": "2026-10-12",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "समुंदर का पानी नीला क्यों होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-12T06:47:17.932Z",
+      "updatedAt": "2026-10-12T06:47:17.932Z",
+      "durationSeconds": 41.2,
+      "releaseTag": "draft-2026-10-12-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-12-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632936575",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-12-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632936605",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632936626",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/632936642"
+      },
+      "description": "बोल्ट के साथ जानिए कि समुंदर का पानी नीला क्यों दिखाई देता है। बच्चों के लिए विज्ञान की एक सरल और मजेदार जानकारी।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "ocean",
+        "samundar",
+        "science for kids",
+        "hindi kids video",
+        "bolt aur pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-12T06:47:17.932Z",
+      "telegramMessageId": 178,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-12T06:41:04.719Z",
+    "generate": "2026-10-12T06:47:17.932Z",
     "publish": "2026-10-12T05:50:15.444Z"
   }
 }
