@@ -1953,10 +1953,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do apples turn brown after being cut",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-13T07:13:05.740Z",
-      "updatedAt": "2026-10-13T07:13:05.740Z",
+      "updatedAt": "2026-10-13T11:43:07.223Z",
       "durationSeconds": 39.36666666666667,
       "releaseTag": "draft-2026-10-13-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-13-en",
@@ -1979,6 +1979,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-13T07:13:05.740Z",
       "telegramMessageId": 182,
+      "youtubeVideoId": "KJuXqe6wPwk",
+      "scheduledFor": "2026-10-17T11:30:00.000Z",
+      "uploadedAt": "2026-10-13T11:43:07.223Z",
       "includes": []
     },
     {
@@ -1989,10 +1992,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बर्फ क्यों पिघल जाती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-13T07:19:42.341Z",
-      "updatedAt": "2026-10-13T07:19:42.341Z",
+      "updatedAt": "2026-10-13T11:43:10.518Z",
       "durationSeconds": 35.766666666666666,
       "releaseTag": "draft-2026-10-13-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-13-hi",
@@ -2016,12 +2019,15 @@
       ],
       "approvedAt": "2026-10-13T07:19:42.341Z",
       "telegramMessageId": 184,
+      "youtubeVideoId": "LR1f5IAAYSA",
+      "scheduledFor": "2026-10-14T11:30:00.000Z",
+      "uploadedAt": "2026-10-13T11:43:10.518Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-13T07:19:42.341Z",
-    "publish": "2026-10-13T03:31:17.762Z"
+    "publish": "2026-10-13T11:43:10.909Z"
   }
 }
