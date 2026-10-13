@@ -27,7 +27,8 @@
         "ocean-004",
         "animals-007",
         "everyday-things-003",
-        "dinosaurs-003"
+        "dinosaurs-003",
+        "food-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1942,11 +1943,47 @@
       "scheduledFor": "2026-10-13T11:30:00.000Z",
       "uploadedAt": "2026-10-12T15:15:12.884Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-13-en-food-005",
+      "kind": "short",
+      "topicId": "food-005",
+      "date": "2026-10-13",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do apples turn brown after being cut",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-13T07:13:05.740Z",
+      "updatedAt": "2026-10-13T07:13:05.740Z",
+      "durationSeconds": 39.36666666666667,
+      "releaseTag": "draft-2026-10-13-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-13-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636222626",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-13-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636222662",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636222681",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636222712"
+      },
+      "description": "Bolt explores why fresh apples change color once they are cut. This simple science lesson helps children understand how oxygen interacts with fruit.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "food",
+        "science",
+        "apples",
+        "kids",
+        "learning",
+        "nature"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-13T07:13:05.740Z",
+      "telegramMessageId": 182,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-12T06:47:17.932Z",
+    "generate": "2026-10-13T07:13:05.740Z",
     "publish": "2026-10-13T03:31:17.762Z"
   }
 }
