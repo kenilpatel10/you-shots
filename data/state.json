@@ -57,7 +57,8 @@
         "animals-002",
         "feelings-friendship-007",
         "weather-nature-008",
-        "ocean-003"
+        "ocean-003",
+        "everyday-things-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -1979,11 +1980,48 @@
       "approvedAt": "2026-10-13T07:13:05.740Z",
       "telegramMessageId": 182,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-13-hi-everyday-things-003",
+      "kind": "short",
+      "topicId": "everyday-things-003",
+      "date": "2026-10-13",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बर्फ क्यों पिघल जाती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-13T07:19:42.341Z",
+      "updatedAt": "2026-10-13T07:19:42.341Z",
+      "durationSeconds": 35.766666666666666,
+      "releaseTag": "draft-2026-10-13-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-13-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636236388",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-13-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636236417",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636236444",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/636236470"
+      },
+      "description": "बोल्ट के साथ जानिए कि बर्फ गर्मी पाकर पानी क्यों बन जाती है। बच्चों के लिए विज्ञान की बहुत सरल और मजेदार जानकारी।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "बर्फ",
+        "विज्ञान",
+        "बच्चे",
+        "बोल्ट और पिप",
+        "hindi"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The experiment section involves handling a cold object and potentially melting water, but it must literally include the phrase 'बड़ों से मदद लो' as per safety rules."
+      ],
+      "approvedAt": "2026-10-13T07:19:42.341Z",
+      "telegramMessageId": 184,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-13T07:13:05.740Z",
+    "generate": "2026-10-13T07:19:42.341Z",
     "publish": "2026-10-13T03:31:17.762Z"
   }
 }
