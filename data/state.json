@@ -59,7 +59,8 @@
         "feelings-friendship-007",
         "weather-nature-008",
         "ocean-003",
-        "everyday-things-003"
+        "everyday-things-003",
+        "food-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2061,11 +2062,46 @@
       "approvedAt": "2026-10-14T05:30:34.837Z",
       "telegramMessageId": 188,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-14-hi-food-005",
+      "kind": "short",
+      "topicId": "food-005",
+      "date": "2026-10-14",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "सेब काटने पर भूरा क्यों हो जाता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-14T05:34:45.680Z",
+      "updatedAt": "2026-10-14T05:34:45.680Z",
+      "durationSeconds": 38.4,
+      "releaseTag": "draft-2026-10-14-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-14-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639354716",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-14-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639354748",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639354762",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639354780"
+      },
+      "description": "बोल्ट के साथ जानिए कि सेब काटने के बाद भूरा क्यों हो जाता है। बच्चों के लिए आसान और मजेदार विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "सेब",
+        "विज्ञान",
+        "बच्चों के लिए",
+        "बोल्ट और पिप",
+        "hindi science"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-14T05:34:45.680Z",
+      "telegramMessageId": 190,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-14T05:30:34.837Z",
+    "generate": "2026-10-14T05:34:45.680Z",
     "publish": "2026-10-14T04:47:41.262Z"
   }
 }
