@@ -28,7 +28,8 @@
         "animals-007",
         "everyday-things-003",
         "dinosaurs-003",
-        "food-005"
+        "food-005",
+        "human-body-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2023,11 +2024,48 @@
       "scheduledFor": "2026-10-14T11:30:00.000Z",
       "uploadedAt": "2026-10-13T11:43:10.518Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-14-en-human-body-004",
+      "kind": "short",
+      "topicId": "human-body-004",
+      "date": "2026-10-14",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we get hiccups",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-14T05:30:34.837Z",
+      "updatedAt": "2026-10-14T05:30:34.837Z",
+      "durationSeconds": 41.8,
+      "releaseTag": "draft-2026-10-14-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-14-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639346067",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-14-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639346164",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639346187",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/639346233"
+      },
+      "description": "Bolt explores why our bodies make that funny hiccup sound. This gentle explanation helps children understand how muscles work.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "hiccups",
+        "body",
+        "science",
+        "learning",
+        "kids",
+        "anatomy",
+        "health"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-14T05:30:34.837Z",
+      "telegramMessageId": 188,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-13T07:19:42.341Z",
+    "generate": "2026-10-14T05:30:34.837Z",
     "publish": "2026-10-14T04:47:41.262Z"
   }
 }
