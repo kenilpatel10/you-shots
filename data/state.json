@@ -2034,10 +2034,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we get hiccups",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-14T05:30:34.837Z",
-      "updatedAt": "2026-10-14T05:30:34.837Z",
+      "updatedAt": "2026-10-14T15:05:04.994Z",
       "durationSeconds": 41.8,
       "releaseTag": "draft-2026-10-14-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-14-en",
@@ -2061,6 +2061,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-14T05:30:34.837Z",
       "telegramMessageId": 188,
+      "youtubeVideoId": "uzz6oH8wG2A",
+      "scheduledFor": "2026-10-18T11:30:00.000Z",
+      "uploadedAt": "2026-10-14T15:05:04.994Z",
       "includes": []
     },
     {
@@ -2071,10 +2074,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "सेब काटने पर भूरा क्यों हो जाता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-14T05:34:45.680Z",
-      "updatedAt": "2026-10-14T05:34:45.680Z",
+      "updatedAt": "2026-10-14T15:05:07.829Z",
       "durationSeconds": 38.4,
       "releaseTag": "draft-2026-10-14-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-14-hi",
@@ -2096,12 +2099,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-14T05:34:45.680Z",
       "telegramMessageId": 190,
+      "youtubeVideoId": "q9FO1egZBWM",
+      "scheduledFor": "2026-10-15T11:30:00.000Z",
+      "uploadedAt": "2026-10-14T15:05:07.829Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-14T05:34:45.680Z",
-    "publish": "2026-10-14T04:47:41.262Z"
+    "publish": "2026-10-14T15:05:08.188Z"
   }
 }
