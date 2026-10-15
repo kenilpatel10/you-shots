@@ -2114,10 +2114,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a light switch work",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-15T05:22:22.813Z",
-      "updatedAt": "2026-10-15T05:22:22.813Z",
+      "updatedAt": "2026-10-15T07:22:40.888Z",
       "durationSeconds": 41.766666666666666,
       "releaseTag": "draft-2026-10-15-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-15-en",
@@ -2142,6 +2142,9 @@
       ],
       "approvedAt": "2026-10-15T05:22:22.813Z",
       "telegramMessageId": 194,
+      "youtubeVideoId": "mPVhQcJU9HA",
+      "scheduledFor": "2026-10-19T11:30:00.000Z",
+      "uploadedAt": "2026-10-15T07:22:40.888Z",
       "includes": []
     },
     {
@@ -2152,10 +2155,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "क्या डायनासोर के पंख होते थे",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-15T05:28:51.417Z",
-      "updatedAt": "2026-10-15T05:28:51.417Z",
+      "updatedAt": "2026-10-15T07:22:43.093Z",
       "durationSeconds": 36.86666666666667,
       "releaseTag": "draft-2026-10-15-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-15-hi",
@@ -2182,12 +2185,15 @@
       ],
       "approvedAt": "2026-10-15T05:28:51.417Z",
       "telegramMessageId": 196,
+      "youtubeVideoId": "WvpQ9KJPAZ4",
+      "scheduledFor": "2026-10-16T11:30:00.000Z",
+      "uploadedAt": "2026-10-15T07:22:43.093Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-15T05:28:51.417Z",
-    "publish": "2026-10-15T01:26:52.846Z"
+    "publish": "2026-10-15T07:22:43.399Z"
   }
 }
