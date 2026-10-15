@@ -29,7 +29,8 @@
         "everyday-things-003",
         "dinosaurs-003",
         "food-005",
-        "human-body-004"
+        "human-body-004",
+        "how-things-work-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2103,11 +2104,49 @@
       "scheduledFor": "2026-10-15T11:30:00.000Z",
       "uploadedAt": "2026-10-14T15:05:07.829Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-15-en-how-things-work-003",
+      "kind": "short",
+      "topicId": "how-things-work-003",
+      "date": "2026-10-15",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a light switch work",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-15T05:22:22.813Z",
+      "updatedAt": "2026-10-15T05:22:22.813Z",
+      "durationSeconds": 41.766666666666666,
+      "releaseTag": "draft-2026-10-15-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-15-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642777758",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-15-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642777797",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642777824",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642777848"
+      },
+      "description": "Bolt explains how a light switch connects a metal path to turn on lamps. Children learn basic mechanics through a simple bridge comparison.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "light switch",
+        "how things work",
+        "kids science",
+        "bolt and pip",
+        "learning"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The answer mentions power flowing through, which touches on electricity concepts that might require extra care, but more importantly, the experiment must literally include the words ask a grown-up to help if handling or touching things, or we can ensure it is purely observational. However, the rule states: If the experiment involves pouring, filling, or handling anything, it must literally include the words ask a grown-up to help. Let us fix the experiment to include ask a grown-up to help just to be completely safe since it involves touching a wall switch.",
+        "[validator 1] estimated length 42.7s (target 44–58s)"
+      ],
+      "approvedAt": "2026-10-15T05:22:22.813Z",
+      "telegramMessageId": 194,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-14T05:34:45.680Z",
+    "generate": "2026-10-15T05:22:22.813Z",
     "publish": "2026-10-15T01:26:52.846Z"
   }
 }
