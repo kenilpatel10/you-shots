@@ -61,7 +61,8 @@
         "weather-nature-008",
         "ocean-003",
         "everyday-things-003",
-        "food-005"
+        "food-005",
+        "dinosaurs-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2142,11 +2143,51 @@
       "approvedAt": "2026-10-15T05:22:22.813Z",
       "telegramMessageId": 194,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-15-hi-dinosaurs-003",
+      "kind": "short",
+      "topicId": "dinosaurs-003",
+      "date": "2026-10-15",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "क्या डायनासोर के पंख होते थे",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-15T05:28:51.417Z",
+      "updatedAt": "2026-10-15T05:28:51.417Z",
+      "durationSeconds": 36.86666666666667,
+      "releaseTag": "draft-2026-10-15-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-15-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642791547",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-15-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642791594",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642791618",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/642791641"
+      },
+      "description": "जानिए क्या डायनासोर के पंख होते थे। बोल्ट के साथ बच्चों के लिए विज्ञान और मजेदार तथ्य हिन्दी में।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "डायनासोर",
+        "पक्षी",
+        "बच्चों के लिए",
+        "विज्ञान",
+        "रोचक तथ्य"
+      ],
+      "reviewerIssues": [
+        "[validator 1] answer: 21 words (allowed 28–47)",
+        "[validator 1] experiment: 13 words (allowed 14–28)",
+        "[validator 1] estimated length 42.4s (target 44–58s)",
+        "[validator 1] experiment involves pouring/handling but does not say \"ask a grown-up\""
+      ],
+      "approvedAt": "2026-10-15T05:28:51.417Z",
+      "telegramMessageId": 196,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-15T05:22:22.813Z",
+    "generate": "2026-10-15T05:28:51.417Z",
     "publish": "2026-10-15T01:26:52.846Z"
   }
 }
