@@ -2200,10 +2200,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why can we not see stars in the daytime",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-16T05:07:11.078Z",
-      "updatedAt": "2026-10-16T05:07:11.078Z",
+      "updatedAt": "2026-10-16T05:48:51.990Z",
       "durationSeconds": 40.3,
       "releaseTag": "draft-2026-10-16-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-16-en",
@@ -2227,6 +2227,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-16T05:07:11.078Z",
       "telegramMessageId": 200,
+      "youtubeVideoId": "YSRd17i6VbQ",
+      "scheduledFor": "2026-10-20T11:30:00.000Z",
+      "uploadedAt": "2026-10-16T05:48:51.990Z",
       "includes": []
     },
     {
@@ -2237,10 +2240,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हमें हिचकी क्यों आती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-16T05:12:45.798Z",
-      "updatedAt": "2026-10-16T05:12:45.798Z",
+      "updatedAt": "2026-10-16T05:48:54.413Z",
       "durationSeconds": 40.166666666666664,
       "releaseTag": "draft-2026-10-16-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-16-hi",
@@ -2263,12 +2266,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-16T05:12:45.798Z",
       "telegramMessageId": 202,
+      "youtubeVideoId": "3RmG0VnhiSY",
+      "scheduledFor": "2026-10-17T11:30:00.000Z",
+      "uploadedAt": "2026-10-16T05:48:54.413Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-16T05:12:45.798Z",
-    "publish": "2026-10-16T00:21:36.071Z"
+    "publish": "2026-10-16T05:48:54.731Z"
   }
 }
