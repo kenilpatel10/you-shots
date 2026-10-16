@@ -63,7 +63,8 @@
         "ocean-003",
         "everyday-things-003",
         "food-005",
-        "dinosaurs-003"
+        "dinosaurs-003",
+        "human-body-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2227,11 +2228,47 @@
       "approvedAt": "2026-10-16T05:07:11.078Z",
       "telegramMessageId": 200,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-16-hi-human-body-004",
+      "kind": "short",
+      "topicId": "human-body-004",
+      "date": "2026-10-16",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हमें हिचकी क्यों आती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-16T05:12:45.798Z",
+      "updatedAt": "2026-10-16T05:12:45.798Z",
+      "durationSeconds": 40.166666666666664,
+      "releaseTag": "draft-2026-10-16-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-16-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646220738",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-16-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646220759",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646220783",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646220811"
+      },
+      "description": "इस मजेदार वीडियो में बोल्ट बच्चों को समझाता है कि हमें हिचकी क्यों आती है। आसान भाषा में जानिए पेट की मांसपेशियों का यह छोटा सा खेल। बच्चों के विज्ञान के लिए एक सरल और मनोरंजक वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "hiccups for kids",
+        "science for kids hindi",
+        "bolt and pip",
+        "human body facts hindi",
+        "kids science experiments hindi",
+        "educational videos for children"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-16T05:12:45.798Z",
+      "telegramMessageId": 202,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-16T05:07:11.078Z",
+    "generate": "2026-10-16T05:12:45.798Z",
     "publish": "2026-10-16T00:21:36.071Z"
   }
 }
