@@ -30,7 +30,8 @@
         "dinosaurs-003",
         "food-005",
         "human-body-004",
-        "how-things-work-003"
+        "how-things-work-003",
+        "space-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2189,11 +2190,48 @@
       "scheduledFor": "2026-10-16T11:30:00.000Z",
       "uploadedAt": "2026-10-15T07:22:43.093Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-16-en-space-005",
+      "kind": "short",
+      "topicId": "space-005",
+      "date": "2026-10-16",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why can we not see stars in the daytime",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-16T05:07:11.078Z",
+      "updatedAt": "2026-10-16T05:07:11.078Z",
+      "durationSeconds": 40.3,
+      "releaseTag": "draft-2026-10-16-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-16-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646210531",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-16-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646210554",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646210565",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/646210581"
+      },
+      "description": "Learn why we cannot see stars during the daytime in this fun video for kids. Bolt explains how bright sunlight makes distant stars invisible until night arrives. Discover fun facts about our sun with Bolt and Pip!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "space",
+        "stars",
+        "sun",
+        "astronomy for kids",
+        "bolt and pip",
+        "science for kids",
+        "daytime stars"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-16T05:07:11.078Z",
+      "telegramMessageId": 200,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-15T05:28:51.417Z",
+    "generate": "2026-10-16T05:07:11.078Z",
     "publish": "2026-10-16T00:21:36.071Z"
   }
 }
