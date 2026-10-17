@@ -65,7 +65,8 @@
         "everyday-things-003",
         "food-005",
         "dinosaurs-003",
-        "human-body-004"
+        "human-body-004",
+        "space-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2307,11 +2308,46 @@
       "approvedAt": "2026-10-17T05:06:50.526Z",
       "telegramMessageId": 206,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-17-hi-space-005",
+      "kind": "short",
+      "topicId": "space-005",
+      "date": "2026-10-17",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "दिन में तारे क्यों नहीं दिखते",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-17T05:13:57.834Z",
+      "updatedAt": "2026-10-17T05:13:57.834Z",
+      "durationSeconds": 45.733333333333334,
+      "releaseTag": "draft-2026-10-17-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-17-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649616740",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-17-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649616786",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649616811",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649616829"
+      },
+      "description": "जानिए दिन के समय आसमान में तारे क्यों दिखाई नहीं देते हैं। यह वीडियो बच्चों को सूरज की रोशनी और तारों के बारे में आसान भाषा में समझाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "stars in daytime",
+        "space for kids",
+        "hindi science facts",
+        "bolt and pip",
+        "din me tare"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-17T05:13:57.834Z",
+      "telegramMessageId": 208,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-17T05:06:50.526Z",
+    "generate": "2026-10-17T05:13:57.834Z",
     "publish": "2026-10-17T01:16:35.024Z"
   }
 }
