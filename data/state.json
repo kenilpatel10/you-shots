@@ -31,7 +31,8 @@
         "food-005",
         "human-body-004",
         "how-things-work-003",
-        "space-005"
+        "space-005",
+        "feelings-friendship-008"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2270,11 +2271,47 @@
       "scheduledFor": "2026-10-17T11:30:00.000Z",
       "uploadedAt": "2026-10-16T05:48:54.413Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-17-en-feelings-friendship-008",
+      "kind": "short",
+      "topicId": "feelings-friendship-008",
+      "date": "2026-10-17",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why Do We Like to Play with Friends",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-17T05:06:50.526Z",
+      "updatedAt": "2026-10-17T05:06:50.526Z",
+      "durationSeconds": 39.93333333333333,
+      "releaseTag": "draft-2026-10-17-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-17-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649603756",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-17-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649603784",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649603827",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/649603839"
+      },
+      "description": "Learn why playing with friends brings so much happiness to our brain and body. Bolt explains how sharing fun creates special feelings that make us smile together.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "friends",
+        "playing",
+        "feelings",
+        "happiness",
+        "science for kids",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-17T05:06:50.526Z",
+      "telegramMessageId": 206,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-16T05:12:45.798Z",
+    "generate": "2026-10-17T05:06:50.526Z",
     "publish": "2026-10-17T01:16:35.024Z"
   }
 }
