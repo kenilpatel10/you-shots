@@ -2281,10 +2281,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why Do We Like to Play with Friends",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-17T05:06:50.526Z",
-      "updatedAt": "2026-10-17T05:06:50.526Z",
+      "updatedAt": "2026-10-17T06:53:08.056Z",
       "durationSeconds": 39.93333333333333,
       "releaseTag": "draft-2026-10-17-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-17-en",
@@ -2307,6 +2307,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-17T05:06:50.526Z",
       "telegramMessageId": 206,
+      "youtubeVideoId": "H78uA58VoAY",
+      "scheduledFor": "2026-10-21T11:30:00.000Z",
+      "uploadedAt": "2026-10-17T06:53:08.056Z",
       "includes": []
     },
     {
@@ -2317,10 +2320,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "दिन में तारे क्यों नहीं दिखते",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-17T05:13:57.834Z",
-      "updatedAt": "2026-10-17T05:13:57.834Z",
+      "updatedAt": "2026-10-17T06:53:10.436Z",
       "durationSeconds": 45.733333333333334,
       "releaseTag": "draft-2026-10-17-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-17-hi",
@@ -2342,12 +2345,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-17T05:13:57.834Z",
       "telegramMessageId": 208,
+      "youtubeVideoId": "4nUhdqHkMwo",
+      "scheduledFor": "2026-10-18T11:30:00.000Z",
+      "uploadedAt": "2026-10-17T06:53:10.436Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-17T05:13:57.834Z",
-    "publish": "2026-10-17T01:16:35.024Z"
+    "publish": "2026-10-17T06:53:10.772Z"
   }
 }
