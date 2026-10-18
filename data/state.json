@@ -32,7 +32,8 @@
         "human-body-004",
         "how-things-work-003",
         "space-005",
-        "feelings-friendship-008"
+        "feelings-friendship-008",
+        "ocean-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2349,11 +2350,47 @@
       "scheduledFor": "2026-10-18T11:30:00.000Z",
       "uploadedAt": "2026-10-17T06:53:10.436Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-18-en-ocean-003",
+      "kind": "short",
+      "topicId": "ocean-003",
+      "date": "2026-10-18",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why is the ocean blue",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-18T05:14:49.615Z",
+      "updatedAt": "2026-10-18T05:14:49.615Z",
+      "durationSeconds": 38.8,
+      "releaseTag": "draft-2026-10-18-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-18-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652554211",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-18-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652554246",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652554268",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652554291"
+      },
+      "description": "Learn why ocean water looks bright blue in this fun episode with Bolt and Pip. Children discover how sunlight interact with water and try a simple light experiment at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "ocean",
+        "science for kids",
+        "why is the ocean blue",
+        "bolt and pip",
+        "kids learning",
+        "fun science"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-18T05:14:49.615Z",
+      "telegramMessageId": 212,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-17T05:13:57.834Z",
+    "generate": "2026-10-18T05:14:49.615Z",
     "publish": "2026-10-18T04:24:45.997Z"
   }
 }
