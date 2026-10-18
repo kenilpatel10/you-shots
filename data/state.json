@@ -67,7 +67,8 @@
         "food-005",
         "dinosaurs-003",
         "human-body-004",
-        "space-005"
+        "space-005",
+        "how-things-work-003"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2386,11 +2387,53 @@
       "approvedAt": "2026-10-18T05:14:49.615Z",
       "telegramMessageId": 212,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-18-hi-how-things-work-003",
+      "kind": "short",
+      "topicId": "how-things-work-003",
+      "date": "2026-10-18",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बटन दबाने पर लाइट कैसे जलती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-18T05:24:26.982Z",
+      "updatedAt": "2026-10-18T05:24:26.982Z",
+      "durationSeconds": 37.36666666666667,
+      "releaseTag": "draft-2026-10-18-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-18-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652570301",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-18-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652570344",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652570355",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/652570368"
+      },
+      "description": "बोल्ट के साथ जानिए कि घर का लाइट बटन दबाने पर बल्ब कैसे जल जाता है। बच्चों के लिए विज्ञान को सरल और मजेदार तरीके से समझाया गया है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "लाइट स्विच",
+        "विज्ञान",
+        "बोल्ट और पिप",
+        "बच्चों के लिए",
+        "रोचक तथ्य",
+        "how things work"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The word count for 'answer' (27 words) was below the minimum limit of 28 words.",
+        "[attempt 1] The word count for 'experiment' (9 words) was below the minimum limit of 14 words.",
+        "[attempt 1] The total spoken word count (60 words) was below the required range of 81–104 words.",
+        "[validator 1] guess.prompt longer than 5 words",
+        "[validator 1] unsafe experiment (hazard words): आग, सड़क"
+      ],
+      "approvedAt": "2026-10-18T05:24:26.982Z",
+      "telegramMessageId": 214,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-18T05:14:49.615Z",
+    "generate": "2026-10-18T05:24:26.982Z",
     "publish": "2026-10-18T04:24:45.997Z"
   }
 }
