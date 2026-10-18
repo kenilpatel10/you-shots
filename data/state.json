@@ -2360,10 +2360,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why is the ocean blue",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-18T05:14:49.615Z",
-      "updatedAt": "2026-10-18T05:14:49.615Z",
+      "updatedAt": "2026-10-18T09:31:57.223Z",
       "durationSeconds": 38.8,
       "releaseTag": "draft-2026-10-18-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-18-en",
@@ -2386,6 +2386,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-18T05:14:49.615Z",
       "telegramMessageId": 212,
+      "youtubeVideoId": "0qekJQ-m4dY",
+      "scheduledFor": "2026-10-22T11:30:00.000Z",
+      "uploadedAt": "2026-10-18T09:31:57.223Z",
       "includes": []
     },
     {
@@ -2396,10 +2399,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बटन दबाने पर लाइट कैसे जलती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-18T05:24:26.982Z",
-      "updatedAt": "2026-10-18T05:24:26.982Z",
+      "updatedAt": "2026-10-18T09:31:59.302Z",
       "durationSeconds": 37.36666666666667,
       "releaseTag": "draft-2026-10-18-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-18-hi",
@@ -2428,12 +2431,15 @@
       ],
       "approvedAt": "2026-10-18T05:24:26.982Z",
       "telegramMessageId": 214,
+      "youtubeVideoId": "ESS6FjOOi7I",
+      "scheduledFor": "2026-10-19T11:30:00.000Z",
+      "uploadedAt": "2026-10-18T09:31:59.302Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-18T05:24:26.982Z",
-    "publish": "2026-10-18T04:24:45.997Z"
+    "publish": "2026-10-18T09:31:59.607Z"
   }
 }
