@@ -33,7 +33,8 @@
         "how-things-work-003",
         "space-005",
         "feelings-friendship-008",
-        "ocean-003"
+        "ocean-003",
+        "weather-nature-020"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2435,11 +2436,48 @@
       "scheduledFor": "2026-10-19T11:30:00.000Z",
       "uploadedAt": "2026-10-18T09:31:59.302Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-19-en-weather-nature-020",
+      "kind": "short",
+      "topicId": "weather-nature-020",
+      "date": "2026-10-19",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why is fog so hard to see through",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-19T05:27:20.380Z",
+      "updatedAt": "2026-10-19T05:27:20.380Z",
+      "durationSeconds": 38.233333333333334,
+      "releaseTag": "draft-2026-10-19-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-19-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655331367",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-19-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655331399",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655331421",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655331445"
+      },
+      "description": "Learn why fog makes it so tricky to see outside with Bolt and Pip. Discover how tiny water droplets scatter light just like a cloud on the ground. Includes a simple, safe hands-on activity for kids to try at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "fog",
+        "clouds",
+        "science for kids",
+        "weather facts",
+        "bolt and pip",
+        "stem for kids",
+        "light scattering"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-19T05:27:20.380Z",
+      "telegramMessageId": 222,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-18T05:24:26.982Z",
+    "generate": "2026-10-19T05:27:20.380Z",
     "publish": "2026-10-19T01:11:29.723Z"
   }
 }
