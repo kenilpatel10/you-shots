@@ -2446,10 +2446,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why is fog so hard to see through",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-19T05:27:20.380Z",
-      "updatedAt": "2026-10-19T05:27:20.380Z",
+      "updatedAt": "2026-10-19T06:09:51.893Z",
       "durationSeconds": 38.233333333333334,
       "releaseTag": "draft-2026-10-19-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-19-en",
@@ -2473,6 +2473,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-19T05:27:20.380Z",
       "telegramMessageId": 222,
+      "youtubeVideoId": "KRUQhM9PlJM",
+      "scheduledFor": "2026-10-23T11:30:00.000Z",
+      "uploadedAt": "2026-10-19T06:09:51.893Z",
       "includes": []
     },
     {
@@ -2483,10 +2486,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "खरगोश के कान लंबे क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-19T05:33:54.907Z",
-      "updatedAt": "2026-10-19T05:33:54.907Z",
+      "updatedAt": "2026-10-19T06:09:54.878Z",
       "durationSeconds": 42.1,
       "releaseTag": "draft-2026-10-19-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-19-hi",
@@ -2508,12 +2511,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-19T05:33:54.907Z",
       "telegramMessageId": 224,
+      "youtubeVideoId": "H6JRWNAm7qM",
+      "scheduledFor": "2026-10-20T11:30:00.000Z",
+      "uploadedAt": "2026-10-19T06:09:54.878Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-19T05:33:54.907Z",
-    "publish": "2026-10-19T01:11:29.723Z"
+    "publish": "2026-10-19T06:09:55.218Z"
   }
 }
