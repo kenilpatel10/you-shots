@@ -69,7 +69,8 @@
         "dinosaurs-003",
         "human-body-004",
         "space-005",
-        "how-things-work-003"
+        "how-things-work-003",
+        "animals-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2473,11 +2474,46 @@
       "approvedAt": "2026-10-19T05:27:20.380Z",
       "telegramMessageId": 222,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-19-hi-animals-005",
+      "kind": "short",
+      "topicId": "animals-005",
+      "date": "2026-10-19",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "खरगोश के कान लंबे क्यों होते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-19T05:33:54.907Z",
+      "updatedAt": "2026-10-19T05:33:54.907Z",
+      "durationSeconds": 42.1,
+      "releaseTag": "draft-2026-10-19-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-19-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655344383",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-19-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655344425",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655344445",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/655344467"
+      },
+      "description": "जानिए कि खरगोश के लंबे कान उनके किस काम आते हैं। बच्चों के लिए एक आसान और मजेदार विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "rabbits",
+        "animals for kids",
+        "hindi science",
+        "bolt and pip",
+        "kids video"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-19T05:33:54.907Z",
+      "telegramMessageId": 224,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-19T05:27:20.380Z",
+    "generate": "2026-10-19T05:33:54.907Z",
     "publish": "2026-10-19T01:11:29.723Z"
   }
 }
