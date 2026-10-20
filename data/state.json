@@ -71,7 +71,8 @@
         "human-body-004",
         "space-005",
         "how-things-work-003",
-        "animals-005"
+        "animals-005",
+        "feelings-friendship-008"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2552,11 +2553,49 @@
       "approvedAt": "2026-10-20T05:23:35.093Z",
       "telegramMessageId": 228,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-20-hi-feelings-friendship-008",
+      "kind": "short",
+      "topicId": "feelings-friendship-008",
+      "date": "2026-10-20",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हम दोस्तों के साथ क्यों खेलते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-20T05:36:19.466Z",
+      "updatedAt": "2026-10-20T05:36:19.466Z",
+      "durationSeconds": 41.666666666666664,
+      "releaseTag": "draft-2026-10-20-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-20-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/658382324",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-20-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/658382353",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/658382362",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/658382409"
+      },
+      "description": "इस वीडियो में जानिए कि दोस्तों के साथ खेलना हमारे मन और दिल को खुश क्यों रखता है। आसान और मजेदार उदाहरण से बच्चों को दोस्ती की अहमियत समझाई गई है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dosti",
+        "friends",
+        "kids learning hindi",
+        "bolt and pip",
+        "feelings for kids",
+        "child psychology"
+      ],
+      "reviewerIssues": [
+        "[validator 1] estimated length 58.1s (target 44–58s)"
+      ],
+      "approvedAt": "2026-10-20T05:36:19.466Z",
+      "telegramMessageId": 230,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-20T05:23:35.093Z",
+    "generate": "2026-10-20T05:36:19.466Z",
     "publish": "2026-10-20T04:43:04.552Z"
   }
 }
