@@ -2526,10 +2526,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Where does rice come from",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-20T05:23:35.093Z",
-      "updatedAt": "2026-10-20T05:23:35.093Z",
+      "updatedAt": "2026-10-20T09:59:40.073Z",
       "durationSeconds": 38.166666666666664,
       "releaseTag": "draft-2026-10-20-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-20-en",
@@ -2552,6 +2552,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-20T05:23:35.093Z",
       "telegramMessageId": 228,
+      "youtubeVideoId": "B5t32rSF_pc",
+      "scheduledFor": "2026-10-24T11:30:00.000Z",
+      "uploadedAt": "2026-10-20T09:59:40.073Z",
       "includes": []
     },
     {
@@ -2562,10 +2565,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हम दोस्तों के साथ क्यों खेलते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-20T05:36:19.466Z",
-      "updatedAt": "2026-10-20T05:36:19.466Z",
+      "updatedAt": "2026-10-20T09:59:43.696Z",
       "durationSeconds": 41.666666666666664,
       "releaseTag": "draft-2026-10-20-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-20-hi",
@@ -2590,12 +2593,15 @@
       ],
       "approvedAt": "2026-10-20T05:36:19.466Z",
       "telegramMessageId": 230,
+      "youtubeVideoId": "4sykWObCxq4",
+      "scheduledFor": "2026-10-21T11:30:00.000Z",
+      "uploadedAt": "2026-10-20T09:59:43.696Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-20T05:36:19.466Z",
-    "publish": "2026-10-20T04:43:04.552Z"
+    "publish": "2026-10-20T09:59:44.061Z"
   }
 }
