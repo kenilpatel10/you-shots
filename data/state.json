@@ -2608,10 +2608,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why did Triceratops have horns?",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-21T05:27:27.247Z",
-      "updatedAt": "2026-10-21T05:27:27.247Z",
+      "updatedAt": "2026-10-21T07:32:52.392Z",
       "durationSeconds": 38.96666666666667,
       "releaseTag": "draft-2026-10-21-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-21-en",
@@ -2634,6 +2634,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-21T05:27:27.247Z",
       "telegramMessageId": 234,
+      "youtubeVideoId": "H0uha6HqhnQ",
+      "scheduledFor": "2026-10-25T11:30:00.000Z",
+      "uploadedAt": "2026-10-21T07:32:52.392Z",
       "includes": []
     },
     {
@@ -2644,10 +2647,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "कोहरा क्यों होता है इतना धुंधला",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-21T05:36:34.820Z",
-      "updatedAt": "2026-10-21T05:36:34.820Z",
+      "updatedAt": "2026-10-21T07:32:54.897Z",
       "durationSeconds": 38.233333333333334,
       "releaseTag": "draft-2026-10-21-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-21-hi",
@@ -2673,12 +2676,15 @@
       ],
       "approvedAt": "2026-10-21T05:36:34.820Z",
       "telegramMessageId": 236,
+      "youtubeVideoId": "sv_gfWw410c",
+      "scheduledFor": "2026-10-22T11:30:00.000Z",
+      "uploadedAt": "2026-10-21T07:32:54.897Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-21T05:36:34.820Z",
-    "publish": "2026-10-21T01:31:45.340Z"
+    "publish": "2026-10-21T07:32:55.218Z"
   }
 }
