@@ -2691,10 +2691,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How do fish breathe underwater",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-22T05:29:22.500Z",
-      "updatedAt": "2026-10-22T05:29:22.500Z",
+      "updatedAt": "2026-10-22T07:30:34.789Z",
       "durationSeconds": 38.266666666666666,
       "releaseTag": "draft-2026-10-22-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-22-en",
@@ -2717,6 +2717,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-22T05:29:22.500Z",
       "telegramMessageId": 240,
+      "youtubeVideoId": "KcWvZBW026c",
+      "scheduledFor": "2026-10-26T11:30:00.000Z",
+      "uploadedAt": "2026-10-22T07:30:34.789Z",
       "includes": []
     },
     {
@@ -2727,10 +2730,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "कागज़ खिंचता क्यों नहीं है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-22T05:36:15.892Z",
-      "updatedAt": "2026-10-22T05:36:15.892Z",
+      "updatedAt": "2026-10-22T07:30:38.012Z",
       "durationSeconds": 43.06666666666667,
       "releaseTag": "draft-2026-10-22-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-22-hi",
@@ -2752,12 +2755,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-22T05:36:15.892Z",
       "telegramMessageId": 242,
+      "youtubeVideoId": "svIUqDkyDPM",
+      "scheduledFor": "2026-10-23T11:30:00.000Z",
+      "uploadedAt": "2026-10-22T07:30:38.012Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-22T05:36:15.892Z",
-    "publish": "2026-10-22T01:28:25.599Z"
+    "publish": "2026-10-22T07:30:38.361Z"
   }
 }
