@@ -36,7 +36,8 @@
         "ocean-003",
         "weather-nature-020",
         "food-017",
-        "dinosaurs-012"
+        "dinosaurs-012",
+        "animals-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2680,11 +2681,47 @@
       "scheduledFor": "2026-10-22T11:30:00.000Z",
       "uploadedAt": "2026-10-21T07:32:54.897Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-22-en-animals-004",
+      "kind": "short",
+      "topicId": "animals-004",
+      "date": "2026-10-22",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How do fish breathe underwater",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-22T05:29:22.500Z",
+      "updatedAt": "2026-10-22T05:29:22.500Z",
+      "durationSeconds": 38.266666666666666,
+      "releaseTag": "draft-2026-10-22-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-22-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664784546",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-22-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664784567",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664784583",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664784607"
+      },
+      "description": "Learn how fish use their gills to breathe oxygen right out of the water. Bolt explains underwater science in a fun and simple way for kids.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "fish",
+        "gills",
+        "underwater",
+        "ocean animals",
+        "science for kids",
+        "how fish breathe"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-22T05:29:22.500Z",
+      "telegramMessageId": 240,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-21T05:36:34.820Z",
+    "generate": "2026-10-22T05:29:22.500Z",
     "publish": "2026-10-22T01:28:25.599Z"
   }
 }
