@@ -75,7 +75,8 @@
         "how-things-work-003",
         "animals-005",
         "feelings-friendship-008",
-        "weather-nature-020"
+        "weather-nature-020",
+        "everyday-things-020"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2717,11 +2718,46 @@
       "approvedAt": "2026-10-22T05:29:22.500Z",
       "telegramMessageId": 240,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-22-hi-everyday-things-020",
+      "kind": "short",
+      "topicId": "everyday-things-020",
+      "date": "2026-10-22",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "कागज़ खिंचता क्यों नहीं है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-22T05:36:15.892Z",
+      "updatedAt": "2026-10-22T05:36:15.892Z",
+      "durationSeconds": 43.06666666666667,
+      "releaseTag": "draft-2026-10-22-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-22-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664798335",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-22-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664798389",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664798425",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/664798449"
+      },
+      "description": "जानिए कि कागज़ रबर की तरह खिंचने के बजाय क्यों फट जाता है। बोल्ट और पिप बच्चों को कागज़ के रेशों के बारे में आसान तरीके से बताते हैं।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "hindi kids science",
+        "bolt and pip",
+        "why paper tears",
+        "kids learning hindi",
+        "everyday science"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-22T05:36:15.892Z",
+      "telegramMessageId": 242,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-22T05:29:22.500Z",
+    "generate": "2026-10-22T05:36:15.892Z",
     "publish": "2026-10-22T01:28:25.599Z"
   }
 }
