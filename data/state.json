@@ -77,7 +77,8 @@
         "animals-005",
         "feelings-friendship-008",
         "weather-nature-020",
-        "everyday-things-020"
+        "everyday-things-020",
+        "ocean-017"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2796,11 +2797,47 @@
       "approvedAt": "2026-10-23T05:31:35.326Z",
       "telegramMessageId": 246,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-23-hi-ocean-017",
+      "kind": "short",
+      "topicId": "ocean-017",
+      "date": "2026-10-23",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "समुद्र का पानी आगे पीछे क्यों जाता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-23T05:39:37.198Z",
+      "updatedAt": "2026-10-23T05:39:37.198Z",
+      "durationSeconds": 41.96666666666667,
+      "releaseTag": "draft-2026-10-23-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-23-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668100573",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-23-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668100605",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668100624",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668100646"
+      },
+      "description": "इस वीडियो में जानिए कि समुद्र में लहरें आगे-पीछे क्यों आती हैं। बोल्ट बच्चों को चंदा मामा के खिंचाव के बारे में आसान तरीके से सिखाता है। घर पर करने के लिए एक सुरक्षित गतिविधि भी शामिल है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "ocean tides for kids",
+        "bolt and pip hindi",
+        "science for kids hindi",
+        "moon gravity kids",
+        "ocean science hindi",
+        "kids hindi video"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-23T05:39:37.198Z",
+      "telegramMessageId": 248,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-23T05:31:35.326Z",
+    "generate": "2026-10-23T05:39:37.198Z",
     "publish": "2026-10-23T01:27:26.750Z"
   }
 }
