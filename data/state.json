@@ -37,7 +37,8 @@
         "weather-nature-020",
         "food-017",
         "dinosaurs-012",
-        "animals-004"
+        "animals-004",
+        "feelings-friendship-030"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2759,11 +2760,47 @@
       "scheduledFor": "2026-10-23T11:30:00.000Z",
       "uploadedAt": "2026-10-22T07:30:38.012Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-23-en-feelings-friendship-030",
+      "kind": "short",
+      "topicId": "feelings-friendship-030",
+      "date": "2026-10-23",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does listening make people feel good",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-23T05:31:35.326Z",
+      "updatedAt": "2026-10-23T05:31:35.326Z",
+      "durationSeconds": 41.93333333333333,
+      "releaseTag": "draft-2026-10-23-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-23-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668084450",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-23-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668084481",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668084490",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/668084501"
+      },
+      "description": "Learn why being a good listener makes your friends feel loved and happy! Bolt explains how giving quiet attention works just like a cozy hug for someone's feelings.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "listening",
+        "friendship",
+        "feelings",
+        "kids learning",
+        "social skills",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-23T05:31:35.326Z",
+      "telegramMessageId": 246,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-22T05:36:15.892Z",
+    "generate": "2026-10-23T05:31:35.326Z",
     "publish": "2026-10-23T01:27:26.750Z"
   }
 }
