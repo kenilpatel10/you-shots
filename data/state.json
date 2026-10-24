@@ -38,7 +38,8 @@
         "food-017",
         "dinosaurs-012",
         "animals-004",
-        "feelings-friendship-030"
+        "feelings-friendship-030",
+        "everyday-things-005"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2839,11 +2840,47 @@
       "scheduledFor": "2026-10-24T11:30:00.000Z",
       "uploadedAt": "2026-10-23T07:25:29.923Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-24-en-everyday-things-005",
+      "kind": "short",
+      "topicId": "everyday-things-005",
+      "date": "2026-10-24",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do shoes have laces?",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-24T05:06:37.822Z",
+      "updatedAt": "2026-10-24T05:06:37.822Z",
+      "durationSeconds": 41.1,
+      "releaseTag": "draft-2026-10-24-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-24-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671329321",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-24-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671329351",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671329368",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671329396"
+      },
+      "description": "Bolt explains why shoes have laces to keep your feet cozy and secure. Learn a fun fact about ancient shoelaces and try a safe knot activity at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "shoes",
+        "shoelaces",
+        "kids science",
+        "bolt and pip",
+        "everyday objects",
+        "how things work"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-24T05:06:37.822Z",
+      "telegramMessageId": 252,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-23T05:39:37.198Z",
+    "generate": "2026-10-24T05:06:37.822Z",
     "publish": "2026-10-24T00:37:25.015Z"
   }
 }
