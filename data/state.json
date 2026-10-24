@@ -79,7 +79,8 @@
         "feelings-friendship-008",
         "weather-nature-020",
         "everyday-things-020",
-        "ocean-017"
+        "ocean-017",
+        "dinosaurs-012"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2876,11 +2877,48 @@
       "approvedAt": "2026-10-24T05:06:37.822Z",
       "telegramMessageId": 252,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-24-hi-dinosaurs-012",
+      "kind": "short",
+      "topicId": "dinosaurs-012",
+      "date": "2026-10-24",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "ट्राइसेराटोप्स के सींग क्यों होते थे",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-24T05:13:16.433Z",
+      "updatedAt": "2026-10-24T05:13:16.433Z",
+      "durationSeconds": 42,
+      "releaseTag": "draft-2026-10-24-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-24-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671341892",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-24-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671341925",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671341944",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/671341973"
+      },
+      "description": "इस मजेदार वीडियो में बच्चे जानेंगे कि ट्राइसेराटोप्स के सिर पर सींग क्यों होते थे। आसान उदाहरणों के जरिए विज्ञान समझना बच्चों के लिए बहुत आसान हो जाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dinosaurs",
+        "triceratops",
+        "kids science",
+        "hindi stories",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The experiment section must literally include the phrase 'बड़ों से मदद लो'."
+      ],
+      "approvedAt": "2026-10-24T05:13:16.433Z",
+      "telegramMessageId": 254,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-24T05:06:37.822Z",
+    "generate": "2026-10-24T05:13:16.433Z",
     "publish": "2026-10-24T00:37:25.015Z"
   }
 }
