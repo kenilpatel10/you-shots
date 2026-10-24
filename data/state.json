@@ -2850,10 +2850,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do shoes have laces?",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-24T05:06:37.822Z",
-      "updatedAt": "2026-10-24T05:06:37.822Z",
+      "updatedAt": "2026-10-24T05:47:14.762Z",
       "durationSeconds": 41.1,
       "releaseTag": "draft-2026-10-24-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-24-en",
@@ -2876,6 +2876,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-24T05:06:37.822Z",
       "telegramMessageId": 252,
+      "youtubeVideoId": "hnbUOJb_ncM",
+      "scheduledFor": "2026-10-28T11:30:00.000Z",
+      "uploadedAt": "2026-10-24T05:47:14.762Z",
       "includes": []
     },
     {
@@ -2886,10 +2889,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "ट्राइसेराटोप्स के सींग क्यों होते थे",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-24T05:13:16.433Z",
-      "updatedAt": "2026-10-24T05:13:16.433Z",
+      "updatedAt": "2026-10-24T05:47:17.519Z",
       "durationSeconds": 42,
       "releaseTag": "draft-2026-10-24-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-24-hi",
@@ -2913,12 +2916,15 @@
       ],
       "approvedAt": "2026-10-24T05:13:16.433Z",
       "telegramMessageId": 254,
+      "youtubeVideoId": "z9d6Kc2OPX4",
+      "scheduledFor": "2026-10-25T11:30:00.000Z",
+      "uploadedAt": "2026-10-24T05:47:17.519Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-24T05:13:16.433Z",
-    "publish": "2026-10-24T00:37:25.015Z"
+    "publish": "2026-10-24T05:47:17.810Z"
   }
 }
