@@ -2931,10 +2931,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a boat float",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-25T05:25:29.014Z",
-      "updatedAt": "2026-10-25T05:25:29.014Z",
+      "updatedAt": "2026-10-25T06:03:06.866Z",
       "durationSeconds": 40.4,
       "releaseTag": "draft-2026-10-25-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-25-en",
@@ -2957,6 +2957,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-25T05:25:29.014Z",
       "telegramMessageId": 258,
+      "youtubeVideoId": "fPKrzUQbvIA",
+      "scheduledFor": "2026-10-29T11:30:00.000Z",
+      "uploadedAt": "2026-10-25T06:03:06.866Z",
       "includes": []
     },
     {
@@ -2967,10 +2970,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "मछलियां पानी में सांस कैसे लेती हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-25T05:33:47.054Z",
-      "updatedAt": "2026-10-25T05:33:47.054Z",
+      "updatedAt": "2026-10-25T06:03:09.488Z",
       "durationSeconds": 40.6,
       "releaseTag": "draft-2026-10-25-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-25-hi",
@@ -2993,12 +2996,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-25T05:33:47.054Z",
       "telegramMessageId": 260,
+      "youtubeVideoId": "UL0krqN893o",
+      "scheduledFor": "2026-10-26T11:30:00.000Z",
+      "uploadedAt": "2026-10-25T06:03:09.488Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-25T05:33:47.054Z",
-    "publish": "2026-10-25T01:06:16.105Z"
+    "publish": "2026-10-25T06:03:09.805Z"
   }
 }
