@@ -81,7 +81,8 @@
         "weather-nature-020",
         "everyday-things-020",
         "ocean-017",
-        "dinosaurs-012"
+        "dinosaurs-012",
+        "animals-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2957,11 +2958,47 @@
       "approvedAt": "2026-10-25T05:25:29.014Z",
       "telegramMessageId": 258,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-25-hi-animals-004",
+      "kind": "short",
+      "topicId": "animals-004",
+      "date": "2026-10-25",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "मछलियां पानी में सांस कैसे लेती हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-25T05:33:47.054Z",
+      "updatedAt": "2026-10-25T05:33:47.054Z",
+      "durationSeconds": 40.6,
+      "releaseTag": "draft-2026-10-25-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-25-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674198695",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-25-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674198729",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674198741",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674198756"
+      },
+      "description": "यह वीडियो बच्चों को सिखाता है कि मछलियां पानी के अंदर गलफड़ों की मदद से सांस कैसे लेती हैं। इसमें आसान उदाहरण और एक मजेदार छोटा प्रयोग शामिल है। छोटे बच्चों के लिए विज्ञान को समझना अब बहुत आसान है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "matsya",
+        "fish breathing",
+        "hindi science for kids",
+        "bolt aur pip",
+        "animals for children",
+        "gills hindi"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-25T05:33:47.054Z",
+      "telegramMessageId": 260,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-25T05:25:29.014Z",
+    "generate": "2026-10-25T05:33:47.054Z",
     "publish": "2026-10-25T01:06:16.105Z"
   }
 }
