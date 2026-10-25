@@ -39,7 +39,8 @@
         "dinosaurs-012",
         "animals-004",
         "feelings-friendship-030",
-        "everyday-things-005"
+        "everyday-things-005",
+        "how-things-work-009"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -2920,11 +2921,47 @@
       "scheduledFor": "2026-10-25T11:30:00.000Z",
       "uploadedAt": "2026-10-24T05:47:17.519Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-25-en-how-things-work-009",
+      "kind": "short",
+      "topicId": "how-things-work-009",
+      "date": "2026-10-25",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a boat float",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-25T05:25:29.014Z",
+      "updatedAt": "2026-10-25T05:25:29.014Z",
+      "durationSeconds": 40.4,
+      "releaseTag": "draft-2026-10-25-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-25-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674185141",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-25-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674185178",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674185192",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/674185206"
+      },
+      "description": "Bolt explains how hollow shapes and trapped air help giant heavy boats stay afloat on water. Children learn about displacement through a simple comparison with household objects. Includes a fun and easy kitchen sink experiment to try at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "science for kids",
+        "how boats float",
+        "bolt and pip",
+        "physics for toddlers",
+        "stem kids",
+        "fun learning"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-25T05:25:29.014Z",
+      "telegramMessageId": 258,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-24T05:13:16.433Z",
+    "generate": "2026-10-25T05:25:29.014Z",
     "publish": "2026-10-25T01:06:16.105Z"
   }
 }
