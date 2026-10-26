@@ -83,7 +83,8 @@
         "everyday-things-020",
         "ocean-017",
         "dinosaurs-012",
-        "animals-004"
+        "animals-004",
+        "feelings-friendship-030"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3038,11 +3039,48 @@
       "approvedAt": "2026-10-26T05:24:35.815Z",
       "telegramMessageId": 268,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-26-hi-feelings-friendship-030",
+      "kind": "short",
+      "topicId": "feelings-friendship-030",
+      "date": "2026-10-26",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बात सुनने से हमें खुशी क्यों मिलती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-26T05:32:48.854Z",
+      "updatedAt": "2026-10-26T05:32:48.854Z",
+      "durationSeconds": 39.53333333333333,
+      "releaseTag": "draft-2026-10-26-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-26-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677136168",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-26-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677136197",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677136205",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677136232"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को बताता है कि ध्यान से सुनने से हमें खुशी और अपनापन क्यों महसूस होता है। यह बच्चों में दोस्ती और सामाजिक समझ बढ़ाने में मदद करता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "bolt aur pip",
+        "feelings for kids",
+        "listening skills",
+        "kids videos hindi",
+        "friendship for kids"
+      ],
+      "reviewerIssues": [
+        "[validator 1] banned words: भूत"
+      ],
+      "approvedAt": "2026-10-26T05:32:48.854Z",
+      "telegramMessageId": 270,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-26T05:24:35.815Z",
+    "generate": "2026-10-26T05:32:48.854Z",
     "publish": "2026-10-26T00:18:00.211Z"
   }
 }
