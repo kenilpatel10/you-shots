@@ -40,7 +40,8 @@
         "animals-004",
         "feelings-friendship-030",
         "everyday-things-005",
-        "how-things-work-009"
+        "how-things-work-009",
+        "space-009"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3000,11 +3001,48 @@
       "scheduledFor": "2026-10-26T11:30:00.000Z",
       "uploadedAt": "2026-10-25T06:03:09.488Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-26-en-space-009",
+      "kind": "short",
+      "topicId": "space-009",
+      "date": "2026-10-26",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does the Moon follow us in the car",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-26T05:24:35.815Z",
+      "updatedAt": "2026-10-26T05:24:35.815Z",
+      "durationSeconds": 39.166666666666664,
+      "releaseTag": "draft-2026-10-26-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-26-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677120655",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-26-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677120697",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677120736",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/677120758"
+      },
+      "description": "Bolt explains why the Moon seems to chase your car during nighttime drives. Discover how distance changes how objects seem to move with a simple indoor trick. A fun space science lesson for curious kids.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "moon",
+        "space",
+        "kids science",
+        "astronomy",
+        "bolt and pip",
+        "moon following car",
+        "fun facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-26T05:24:35.815Z",
+      "telegramMessageId": 268,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-25T05:33:47.054Z",
+    "generate": "2026-10-26T05:24:35.815Z",
     "publish": "2026-10-26T00:18:00.211Z"
   }
 }
