@@ -3011,10 +3011,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does the Moon follow us in the car",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-26T05:24:35.815Z",
-      "updatedAt": "2026-10-26T05:24:35.815Z",
+      "updatedAt": "2026-10-26T06:07:08.555Z",
       "durationSeconds": 39.166666666666664,
       "releaseTag": "draft-2026-10-26-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-26-en",
@@ -3038,6 +3038,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-26T05:24:35.815Z",
       "telegramMessageId": 268,
+      "youtubeVideoId": "uGcC-oBJ5RE",
+      "scheduledFor": "2026-10-30T11:30:00.000Z",
+      "uploadedAt": "2026-10-26T06:07:08.555Z",
       "includes": []
     },
     {
@@ -3048,10 +3051,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बात सुनने से हमें खुशी क्यों मिलती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-26T05:32:48.854Z",
-      "updatedAt": "2026-10-26T05:32:48.854Z",
+      "updatedAt": "2026-10-26T06:07:11.115Z",
       "durationSeconds": 39.53333333333333,
       "releaseTag": "draft-2026-10-26-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-26-hi",
@@ -3075,12 +3078,15 @@
       ],
       "approvedAt": "2026-10-26T05:32:48.854Z",
       "telegramMessageId": 270,
+      "youtubeVideoId": "alrTPAOb1vo",
+      "scheduledFor": "2026-10-27T11:30:00.000Z",
+      "uploadedAt": "2026-10-26T06:07:11.115Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-26T05:32:48.854Z",
-    "publish": "2026-10-26T00:18:00.211Z"
+    "publish": "2026-10-26T06:07:11.436Z"
   }
 }
