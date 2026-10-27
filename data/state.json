@@ -85,7 +85,8 @@
         "ocean-017",
         "dinosaurs-012",
         "animals-004",
-        "feelings-friendship-030"
+        "feelings-friendship-030",
+        "food-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3122,11 +3123,50 @@
       "approvedAt": "2026-10-27T05:42:39.277Z",
       "telegramMessageId": 274,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-27-hi-food-004",
+      "kind": "short",
+      "topicId": "food-004",
+      "date": "2026-10-27",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "शहद इतना चिपचिपा क्यों होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-27T05:53:27.851Z",
+      "updatedAt": "2026-10-27T05:53:27.851Z",
+      "durationSeconds": 44.8,
+      "releaseTag": "draft-2026-10-27-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-27-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680614258",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-27-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680614311",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680614321",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680614343"
+      },
+      "description": "इस मजेदार वीडियो में बोल्ट से जानिए कि शहद इतना चिपचिपा क्यों होता है। बच्चे सीखेंगे कि मधुमक्खियां कैसे गाढ़ा शहद बनाती हैं। घर पर करने के लिए एक आसान और सुरक्षित गतिविधि भी है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "honey",
+        "kids science",
+        "bolt and pip",
+        "food facts",
+        "शहद",
+        "हिंदी कहानी"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Total spoken word count (77 words) is below the required range of 81-104 words.",
+        "[validator 1] estimated length 58.9s (target 44–58s)"
+      ],
+      "approvedAt": "2026-10-27T05:53:27.851Z",
+      "telegramMessageId": 276,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-27T05:42:39.277Z",
+    "generate": "2026-10-27T05:53:27.851Z",
     "publish": "2026-10-27T02:01:24.509Z"
   }
 }
