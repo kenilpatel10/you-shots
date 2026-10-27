@@ -41,7 +41,8 @@
         "feelings-friendship-030",
         "everyday-things-005",
         "how-things-work-009",
-        "space-009"
+        "space-009",
+        "human-body-025"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3082,11 +3083,50 @@
       "scheduledFor": "2026-10-27T11:30:00.000Z",
       "uploadedAt": "2026-10-26T06:07:11.115Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-27-en-human-body-025",
+      "kind": "short",
+      "topicId": "human-body-025",
+      "date": "2026-10-27",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we have different eye colours",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-27T05:42:39.277Z",
+      "updatedAt": "2026-10-27T05:42:39.277Z",
+      "durationSeconds": 41.233333333333334,
+      "releaseTag": "draft-2026-10-27-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-27-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680592943",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-27-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680593000",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680593032",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/680593073"
+      },
+      "description": "Bolt explains why people have brown, blue, or green eyes using a simple paint comparison. Children will learn about melanin and discover how eye colors are inherited from family.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "eyes",
+        "eye color",
+        "science for kids",
+        "human body",
+        "bolt and pip",
+        "learning",
+        "kids science"
+      ],
+      "reviewerIssues": [
+        "[validator 1] experiment involves eating/tasting or putting things near the mouth, eyes, ears or nose"
+      ],
+      "approvedAt": "2026-10-27T05:42:39.277Z",
+      "telegramMessageId": 274,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-26T05:32:48.854Z",
+    "generate": "2026-10-27T05:42:39.277Z",
     "publish": "2026-10-27T02:01:24.509Z"
   }
 }
