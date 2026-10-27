@@ -3093,10 +3093,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we have different eye colours",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-27T05:42:39.277Z",
-      "updatedAt": "2026-10-27T05:42:39.277Z",
+      "updatedAt": "2026-10-27T07:46:04.478Z",
       "durationSeconds": 41.233333333333334,
       "releaseTag": "draft-2026-10-27-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-27-en",
@@ -3122,6 +3122,9 @@
       ],
       "approvedAt": "2026-10-27T05:42:39.277Z",
       "telegramMessageId": 274,
+      "youtubeVideoId": "CM8-wix-MXE",
+      "scheduledFor": "2026-10-31T11:30:00.000Z",
+      "uploadedAt": "2026-10-27T07:46:04.478Z",
       "includes": []
     },
     {
@@ -3132,10 +3135,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "शहद इतना चिपचिपा क्यों होता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-27T05:53:27.851Z",
-      "updatedAt": "2026-10-27T05:53:27.851Z",
+      "updatedAt": "2026-10-27T07:46:06.988Z",
       "durationSeconds": 44.8,
       "releaseTag": "draft-2026-10-27-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-27-hi",
@@ -3161,12 +3164,15 @@
       ],
       "approvedAt": "2026-10-27T05:53:27.851Z",
       "telegramMessageId": 276,
+      "youtubeVideoId": "UpKS_0rA5xo",
+      "scheduledFor": "2026-10-28T11:30:00.000Z",
+      "uploadedAt": "2026-10-27T07:46:06.988Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-27T05:53:27.851Z",
-    "publish": "2026-10-27T02:01:24.509Z"
+    "publish": "2026-10-27T07:46:07.356Z"
   }
 }
