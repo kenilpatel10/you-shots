@@ -87,7 +87,8 @@
         "dinosaurs-012",
         "animals-004",
         "feelings-friendship-030",
-        "food-004"
+        "food-004",
+        "how-things-work-009"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3206,11 +3207,50 @@
       "approvedAt": "2026-10-28T06:23:49.151Z",
       "telegramMessageId": 280,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-28-hi-how-things-work-009",
+      "kind": "short",
+      "topicId": "how-things-work-009",
+      "date": "2026-10-28",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "नाव पानी पर कैसे तैरती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-28T06:31:59.882Z",
+      "updatedAt": "2026-10-28T06:31:59.882Z",
+      "durationSeconds": 42.03333333333333,
+      "releaseTag": "draft-2026-10-28-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-28-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684073937",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-28-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684073972",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684073999",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684074011"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को सरल तरीके से बताता है कि भारी नाव पानी में कैसे तैरती है। बच्चे पानी के उछाल बल के बारे में एक मजेदार प्रयोग से सीखेंगे। यह जानकारी बच्चों में विज्ञान के प्रति उत्सुकता बढ़ाती है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "boat",
+        "floating",
+        "science for kids",
+        "hindi shorts",
+        "bolt and pip",
+        "experiments",
+        "how things work",
+        "kids learning",
+        "physics for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-28T06:31:59.882Z",
+      "telegramMessageId": 282,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-28T06:23:49.151Z",
+    "generate": "2026-10-28T06:31:59.882Z",
     "publish": "2026-10-28T05:33:14.285Z"
   }
 }
