@@ -3179,10 +3179,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How do solar panels make power",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-28T06:23:49.151Z",
-      "updatedAt": "2026-10-28T06:23:49.151Z",
+      "updatedAt": "2026-10-28T12:44:28.456Z",
       "durationSeconds": 43.666666666666664,
       "releaseTag": "draft-2026-10-28-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-28-en",
@@ -3206,6 +3206,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-28T06:23:49.151Z",
       "telegramMessageId": 280,
+      "youtubeVideoId": "q_tzoPsZaSs",
+      "scheduledFor": "2026-11-01T11:30:00.000Z",
+      "uploadedAt": "2026-10-28T12:44:28.456Z",
       "includes": []
     },
     {
@@ -3216,10 +3219,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "नाव पानी पर कैसे तैरती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-28T06:31:59.882Z",
-      "updatedAt": "2026-10-28T06:31:59.882Z",
+      "updatedAt": "2026-10-28T12:44:31.104Z",
       "durationSeconds": 42.03333333333333,
       "releaseTag": "draft-2026-10-28-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-28-hi",
@@ -3245,12 +3248,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-28T06:31:59.882Z",
       "telegramMessageId": 282,
+      "youtubeVideoId": "t3xrVN-fSfQ",
+      "scheduledFor": "2026-10-29T11:30:00.000Z",
+      "uploadedAt": "2026-10-28T12:44:31.104Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-28T06:31:59.882Z",
-    "publish": "2026-10-28T05:33:14.285Z"
+    "publish": "2026-10-28T12:44:31.495Z"
   }
 }
