@@ -42,7 +42,8 @@
         "everyday-things-005",
         "how-things-work-009",
         "space-009",
-        "human-body-025"
+        "human-body-025",
+        "how-things-work-026"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3168,11 +3169,48 @@
       "scheduledFor": "2026-10-28T11:30:00.000Z",
       "uploadedAt": "2026-10-27T07:46:06.988Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-28-en-how-things-work-026",
+      "kind": "short",
+      "topicId": "how-things-work-026",
+      "date": "2026-10-28",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How do solar panels make power",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-28T06:23:49.151Z",
+      "updatedAt": "2026-10-28T06:23:49.151Z",
+      "durationSeconds": 43.666666666666664,
+      "releaseTag": "draft-2026-10-28-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-28-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684057760",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-28-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684057794",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684057812",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/684057853"
+      },
+      "description": "Learn how solar panels turn sunlight into clean power with Bolt and Pip. This short explains solar energy with simple comparisons for curious children.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "solar panels",
+        "science for kids",
+        "how things work",
+        "sunlight",
+        "bolt and pip",
+        "clean energy",
+        "stem"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-28T06:23:49.151Z",
+      "telegramMessageId": 280,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-27T05:53:27.851Z",
+    "generate": "2026-10-28T06:23:49.151Z",
     "publish": "2026-10-28T05:33:14.285Z"
   }
 }
