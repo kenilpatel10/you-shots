@@ -43,7 +43,8 @@
         "how-things-work-009",
         "space-009",
         "human-body-025",
-        "how-things-work-026"
+        "how-things-work-026",
+        "food-018"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3252,11 +3253,49 @@
       "scheduledFor": "2026-10-29T11:30:00.000Z",
       "uploadedAt": "2026-10-28T12:44:31.104Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-29-en-food-018",
+      "kind": "short",
+      "topicId": "food-018",
+      "date": "2026-10-29",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does jelly wobble",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-29T06:34:11.144Z",
+      "updatedAt": "2026-10-29T06:34:11.144Z",
+      "durationSeconds": 40.06666666666667,
+      "releaseTag": "draft-2026-10-29-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-29-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687608308",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-29-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687608396",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687608406",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687608448"
+      },
+      "description": "Learn all about why jelly wobbles and shakes on your plate. Bolt explains how tiny nets hold liquid together in a fun and easy way for kids. Perfect for young curious minds who love food science.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "jelly",
+        "science for kids",
+        "bolt and pip",
+        "food science",
+        "why does jelly wobble",
+        "kids learning"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Fact check: The wowFact stated that warm pineapple juice breaks gelatin, but heating destroys the enzyme (bromelain) that breaks down gelatin. It is fresh, raw pineapple that prevents jelly from setting."
+      ],
+      "approvedAt": "2026-10-29T06:34:11.144Z",
+      "telegramMessageId": 286,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-28T06:31:59.882Z",
+    "generate": "2026-10-29T06:34:11.144Z",
     "publish": "2026-10-29T02:23:53.463Z"
   }
 }
