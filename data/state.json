@@ -3263,10 +3263,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does jelly wobble",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-29T06:34:11.144Z",
-      "updatedAt": "2026-10-29T06:34:11.144Z",
+      "updatedAt": "2026-10-29T09:52:32.883Z",
       "durationSeconds": 40.06666666666667,
       "releaseTag": "draft-2026-10-29-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-29-en",
@@ -3291,6 +3291,9 @@
       ],
       "approvedAt": "2026-10-29T06:34:11.144Z",
       "telegramMessageId": 286,
+      "youtubeVideoId": "LC7TjZOIdsw",
+      "scheduledFor": "2026-11-02T11:30:00.000Z",
+      "uploadedAt": "2026-10-29T09:52:32.883Z",
       "includes": []
     },
     {
@@ -3301,10 +3304,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "चांद कार में हमारे साथ क्यों चलता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-29T06:42:13.132Z",
-      "updatedAt": "2026-10-29T06:42:13.132Z",
+      "updatedAt": "2026-10-29T09:52:36.196Z",
       "durationSeconds": 45,
       "releaseTag": "draft-2026-10-29-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-29-hi",
@@ -3330,12 +3333,15 @@
       ],
       "approvedAt": "2026-10-29T06:42:13.132Z",
       "telegramMessageId": 288,
+      "youtubeVideoId": "Fl93uDzylxs",
+      "scheduledFor": "2026-10-30T11:30:00.000Z",
+      "uploadedAt": "2026-10-29T09:52:36.196Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-29T06:42:13.132Z",
-    "publish": "2026-10-29T02:23:53.463Z"
+    "publish": "2026-10-29T09:52:36.539Z"
   }
 }
