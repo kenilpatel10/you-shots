@@ -89,7 +89,8 @@
         "animals-004",
         "feelings-friendship-030",
         "food-004",
-        "how-things-work-009"
+        "how-things-work-009",
+        "space-009"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3291,11 +3292,50 @@
       "approvedAt": "2026-10-29T06:34:11.144Z",
       "telegramMessageId": 286,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-29-hi-space-009",
+      "kind": "short",
+      "topicId": "space-009",
+      "date": "2026-10-29",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "चांद कार में हमारे साथ क्यों चलता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-29T06:42:13.132Z",
+      "updatedAt": "2026-10-29T06:42:13.132Z",
+      "durationSeconds": 45,
+      "releaseTag": "draft-2026-10-29-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-29-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687624517",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-29-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687624575",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687624614",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/687624630"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को समझाता है कि जब हम गाड़ी में चलते हैं तो चांद हमारे साथ चलता हुआ क्यों दिखाई देता है। यह बच्चों के लिए विज्ञान को आसान और मजेदार बनाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "space",
+        "moon",
+        "science",
+        "bolt",
+        "kids",
+        "hindi"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The wowFact was too short (11 words), below the minimum limit of 14 words.",
+        "[attempt 1] The answer section's explanation about trees and the moon was slightly confusing and inaccurate."
+      ],
+      "approvedAt": "2026-10-29T06:42:13.132Z",
+      "telegramMessageId": 288,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-29T06:34:11.144Z",
+    "generate": "2026-10-29T06:42:13.132Z",
     "publish": "2026-10-29T02:23:53.463Z"
   }
 }
