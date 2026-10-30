@@ -44,7 +44,8 @@
         "space-009",
         "human-body-025",
         "how-things-work-026",
-        "food-018"
+        "food-018",
+        "feelings-friendship-037"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3337,11 +3338,48 @@
       "scheduledFor": "2026-10-30T11:30:00.000Z",
       "uploadedAt": "2026-10-29T09:52:36.196Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-10-30-en-feelings-friendship-037",
+      "kind": "short",
+      "topicId": "feelings-friendship-037",
+      "date": "2026-10-30",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we feel lonely sometimes",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-30T06:37:15.905Z",
+      "updatedAt": "2026-10-30T06:37:15.905Z",
+      "durationSeconds": 40.4,
+      "releaseTag": "draft-2026-10-30-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-30-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691201320",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-30-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691201376",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691201397",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691201428"
+      },
+      "description": "Bolt explains why we feel lonely and how it is just a signal from our heart for connection. Learn how simple acts of kindness help us feel closer to others.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "loneliness",
+        "feelings",
+        "emotions",
+        "friendship",
+        "kids feelings",
+        "bolt and pip",
+        "kindness"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-30T06:37:15.905Z",
+      "telegramMessageId": 292,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-29T06:42:13.132Z",
+    "generate": "2026-10-30T06:37:15.905Z",
     "publish": "2026-10-30T01:56:07.202Z"
   }
 }
