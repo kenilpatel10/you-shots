@@ -91,7 +91,8 @@
         "feelings-friendship-030",
         "food-004",
         "how-things-work-009",
-        "space-009"
+        "space-009",
+        "human-body-025"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3375,11 +3376,49 @@
       "approvedAt": "2026-10-30T06:37:15.905Z",
       "telegramMessageId": 292,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-30-hi-human-body-025",
+      "kind": "short",
+      "topicId": "human-body-025",
+      "date": "2026-10-30",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हमारी आँखों के रंग अलग क्यों होते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-30T06:44:39.036Z",
+      "updatedAt": "2026-10-30T06:44:39.036Z",
+      "durationSeconds": 41.266666666666666,
+      "releaseTag": "draft-2026-10-30-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-30-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691216113",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-30-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691216139",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691216149",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/691216184"
+      },
+      "description": "इस वीडियो में जानिए कि हमारी आँखों के रंग अलग-अलग क्यों होते हैं। बोल्ट समझाते हैं कि मेलानिन कैसे हमारी आँखों को सुंदर रंग देता है। बच्चों के लिए आसान और मजेदार विज्ञान।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "eye color hindi",
+        "kids science hindi",
+        "bolt and pip",
+        "human body facts",
+        "science shorts hindi"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The claim in wowFact that all babies are born with very light eyes is factually inaccurate globally.",
+        "[attempt 1] The total spoken word count was 80 words, which is below the minimum required limit of 81 words."
+      ],
+      "approvedAt": "2026-10-30T06:44:39.036Z",
+      "telegramMessageId": 294,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-30T06:37:15.905Z",
+    "generate": "2026-10-30T06:44:39.036Z",
     "publish": "2026-10-30T01:56:07.202Z"
   }
 }
