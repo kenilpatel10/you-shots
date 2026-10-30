@@ -3348,10 +3348,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we feel lonely sometimes",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-30T06:37:15.905Z",
-      "updatedAt": "2026-10-30T06:37:15.905Z",
+      "updatedAt": "2026-10-30T08:33:51.315Z",
       "durationSeconds": 40.4,
       "releaseTag": "draft-2026-10-30-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-30-en",
@@ -3375,6 +3375,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-30T06:37:15.905Z",
       "telegramMessageId": 292,
+      "youtubeVideoId": "Co871rtPvgw",
+      "scheduledFor": "2026-11-03T11:30:00.000Z",
+      "uploadedAt": "2026-10-30T08:33:51.315Z",
       "includes": []
     },
     {
@@ -3385,10 +3388,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हमारी आँखों के रंग अलग क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-30T06:44:39.036Z",
-      "updatedAt": "2026-10-30T06:44:39.036Z",
+      "updatedAt": "2026-10-30T08:33:54.261Z",
       "durationSeconds": 41.266666666666666,
       "releaseTag": "draft-2026-10-30-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-30-hi",
@@ -3413,12 +3416,15 @@
       ],
       "approvedAt": "2026-10-30T06:44:39.036Z",
       "telegramMessageId": 294,
+      "youtubeVideoId": "ZPDDpuLQGk0",
+      "scheduledFor": "2026-10-31T11:30:00.000Z",
+      "uploadedAt": "2026-10-30T08:33:54.261Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-30T06:44:39.036Z",
-    "publish": "2026-10-30T01:56:07.202Z"
+    "publish": "2026-10-30T08:33:54.877Z"
   }
 }
