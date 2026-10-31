@@ -93,7 +93,8 @@
         "food-004",
         "how-things-work-009",
         "space-009",
-        "human-body-025"
+        "human-body-025",
+        "how-things-work-026"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3458,11 +3459,48 @@
       "approvedAt": "2026-10-31T06:27:43.094Z",
       "telegramMessageId": 298,
       "includes": []
+    },
+    {
+      "id": "short-2026-10-31-hi-how-things-work-026",
+      "kind": "short",
+      "topicId": "how-things-work-026",
+      "date": "2026-10-31",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "सोलर पैनल बिजली कैसे बनाते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-10-31T06:34:19.217Z",
+      "updatedAt": "2026-10-31T06:34:19.217Z",
+      "durationSeconds": 41.86666666666667,
+      "releaseTag": "draft-2026-10-31-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-31-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/694594978",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-10-31-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/694595015",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/694595025",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/694595041"
+      },
+      "description": "जानिए कि सोलर पैनल सूरज की रोशनी से ताकत कैसे बनाते हैं। बच्चों के लिए एक आसान और मजेदार विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "solar panels",
+        "science for kids",
+        "how things work",
+        "bolt and pip",
+        "hindi kids science",
+        "सूरज",
+        "सोलर पैनल"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-10-31T06:34:19.217Z",
+      "telegramMessageId": 300,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-31T06:27:43.094Z",
+    "generate": "2026-10-31T06:34:19.217Z",
     "publish": "2026-10-31T00:44:47.818Z"
   }
 }
