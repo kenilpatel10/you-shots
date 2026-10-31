@@ -3431,10 +3431,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does the sea look green sometimes",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-31T06:27:43.094Z",
-      "updatedAt": "2026-10-31T06:27:43.094Z",
+      "updatedAt": "2026-10-31T06:57:43.242Z",
       "durationSeconds": 39.733333333333334,
       "releaseTag": "draft-2026-10-31-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-31-en",
@@ -3458,6 +3458,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-31T06:27:43.094Z",
       "telegramMessageId": 298,
+      "youtubeVideoId": "yzSCbgoNt6g",
+      "scheduledFor": "2026-11-04T11:30:00.000Z",
+      "uploadedAt": "2026-10-31T06:57:43.242Z",
       "includes": []
     },
     {
@@ -3468,10 +3471,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "सोलर पैनल बिजली कैसे बनाते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-10-31T06:34:19.217Z",
-      "updatedAt": "2026-10-31T06:34:19.217Z",
+      "updatedAt": "2026-10-31T06:57:46.270Z",
       "durationSeconds": 41.86666666666667,
       "releaseTag": "draft-2026-10-31-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-10-31-hi",
@@ -3495,12 +3498,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-10-31T06:34:19.217Z",
       "telegramMessageId": 300,
+      "youtubeVideoId": "c0bhPuBmK6M",
+      "scheduledFor": "2026-11-01T11:30:00.000Z",
+      "uploadedAt": "2026-10-31T06:57:46.270Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-10-31T06:34:19.217Z",
-    "publish": "2026-10-31T00:44:47.818Z"
+    "publish": "2026-10-31T06:57:46.633Z"
   }
 }
