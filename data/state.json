@@ -3513,10 +3513,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do elephants have such big ears",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-01T06:59:24.677Z",
-      "updatedAt": "2026-11-01T06:59:24.677Z",
+      "updatedAt": "2026-11-01T09:10:27.736Z",
       "durationSeconds": 42.233333333333334,
       "releaseTag": "draft-2026-11-01-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-01-en",
@@ -3539,6 +3539,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-01T06:59:24.677Z",
       "telegramMessageId": 304,
+      "youtubeVideoId": "2p23Gp8wmK4",
+      "scheduledFor": "2026-11-05T11:30:00.000Z",
+      "uploadedAt": "2026-11-01T09:10:27.736Z",
       "includes": []
     },
     {
@@ -3549,10 +3552,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "जेली डगमग क्यों हिलती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-01T07:06:40.761Z",
-      "updatedAt": "2026-11-01T07:06:40.761Z",
+      "updatedAt": "2026-11-01T09:10:31.352Z",
       "durationSeconds": 41.53333333333333,
       "releaseTag": "draft-2026-11-01-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-01-hi",
@@ -3575,12 +3578,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-01T07:06:40.761Z",
       "telegramMessageId": 306,
+      "youtubeVideoId": "sImIaNiOUQs",
+      "scheduledFor": "2026-11-02T11:30:00.000Z",
+      "uploadedAt": "2026-11-01T09:10:31.352Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-01T07:06:40.761Z",
-    "publish": "2026-11-01T02:10:26.417Z"
+    "publish": "2026-11-01T09:10:31.697Z"
   }
 }
