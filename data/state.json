@@ -46,7 +46,8 @@
         "how-things-work-026",
         "food-018",
         "feelings-friendship-037",
-        "ocean-033"
+        "ocean-033",
+        "animals-012"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3502,11 +3503,47 @@
       "scheduledFor": "2026-11-01T11:30:00.000Z",
       "uploadedAt": "2026-10-31T06:57:46.270Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-01-en-animals-012",
+      "kind": "short",
+      "topicId": "animals-012",
+      "date": "2026-11-01",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do elephants have such big ears",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-01T06:59:24.677Z",
+      "updatedAt": "2026-11-01T06:59:24.677Z",
+      "durationSeconds": 42.233333333333334,
+      "releaseTag": "draft-2026-11-01-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-01-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697594196",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-01-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697594216",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697594231",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697594244"
+      },
+      "description": "Bolt explains how giant elephant ears work like natural fans to keep elephants cool on warm days. Children will learn a fun fact about elephant ear sizes and try a simple breeze experiment at home.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "elephants",
+        "animals",
+        "science for kids",
+        "elephant ears",
+        "fun facts",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-01T06:59:24.677Z",
+      "telegramMessageId": 304,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-10-31T06:34:19.217Z",
+    "generate": "2026-11-01T06:59:24.677Z",
     "publish": "2026-11-01T02:10:26.417Z"
   }
 }
