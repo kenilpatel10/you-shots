@@ -95,7 +95,8 @@
         "how-things-work-009",
         "space-009",
         "human-body-025",
-        "how-things-work-026"
+        "how-things-work-026",
+        "food-018"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3539,11 +3540,47 @@
       "approvedAt": "2026-11-01T06:59:24.677Z",
       "telegramMessageId": 304,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-01-hi-food-018",
+      "kind": "short",
+      "topicId": "food-018",
+      "date": "2026-11-01",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "जेली डगमग क्यों हिलती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-01T07:06:40.761Z",
+      "updatedAt": "2026-11-01T07:06:40.761Z",
+      "durationSeconds": 41.53333333333333,
+      "releaseTag": "draft-2026-11-01-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-01-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697607434",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-01-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697607468",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697607489",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/697607505"
+      },
+      "description": "जेली इतनी मजेदार और डगमग क्यों हिलती है? इस वीडियो में बोल्ट बच्चों को जेली के पीछे का मजेदार विज्ञान आसान भाषा में समझाते हैं।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "jelly science",
+        "kids science hindi",
+        "bolt and pip",
+        "science for kids",
+        "why jelly wobbles",
+        "fun facts for children"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-01T07:06:40.761Z",
+      "telegramMessageId": 306,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-01T06:59:24.677Z",
+    "generate": "2026-11-01T07:06:40.761Z",
     "publish": "2026-11-01T02:10:26.417Z"
   }
 }
