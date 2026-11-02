@@ -97,7 +97,8 @@
         "space-009",
         "human-body-025",
         "how-things-work-026",
-        "food-018"
+        "food-018",
+        "feelings-friendship-037"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3620,11 +3621,49 @@
       "approvedAt": "2026-11-02T06:56:19.611Z",
       "telegramMessageId": 314,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-02-hi-feelings-friendship-037",
+      "kind": "short",
+      "topicId": "feelings-friendship-037",
+      "date": "2026-11-02",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हमें कभी कभी अकेलापन क्यों महसूस होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-02T07:07:23.724Z",
+      "updatedAt": "2026-11-02T07:07:23.724Z",
+      "durationSeconds": 42.4,
+      "releaseTag": "draft-2026-11-02-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-02-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/700855694",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-02-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/700855728",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/700855747",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/700855775"
+      },
+      "description": "यह वीडियो बच्चों को बताता है कि कभी-कभी अकेला महसूस होना सामान्य क्यों है। बोल्ट समझाते हैं कि अकेलापन हमें दोस्तों और प्यार की ज़रूरत याद दिलाता है। यह बच्चों में भावनाओं की समझ और दोस्ती का महत्व बढ़ाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "अकेलापन",
+        "भावनाएं",
+        "दोस्ती",
+        "बच्चों के वीडियो",
+        "बोल्ट और पिप",
+        "kids feelings",
+        "hindi story",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-02T07:07:23.724Z",
+      "telegramMessageId": 316,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-02T06:56:19.611Z",
+    "generate": "2026-11-02T07:07:23.724Z",
     "publish": "2026-11-02T00:39:09.569Z"
   }
 }
