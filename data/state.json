@@ -3593,10 +3593,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does Saturn have rings",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-02T06:56:19.611Z",
-      "updatedAt": "2026-11-02T06:56:19.611Z",
+      "updatedAt": "2026-11-02T07:38:28.902Z",
       "durationSeconds": 39.9,
       "releaseTag": "draft-2026-11-02-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-02-en",
@@ -3620,6 +3620,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-02T06:56:19.611Z",
       "telegramMessageId": 314,
+      "youtubeVideoId": "8WQYClpCWrg",
+      "scheduledFor": "2026-11-06T11:30:00.000Z",
+      "uploadedAt": "2026-11-02T07:38:28.902Z",
       "includes": []
     },
     {
@@ -3630,10 +3633,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हमें कभी कभी अकेलापन क्यों महसूस होता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-02T07:07:23.724Z",
-      "updatedAt": "2026-11-02T07:07:23.724Z",
+      "updatedAt": "2026-11-02T07:38:30.940Z",
       "durationSeconds": 42.4,
       "releaseTag": "draft-2026-11-02-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-02-hi",
@@ -3658,12 +3661,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-02T07:07:23.724Z",
       "telegramMessageId": 316,
+      "youtubeVideoId": "koy56c7uqaY",
+      "scheduledFor": "2026-11-03T11:30:00.000Z",
+      "uploadedAt": "2026-11-02T07:38:30.940Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-02T07:07:23.724Z",
-    "publish": "2026-11-02T00:39:09.569Z"
+    "publish": "2026-11-02T07:38:31.231Z"
   }
 }
