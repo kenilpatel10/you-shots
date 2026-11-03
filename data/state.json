@@ -48,7 +48,8 @@
         "feelings-friendship-037",
         "ocean-033",
         "animals-012",
-        "space-014"
+        "space-014",
+        "everyday-things-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3665,11 +3666,47 @@
       "scheduledFor": "2026-11-03T11:30:00.000Z",
       "uploadedAt": "2026-11-02T07:38:30.940Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-03-en-everyday-things-022",
+      "kind": "short",
+      "topicId": "everyday-things-022",
+      "date": "2026-11-03",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does a boat float but a stone sink",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-03T07:19:49.541Z",
+      "updatedAt": "2026-11-03T07:19:49.541Z",
+      "durationSeconds": 37.333333333333336,
+      "releaseTag": "draft-2026-11-03-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-03-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704702296",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-03-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704702329",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704702374",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704702411"
+      },
+      "description": "Learn why large boats can float while small stones sink to the bottom. Bolt explains how air and shape help things stay afloat. Perfect for curious young minds.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "boats",
+        "floating",
+        "sinking",
+        "science for kids",
+        "bolt and pip",
+        "everyday science"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-03T07:19:49.541Z",
+      "telegramMessageId": 320,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-02T07:07:23.724Z",
+    "generate": "2026-11-03T07:19:49.541Z",
     "publish": "2026-11-03T01:32:49.712Z"
   }
 }
