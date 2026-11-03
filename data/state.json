@@ -99,7 +99,8 @@
         "human-body-025",
         "how-things-work-026",
         "food-018",
-        "feelings-friendship-037"
+        "feelings-friendship-037",
+        "ocean-033"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3702,11 +3703,48 @@
       "approvedAt": "2026-11-03T07:19:49.541Z",
       "telegramMessageId": 320,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-03-hi-ocean-033",
+      "kind": "short",
+      "topicId": "ocean-033",
+      "date": "2026-11-03",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "समुद्र का पानी कभी-कभी हरा क्यों दिखाई देता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-03T07:27:38.481Z",
+      "updatedAt": "2026-11-03T07:27:38.481Z",
+      "durationSeconds": 44.333333333333336,
+      "releaseTag": "draft-2026-11-03-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-03-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704722322",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-03-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704722363",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704722393",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/704722439"
+      },
+      "description": "इस वीडियो में बच्चे जानेंगे कि समुद्र का पानी कभी-कभी हरा क्यों दिखाई देता है। फाइटोप्लैंकटन नाम के नन्हे पौधों के बारे में एक मजेदार जानकारी। बच्चों के लिए एक आसान और सुरक्षित गतिविधि भी शामिल है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "ocean",
+        "sea water",
+        "science for kids",
+        "bolt and pip",
+        "hindi kids video",
+        "samudra",
+        "science facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-03T07:27:38.481Z",
+      "telegramMessageId": 322,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-03T07:19:49.541Z",
+    "generate": "2026-11-03T07:27:38.481Z",
     "publish": "2026-11-03T01:32:49.712Z"
   }
 }
