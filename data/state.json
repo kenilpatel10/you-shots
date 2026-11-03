@@ -3676,10 +3676,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why does a boat float but a stone sink",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-03T07:19:49.541Z",
-      "updatedAt": "2026-11-03T07:19:49.541Z",
+      "updatedAt": "2026-11-03T09:28:54.767Z",
       "durationSeconds": 37.333333333333336,
       "releaseTag": "draft-2026-11-03-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-03-en",
@@ -3702,6 +3702,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-03T07:19:49.541Z",
       "telegramMessageId": 320,
+      "youtubeVideoId": "maadHppUo-U",
+      "scheduledFor": "2026-11-07T11:30:00.000Z",
+      "uploadedAt": "2026-11-03T09:28:54.767Z",
       "includes": []
     },
     {
@@ -3712,10 +3715,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "समुद्र का पानी कभी-कभी हरा क्यों दिखाई देता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-03T07:27:38.481Z",
-      "updatedAt": "2026-11-03T07:27:38.481Z",
+      "updatedAt": "2026-11-03T09:28:58.536Z",
       "durationSeconds": 44.333333333333336,
       "releaseTag": "draft-2026-11-03-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-03-hi",
@@ -3739,12 +3742,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-03T07:27:38.481Z",
       "telegramMessageId": 322,
+      "youtubeVideoId": "T3j1x4HSZ4g",
+      "scheduledFor": "2026-11-04T11:30:00.000Z",
+      "uploadedAt": "2026-11-03T09:28:58.536Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-03T07:27:38.481Z",
-    "publish": "2026-11-03T01:32:49.712Z"
+    "publish": "2026-11-03T09:28:58.904Z"
   }
 }
