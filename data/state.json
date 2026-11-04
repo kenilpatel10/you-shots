@@ -3757,10 +3757,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "What happened to the dinosaurs",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-04T07:07:41.242Z",
-      "updatedAt": "2026-11-04T07:07:41.242Z",
+      "updatedAt": "2026-11-04T14:25:43.742Z",
       "durationSeconds": 43.93333333333333,
       "releaseTag": "draft-2026-11-04-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-04-en",
@@ -3783,6 +3783,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-04T07:07:41.242Z",
       "telegramMessageId": 326,
+      "youtubeVideoId": "p7Ldfyfsuh0",
+      "scheduledFor": "2026-11-08T11:30:00.000Z",
+      "uploadedAt": "2026-11-04T14:25:43.742Z",
       "includes": []
     },
     {
@@ -3793,10 +3796,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हाथी के कान इतने बड़े क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-04T07:19:41.772Z",
-      "updatedAt": "2026-11-04T07:19:41.772Z",
+      "updatedAt": "2026-11-04T14:25:46.032Z",
       "durationSeconds": 44.53333333333333,
       "releaseTag": "draft-2026-11-04-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-04-hi",
@@ -3821,12 +3824,15 @@
       ],
       "approvedAt": "2026-11-04T07:19:41.772Z",
       "telegramMessageId": 328,
+      "youtubeVideoId": "0rxFdAP7wT0",
+      "scheduledFor": "2026-11-05T11:30:00.000Z",
+      "uploadedAt": "2026-11-04T14:25:46.032Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-04T07:19:41.772Z",
-    "publish": "2026-11-04T06:09:05.781Z"
+    "publish": "2026-11-04T14:25:46.329Z"
   }
 }
