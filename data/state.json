@@ -101,7 +101,8 @@
         "how-things-work-026",
         "food-018",
         "feelings-friendship-037",
-        "ocean-033"
+        "ocean-033",
+        "animals-012"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3783,11 +3784,49 @@
       "approvedAt": "2026-11-04T07:07:41.242Z",
       "telegramMessageId": 326,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-04-hi-animals-012",
+      "kind": "short",
+      "topicId": "animals-012",
+      "date": "2026-11-04",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हाथी के कान इतने बड़े क्यों होते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-04T07:19:41.772Z",
+      "updatedAt": "2026-11-04T07:19:41.772Z",
+      "durationSeconds": 44.53333333333333,
+      "releaseTag": "draft-2026-11-04-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-04-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708623421",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-04-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708623463",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708623482",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708623504"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को बताता है कि हाथी के कान इतने बड़े क्यों होते हैं। जानिए कैसे हाथी अपने कानों से शरीर को ठंडा रखते हैं। बच्चों के लिए एक मजेदार और आसान विज्ञान पाठ।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "elephants",
+        "kids science",
+        "hindi science for kids",
+        "bolt and pip",
+        "animals for kids",
+        "हाथी के कान"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The word 'खून' (blood) in the answer violates content safety rules for young children. Replaced with safe heat-dissipation language."
+      ],
+      "approvedAt": "2026-11-04T07:19:41.772Z",
+      "telegramMessageId": 328,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-04T07:07:41.242Z",
+    "generate": "2026-11-04T07:19:41.772Z",
     "publish": "2026-11-04T06:09:05.781Z"
   }
 }
