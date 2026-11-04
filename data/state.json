@@ -49,7 +49,8 @@
         "ocean-033",
         "animals-012",
         "space-014",
-        "everyday-things-022"
+        "everyday-things-022",
+        "dinosaurs-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3746,11 +3747,47 @@
       "scheduledFor": "2026-11-04T11:30:00.000Z",
       "uploadedAt": "2026-11-03T09:28:58.536Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-04-en-dinosaurs-022",
+      "kind": "short",
+      "topicId": "dinosaurs-022",
+      "date": "2026-11-04",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "What happened to the dinosaurs",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-04T07:07:41.242Z",
+      "updatedAt": "2026-11-04T07:07:41.242Z",
+      "durationSeconds": 43.93333333333333,
+      "releaseTag": "draft-2026-11-04-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-04-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708591302",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-04-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708591348",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708591368",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/708591396"
+      },
+      "description": "Learn what happened to the dinosaurs long ago in a simple, kid-friendly way. Bolt explains how a space rock changed Earth and how birds are connected to dinosaurs today.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dinosaurs",
+        "science for kids",
+        "bolt and pip",
+        "dinosaurs for kids",
+        "fun facts",
+        "birds and dinosaurs"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-04T07:07:41.242Z",
+      "telegramMessageId": 326,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-03T07:27:38.481Z",
+    "generate": "2026-11-04T07:07:41.242Z",
     "publish": "2026-11-04T06:09:05.781Z"
   }
 }
