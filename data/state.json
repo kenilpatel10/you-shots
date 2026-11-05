@@ -103,7 +103,8 @@
         "food-018",
         "feelings-friendship-037",
         "ocean-033",
-        "animals-012"
+        "animals-012",
+        "space-014"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3866,11 +3867,46 @@
       "approvedAt": "2026-11-05T07:30:32.288Z",
       "telegramMessageId": 332,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-05-hi-space-014",
+      "kind": "short",
+      "topicId": "space-014",
+      "date": "2026-11-05",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "शनि ग्रह के पास रिंग्स क्यों होते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-05T07:40:13.507Z",
+      "updatedAt": "2026-11-05T07:40:13.507Z",
+      "durationSeconds": 38.53333333333333,
+      "releaseTag": "draft-2026-11-05-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-05-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/712518536",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-05-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/712518572",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/712518600",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/712518623"
+      },
+      "description": "बोल्ट के साथ जानिए कि शनि ग्रह के चारों ओर खूबसूरत रिंग्स कैसे बने। बच्चों के लिए अंतरिक्ष की एक बहुत ही सरल और मजेदार जानकारी।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "शनि ग्रह",
+        "अंतरिक्ष",
+        "बच्चों के लिए",
+        "science for kids",
+        "space facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-05T07:40:13.507Z",
+      "telegramMessageId": 334,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-05T07:30:32.288Z",
+    "generate": "2026-11-05T07:40:13.507Z",
     "publish": "2026-11-05T02:22:34.141Z"
   }
 }
