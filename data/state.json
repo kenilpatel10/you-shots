@@ -3839,10 +3839,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we have freckles",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-05T07:30:32.288Z",
-      "updatedAt": "2026-11-05T07:30:32.288Z",
+      "updatedAt": "2026-11-05T10:47:08.385Z",
       "durationSeconds": 41,
       "releaseTag": "draft-2026-11-05-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-05-en",
@@ -3866,6 +3866,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-05T07:30:32.288Z",
       "telegramMessageId": 332,
+      "youtubeVideoId": "uq4oPvbjfRw",
+      "scheduledFor": "2026-11-09T11:30:00.000Z",
+      "uploadedAt": "2026-11-05T10:47:08.385Z",
       "includes": []
     },
     {
@@ -3876,10 +3879,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "शनि ग्रह के पास रिंग्स क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-05T07:40:13.507Z",
-      "updatedAt": "2026-11-05T07:40:13.507Z",
+      "updatedAt": "2026-11-05T10:47:11.752Z",
       "durationSeconds": 38.53333333333333,
       "releaseTag": "draft-2026-11-05-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-05-hi",
@@ -3901,12 +3904,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-05T07:40:13.507Z",
       "telegramMessageId": 334,
+      "youtubeVideoId": "njp8WHtMa_w",
+      "scheduledFor": "2026-11-06T11:30:00.000Z",
+      "uploadedAt": "2026-11-05T10:47:11.752Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-05T07:40:13.507Z",
-    "publish": "2026-11-05T02:22:34.141Z"
+    "publish": "2026-11-05T10:47:12.116Z"
   }
 }
