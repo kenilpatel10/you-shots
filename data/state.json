@@ -105,7 +105,8 @@
         "feelings-friendship-037",
         "ocean-033",
         "animals-012",
-        "space-014"
+        "space-014",
+        "everyday-things-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3946,11 +3947,47 @@
       "approvedAt": "2026-11-06T07:29:29.604Z",
       "telegramMessageId": 338,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-06-hi-everyday-things-022",
+      "kind": "short",
+      "topicId": "everyday-things-022",
+      "date": "2026-11-06",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "नाव पानी पर क्यों तैरती है और पत्थर क्यों डूब जाता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-06T07:38:19.808Z",
+      "updatedAt": "2026-11-06T07:38:19.808Z",
+      "durationSeconds": 42.53333333333333,
+      "releaseTag": "draft-2026-11-06-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-06-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716331908",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-06-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716331945",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716331960",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716331976"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को सिखाता है कि भारी नाव पानी पर कैसे तैरती है और पत्थर क्यों डूब जाता है। सरल उदाहरणों से बच्चे पानी के उछाल का आसान विज्ञान समझ सकते हैं।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "science for kids",
+        "kids hindi science",
+        "why boats float",
+        "bolt and pip",
+        "educational hindi",
+        "floating and sinking"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-06T07:38:19.808Z",
+      "telegramMessageId": 340,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-06T07:29:29.604Z",
+    "generate": "2026-11-06T07:38:19.808Z",
     "publish": "2026-11-06T06:34:26.239Z"
   }
 }
