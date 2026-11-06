@@ -51,7 +51,8 @@
         "space-014",
         "everyday-things-022",
         "dinosaurs-022",
-        "human-body-029"
+        "human-body-029",
+        "weather-nature-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3908,11 +3909,48 @@
       "scheduledFor": "2026-11-06T11:30:00.000Z",
       "uploadedAt": "2026-11-05T10:47:11.752Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-06-en-weather-nature-022",
+      "kind": "short",
+      "topicId": "weather-nature-022",
+      "date": "2026-11-06",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why are deserts hot in the day and cold at night",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-06T07:29:29.604Z",
+      "updatedAt": "2026-11-06T07:29:29.604Z",
+      "durationSeconds": 39.4,
+      "releaseTag": "draft-2026-11-06-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-06-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716311888",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-06-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716311925",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716311961",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/716312002"
+      },
+      "description": "Bolt explains why deserts get super hot during the day and very cold at night. Learn how humidity and clouds act like a blanket for Earth's heat in this fun science video for kids.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "deserts",
+        "weather",
+        "science for kids",
+        "bolt and pip",
+        "earth science",
+        "desert temperature",
+        "learning"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-06T07:29:29.604Z",
+      "telegramMessageId": 338,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-05T07:40:13.507Z",
+    "generate": "2026-11-06T07:29:29.604Z",
     "publish": "2026-11-06T06:34:26.239Z"
   }
 }
