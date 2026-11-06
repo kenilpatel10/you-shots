@@ -3919,10 +3919,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why are deserts hot in the day and cold at night",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-06T07:29:29.604Z",
-      "updatedAt": "2026-11-06T07:29:29.604Z",
+      "updatedAt": "2026-11-06T14:59:21.135Z",
       "durationSeconds": 39.4,
       "releaseTag": "draft-2026-11-06-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-06-en",
@@ -3946,6 +3946,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-06T07:29:29.604Z",
       "telegramMessageId": 338,
+      "youtubeVideoId": "EzJ_e0oGKeY",
+      "scheduledFor": "2026-11-10T11:30:00.000Z",
+      "uploadedAt": "2026-11-06T14:59:21.135Z",
       "includes": []
     },
     {
@@ -3956,10 +3959,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "नाव पानी पर क्यों तैरती है और पत्थर क्यों डूब जाता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-06T07:38:19.808Z",
-      "updatedAt": "2026-11-06T07:38:19.808Z",
+      "updatedAt": "2026-11-06T14:59:23.870Z",
       "durationSeconds": 42.53333333333333,
       "releaseTag": "draft-2026-11-06-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-06-hi",
@@ -3982,12 +3985,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-06T07:38:19.808Z",
       "telegramMessageId": 340,
+      "youtubeVideoId": "UPXhcYsgw1g",
+      "scheduledFor": "2026-11-07T11:30:00.000Z",
+      "uploadedAt": "2026-11-06T14:59:23.870Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-06T07:38:19.808Z",
-    "publish": "2026-11-06T06:34:26.239Z"
+    "publish": "2026-11-06T14:59:24.248Z"
   }
 }
