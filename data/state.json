@@ -52,7 +52,8 @@
         "everyday-things-022",
         "dinosaurs-022",
         "human-body-029",
-        "weather-nature-022"
+        "weather-nature-022",
+        "space-016"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -3989,11 +3990,48 @@
       "scheduledFor": "2026-11-07T11:30:00.000Z",
       "uploadedAt": "2026-11-06T14:59:23.870Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-07-en-space-016",
+      "kind": "short",
+      "topicId": "space-016",
+      "date": "2026-11-07",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we have seasons",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-07T06:43:24.042Z",
+      "updatedAt": "2026-11-07T06:43:24.042Z",
+      "durationSeconds": 40.166666666666664,
+      "releaseTag": "draft-2026-11-07-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-07-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719881970",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-07-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719882010",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719882041",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719882083"
+      },
+      "description": "Learn why Earth has different seasons throughout the year with Bolt! Discover how Earth's tilt creates warm summer and cold winter. Perfect science fun for curious young minds.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "seasons",
+        "space for kids",
+        "earth tilt",
+        "science for kids",
+        "bolt and pip",
+        "astronomy",
+        "learn seasons"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-07T06:43:24.042Z",
+      "telegramMessageId": 344,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-06T07:38:19.808Z",
+    "generate": "2026-11-07T06:43:24.042Z",
     "publish": "2026-11-07T00:53:53.381Z"
   }
 }
