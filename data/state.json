@@ -107,7 +107,8 @@
         "ocean-033",
         "animals-012",
         "space-014",
-        "everyday-things-022"
+        "everyday-things-022",
+        "dinosaurs-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4027,11 +4028,48 @@
       "approvedAt": "2026-11-07T06:43:24.042Z",
       "telegramMessageId": 344,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-07-hi-dinosaurs-022",
+      "kind": "short",
+      "topicId": "dinosaurs-022",
+      "date": "2026-11-07",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "डायनासोर कहाँ चले गए",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-07T06:51:20.678Z",
+      "updatedAt": "2026-11-07T06:51:20.678Z",
+      "durationSeconds": 44.46666666666667,
+      "releaseTag": "draft-2026-11-07-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-07-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719899366",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-07-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719899405",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719899421",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/719899438"
+      },
+      "description": "इस वीडियो में बच्चे जानेंगे कि डायनासोर का क्या हुआ और आज की चिड़िया उनसे कैसे जुड़ी हैं। बोल्ट बच्चों को विज्ञान की बातें आसान और मजेदार तरीके से सिखाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dinosaurs",
+        "kids science",
+        "hindi shorts",
+        "bolt and pip",
+        "डायनासोर",
+        "चिड़िया",
+        "बच्चों का विज्ञान"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-07T06:51:20.678Z",
+      "telegramMessageId": 346,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-07T06:43:24.042Z",
+    "generate": "2026-11-07T06:51:20.678Z",
     "publish": "2026-11-07T00:53:53.381Z"
   }
 }
