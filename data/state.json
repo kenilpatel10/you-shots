@@ -4000,10 +4000,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we have seasons",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-07T06:43:24.042Z",
-      "updatedAt": "2026-11-07T06:43:24.042Z",
+      "updatedAt": "2026-11-07T07:04:18.837Z",
       "durationSeconds": 40.166666666666664,
       "releaseTag": "draft-2026-11-07-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-07-en",
@@ -4027,6 +4027,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-07T06:43:24.042Z",
       "telegramMessageId": 344,
+      "youtubeVideoId": "6jh25aNHQMY",
+      "scheduledFor": "2026-11-11T11:30:00.000Z",
+      "uploadedAt": "2026-11-07T07:04:18.837Z",
       "includes": []
     },
     {
@@ -4037,10 +4040,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "डायनासोर कहाँ चले गए",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-07T06:51:20.678Z",
-      "updatedAt": "2026-11-07T06:51:20.678Z",
+      "updatedAt": "2026-11-07T07:04:23.305Z",
       "durationSeconds": 44.46666666666667,
       "releaseTag": "draft-2026-11-07-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-07-hi",
@@ -4064,12 +4067,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-07T06:51:20.678Z",
       "telegramMessageId": 346,
+      "youtubeVideoId": "kdOZv4Q3GmU",
+      "scheduledFor": "2026-11-08T11:30:00.000Z",
+      "uploadedAt": "2026-11-07T07:04:23.305Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-07T06:51:20.678Z",
-    "publish": "2026-11-07T00:53:53.381Z"
+    "publish": "2026-11-07T07:04:23.916Z"
   }
 }
