@@ -109,7 +109,8 @@
         "animals-012",
         "space-014",
         "everyday-things-022",
-        "dinosaurs-022"
+        "dinosaurs-022",
+        "human-body-029"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4109,11 +4110,49 @@
       "approvedAt": "2026-11-08T06:49:32.316Z",
       "telegramMessageId": 350,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-08-hi-human-body-029",
+      "kind": "short",
+      "topicId": "human-body-029",
+      "date": "2026-11-08",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "चेहरे पर छोटे तिल क्यों होते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-08T06:55:41.047Z",
+      "updatedAt": "2026-11-08T06:55:41.047Z",
+      "durationSeconds": 39.03333333333333,
+      "releaseTag": "draft-2026-11-08-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-08-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/723172606",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-08-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/723172650",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/723172681",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/723172722"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को समझाते हैं कि त्वचा पर तिल क्यों बनते हैं। यह एक सरल विज्ञान पाठ है जो बच्चों को शरीर के बारे में सिखाता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "freckles",
+        "human body hindi",
+        "kids science hindi",
+        "bolt and pip",
+        "boil and pip hindi",
+        "body facts for kids"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The hook contained redundant question markers ('क्या' and 'क्यों' used together: 'क्या हमारे चेहरे पर छोटे भूरे तिल क्यों होते हैं?'). Fixed to natural Hindi phrasing."
+      ],
+      "approvedAt": "2026-11-08T06:55:41.047Z",
+      "telegramMessageId": 352,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-08T06:49:32.316Z",
+    "generate": "2026-11-08T06:55:41.047Z",
     "publish": "2026-11-08T02:24:44.165Z"
   }
 }
