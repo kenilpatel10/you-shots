@@ -4082,10 +4082,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How do our eyes see colours",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-08T06:49:32.316Z",
-      "updatedAt": "2026-11-08T06:49:32.316Z",
+      "updatedAt": "2026-11-08T10:12:52.287Z",
       "durationSeconds": 38.96666666666667,
       "releaseTag": "draft-2026-11-08-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-08-en",
@@ -4109,6 +4109,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-08T06:49:32.316Z",
       "telegramMessageId": 350,
+      "youtubeVideoId": "YHSxpBIsM6U",
+      "scheduledFor": "2026-11-12T11:30:00.000Z",
+      "uploadedAt": "2026-11-08T10:12:52.287Z",
       "includes": []
     },
     {
@@ -4119,10 +4122,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "चेहरे पर छोटे तिल क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-08T06:55:41.047Z",
-      "updatedAt": "2026-11-08T06:55:41.047Z",
+      "updatedAt": "2026-11-08T10:12:54.253Z",
       "durationSeconds": 39.03333333333333,
       "releaseTag": "draft-2026-11-08-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-08-hi",
@@ -4147,12 +4150,15 @@
       ],
       "approvedAt": "2026-11-08T06:55:41.047Z",
       "telegramMessageId": 352,
+      "youtubeVideoId": "DWR_mkAxaAM",
+      "scheduledFor": "2026-11-09T11:30:00.000Z",
+      "uploadedAt": "2026-11-08T10:12:54.253Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-08T06:55:41.047Z",
-    "publish": "2026-11-08T02:24:44.165Z"
+    "publish": "2026-11-08T10:12:54.544Z"
   }
 }
