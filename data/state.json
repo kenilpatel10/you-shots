@@ -54,7 +54,8 @@
         "human-body-029",
         "weather-nature-022",
         "space-016",
-        "human-body-035"
+        "human-body-035",
+        "animals-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4154,11 +4155,47 @@
       "scheduledFor": "2026-11-09T11:30:00.000Z",
       "uploadedAt": "2026-11-08T10:12:54.253Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-09-en-animals-022",
+      "kind": "short",
+      "topicId": "animals-022",
+      "date": "2026-11-09",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do cats have whiskers",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-09T07:17:39.250Z",
+      "updatedAt": "2026-11-09T07:17:39.250Z",
+      "durationSeconds": 36.13333333333333,
+      "releaseTag": "draft-2026-11-09-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-09-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/726588895",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-09-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/726588933",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/726588948",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/726588981"
+      },
+      "description": "Learn how cats use their whiskers like tiny built-in rulers to explore the world around them. Bolt explains how cat whiskers help measure tight spaces and feel movement.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "cats",
+        "whiskers",
+        "animals",
+        "cat facts",
+        "science for kids",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-09T07:17:39.250Z",
+      "telegramMessageId": 358,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-08T06:55:41.047Z",
+    "generate": "2026-11-09T07:17:39.250Z",
     "publish": "2026-11-09T00:49:32.123Z"
   }
 }
