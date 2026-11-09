@@ -4165,10 +4165,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do cats have whiskers",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-09T07:17:39.250Z",
-      "updatedAt": "2026-11-09T07:17:39.250Z",
+      "updatedAt": "2026-11-09T07:54:49.033Z",
       "durationSeconds": 36.13333333333333,
       "releaseTag": "draft-2026-11-09-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-09-en",
@@ -4191,6 +4191,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-09T07:17:39.250Z",
       "telegramMessageId": 358,
+      "youtubeVideoId": "PAGwtrEcv-Q",
+      "scheduledFor": "2026-11-13T11:30:00.000Z",
+      "uploadedAt": "2026-11-09T07:54:49.033Z",
       "includes": []
     },
     {
@@ -4201,10 +4204,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "रेगिस्तान दिन में गर्म और रात में ठंडे क्यों होते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-09T07:26:39.891Z",
-      "updatedAt": "2026-11-09T07:26:39.891Z",
+      "updatedAt": "2026-11-09T07:54:52.067Z",
       "durationSeconds": 43.36666666666667,
       "releaseTag": "draft-2026-11-09-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-09-hi",
@@ -4229,12 +4232,15 @@
       ],
       "approvedAt": "2026-11-09T07:26:39.891Z",
       "telegramMessageId": 360,
+      "youtubeVideoId": "yZPJdhCJdDY",
+      "scheduledFor": "2026-11-10T11:30:00.000Z",
+      "uploadedAt": "2026-11-09T07:54:52.067Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-09T07:26:39.891Z",
-    "publish": "2026-11-09T00:49:32.123Z"
+    "publish": "2026-11-09T07:54:52.444Z"
   }
 }
