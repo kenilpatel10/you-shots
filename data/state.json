@@ -113,7 +113,8 @@
         "everyday-things-022",
         "dinosaurs-022",
         "human-body-029",
-        "weather-nature-022"
+        "weather-nature-022",
+        "space-016"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4274,11 +4275,49 @@
       "approvedAt": "2026-11-10T07:51:09.738Z",
       "telegramMessageId": 364,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-10-hi-space-016",
+      "kind": "short",
+      "topicId": "space-016",
+      "date": "2026-11-10",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "पृथ्वी पर मौसम क्यों बदलते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-10T08:03:25.075Z",
+      "updatedAt": "2026-11-10T08:03:25.075Z",
+      "durationSeconds": 40.06666666666667,
+      "releaseTag": "draft-2026-11-10-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-10-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730615187",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-10-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730615230",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730615265",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730615310"
+      },
+      "description": "इस वीडियो में बच्चे जानेंगे कि पृथ्वी के झुकाव के कारण मौसम कैसे बदलते हैं। बोल्ट एक आसान उदाहरण से गर्मी और सर्दी का कारण समझाते हैं। बच्चों के लिए एक मजेदार और सुरक्षित गतिविधि भी शामिल है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "seasons hindi",
+        "why seasons change",
+        "science for kids",
+        "bolt and pip",
+        "earth tilt hindi",
+        "kids learning hindi",
+        "space for kids",
+        "curious kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-10T08:03:25.075Z",
+      "telegramMessageId": 366,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-10T07:51:09.738Z",
+    "generate": "2026-11-10T08:03:25.075Z",
     "publish": "2026-11-10T02:02:43.336Z"
   }
 }
