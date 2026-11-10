@@ -4247,10 +4247,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we see colours in a bubble",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-10T07:51:09.738Z",
-      "updatedAt": "2026-11-10T07:51:09.738Z",
+      "updatedAt": "2026-11-10T09:43:27.433Z",
       "durationSeconds": 43.266666666666666,
       "releaseTag": "draft-2026-11-10-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-10-en",
@@ -4274,6 +4274,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-10T07:51:09.738Z",
       "telegramMessageId": 364,
+      "youtubeVideoId": "-Ox9xptudnQ",
+      "scheduledFor": "2026-11-14T11:30:00.000Z",
+      "uploadedAt": "2026-11-10T09:43:27.433Z",
       "includes": []
     },
     {
@@ -4284,10 +4287,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "पृथ्वी पर मौसम क्यों बदलते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-10T08:03:25.075Z",
-      "updatedAt": "2026-11-10T08:03:25.075Z",
+      "updatedAt": "2026-11-10T09:43:29.799Z",
       "durationSeconds": 40.06666666666667,
       "releaseTag": "draft-2026-11-10-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-10-hi",
@@ -4312,12 +4315,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-10T08:03:25.075Z",
       "telegramMessageId": 366,
+      "youtubeVideoId": "vPPKhz58h8I",
+      "scheduledFor": "2026-11-11T11:30:00.000Z",
+      "uploadedAt": "2026-11-10T09:43:29.799Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-10T08:03:25.075Z",
-    "publish": "2026-11-10T02:02:43.336Z"
+    "publish": "2026-11-10T09:43:30.097Z"
   }
 }
