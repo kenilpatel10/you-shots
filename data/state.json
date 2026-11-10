@@ -55,7 +55,8 @@
         "weather-nature-022",
         "space-016",
         "human-body-035",
-        "animals-022"
+        "animals-022",
+        "everyday-things-031"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4236,11 +4237,48 @@
       "scheduledFor": "2026-11-10T11:30:00.000Z",
       "uploadedAt": "2026-11-09T07:54:52.067Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-10-en-everyday-things-031",
+      "kind": "short",
+      "topicId": "everyday-things-031",
+      "date": "2026-11-10",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we see colours in a bubble",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-10T07:51:09.738Z",
+      "updatedAt": "2026-11-10T07:51:09.738Z",
+      "durationSeconds": 43.266666666666666,
+      "releaseTag": "draft-2026-11-10-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-10-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730583191",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-10-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730583237",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730583253",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/730583293"
+      },
+      "description": "Bolt explains how sunlight bounces off thin soap layers to create vibrant rainbow colours in soap bubbles. Learn the fun science behind swirling bubble colours and try a simple observation activity at home with a grown-up.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "bubbles",
+        "science for kids",
+        "light and colours",
+        "rainbows",
+        "bolt and pip",
+        "everyday science",
+        "fun learning"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-10T07:51:09.738Z",
+      "telegramMessageId": 364,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-09T07:26:39.891Z",
+    "generate": "2026-11-10T07:51:09.738Z",
     "publish": "2026-11-10T02:02:43.336Z"
   }
 }
