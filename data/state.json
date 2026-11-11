@@ -4330,10 +4330,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How do clownfish live in anemones",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-11T07:20:34.027Z",
-      "updatedAt": "2026-11-11T07:20:34.027Z",
+      "updatedAt": "2026-11-11T10:49:19.271Z",
       "durationSeconds": 45.333333333333336,
       "releaseTag": "draft-2026-11-11-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-11-en",
@@ -4356,6 +4356,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-11T07:20:34.027Z",
       "telegramMessageId": 370,
+      "youtubeVideoId": "weCeHaeCS8o",
+      "scheduledFor": "2026-11-15T11:30:00.000Z",
+      "uploadedAt": "2026-11-11T10:49:19.271Z",
       "includes": []
     },
     {
@@ -4366,10 +4369,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हमारी आँखें रंग कैसे देखती हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-11T07:26:05.640Z",
-      "updatedAt": "2026-11-11T07:26:05.640Z",
+      "updatedAt": "2026-11-11T10:49:21.952Z",
       "durationSeconds": 43.86666666666667,
       "releaseTag": "draft-2026-11-11-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-11-hi",
@@ -4392,12 +4395,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-11T07:26:05.640Z",
       "telegramMessageId": 372,
+      "youtubeVideoId": "pYshZJ7hnZk",
+      "scheduledFor": "2026-11-12T11:30:00.000Z",
+      "uploadedAt": "2026-11-11T10:49:21.952Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-11T07:26:05.640Z",
-    "publish": "2026-11-11T02:48:14.441Z"
+    "publish": "2026-11-11T10:49:22.254Z"
   }
 }
