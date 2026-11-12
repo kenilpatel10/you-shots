@@ -4410,10 +4410,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a cactus live without much rain",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-12T07:48:10.380Z",
-      "updatedAt": "2026-11-12T07:48:10.380Z",
+      "updatedAt": "2026-11-12T09:44:43.537Z",
       "durationSeconds": 37.9,
       "releaseTag": "draft-2026-11-12-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-12-en",
@@ -4436,6 +4436,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-12T07:48:10.380Z",
       "telegramMessageId": 376,
+      "youtubeVideoId": "K0ydo16CIik",
+      "scheduledFor": "2026-11-16T11:30:00.000Z",
+      "uploadedAt": "2026-11-12T09:44:43.537Z",
       "includes": []
     },
     {
@@ -4446,10 +4449,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बिल्लियों की मूंछें क्यों होती हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-12T07:58:32.734Z",
-      "updatedAt": "2026-11-12T07:58:32.734Z",
+      "updatedAt": "2026-11-12T09:44:46.037Z",
       "durationSeconds": 40.86666666666667,
       "releaseTag": "draft-2026-11-12-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-12-hi",
@@ -4473,12 +4476,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-12T07:58:32.734Z",
       "telegramMessageId": 378,
+      "youtubeVideoId": "yfg_Ktjj0S0",
+      "scheduledFor": "2026-11-13T11:30:00.000Z",
+      "uploadedAt": "2026-11-12T09:44:46.037Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-12T07:58:32.734Z",
-    "publish": "2026-11-12T01:30:16.237Z"
+    "publish": "2026-11-12T09:44:46.378Z"
   }
 }
