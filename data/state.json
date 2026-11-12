@@ -57,7 +57,8 @@
         "human-body-035",
         "animals-022",
         "everyday-things-031",
-        "ocean-026"
+        "ocean-026",
+        "weather-nature-030"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4399,11 +4400,47 @@
       "scheduledFor": "2026-11-12T11:30:00.000Z",
       "uploadedAt": "2026-11-11T10:49:21.952Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-12-en-weather-nature-030",
+      "kind": "short",
+      "topicId": "weather-nature-030",
+      "date": "2026-11-12",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a cactus live without much rain",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-12T07:48:10.380Z",
+      "updatedAt": "2026-11-12T07:48:10.380Z",
+      "durationSeconds": 37.9,
+      "releaseTag": "draft-2026-11-12-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-12-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738567273",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-12-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738567314",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738567346",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738567376"
+      },
+      "description": "Learn how cacti store water in the dry desert! Bolt explains how their thick stems act like giant water bottles to keep them hydrated.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "cactus",
+        "desert plants",
+        "nature facts",
+        "kids science",
+        "weather nature",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-12T07:48:10.380Z",
+      "telegramMessageId": 376,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-11T07:26:05.640Z",
+    "generate": "2026-11-12T07:48:10.380Z",
     "publish": "2026-11-12T01:30:16.237Z"
   }
 }
