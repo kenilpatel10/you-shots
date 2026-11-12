@@ -117,7 +117,8 @@
         "human-body-029",
         "weather-nature-022",
         "space-016",
-        "human-body-035"
+        "human-body-035",
+        "animals-022"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4436,11 +4437,48 @@
       "approvedAt": "2026-11-12T07:48:10.380Z",
       "telegramMessageId": 376,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-12-hi-animals-022",
+      "kind": "short",
+      "topicId": "animals-022",
+      "date": "2026-11-12",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बिल्लियों की मूंछें क्यों होती हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-12T07:58:32.734Z",
+      "updatedAt": "2026-11-12T07:58:32.734Z",
+      "durationSeconds": 40.86666666666667,
+      "releaseTag": "draft-2026-11-12-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-12-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738595152",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-12-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738595206",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738595236",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/738595259"
+      },
+      "description": "इस मजेदार वीडियो में बच्चे जानेंगे कि बिल्लियों की मूंछें उनके लिए कितनी जरूरी होती हैं। यह वीडियो बच्चों को जानवरों की दुनिया को समझने में मदद करता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "cats",
+        "whiskers",
+        "kids science",
+        "animals",
+        "hindi shorts",
+        "bolt and pip",
+        "cat facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-12T07:58:32.734Z",
+      "telegramMessageId": 378,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-12T07:48:10.380Z",
+    "generate": "2026-11-12T07:58:32.734Z",
     "publish": "2026-11-12T01:30:16.237Z"
   }
 }
