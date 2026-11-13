@@ -58,7 +58,8 @@
         "animals-022",
         "everyday-things-031",
         "ocean-026",
-        "weather-nature-030"
+        "weather-nature-030",
+        "how-things-work-036"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4480,11 +4481,47 @@
       "scheduledFor": "2026-11-13T11:30:00.000Z",
       "uploadedAt": "2026-11-12T09:44:46.037Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-13-en-how-things-work-036",
+      "kind": "short",
+      "topicId": "how-things-work-036",
+      "date": "2026-11-13",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a lock know the right key",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-13T07:26:24.520Z",
+      "updatedAt": "2026-11-13T07:26:24.520Z",
+      "durationSeconds": 37.7,
+      "releaseTag": "draft-2026-11-13-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-13-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742710986",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-13-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742711053",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742711088",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742711125"
+      },
+      "description": "Learn how locks and keys work together using tiny hidden pins. Bolt explains how key ridges align inside a mechanism to turn it open.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "locks",
+        "keys",
+        "how things work",
+        "kids science",
+        "bolt and pip",
+        "stem for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-13T07:26:24.520Z",
+      "telegramMessageId": 382,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-12T07:58:32.734Z",
+    "generate": "2026-11-13T07:26:24.520Z",
     "publish": "2026-11-13T06:34:39.211Z"
   }
 }
