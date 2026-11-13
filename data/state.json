@@ -4491,10 +4491,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a lock know the right key",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-13T07:26:24.520Z",
-      "updatedAt": "2026-11-13T07:26:24.520Z",
+      "updatedAt": "2026-11-13T15:20:23.963Z",
       "durationSeconds": 37.7,
       "releaseTag": "draft-2026-11-13-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-13-en",
@@ -4517,6 +4517,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-13T07:26:24.520Z",
       "telegramMessageId": 382,
+      "youtubeVideoId": "d7ABO8Laq8o",
+      "scheduledFor": "2026-11-17T11:30:00.000Z",
+      "uploadedAt": "2026-11-13T15:20:23.963Z",
       "includes": []
     },
     {
@@ -4527,10 +4530,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "साबुन के बुलबुले में रंग क्यों दिखाई देते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-13T07:35:29.227Z",
-      "updatedAt": "2026-11-13T07:35:29.227Z",
+      "updatedAt": "2026-11-13T15:20:26.923Z",
       "durationSeconds": 45.8,
       "releaseTag": "draft-2026-11-13-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-13-hi",
@@ -4554,12 +4557,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-13T07:35:29.227Z",
       "telegramMessageId": 384,
+      "youtubeVideoId": "0V1nJaySwL4",
+      "scheduledFor": "2026-11-14T11:30:00.000Z",
+      "uploadedAt": "2026-11-13T15:20:26.923Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-13T07:35:29.227Z",
-    "publish": "2026-11-13T06:34:39.211Z"
+    "publish": "2026-11-13T15:20:27.273Z"
   }
 }
