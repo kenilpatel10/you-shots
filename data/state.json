@@ -119,7 +119,8 @@
         "weather-nature-022",
         "space-016",
         "human-body-035",
-        "animals-022"
+        "animals-022",
+        "everyday-things-031"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4517,11 +4518,48 @@
       "approvedAt": "2026-11-13T07:26:24.520Z",
       "telegramMessageId": 382,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-13-hi-everyday-things-031",
+      "kind": "short",
+      "topicId": "everyday-things-031",
+      "date": "2026-11-13",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "साबुन के बुलबुले में रंग क्यों दिखाई देते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-13T07:35:29.227Z",
+      "updatedAt": "2026-11-13T07:35:29.227Z",
+      "durationSeconds": 45.8,
+      "releaseTag": "draft-2026-11-13-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-13-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742736386",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-13-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742736424",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742736474",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/742736524"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को समझाता है कि साबुन के बुलबुले में सुंदर रंग कैसे दिखाई देते हैं। आसान उदाहरण और एक सुरक्षित प्रयोग के ज़रिए बच्चे विज्ञान के बुनियादी नियम सीखेंगे।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "bubbles",
+        "colors in bubbles",
+        "science for kids",
+        "bolt and pip",
+        "hindi science",
+        "इंद्रधनुष",
+        "बुलबुले"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-13T07:35:29.227Z",
+      "telegramMessageId": 384,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-13T07:26:24.520Z",
+    "generate": "2026-11-13T07:35:29.227Z",
     "publish": "2026-11-13T06:34:39.211Z"
   }
 }
