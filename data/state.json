@@ -4572,10 +4572,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Did dinosaurs live in groups",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-14T07:07:38.438Z",
-      "updatedAt": "2026-11-14T07:07:38.438Z",
+      "updatedAt": "2026-11-14T10:15:40.871Z",
       "durationSeconds": 43.9,
       "releaseTag": "draft-2026-11-14-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-14-en",
@@ -4600,6 +4600,9 @@
       ],
       "approvedAt": "2026-11-14T07:07:38.438Z",
       "telegramMessageId": 388,
+      "youtubeVideoId": "e8x92T9NKV0",
+      "scheduledFor": "2026-11-18T11:30:00.000Z",
+      "uploadedAt": "2026-11-14T10:15:40.871Z",
       "includes": []
     },
     {
@@ -4610,10 +4613,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "क्लोनफिश एनीमोन में कैसे सुरक्षित रहती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-14T07:20:57.324Z",
-      "updatedAt": "2026-11-14T07:20:57.324Z",
+      "updatedAt": "2026-11-14T10:15:42.972Z",
       "durationSeconds": 44.333333333333336,
       "releaseTag": "draft-2026-11-14-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-14-hi",
@@ -4637,12 +4640,15 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-14T07:20:57.324Z",
       "telegramMessageId": 390,
+      "youtubeVideoId": "aa75LmZZRL4",
+      "scheduledFor": "2026-11-15T11:30:00.000Z",
+      "uploadedAt": "2026-11-14T10:15:42.972Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-14T07:20:57.324Z",
-    "publish": "2026-11-14T02:22:25.721Z"
+    "publish": "2026-11-14T10:15:43.281Z"
   }
 }
