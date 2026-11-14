@@ -121,7 +121,8 @@
         "space-016",
         "human-body-035",
         "animals-022",
-        "everyday-things-031"
+        "everyday-things-031",
+        "ocean-026"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4600,11 +4601,48 @@
       "approvedAt": "2026-11-14T07:07:38.438Z",
       "telegramMessageId": 388,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-14-hi-ocean-026",
+      "kind": "short",
+      "topicId": "ocean-026",
+      "date": "2026-11-14",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "क्लोनफिश एनीमोन में कैसे सुरक्षित रहती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-14T07:20:57.324Z",
+      "updatedAt": "2026-11-14T07:20:57.324Z",
+      "durationSeconds": 44.333333333333336,
+      "releaseTag": "draft-2026-11-14-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-14-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/746677744",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-14-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/746677789",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/746677801",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/746677820"
+      },
+      "description": "इस वीडियो में बच्चे जानेंगे कि क्लोनफिश समुद्री एनीमोन के डंक से कैसे बचती है। एक आसान घरेलू प्रयोग से पानी और तेल का व्यवहार भी समझ आएगा।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "clownfish",
+        "ocean life",
+        "anemone",
+        "kids science",
+        "hindi kids",
+        "bolt and pip",
+        "fun facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-14T07:20:57.324Z",
+      "telegramMessageId": 390,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-14T07:07:38.438Z",
+    "generate": "2026-11-14T07:20:57.324Z",
     "publish": "2026-11-14T02:22:25.721Z"
   }
 }
