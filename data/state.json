@@ -123,7 +123,8 @@
         "human-body-035",
         "animals-022",
         "everyday-things-031",
-        "ocean-026"
+        "ocean-026",
+        "weather-nature-030"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4682,11 +4683,49 @@
       "approvedAt": "2026-11-15T07:18:30.082Z",
       "telegramMessageId": 394,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-15-hi-weather-nature-030",
+      "kind": "short",
+      "topicId": "weather-nature-030",
+      "date": "2026-11-15",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "कैक्टस बिना पानी के कैसे रहता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-15T07:28:49.291Z",
+      "updatedAt": "2026-11-15T07:28:49.291Z",
+      "durationSeconds": 43.43333333333333,
+      "releaseTag": "draft-2026-11-15-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-15-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750209789",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-15-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750209827",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750209842",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750209867"
+      },
+      "description": "इस मजेदार वीडियो में बोल्ट बच्चों को समझाता है कि कैक्टस रेगिस्तान में बिना पानी के कैसे जीवित रहता है। बच्चे सीखेंगे कि कैसे कैक्टस अपने तने में पानी संचित करता है। घर पर स्पंज के साथ एक आसान प्रयोग भी सीखें।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "cactus",
+        "plants",
+        "kids learning hindi",
+        "science for kids",
+        "bolt and pip",
+        "nature facts"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Total spoken word count in the original script is 78 words, which is below the minimum required range of 81–104 words."
+      ],
+      "approvedAt": "2026-11-15T07:28:49.291Z",
+      "telegramMessageId": 396,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-15T07:18:30.082Z",
+    "generate": "2026-11-15T07:28:49.291Z",
     "publish": "2026-11-15T01:51:54.339Z"
   }
 }
