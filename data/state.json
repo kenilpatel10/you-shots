@@ -60,7 +60,8 @@
         "ocean-026",
         "weather-nature-030",
         "how-things-work-036",
-        "dinosaurs-020"
+        "dinosaurs-020",
+        "food-031"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4644,11 +4645,48 @@
       "scheduledFor": "2026-11-15T11:30:00.000Z",
       "uploadedAt": "2026-11-14T10:15:42.972Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-15-en-food-031",
+      "kind": "short",
+      "topicId": "food-031",
+      "date": "2026-11-15",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Where does sugar come from",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-15T07:18:30.082Z",
+      "updatedAt": "2026-11-15T07:18:30.082Z",
+      "durationSeconds": 44.333333333333336,
+      "releaseTag": "draft-2026-11-15-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-15-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750186006",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-15-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750186059",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750186076",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/750186103"
+      },
+      "description": "Bolt learns where sugar comes from and how plants make sweet juice using sunlight. Discover how natural sugar is inside many fruits and vegetables!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "sugar",
+        "plants",
+        "food science",
+        "science for kids",
+        "bolt and pip",
+        "learning",
+        "nature"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-15T07:18:30.082Z",
+      "telegramMessageId": 394,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-14T07:20:57.324Z",
+    "generate": "2026-11-15T07:18:30.082Z",
     "publish": "2026-11-15T01:51:54.339Z"
   }
 }
