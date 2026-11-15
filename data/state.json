@@ -4655,10 +4655,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Where does sugar come from",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-15T07:18:30.082Z",
-      "updatedAt": "2026-11-15T07:18:30.082Z",
+      "updatedAt": "2026-11-15T09:17:09.932Z",
       "durationSeconds": 44.333333333333336,
       "releaseTag": "draft-2026-11-15-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-15-en",
@@ -4682,6 +4682,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-15T07:18:30.082Z",
       "telegramMessageId": 394,
+      "youtubeVideoId": "3WF7mgU-C0Q",
+      "scheduledFor": "2026-11-19T11:30:00.000Z",
+      "uploadedAt": "2026-11-15T09:17:09.932Z",
       "includes": []
     },
     {
@@ -4692,10 +4695,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "कैक्टस बिना पानी के कैसे रहता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-15T07:28:49.291Z",
-      "updatedAt": "2026-11-15T07:28:49.291Z",
+      "updatedAt": "2026-11-15T09:17:13.167Z",
       "durationSeconds": 43.43333333333333,
       "releaseTag": "draft-2026-11-15-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-15-hi",
@@ -4720,12 +4723,15 @@
       ],
       "approvedAt": "2026-11-15T07:28:49.291Z",
       "telegramMessageId": 396,
+      "youtubeVideoId": "xa0OTdScdSU",
+      "scheduledFor": "2026-11-16T11:30:00.000Z",
+      "uploadedAt": "2026-11-15T09:17:13.167Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-15T07:28:49.291Z",
-    "publish": "2026-11-15T01:51:54.339Z"
+    "publish": "2026-11-15T09:17:13.548Z"
   }
 }
