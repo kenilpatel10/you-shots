@@ -61,7 +61,8 @@
         "weather-nature-030",
         "how-things-work-036",
         "dinosaurs-020",
-        "food-031"
+        "food-031",
+        "feelings-friendship-014"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4727,11 +4728,48 @@
       "scheduledFor": "2026-11-16T11:30:00.000Z",
       "uploadedAt": "2026-11-15T09:17:13.167Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-16-en-feelings-friendship-014",
+      "kind": "short",
+      "topicId": "feelings-friendship-014",
+      "date": "2026-11-16",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we feel proud",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-16T07:30:59.273Z",
+      "updatedAt": "2026-11-16T07:30:59.273Z",
+      "durationSeconds": 42.56666666666667,
+      "releaseTag": "draft-2026-11-16-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-16-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753907646",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-16-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753907705",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753907721",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753907745"
+      },
+      "description": "Bolt explores why we feel proud of our accomplishments. This video helps children understand pride as a positive reward for hard work.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "feelings",
+        "pride",
+        "emotions",
+        "kids",
+        "learning",
+        "bolt",
+        "friendship"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-16T07:30:59.273Z",
+      "telegramMessageId": 404,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-15T07:28:49.291Z",
+    "generate": "2026-11-16T07:30:59.273Z",
     "publish": "2026-11-16T01:58:55.495Z"
   }
 }
