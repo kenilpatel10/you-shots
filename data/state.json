@@ -4738,10 +4738,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we feel proud",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-16T07:30:59.273Z",
-      "updatedAt": "2026-11-16T07:30:59.273Z",
+      "updatedAt": "2026-11-16T09:34:01.183Z",
       "durationSeconds": 42.56666666666667,
       "releaseTag": "draft-2026-11-16-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-16-en",
@@ -4765,6 +4765,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-16T07:30:59.273Z",
       "telegramMessageId": 404,
+      "youtubeVideoId": "BdDnMU23wT8",
+      "scheduledFor": "2026-11-20T11:30:00.000Z",
+      "uploadedAt": "2026-11-16T09:34:01.183Z",
       "includes": []
     },
     {
@@ -4775,10 +4778,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "ताला सही चाबी कैसे पहचानता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-16T07:37:11.292Z",
-      "updatedAt": "2026-11-16T07:37:11.292Z",
+      "updatedAt": "2026-11-16T09:34:03.944Z",
       "durationSeconds": 40.03333333333333,
       "releaseTag": "draft-2026-11-16-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-16-hi",
@@ -4804,12 +4807,15 @@
       ],
       "approvedAt": "2026-11-16T07:37:11.292Z",
       "telegramMessageId": 406,
+      "youtubeVideoId": "LnLLQ13lg4Y",
+      "scheduledFor": "2026-11-17T11:30:00.000Z",
+      "uploadedAt": "2026-11-16T09:34:03.944Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-16T07:37:11.292Z",
-    "publish": "2026-11-16T01:58:55.495Z"
+    "publish": "2026-11-16T09:34:04.313Z"
   }
 }
