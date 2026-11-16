@@ -125,7 +125,8 @@
         "animals-022",
         "everyday-things-031",
         "ocean-026",
-        "weather-nature-030"
+        "weather-nature-030",
+        "how-things-work-036"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4765,11 +4766,50 @@
       "approvedAt": "2026-11-16T07:30:59.273Z",
       "telegramMessageId": 404,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-16-hi-how-things-work-036",
+      "kind": "short",
+      "topicId": "how-things-work-036",
+      "date": "2026-11-16",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "ताला सही चाबी कैसे पहचानता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-16T07:37:11.292Z",
+      "updatedAt": "2026-11-16T07:37:11.292Z",
+      "durationSeconds": 40.03333333333333,
+      "releaseTag": "draft-2026-11-16-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-16-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753923469",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-16-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753923536",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753923565",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/753923585"
+      },
+      "description": "इस वीडियो में बच्चे सीखेंगे कि ताले और चाबी कैसे काम करते हैं। सरल उदाहरणों के साथ ताले के अंदर की बनावट को समझाया गया है। यह बच्चों की जिज्ञासा बढ़ाने के लिए एक मजेदार तरीका है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "locks",
+        "how locks work",
+        "bolt and pip",
+        "hindi kids science",
+        "kids curiosity",
+        "everyday science hindi",
+        "children learning"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Total spoken word count is 80 words, which is below the required range of 81–104 words."
+      ],
+      "approvedAt": "2026-11-16T07:37:11.292Z",
+      "telegramMessageId": 406,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-16T07:30:59.273Z",
+    "generate": "2026-11-16T07:37:11.292Z",
     "publish": "2026-11-16T01:58:55.495Z"
   }
 }
