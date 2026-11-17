@@ -4822,10 +4822,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a swing keep swinging",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-17T08:36:11.355Z",
-      "updatedAt": "2026-11-17T08:36:11.355Z",
+      "updatedAt": "2026-11-17T13:15:21.485Z",
       "durationSeconds": 38.166666666666664,
       "releaseTag": "draft-2026-11-17-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-17-en",
@@ -4851,6 +4851,9 @@
       ],
       "approvedAt": "2026-11-17T08:36:11.355Z",
       "telegramMessageId": 410,
+      "youtubeVideoId": "WmcslukWPNs",
+      "scheduledFor": "2026-11-21T11:30:00.000Z",
+      "uploadedAt": "2026-11-17T13:15:21.485Z",
       "includes": []
     },
     {
@@ -4861,10 +4864,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "क्या डायनासोर झुंड में रहते थे",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-17T08:45:06.593Z",
-      "updatedAt": "2026-11-17T08:45:06.593Z",
+      "updatedAt": "2026-11-17T13:15:24.321Z",
       "durationSeconds": 40.7,
       "releaseTag": "draft-2026-11-17-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-17-hi",
@@ -4890,12 +4893,15 @@
       ],
       "approvedAt": "2026-11-17T08:45:06.593Z",
       "telegramMessageId": 412,
+      "youtubeVideoId": "St80khUyrWg",
+      "scheduledFor": "2026-11-18T11:30:00.000Z",
+      "uploadedAt": "2026-11-17T13:15:24.321Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-17T08:45:06.593Z",
-    "publish": "2026-11-17T03:47:45.060Z"
+    "publish": "2026-11-17T13:15:24.628Z"
   }
 }
