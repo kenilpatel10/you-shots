@@ -127,7 +127,8 @@
         "everyday-things-031",
         "ocean-026",
         "weather-nature-030",
-        "how-things-work-036"
+        "how-things-work-036",
+        "dinosaurs-020"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4851,11 +4852,50 @@
       "approvedAt": "2026-11-17T08:36:11.355Z",
       "telegramMessageId": 410,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-17-hi-dinosaurs-020",
+      "kind": "short",
+      "topicId": "dinosaurs-020",
+      "date": "2026-11-17",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "क्या डायनासोर झुंड में रहते थे",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-17T08:45:06.593Z",
+      "updatedAt": "2026-11-17T08:45:06.593Z",
+      "durationSeconds": 40.7,
+      "releaseTag": "draft-2026-11-17-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-17-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758296553",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-17-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758296596",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758296622",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758296657"
+      },
+      "description": "बोल्ट और पिप के साथ जानिए कि क्या पुराने समय के विशाल डायनासोर झुंड में मिलजुलकर रहते थे या अकेले रहना पसंद करते थे। बच्चों के लिए ज्ञानवर्धक और मजेदार वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dinosaurs",
+        "डायनासोर",
+        "बच्चों के लिए",
+        "विज्ञान",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [
+        "[validator 1] answer: 22 words (allowed 28–47)",
+        "[validator 1] experiment: 13 words (allowed 14–28)",
+        "[validator 1] estimated length 37.0s (target 44–58s)"
+      ],
+      "approvedAt": "2026-11-17T08:45:06.593Z",
+      "telegramMessageId": 412,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-17T08:36:11.355Z",
+    "generate": "2026-11-17T08:45:06.593Z",
     "publish": "2026-11-17T03:47:45.060Z"
   }
 }
