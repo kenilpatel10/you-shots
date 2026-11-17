@@ -62,7 +62,8 @@
         "how-things-work-036",
         "dinosaurs-020",
         "food-031",
-        "feelings-friendship-014"
+        "feelings-friendship-014",
+        "everyday-things-035"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4811,11 +4812,50 @@
       "scheduledFor": "2026-11-17T11:30:00.000Z",
       "uploadedAt": "2026-11-16T09:34:03.944Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-17-en-everyday-things-035",
+      "kind": "short",
+      "topicId": "everyday-things-035",
+      "date": "2026-11-17",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a swing keep swinging",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-17T08:36:11.355Z",
+      "updatedAt": "2026-11-17T08:36:11.355Z",
+      "durationSeconds": 38.166666666666664,
+      "releaseTag": "draft-2026-11-17-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-17-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758271864",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-17-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758271915",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758271951",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/758271983"
+      },
+      "description": "Join Bolt to learn how body weight and leg movement keep a playground swing going. Fun science facts made simple for kids.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "swings",
+        "playground",
+        "physics",
+        "science for kids",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Guess option 1 exceeds 20 characters.",
+        "[validator 1] estimated length 43.8s (target 44–58s)",
+        "[validator 1] unsafe experiment (hazard words): car"
+      ],
+      "approvedAt": "2026-11-17T08:36:11.355Z",
+      "telegramMessageId": 410,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-16T07:37:11.292Z",
+    "generate": "2026-11-17T08:36:11.355Z",
     "publish": "2026-11-17T03:47:45.060Z"
   }
 }
