@@ -129,7 +129,8 @@
         "ocean-026",
         "weather-nature-030",
         "how-things-work-036",
-        "dinosaurs-020"
+        "dinosaurs-020",
+        "food-031"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4935,11 +4936,47 @@
       "approvedAt": "2026-11-20T17:59:38.220Z",
       "telegramMessageId": 430,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-20-hi-food-031",
+      "kind": "short",
+      "topicId": "food-031",
+      "date": "2026-11-20",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "चीनी कहाँ से आती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-20T18:04:59.857Z",
+      "updatedAt": "2026-11-20T18:04:59.857Z",
+      "durationSeconds": 40.9,
+      "releaseTag": "draft-2026-11-20-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-20-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772811313",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-20-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772811354",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772811384",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772811442"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को बहुत ही आसान शब्दों में बताता है कि चीनी कैसे बनती है। जानिए गन्ने के रस और चुकंदर से मीठी चीनी बनने का मजेदार तरीका।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "sugar",
+        "bolt and pip",
+        "hindi kids science",
+        "sugarcane",
+        "kids learning",
+        "बोल्ट और पिप"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-20T18:04:59.857Z",
+      "telegramMessageId": 432,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-20T17:59:38.220Z",
+    "generate": "2026-11-20T18:04:59.857Z",
     "publish": "2026-11-17T21:47:15.868Z"
   }
 }
