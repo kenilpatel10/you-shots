@@ -173,6 +173,7 @@ See `.env.example`. Locally, copy it to `.env`. In Actions, add the same names a
 | --- | --- |
 | `Failed to launch the browser process` | Set `REMOTION_BROWSER_EXECUTABLE` to a Chrome/Chromium binary, or unset `REMOTION_PREFER_DOWNLOADED_BROWSER` and let Remotion download its headless shell. |
 | `Text-to-speech failed … Forbidden access to file: https://huggingface.co/…` | The machine cannot reach Hugging Face. Check the network/proxy; for an offline test render use `--dry-run --voice espeak` (bundled eSpeak-NG: robotic but clear) or set `ALLOW_FALLBACK_VOICE=1`. |
+| `npm ci` fails in `onnxruntime-node` with `Failed to download the binaries: 404` | Its postinstall fetches CUDA binaries that Microsoft no longer hosts. Set `ONNXRUNTIME_NODE_INSTALL_CUDA=skip` (the workflows do); CPU inference is unaffected. |
 | `whisper.cpp unavailable … using estimated word timings` | Install `git` and `cmake` (Linux/macOS); captions still work with estimated timings. |
 | `cached whisper-cli does not run on this CPU` / `SIGILL` | A cached whisper binary was built for another machine; the pipeline rebuilds it portably (`-DGGML_NATIVE=OFF`) on the spot. Delete `.cache/whisper/whisper.cpp` to force it. |
 | Telegram `Bad Request: chat not found` | Press *Start* in the bot chat first; check `TELEGRAM_CHAT_ID`. |

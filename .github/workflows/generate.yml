@@ -64,6 +64,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+        env:
+          # onnxruntime-node's postinstall downloads CUDA binaries on Linux x64; the asset is gone (404) and runners have no GPU.
+          ONNXRUNTIME_NODE_INSTALL_CUDA: skip
       - name: Cache Kokoro model (Hugging Face)
         uses: actions/cache@v4
         with:

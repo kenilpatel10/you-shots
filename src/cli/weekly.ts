@@ -15,6 +15,7 @@ import { channelIdentity, currentLanguage, finishDescription, loadChannelConfig 
 import { listFallbackScripts } from "../content/fallback";
 import { ScriptRecordSchema } from "../content/schema";
 import { ensureMusic } from "../audio/music";
+import { ensureSfx } from "../audio/sfx";
 import { envBool } from "../lib/env";
 import { ensureDir, exists, readJson, writeJsonAtomic } from "../lib/fs";
 import { createLogger } from "../lib/logger";
@@ -159,6 +160,8 @@ async function main() {
   }
 
   const music = await ensureMusic(cfg.music.file, cfg.music.enabled);
+  // The Shorts' props reference public/sfx/*.wav (git-ignored, generated); a fresh runner needs them for the long render too.
+  await ensureSfx();
   const props: LongVideoProps = {
     channel,
     weekTitle: lang.weeklyTitle,
