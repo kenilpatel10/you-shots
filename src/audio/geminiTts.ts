@@ -39,6 +39,9 @@ export function geminiTtsModels(): string[] {
 
 /** Models whose daily quota is spent in this process: skipped for the rest of the run. */
 const exhausted = new Set<string>();
+
+/** A 200 with no audio part: the model is throttled or declined the text; another model usually succeeds. */
+export class NoAudioError extends Error {}
 /** Model that produced the most recent audio: the assembler re-voices earlier sections if it changes. */
 let lastModel: string | null = null;
 
@@ -105,7 +108,7 @@ async function request(model: string, prompt: string, voice: string): Promise<{ 
       throw new HttpError(res.status, `Gemini TTS ${model}: ${res.status} ${json.error?.message ?? ""}${ids ? ` [${ids}]` : ""}`.trim());
     }
     const part = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
-    if (!part?.inlineData) throw new Error(`Gemini TTS ${model} returned no audio`);
+    if (!part?.inlineData) throw new NoAudioError(`Gemini TTS ${model} returned no audio`);
     return {
       mime: part.inlineData.mimeType,
       data: Buffer.from(part.inlineData.data, "base64"),
@@ -146,8 +149,9 @@ export async function synthesizeGemini(text: string, opts: GeminiTtsOptions): Pr
         causes.push(`${model}: ${msg.split("\n")[0]!.slice(0, 160)}`);
         continue;
       }
-      if (status === 429) {
-        // Per-minute limit still busy after the waits: give the next model a go rather than fail the run.
+      if (status === 429 || err instanceof NoAudioError) {
+        // Per-minute limit still busy after the waits, or an empty answer: give the next model a go rather than fail the run.
+        log.warn(`${model}: ${msg.split("\n")[0]!.slice(0, 120)}; trying the next TTS model`);
         causes.push(`${model}: ${msg.split("\n")[0]!.slice(0, 160)}`);
         continue;
       }
