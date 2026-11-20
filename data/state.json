@@ -63,7 +63,8 @@
         "dinosaurs-020",
         "food-031",
         "feelings-friendship-014",
-        "everyday-things-035"
+        "everyday-things-035",
+        "dinosaurs-029"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4897,11 +4898,48 @@
       "scheduledFor": "2026-11-18T11:30:00.000Z",
       "uploadedAt": "2026-11-17T13:15:24.321Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-20-en-dinosaurs-029",
+      "kind": "short",
+      "topicId": "dinosaurs-029",
+      "date": "2026-11-20",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How do we know how old a fossil is",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-20T17:59:38.220Z",
+      "updatedAt": "2026-11-20T17:59:38.220Z",
+      "durationSeconds": 41.4,
+      "releaseTag": "draft-2026-11-20-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-20-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772795017",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-20-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772795061",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772795105",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/772795142"
+      },
+      "description": "Bolt explains how scientists figure out the age of dinosaur fossils using layers of rock. Learn how Earth stores ancient secrets deep underground with a fun playdough activity for kids.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dinosaurs",
+        "fossils",
+        "science for kids",
+        "bolt and pip",
+        "dinosaur facts",
+        "earth science",
+        "kids learning"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-20T17:59:38.220Z",
+      "telegramMessageId": 430,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-17T08:45:06.593Z",
+    "generate": "2026-11-20T17:59:38.220Z",
     "publish": "2026-11-17T21:47:15.868Z"
   }
 }
