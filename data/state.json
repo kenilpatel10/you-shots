@@ -64,7 +64,8 @@
         "food-031",
         "feelings-friendship-014",
         "everyday-things-035",
-        "dinosaurs-029"
+        "dinosaurs-029",
+        "space-035"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -4978,11 +4979,48 @@
       "scheduledFor": "2026-11-21T11:30:00.000Z",
       "uploadedAt": "2026-11-20T18:07:20.863Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-21-en-space-035",
+      "kind": "short",
+      "topicId": "space-035",
+      "date": "2026-11-21",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "What is a galaxy",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-21T07:47:13.774Z",
+      "updatedAt": "2026-11-21T07:47:13.774Z",
+      "durationSeconds": 43.4,
+      "releaseTag": "draft-2026-11-21-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-21-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774838805",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-21-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774838832",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774838861",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774838888"
+      },
+      "description": "Learn all about galaxies with Bolt! Discover how billions of stars live together in giant cosmic cities throughout space. Perfect for curious kids who love space science.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "space",
+        "galaxy",
+        "milky way",
+        "stars",
+        "science for kids",
+        "bolt and pip",
+        "astronomy"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-21T07:47:13.774Z",
+      "telegramMessageId": 437,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-20T18:04:59.857Z",
+    "generate": "2026-11-21T07:47:13.774Z",
     "publish": "2026-11-21T01:28:30.395Z"
   }
 }
