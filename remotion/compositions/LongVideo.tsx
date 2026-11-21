@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, type CalculateMetadataFunction } from "remotion";
-import { AnimatedBolt } from "../character/AnimatedBolt";
+import { AnimatedCharacter } from "../character/Character";
+import type { HostLook } from "../character/hostLook";
 import { MusicBed } from "../components/MusicBed";
 import { useFonts } from "../components/useFonts";
 import { mergedTimeline, planLongVideo } from "../long/plan";
@@ -12,11 +13,11 @@ export const calculateLongMetadata: CalculateMetadataFunction<LongVideoProps> = 
   durationInFrames: planLongVideo(props).totalFrames,
 });
 
-const Card: React.FC<{ title: string; subtitle?: string; category?: string; pose?: "wave" | "point" | "jump" | "idle"; index?: number; questionWord?: string }> = ({ title, subtitle, category, pose = "wave", index, questionWord = "Question" }) => {
+const Card: React.FC<{ title: string; subtitle?: string; category?: string; pose?: "wave" | "point" | "jump" | "idle"; index?: number; questionWord?: string; host?: Partial<HostLook> | undefined }> = ({ title, subtitle, category, pose = "wave", index, questionWord = "Question", host }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const pal = categoryPalettes[category ?? "everyday-things"] ?? categoryPalettes["everyday-things"]!;
-  const dark = category === "space";
+  const dark = category === "space" || category === "tech";
   const textColor = dark ? colors.white : colors.ink;
   const s = spring({ frame, fps, config: { damping: 15, stiffness: 110 } });
   return (
@@ -26,7 +27,7 @@ const Card: React.FC<{ title: string; subtitle?: string; category?: string; pose
         <circle cx={width * 0.1} cy={height * 0.85} r={220} fill={pal.ground} opacity={0.6} />
       </svg>
       <div style={{ display: "flex", alignItems: "center", gap: 60, transform: `scale(${interpolate(s, [0, 1], [0.9, 1])})`, opacity: s }}>
-        <AnimatedBolt pose={pose} expression="excited" antennaGlow={0.6} size={360} seed={`card-${title}`} idPrefix={`card-${index ?? 0}`} />
+        <AnimatedCharacter host={host} pose={pose} expression="excited" antennaGlow={0.6} size={360} seed={`card-${title}`} idPrefix={`card-${index ?? 0}`} />
         <div style={{ maxWidth: 1000 }}>
           {index !== undefined ? <div style={{ fontSize: 40, fontWeight: fonts.weightSemi, color: dark ? colors.accent : colors.primary }}>{questionWord} {index}</div> : null}
           <div style={{ fontSize: title.length > 26 ? 84 : 104, fontWeight: fonts.weightBold, color: textColor, lineHeight: 1.05, textWrap: "balance" }}>{title}</div>
@@ -47,14 +48,14 @@ export const LongVideo: React.FC<LongVideoProps> = (props) => {
     <AbsoluteFill style={{ backgroundColor: colors.paper }}>
       {props.music ? <MusicBed src={props.music} timeline={timeline} volume={props.musicVolume} duckedVolume={props.duckedVolume} fadeSeconds={2} totalFrames={plan.totalFrames} /> : null}
       <Sequence from={0} durationInFrames={INTRO_FRAMES} name="intro">
-        <Card title={props.weekTitle} subtitle={`${props.episodes.length} big questions with ${props.channel.characterName}`} pose="jump" />
+        <Card title={props.weekTitle} subtitle={`${props.episodes.length} big questions with ${props.channel.characterName}`} pose="jump" host={props.channel.host} />
       </Sequence>
       {props.episodes.map((ep, i) => {
         const p = plan.episodes[i]!;
         return (
           <React.Fragment key={ep.draftId}>
             <Sequence from={p.chapterFrom} durationInFrames={CHAPTER_CARD_FRAMES} name={`chapter-${i + 1}`}>
-              <Card title={ep.chapterTitle} category={ep.script.background} pose="point" index={i + 1} questionWord={props.channel.labels?.question} />
+              <Card title={ep.chapterTitle} category={ep.script.background} pose="point" index={i + 1} questionWord={props.channel.labels?.question} host={props.channel.host} />
             </Sequence>
             <Sequence from={p.from} durationInFrames={p.durationInFrames} name={`episode-${i + 1}`}>
               <Episode script={ep.script} channel={props.channel} timeline={ep.timeline} voice={ep.audio.voice} variant="long" sfx={ep.audio.sfx} />

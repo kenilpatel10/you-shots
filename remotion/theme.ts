@@ -50,6 +50,7 @@ export const categoryPalettes: Record<string, { sky: string; ground: string; acc
   dinosaurs: { sky: "#F3F0DE", ground: "#B8C480", accent: "#7A9E4B", label: "Dinosaurs" },
   "how-things-work": { sky: "#EDEBFF", ground: "#C9C3F5", accent: "#6C5CE7", label: "How It Works" },
   "feelings-friendship": { sky: "#FFECF6", ground: "#FFC8E6", accent: "#E56AA8", label: "Friends" },
+  tech: { sky: "#0F172A", ground: "#1E293B", accent: "#22D3EE", label: "Tech" },
 };
 
 export const FPS = 30;

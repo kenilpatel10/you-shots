@@ -1,0 +1,146 @@
+[
+  {
+    "id": "tech-001",
+    "question": "What is a large language model, really?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-002",
+    "question": "What does 'open-weights' mean for an AI model?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-003",
+    "question": "What is a vector database and why do AI apps use one?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-004",
+    "question": "What is RAG (retrieval-augmented generation)?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-005",
+    "question": "What is an AI agent, compared with a chatbot?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-006",
+    "question": "What is fine-tuning and when do you need it?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-007",
+    "question": "What is quantization and why does it make models run on laptops?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-008",
+    "question": "What does 'context window' mean and why does size matter?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-009",
+    "question": "What is a token in an AI model?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-010",
+    "question": "What is MCP, the Model Context Protocol?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-011",
+    "question": "What is a GPU and why does AI need one?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-012",
+    "question": "What is prompt injection and why should developers care?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-013",
+    "question": "What is an embedding?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-014",
+    "question": "What does it mean to run a model locally?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-015",
+    "question": "What is a benchmark and why can it mislead?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-016",
+    "question": "What is a README and why does every project start with one?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-017",
+    "question": "What is a GitHub star and what does it actually tell you?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-018",
+    "question": "What is an API key and how do you keep it safe?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-019",
+    "question": "What is Docker and why do AI projects ship with it?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-020",
+    "question": "What is a diffusion model, the thing behind image generators?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-021",
+    "question": "What is speech-to-text and how does Whisper work in one minute?",
+    "category": "tech",
+    "difficulty": 2
+  },
+  {
+    "id": "tech-022",
+    "question": "What is a text-to-speech model?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-023",
+    "question": "What is an open-source license and why does it matter?",
+    "category": "tech",
+    "difficulty": 1
+  },
+  {
+    "id": "tech-024",
+    "question": "What is a transformer, in plain words?",
+    "category": "tech",
+    "difficulty": 2
+  }
+]

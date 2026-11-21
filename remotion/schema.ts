@@ -3,6 +3,8 @@
  * Browser-safe: no Node imports here.
  */
 import { z } from "zod";
+import { HostLookZ } from "./character/hostLook";
+export { HostLookZ } from "./character/hostLook";
 
 export const SectionKeyZ = z.enum(["hook", "answer", "wowFact", "experiment", "signOff"]);
 export type SectionKey = z.infer<typeof SectionKeyZ>;
@@ -86,6 +88,10 @@ export const ChannelPropsZ = z.object({
   feelings: z.record(z.string(), z.string()).default({}),
   sidekickName: z.string().default("Pip"),
   labels: z.record(z.string(), z.string()).default({}),
+  /** Human presenter instead of Bolt (see remotion/character/hostLook.ts). */
+  host: HostLookZ.partial().optional(),
+  /** Show Pip the sidekick. */
+  sidekick: z.boolean().default(true),
 });
 export type ChannelProps = z.infer<typeof ChannelPropsZ>;
 

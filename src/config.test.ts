@@ -12,6 +12,7 @@ describe("personas", () => {
     expect(list[0]).toBe("bolt-pip");
     expect(list).toContain("ncert-science");
     expect(list).toContain("demo-coaching");
+    expect(list).toContain("ai-digest");
   });
 
   it("loads a persona with its audience, files and identity", () => {
@@ -24,6 +25,18 @@ describe("personas", () => {
     expect(id.name).toBe("60 सेकंड विज्ञान");
     expect(cfg.languages.hi?.labels.experiment).toBe("परीक्षा टिप");
     expect(cfg.brand.primary).toBe("#2FA36B");
+  });
+
+  it("loads the ai-digest persona: human host, no sidekick, tech prompts and a live feed", () => {
+    const cfg = loadPersonaConfig("ai-digest", "en");
+    expect(cfg.audience).toBe("general");
+    expect(cfg.promptSet).toBe("tech");
+    expect(cfg.sidekick).toBe(false);
+    expect(cfg.gags).toBe(false);
+    expect(cfg.host?.glasses).toBe("round");
+    expect(cfg.topicFeed?.kind).toBe("github-repos");
+    expect(cfg.bannedWordsFile).toBe("config/banned-words-tech.json");
+    expect(channelIdentity(cfg, "en").name).toBe("60-Second AI");
   });
 
   it("keeps the default persona as before", () => {

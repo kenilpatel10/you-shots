@@ -14,6 +14,7 @@ import { fallbackTopic, pickFallbackScript } from "../content/fallback";
 import { produceScript } from "../content/produceScript";
 import { ScriptRecordSchema, TopicsFileSchema, type ScriptRecord, type Topic } from "../content/schema";
 import { pickTopic } from "../content/topicPicker";
+import { nextFeedTopic } from "../content/feeds/github";
 import { hasLlm } from "../llm";
 import { LlmUnavailableError } from "../llm/types";
 import { envBool } from "../lib/env";
@@ -59,6 +60,15 @@ async function loadTopics(): Promise<Topic[]> {
 
 type Produced = { record: ScriptRecord; topic: Topic; fallbackFile?: string };
 
+/** Feed topics credit their source in the description (the script itself never carries links). */
+export function withSource(description: string, topic: Pick<Topic, "sourceUrl" | "sourceName">): string {
+  if (!topic.sourceUrl) return description;
+  return `${description.trim()}
+
+Source: ${topic.sourceName ?? topic.sourceUrl}
+${topic.sourceUrl}`;
+}
+
 async function produce(state: State, topics: Topic[], language: string): Promise<Produced> {
   if (opts.script) {
     const raw = await readJson<Record<string, unknown>>(opts.script);
@@ -70,18 +80,22 @@ async function produce(state: State, topics: Topic[], language: string): Promise
   const forced = opts.topic ? topics.find((t) => t.id === opts.topic) : undefined;
   if (opts.topic && !forced) throw new Error(`Unknown topic id ${opts.topic}`);
 
-  const ls = langState(state, language, loadChannelConfig().persona);
+  const cfg = loadChannelConfig();
+  const ls = langState(state, language, cfg.persona);
   if (!useFallback) {
     const excluded = [...ls.usedTopicIds];
     for (let i = 0; i < 3; i++) {
+      // Live feed first (new repos/tools), then the curated topics file.
+      const fromFeed = !forced && cfg.topicFeed ? await nextFeedTopic(cfg.topicFeed, excluded) : null;
       const topic =
         forced ??
+        fromFeed ??
         pickTopic({
           topics,
           usedTopicIds: excluded,
           redoTopicIds: ls.redoTopicIds,
         });
-      if (!topic) throw new Error("No unused topics left in data/topics.json");
+      if (!topic) throw new Error(`No unused topics left in ${cfg.topicsFile}`);
       try {
         const out = await produceScript(topic, language);
         if (out.ok) return { record: out.record, topic };
@@ -174,7 +188,7 @@ async function main() {
     assets: {},
     reviewerIssues: record.reviewerNotes,
     includes: [],
-    description: finishDescription(record.description, identity),
+    description: finishDescription(withSource(record.description, topic), identity),
     tags: record.tags,
   };
 

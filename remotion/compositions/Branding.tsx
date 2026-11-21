@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { z } from "zod";
-import { Bolt } from "../character/Bolt";
+import { Character } from "../character/Character";
 import { Pip } from "../character/Pip";
 import { useFonts } from "../components/useFonts";
 import { ChannelPropsZ } from "../schema";
@@ -19,22 +19,27 @@ export const BANNER_WIDTH = 2048;
 export const BANNER_HEIGHT = 1152;
 const SAFE = { w: 1235, h: 338 };
 
-export const Avatar: React.FC<BrandingProps> = () => {
+export const Avatar: React.FC<BrandingProps> = ({ channel }) => {
   useFonts();
+  // Brand kits recolour the ring and the ground; the default stays Bolt's yellow and grass.
+  const ring = channel.brand?.accent ?? colors.accent;
+  const ground = channel.brand?.primary ?? "#9FD98A";
   return (
-    <AbsoluteFill style={{ backgroundColor: colors.accent, overflow: "hidden" }}>
+    <AbsoluteFill style={{ backgroundColor: ring, overflow: "hidden" }}>
       <svg width={AVATAR_SIZE} height={AVATAR_SIZE} style={{ position: "absolute", inset: 0 }}>
-        <circle cx={400} cy={400} r={400} fill={colors.accent} />
+        <circle cx={400} cy={400} r={400} fill={ring} />
         <circle cx={400} cy={430} r={330} fill={colors.paper} />
-        <ellipse cx={400} cy={860} rx={520} ry={150} fill="#9FD98A" />
+        <ellipse cx={400} cy={860} rx={520} ry={150} fill={ground} />
       </svg>
       {/* Bolt's head fills the circle; the body sits below the crop. */}
       <div style={{ position: "absolute", left: 130, top: 90 }}>
-        <Bolt pose="wave" expression="happy" antennaGlow={1} mouthOpen={0.3} size={540} idPrefix="avatar" />
+        <Character host={channel.host} bodyColor={channel.brand?.primary} pose="wave" expression="happy" antennaGlow={1} mouthOpen={0.3} size={540} idPrefix="avatar" />
       </div>
-      <div style={{ position: "absolute", left: 540, top: 470 }}>
-        <Pip mood="happy" size={190} facing="left" idPrefix="avatar-pip" />
-      </div>
+      {channel.sidekick === false ? null : (
+        <div style={{ position: "absolute", left: 540, top: 470 }}>
+          <Pip mood="happy" size={190} facing="left" idPrefix="avatar-pip" />
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -56,11 +61,13 @@ export const Banner: React.FC<BrandingProps> = ({ channel, tagline }) => {
       </svg>
       {/* Characters just inside the safe area so they survive the TV/desktop crops. */}
       <div style={{ position: "absolute", left: left - 20, top: top - 120 }}>
-        <Bolt pose="point" expression="excited" antennaGlow={1} mouthOpen={0.35} size={360} idPrefix="banner" />
+        <Character host={channel.host} bodyColor={channel.brand?.primary} pose="point" expression="excited" antennaGlow={1} mouthOpen={0.35} size={360} idPrefix="banner" />
       </div>
-      <div style={{ position: "absolute", left: left + SAFE.w - 250, top: top + 90 }}>
-        <Pip mood="curious" size={230} facing="left" idPrefix="banner-pip" />
-      </div>
+      {channel.sidekick === false ? null : (
+        <div style={{ position: "absolute", left: left + SAFE.w - 250, top: top + 90 }}>
+          <Pip mood="curious" size={230} facing="left" idPrefix="banner-pip" />
+        </div>
+      )}
       <div style={{ position: "absolute", left: left + 350, top: top + 30, width: SAFE.w - 620, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
         <div style={{ fontSize: titleSize, lineHeight: 1.05, whiteSpace: "nowrap", fontWeight: fonts.weightBold, color: colors.ink, textShadow: "0 6px 0 rgba(255,255,255,0.9)", letterSpacing: -1 }}>{channel.name}</div>
         <div style={{ marginTop: 14, fontSize: 36, lineHeight: 1.2, fontWeight: 600, color: colors.primary }}>{tagline}</div>

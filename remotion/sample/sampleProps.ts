@@ -21,6 +21,7 @@ export const sampleChannel: ChannelProps = {
   feelings: lang.feelings,
   sidekickName: lang.sidekickName,
   labels: lang.labels,
+  sidekick: true,
 };
 
 export const sampleShortProps: ShortProps = {

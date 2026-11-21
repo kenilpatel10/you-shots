@@ -50,6 +50,30 @@ export const Background: React.FC<Props> = ({ category, width: w, height: h }) =
 
   let scene: React.ReactNode;
   switch (category) {
+    case "tech":
+      scene = (
+        <>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <line key={`v${i}`} x1={(i / 11) * w} y1={0} x2={(i / 11) * w} y2={h} stroke={pal.accent} strokeWidth={2} opacity={0.08} />
+          ))}
+          {Array.from({ length: 20 }).map((_, i) => (
+            <line key={`h${i}`} x1={0} y1={(i / 19) * h} x2={w} y2={(i / 19) * h} stroke={pal.accent} strokeWidth={2} opacity={0.08} />
+          ))}
+          {Array.from({ length: 16 }).map((_, i) => {
+            const x = random(`nx${i}`) * w;
+            const y = random(`ny${i}`) * h;
+            const pulse = 0.35 + 0.35 * Math.sin(t * (0.5 + random(`np${i}`)) * Math.PI * 2 + i);
+            return (
+              <g key={`n${i}`}>
+                <circle cx={x} cy={y} r={22} fill={pal.accent} opacity={pulse * 0.25} />
+                <circle cx={x} cy={y} r={7} fill={pal.accent} opacity={pulse + 0.3} />
+              </g>
+            );
+          })}
+          <path d={`M 0 ${h * 0.86} Q ${w * 0.3} ${h * 0.8} ${w * 0.55} ${h * 0.88} T ${w} ${h * 0.84} L ${w} ${h} L 0 ${h} Z`} fill={pal.ground} />
+        </>
+      );
+      break;
     case "space":
       scene = (
         <>

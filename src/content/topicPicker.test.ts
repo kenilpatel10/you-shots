@@ -11,7 +11,8 @@ describe("topics.json", () => {
     expect(topics.length).toBeGreaterThanOrEqual(365);
     expect(new Set(topics.map((t) => t.id)).size).toBe(topics.length);
     expect(new Set(topics.map((t) => t.question.toLowerCase())).size).toBe(topics.length);
-    for (const c of CATEGORIES) expect(topics.filter((t) => t.category === c).length).toBeGreaterThanOrEqual(25);
+    // "tech" belongs to the ai-digest persona (fed live from GitHub), not to the kids topics file.
+    for (const c of CATEGORIES.filter((c) => c !== "tech")) expect(topics.filter((t) => t.category === c).length).toBeGreaterThanOrEqual(25);
     expect(topics.filter((t) => t.difficulty === 1).length).toBeGreaterThanOrEqual(60);
   });
 });

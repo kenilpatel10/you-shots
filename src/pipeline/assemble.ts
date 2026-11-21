@@ -247,6 +247,8 @@ export async function assembleShort(opts: AssembleOptions): Promise<AssembleResu
       feelings: feelingLabels,
       sidekickName: lang.sidekickName,
       labels: lang.labels,
+      host: cfg.host,
+      sidekick: cfg.sidekick,
     },
     timeline,
     audio: {

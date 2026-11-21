@@ -100,8 +100,10 @@ export function estimateScriptSeconds(script: Pick<Script, "hook" | "answer" | "
 const ENGAGEMENT_BAIT = [/watch (till|until) the end/i, /don'?t (skip|scroll)/i, /subscribe/i, /like and/i, /comment below/i, /you won'?t believe/i, /wait for it/i, /smash/i];
 const STATS = [/\b\d+(\.\d+)?\s?(%|percent)/i, /\bstud(y|ies)\b/i, /\bscientists (say|found|discovered)/i, /\bresearch(ers)?\b/i, /\baccording to\b/i];
 const URLS = [/https?:\/\//i, /\bwww\./i, /\.com\b/i, /\bapp\b/i];
+/** Tech channels talk about apps and sites by name; links still go in the description, never the script. */
+const URLS_TECH = [/https?:\/\//i, /\bwww\./i];
 
-export type ValidateOptions = { wordsPerSecond?: number; audience?: "kids" | "general" };
+export type ValidateOptions = { wordsPerSecond?: number; audience?: "kids" | "general"; onlineOk?: boolean };
 
 export function validateScript(input: unknown, banned: BannedWords = loadBannedWords(), options: ValidateOptions = {}): ValidationResult {
   const reasons: string[] = [];
@@ -154,7 +156,7 @@ export function validateScript(input: unknown, banned: BannedWords = loadBannedW
 
   for (const re of ENGAGEMENT_BAIT) if (re.test(everything)) reasons.push(`engagement bait: ${re.source}`);
   for (const re of STATS) if (re.test(spoken)) reasons.push(`invented statistics/studies: ${re.source}`);
-  for (const re of URLS) if (re.test(everything)) reasons.push(`online reference: ${re.source}`);
+  for (const re of options.onlineOk ? URLS_TECH : URLS) if (re.test(everything)) reasons.push(`online reference: ${re.source}`);
 
   if ((options.audience ?? "kids") === "kids" && needsGrownUp(s.experiment, banned.requiredWhenHandling) && !hasGrownUpPhrase(s.experiment, banned.requiredWhenHandling)) {
     reasons.push('experiment involves pouring/handling but does not say "ask a grown-up"');

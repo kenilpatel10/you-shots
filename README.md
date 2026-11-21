@@ -142,8 +142,10 @@ docs/              SETUP_*, CONTENT_POLICY, DECISIONS, HINDI, TOOL_EVALUATION, P
 
 A persona is a full channel definition (character, audience, tone, topics, word lists, colours,
 logo, YouTube identity). `bolt-pip` is the default; `config/personas/` ships `ncert-science`
-(NCERT class 6–10 science, general audience, exam tips) and `demo-coaching` (a client brand kit
-for the explainer-video service). `CHANNELS=["bolt-pip/en","ncert-science/hi"]` runs any mix.
+(NCERT class 6–10 science, general audience, exam tips), `demo-coaching` (a client brand kit
+for the explainer-video service) and `ai-digest` (a tech channel with a **human host avatar** you
+tune to look like you: one new open-source AI repo a day from a live GitHub feed, explained from
+its README). `CHANNELS=["bolt-pip/en","ncert-science/hi","ai-digest/en"]` runs any mix.
 See [docs/PERSONAS.md](docs/PERSONAS.md).
 
 ## Languages and channels

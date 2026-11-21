@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { CONFIG_DIR, ROOT } from "./lib/paths";
 import { env } from "./lib/env";
+import { HostLookZ } from "../remotion/character/hostLook";
 
 const LanguageConfig = z.object({
   label: z.string(),
@@ -93,6 +94,25 @@ export const ChannelConfigSchema = z.object({
   fallbackDir: z.string().default("data/fallback-scripts"),
   bannedWordsFile: z.string().default("config/banned-words.json"),
   brand: BrandSchema.default({}),
+  /** A human presenter instead of Bolt (hair, skin, glasses, outfit…); see docs/PERSONAS.md → "A host that looks like you". */
+  host: HostLookZ.partial().optional(),
+  /** Pip the sidekick on screen. */
+  sidekick: z.boolean().default(true),
+  /** Prompt set: "explainer" = why-questions with a wow fact and an experiment; "tech" = a new repo/tool: what it is, why it matters, try it. */
+  promptSet: z.enum(["explainer", "tech"]).default("explainer"),
+  /** Live topic source tried before topicsFile (which stays as the fallback when the feed is empty or down). */
+  topicFeed: z
+    .object({
+      kind: z.literal("github-repos"),
+      /** One search per GitHub topic (the API does not OR qualifiers); results are merged. */
+      topics: z.array(z.string().min(1)).min(1).default(["ai", "llm", "agents", "machine-learning"]),
+      /** Extra qualifiers for every search, e.g. "language:python". */
+      query: z.string().default(""),
+      /** Only repositories created in the last N days. */
+      days: z.number().int().positive().default(7),
+      minStars: z.number().int().nonnegative().default(100),
+    })
+    .optional(),
   name: z.string().min(1),
   handle: z.string(),
   characterName: z.string(),

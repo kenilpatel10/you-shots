@@ -6,7 +6,7 @@ export type SectionKey = (typeof SECTION_KEYS)[number];
 export const EXPRESSIONS = ["curious", "happy", "surprised", "thinking", "excited"] as const;
 export type Expression = (typeof EXPRESSIONS)[number];
 
-export const CATEGORIES = ["animals", "space", "human-body", "weather-nature", "everyday-things", "food", "ocean", "dinosaurs", "how-things-work", "feelings-friendship"] as const;
+export const CATEGORIES = ["animals", "space", "human-body", "weather-nature", "everyday-things", "food", "ocean", "dinosaurs", "how-things-work", "feelings-friendship", "tech"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 const nonEmpty = z.string().trim().min(1);
@@ -84,6 +84,10 @@ export const TopicSchema = z.object({
   question: nonEmpty,
   category: z.enum(CATEGORIES),
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  /** Feed topics: the facts the writer may use (README excerpt etc.) and where they came from. */
+  notes: z.string().optional(),
+  sourceUrl: z.string().optional(),
+  sourceName: z.string().optional(),
 });
 export type Topic = z.infer<typeof TopicSchema>;
 export const TopicsFileSchema = z.array(TopicSchema);

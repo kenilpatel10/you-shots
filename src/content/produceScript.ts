@@ -49,7 +49,8 @@ export async function produceScript(topic: Topic, language: string): Promise<Pro
       }
     }
 
-    const validation = validateScript(candidate, undefined, { wordsPerSecond: wps, audience: loadChannelConfig().audience });
+    const cfg = loadChannelConfig();
+    const validation = validateScript(candidate, undefined, { wordsPerSecond: wps, audience: cfg.audience, onlineOk: cfg.promptSet === "tech" });
     if (validation.ok) {
       return {
         ok: true,

@@ -13,6 +13,11 @@ export type GuestSpec = {
 };
 
 export const GUESTS: Record<string, GuestSpec> = {
+  tech: {
+    kind: "gear",
+    name: { en: "Pixel the gear", hi: "पिक्सल गियर" },
+    personality: { en: "a tiny gear who insists every new tool is just a fancier gear and wants to be installed", hi: "एक नन्हा गियर जो कहता है हर नया टूल बस एक फ़ैंसी गियर है और इंस्टॉल होना चाहता है" },
+  },
   animals: {
     kind: "cat",
     name: { en: "Mimi the cat", hi: "मिमी बिल्ली" },

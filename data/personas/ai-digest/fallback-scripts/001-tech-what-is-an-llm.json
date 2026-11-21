@@ -1,0 +1,57 @@
+{
+  "topicId": "tech-001",
+  "title": "What a large language model really is",
+  "hook": "Everyone says large language model. Here is what that really means.",
+  "answer": "A large language model is a program that learned to predict the next word by reading huge amounts of text. Think of autocomplete on your phone, trained on so much writing that it can finish whole answers. It does not look things up. It writes the most likely next piece, again and again.",
+  "wowFact": "Here is the interesting part: it predicts rather than knows, so it can sound confident and still be wrong. Good tools let it check sources first.",
+  "experiment": "Try it: ask any chatbot the same question twice with different wording. Watch the answer shift. That shift is prediction, not memory.",
+  "signOff": "That's it. Go build something.",
+  "onScreenText": {
+    "hook": "What is an LLM, really?",
+    "answer": "Autocomplete trained on the internet",
+    "wowFact": "Predicts, does not know",
+    "experiment": "Try it: same question, two wordings"
+  },
+  "expressionCues": [
+    {
+      "section": "hook",
+      "expression": "curious"
+    },
+    {
+      "section": "answer",
+      "expression": "happy"
+    },
+    {
+      "section": "wowFact",
+      "expression": "surprised"
+    },
+    {
+      "section": "experiment",
+      "expression": "excited"
+    },
+    {
+      "section": "signOff",
+      "expression": "happy"
+    }
+  ],
+  "background": "tech",
+  "guess": {
+    "prompt": "What does it do?",
+    "options": [
+      "Predicts words",
+      "Searches the web",
+      "Stores facts"
+    ],
+    "answer": 0
+  },
+  "description": "A plain-words explanation of what a large language model is: a program trained to predict the next word, which is why it is fast, fluent and sometimes confidently wrong. For developers, students and anyone curious about how AI chatbots work.",
+  "tags": [
+    "llm",
+    "large language model",
+    "ai explained",
+    "how ai works",
+    "chatbot",
+    "machine learning",
+    "open source"
+  ]
+}

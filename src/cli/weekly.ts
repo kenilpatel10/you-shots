@@ -110,6 +110,8 @@ async function main() {
     feelings: lang.feelings,
     sidekickName: lang.sidekickName,
     labels: lang.labels,
+    host: cfg.host,
+    sidekick: cfg.sidekick,
   };
 
   let episodes: LongEpisode[];

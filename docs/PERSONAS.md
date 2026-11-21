@@ -34,6 +34,33 @@ schema. A **channel** is `persona/lang`, e.g. `ncert-science/hi`.
 `public/`) appears above the progress bar. Per-language `labels.experiment` names section 4 on
 screen ("Exam tip" / "परीक्षा टिप").
 
+## A host that looks like you (ai-digest)
+
+`config/personas/ai-digest.json` is a tech/AI channel presented by a **human cartoon host** instead
+of Bolt: one new open-source AI repository or tool a day, explained from its README.
+
+- `host` replaces Bolt everywhere (Short, weekly cards, avatar, banner, thumbnail). Tune it to look
+  like the presenter: `skin`, `hair` (short · buzz · curly · side · bun · long · none), `hairColor`,
+  `facialHair` (none · stubble · beard · moustache · goatee), `glasses` (none · round · square),
+  `eyeColor`, `outfit` (hoodie · tee · shirt) with `outfitColor`/`outfitAccent`, `accessory`
+  (none · headphones · cap). Render the preset sheet to pick a starting point:
+  `npx remotion still remotion/index.ts HostLooks out/host-looks.png`.
+- `sidekick: false` hides Pip; `gags: false` turns the guest gag off.
+- `promptSet: "tech"` swaps the writer/reviewer prompts: hook = the news, answer = what it is,
+  wowFact = why it matters, experiment = try it (labels come from `languages.en.labels`).
+  The writer may only use the **source notes** (README excerpt, stars, license); the reviewer
+  rejects anything the notes do not support. Links never go in the script; the repo URL is
+  appended to the description automatically.
+- `topicFeed` pulls repositories created in the last `days` with ≥ `minStars` under any of its
+  GitHub `topics` (plus optional `query` qualifiers such as `language:python`) from the search API (uses `GITHUB_TOKEN` when present). Used repos are remembered per
+  channel like any topic id (`gh-owner-name`). When the feed is empty or down, `topicsFile`
+  (evergreen AI concepts) is used instead, and the hand-written fallback script after that.
+- `audience: general` → not made-for-kids, category 28 (Science & Technology).
+- Voice: Kokoro `am_puck` by default; any Kokoro voice id works (`af_*` / `am_*` / `bf_*` / `bm_*`).
+- Channel: create it, run `npm run auth:youtube -- --persona ai-digest --language en`, add the
+  secret `YOUTUBE_REFRESH_TOKEN_AI_DIGEST_EN`, and add `"ai-digest/en"` to the `CHANNELS` variable.
+  `autoApprove` is off for this persona until the first few drafts have been checked by hand.
+
 ## Running a persona
 
 ```bash

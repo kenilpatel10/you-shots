@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, Img, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Background } from "../backgrounds/Background";
-import { AnimatedBolt } from "../character/AnimatedBolt";
+import { AnimatedCharacter } from "../character/Character";
 import { AnimatedPip } from "../character/AnimatedPip";
 import type { PipMood } from "../character/Pip";
 import { FeelingChip } from "../components/FeelingChip";
@@ -125,7 +125,8 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
         </Sequence>
       ) : null}
       <div style={{ position: "absolute", left: L.bolt.centerX - L.bolt.size / 2, top: L.bolt.top + hopY, transform: `rotate(${wobble + gagWobble}deg)`, transformOrigin: "50% 90%" }}>
-        <AnimatedBolt
+        <AnimatedCharacter
+          host={channel.host}
           pose={inGag && reaction === "laugh" ? "jump" : pose}
           expression={inGag ? gagExpression : expression}
           mouthOpen={inGag ? 0 : mouthOpen}
@@ -136,9 +137,11 @@ export const Episode: React.FC<EpisodeProps> = ({ script, channel, timeline, voi
           bodyColor={channel.brand?.primary}
         />
       </div>
+      {channel.sidekick === false ? null : (
       <div style={{ position: "absolute", left: pipPos.left, top: pipPos.top }}>
         <AnimatedPip mood={pipMood} excitement={pipExcited} talking={pipTalking} size={pipSize} idPrefix={`pip-${script.topicId}`} />
       </div>
+      )}
       {feeling && sinceStart < 50 && !inGuess && !revealing && !inGag ? <FeelingChip text={feeling} left={L.bolt.centerX - L.bolt.size / 2 - 10} top={L.bolt.top + 20} enterFrame={0} frame={sinceStart} /> : null}
       <Captions wordGroups={sections.map((s) => s.words)} box={L.captions} fontSize={variant === "short" ? 60 : 52} />
       <ProgressBar sections={sections} box={L.progress} color={channel.brand?.accent} />
