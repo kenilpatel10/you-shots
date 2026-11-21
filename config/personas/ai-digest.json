@@ -13,8 +13,7 @@
   "bannedWordsFile": "config/banned-words-tech.json",
   "brand": {
     "primary": "#5B3FB5",
-    "accent": "#F59E0B",
-    "photo": "brands/ai-digest/host-square.jpg"
+    "accent": "#F59E0B"
   },
   "name": "60-Second AI",
   "handle": "@60secondai",
