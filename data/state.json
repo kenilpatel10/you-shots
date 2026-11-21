@@ -4989,10 +4989,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "What is a galaxy",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-21T07:47:13.774Z",
-      "updatedAt": "2026-11-21T07:47:13.774Z",
+      "updatedAt": "2026-11-21T09:42:52.680Z",
       "durationSeconds": 43.4,
       "releaseTag": "draft-2026-11-21-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-21-en",
@@ -5016,6 +5016,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-21T07:47:13.774Z",
       "telegramMessageId": 437,
+      "youtubeVideoId": "eKmFEGtQKw0",
+      "scheduledFor": "2026-11-23T11:30:00.000Z",
+      "uploadedAt": "2026-11-21T09:42:52.680Z",
       "includes": []
     },
     {
@@ -5026,10 +5029,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हमें गर्व महसूस क्यों होता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-21T07:58:48.367Z",
-      "updatedAt": "2026-11-21T07:58:48.367Z",
+      "updatedAt": "2026-11-21T09:42:55.221Z",
       "durationSeconds": 37.63333333333333,
       "releaseTag": "draft-2026-11-21-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-21-hi",
@@ -5054,12 +5057,15 @@
       ],
       "approvedAt": "2026-11-21T07:58:48.367Z",
       "telegramMessageId": 439,
+      "youtubeVideoId": "chYDjolXMRs",
+      "scheduledFor": "2026-11-22T11:30:00.000Z",
+      "uploadedAt": "2026-11-21T09:42:55.221Z",
       "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-21T07:58:48.367Z",
-    "publish": "2026-11-21T01:28:30.395Z"
+    "publish": "2026-11-21T09:42:55.573Z"
   }
 }
