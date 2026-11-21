@@ -1,0 +1,54 @@
+name: Auth YouTube (headless)
+
+# Get a YouTube refresh token without a local machine. Step 1: run with an empty code → the sign-in
+# link is sent to the Telegram chat. Step 2: run again with the redirected URL (or its code) → the
+# refresh token is sent to the same Telegram chat, never printed in the log. Then add it as the
+# repository secret the message names (YOUTUBE_REFRESH_TOKEN_<PERSONA>_<LANG>).
+on:
+  workflow_dispatch:
+    inputs:
+      persona:
+        description: "Persona id (bolt-pip, ncert-science, ai-digest…)"
+        required: true
+        default: "ai-digest"
+      language:
+        description: "Language code"
+        required: true
+        default: "en"
+      code:
+        description: "Leave empty to receive the sign-in link; paste the redirected localhost URL (or its code) to exchange it"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: if [ -f package-lock.json ]; then npm ci --omit=optional; else npm install --no-audit --no-fund; fi
+        env:
+          ONNXRUNTIME_NODE_INSTALL_CUDA: skip
+      - name: Send sign-in link or exchange the code (result goes to Telegram)
+        env:
+          AUTH_CODE: ${{ github.event.inputs.code }}
+        run: |
+          if [ -z "$AUTH_CODE" ]; then
+            npm run auth:youtube -- --persona "${{ github.event.inputs.persona }}" --language "${{ github.event.inputs.language }}" --print-url --telegram
+          else
+            npm run auth:youtube -- --persona "${{ github.event.inputs.persona }}" --language "${{ github.event.inputs.language }}" --code "$AUTH_CODE" --telegram
+          fi
