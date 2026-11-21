@@ -30,6 +30,8 @@ async function main() {
       feelings: lang.feelings,
       sidekickName: lang.sidekickName,
       labels: lang.labels,
+      host: cfg.host,
+      sidekick: cfg.sidekick,
     };
     const dir = path.join(OUT_DIR, "branding", language);
     await ensureDir(dir);

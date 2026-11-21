@@ -74,6 +74,8 @@ export const BrandPropsZ = z.object({
   accent: z.string().optional(),
   /** Path under public/ (staticFile) of a corner logo. */
   logo: z.string().optional(),
+  /** Path under public/ of the presenter's real photo (square); branding stills use it instead of the drawn character. */
+  photo: z.string().optional(),
 });
 export type BrandProps = z.infer<typeof BrandPropsZ>;
 

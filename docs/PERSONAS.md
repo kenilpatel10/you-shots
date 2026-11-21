@@ -45,6 +45,8 @@ of Bolt: one new open-source AI repository or tool a day, explained from its REA
   `eyeColor`, `outfit` (hoodie · tee · shirt) with `outfitColor`/`outfitAccent`, `accessory`
   (none · headphones · cap), `watch` and `chain`. Render the preset sheet to pick a starting point:
   `npx remotion still remotion/index.ts HostLooks out/host-looks.png`.
+- `brand.photo` (a square JPG under `public/`) puts the presenter's **real photo** on the channel
+  avatar, banner and weekly thumbnails; the videos keep the drawn host. `npm run branding` renders them.
 - `sidekick: false` hides Pip; `gags: false` turns the guest gag off.
 - `promptSet: "tech"` swaps the writer/reviewer prompts: hook = the news, answer = what it is,
   wowFact = why it matters, experiment = try it (labels come from `languages.en.labels`).

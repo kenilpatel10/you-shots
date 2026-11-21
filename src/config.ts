@@ -61,6 +61,8 @@ export const BrandSchema = z.object({
   accent: z.string().optional(),
   /** Path under public/ of a logo shown in the corner, e.g. "brands/sharma/logo.png". */
   logo: z.string().optional(),
+  /** Path under public/ of the presenter's real photo (square). Used on the avatar, banner and thumbnails; the video keeps the drawn host. */
+  photo: z.string().optional(),
 });
 
 export const ChannelConfigSchema = z.object({

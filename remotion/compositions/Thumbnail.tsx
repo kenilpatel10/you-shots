@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, Img, staticFile } from "remotion";
 import { Character } from "../character/Character";
 import { useFonts } from "../components/useFonts";
 import type { ThumbnailProps } from "../schema";
@@ -19,9 +19,13 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({ words, background, channel
         <circle cx={1100} cy={120} r={160} fill={pal.accent} opacity={0.5} />
         <ellipse cx={640} cy={760} rx={900} ry={180} fill={pal.ground} />
       </svg>
-      <div style={{ position: "absolute", left: 40, top: 20 }}>
-        <Character host={channel.host} bodyColor={channel.brand?.primary} pose="point" expression="excited" antennaGlow={1} mouthOpen={0.35} size={540} idPrefix="thumb" />
-      </div>
+      {channel.brand?.photo ? (
+        <Img src={staticFile(channel.brand.photo)} style={{ position: "absolute", left: 60, top: 80, width: 460, height: 560, borderRadius: 40, objectFit: "cover", objectPosition: "50% 20%", border: `10px solid ${colors.white}`, boxShadow: "0 14px 0 rgba(0,0,0,0.25)" }} />
+      ) : (
+        <div style={{ position: "absolute", left: 40, top: 20 }}>
+          <Character host={channel.host} bodyColor={channel.brand?.primary} pose="point" expression="excited" antennaGlow={1} mouthOpen={0.35} size={540} idPrefix="thumb" />
+        </div>
+      )}
       <div style={{ position: "absolute", left: 560, top: 90, width: 680, display: "flex", flexDirection: "column", gap: 4 }}>
         {words.map((w, i) => (
           <div
