@@ -137,6 +137,14 @@
       "redoTopicIds": [],
       "usedFallbackScripts": [],
       "weeklyCompiled": []
+    },
+    "ai-digest/en": {
+      "usedTopicIds": [
+        "gh-sybil-solutions-inference-optimisation-skill"
+      ],
+      "redoTopicIds": [],
+      "usedFallbackScripts": [],
+      "weeklyCompiled": []
     }
   },
   "drafts": [
@@ -5061,11 +5069,50 @@
       "scheduledFor": "2026-11-22T11:30:00.000Z",
       "uploadedAt": "2026-11-21T09:42:55.221Z",
       "includes": []
+    },
+    {
+      "id": "short-2026-11-21-ai-digest-en-gh-sybil-solutions-inference-optimisation-skill",
+      "kind": "short",
+      "topicId": "gh-sybil-solutions-inference-optimisation-skill",
+      "date": "2026-11-21",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "inference-optimisation-skill speeds up local LLMs",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-21T12:14:41.882Z",
+      "updatedAt": "2026-11-21T12:14:41.882Z",
+      "durationSeconds": 51.06666666666667,
+      "releaseTag": "draft-2026-11-21-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-21-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/775477562",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-21-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/775477628",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/775477660",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/775477701"
+      },
+      "description": "inference-optimisation-skill is an open-source MIT skill that guides coding agents to systematically speed up local LLM inference. It uses structured benchmarking to tune decode speeds, prefill times, and KV caches on any hardware. This tool is built for developers optimizing local AI servers.\n\nSource: sybil-solutions/inference-optimisation-skill\nhttps://github.com/sybil-solutions/inference-optimisation-skill\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "inference-optimisation-skill",
+        "llm",
+        "ai tools",
+        "python",
+        "open source",
+        "claude code",
+        "benchmarking"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The wowFact section omitted the strict requirements/limitations mentioned in the notes (memory caps and full-context stability checks).",
+        "[attempt 1] The original answer did not include an explicit everyday sentence stating what you would use the tool for."
+      ],
+      "telegramMessageId": 445,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-21T07:58:48.367Z",
+    "generate": "2026-11-21T12:14:41.882Z",
     "publish": "2026-11-21T09:42:55.573Z"
   }
 }
