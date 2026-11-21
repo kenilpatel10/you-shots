@@ -33,7 +33,7 @@ describe("personas", () => {
     expect(cfg.promptSet).toBe("tech");
     expect(cfg.sidekick).toBe(false);
     expect(cfg.gags).toBe(false);
-    expect(cfg.host?.glasses).toBe("round");
+    expect(cfg.host?.hair).toBe("quiff");
     expect(cfg.topicFeed?.kind).toBe("github-repos");
     expect(cfg.bannedWordsFile).toBe("config/banned-words-tech.json");
     expect(channelIdentity(cfg, "en").name).toBe("60-Second AI");

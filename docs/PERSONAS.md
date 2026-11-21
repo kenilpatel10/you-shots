@@ -40,10 +40,10 @@ screen ("Exam tip" / "परीक्षा टिप").
 of Bolt: one new open-source AI repository or tool a day, explained from its README.
 
 - `host` replaces Bolt everywhere (Short, weekly cards, avatar, banner, thumbnail). Tune it to look
-  like the presenter: `skin`, `hair` (short · buzz · curly · side · bun · long · none), `hairColor`,
-  `facialHair` (none · stubble · beard · moustache · goatee), `glasses` (none · round · square),
+  like the presenter: `skin`, `hair` (short · quiff · buzz · curly · side · bun · long · none), `hairColor`,
+  `facialHair` (none · stubble · beard · moustache · goatee), `glasses` (none · round · square · sunglasses),
   `eyeColor`, `outfit` (hoodie · tee · shirt) with `outfitColor`/`outfitAccent`, `accessory`
-  (none · headphones · cap). Render the preset sheet to pick a starting point:
+  (none · headphones · cap), `watch` and `chain`. Render the preset sheet to pick a starting point:
   `npx remotion still remotion/index.ts HostLooks out/host-looks.png`.
 - `sidekick: false` hides Pip; `gags: false` turns the guest gag off.
 - `promptSet: "tech"` swaps the writer/reviewer prompts: hook = the news, answer = what it is,

@@ -12,8 +12,8 @@
   "fallbackDir": "data/personas/ai-digest/fallback-scripts",
   "bannedWordsFile": "config/banned-words-tech.json",
   "brand": {
-    "primary": "#0EA5E9",
-    "accent": "#22D3EE"
+    "primary": "#5B3FB5",
+    "accent": "#F59E0B"
   },
   "name": "60-Second AI",
   "handle": "@60secondai",
@@ -124,16 +124,18 @@
     "minStars": 150
   },
   "host": {
-    "skin": "#C68642",
-    "hair": "short",
-    "hairColor": "#1B1B1B",
+    "skin": "#B5794A",
+    "hair": "quiff",
+    "hairColor": "#161616",
     "facialHair": "beard",
-    "glasses": "round",
+    "glasses": "none",
     "glassesColor": "#1E2A44",
-    "eyeColor": "#3B2A1A",
-    "outfit": "tee",
-    "outfitColor": "#1E2A44",
-    "outfitAccent": "#22D3EE",
-    "accessory": "none"
+    "eyeColor": "#3A2415",
+    "outfit": "shirt",
+    "outfitColor": "#5B3FB5",
+    "outfitAccent": "#FFFFFF",
+    "accessory": "none",
+    "watch": true,
+    "chain": true
   }
 }

@@ -99,6 +99,14 @@ export const Host: React.FC<HostProps> = ({ look: lookIn, pose = "idle", express
         <g transform={`translate(0 ${upper}) rotate(${elbow})`}>
           <rect x={-14} y={-8} width={28} height={fore + 8} rx={14} fill={look.skin} stroke={colors.ink} strokeWidth={4.5} />
           {look.outfit !== "tee" ? <rect x={-15} y={-9} width={30} height={14} rx={7} fill={outfitDark} stroke={colors.ink} strokeWidth={3} /> : null}
+          {look.watch && side === "r" ? (
+            <g transform={`translate(0 ${fore - 10})`}>
+              <rect x={-16} y={-7} width={32} height={14} rx={4} fill="#9CA3AF" stroke={colors.ink} strokeWidth={3} />
+              <circle cx={0} cy={0} r={9} fill="#E5E7EB" stroke={colors.ink} strokeWidth={3} />
+              <line x1={0} y1={0} x2={0} y2={-5} stroke={colors.ink} strokeWidth={2} />
+              <line x1={0} y1={0} x2={4} y2={2} stroke={colors.ink} strokeWidth={2} />
+            </g>
+          ) : null}
           {p.pointing && side === "r" ? (
             <g transform={`translate(0 ${fore + 6})`}>
               <circle cx={0} cy={0} r={19} fill={look.skin} stroke={colors.ink} strokeWidth={4.5} />
@@ -146,6 +154,14 @@ export const Host: React.FC<HostProps> = ({ look: lookIn, pose = "idle", express
             <circle cx={cx} cy={headCy - headRy - 22} r={34} stroke={colors.ink} strokeWidth={4} />
           </g>
         );
+      case "quiff":
+        return (
+          <g fill={look.hairColor}>
+            <ellipse cx={cx} cy={headCy - 44} rx={headRx + 10} ry={78} />
+            <ellipse cx={cx - 10} cy={headCy - headRy - 14} rx={88} ry={40} />
+            <ellipse cx={cx + 40} cy={headCy - headRy - 4} rx={60} ry={36} />
+          </g>
+        );
       case "side":
       case "short":
       default:
@@ -159,6 +175,13 @@ export const Host: React.FC<HostProps> = ({ look: lookIn, pose = "idle", express
       case "none":
       case "buzz":
         return null;
+      case "quiff":
+        return (
+          <g fill={look.hairColor}>
+            <path d={`M ${cx - headRx + 2} ${top + 76} Q ${cx - headRx - 6} ${top + 10} ${cx - 30} ${top - 30} Q ${cx + 30} ${top - 52} ${cx + 70} ${top - 10} Q ${cx + headRx + 2} ${top + 20} ${cx + headRx - 2} ${top + 62} Q ${cx + 60} ${top + 26} ${cx + 20} ${top + 34} Q ${cx - 30} ${top + 44} ${cx - headRx + 2} ${top + 76} Z`} />
+            <path d={`M ${cx - 40} ${top - 6} Q ${cx - 6} ${top - 44} ${cx + 44} ${top - 20}`} fill="none" stroke={shade(look.hairColor, 0.22)} strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+          </g>
+        );
       case "side":
         return <path d={`M ${cx - headRx + 2} ${top + 70} Q ${cx - headRx + 10} ${top + 10} ${cx + 10} ${top + 4} Q ${cx + 80} ${top + 2} ${cx + headRx - 4} ${top + 58} Q ${cx + 40} ${top + 24} ${cx - 20} ${top + 46} Q ${cx - 50} ${top + 60} ${cx - headRx + 2} ${top + 70} Z`} fill={look.hairColor} />;
       case "curly":
@@ -195,11 +218,14 @@ export const Host: React.FC<HostProps> = ({ look: lookIn, pose = "idle", express
       case "beard":
       default:
         return (
+          <g>
+          <path d={`M ${cx - 30} ${mouthY - 10} Q ${cx - 16} ${mouthY - 30} ${cx} ${mouthY - 18} Q ${cx + 16} ${mouthY - 30} ${cx + 30} ${mouthY - 10} Q ${cx + 14} ${mouthY - 6} ${cx} ${mouthY - 10} Q ${cx - 14} ${mouthY - 6} ${cx - 30} ${mouthY - 10} Z`} fill={look.hairColor} opacity={look.facialHair === "stubble" ? 0.4 : 1} />
           <path
             d={`M ${cx - headRx + 2} ${headCy + 6} Q ${cx - headRx + 4} ${chin - 4} ${cx} ${chin + 3} Q ${cx + headRx - 4} ${chin - 4} ${cx + headRx - 2} ${headCy + 6} L ${cx + headRx - 14} ${headCy + 34} Q ${cx + headRx - 34} ${mouthY + 22} ${cx} ${mouthY + 20} Q ${cx - headRx + 34} ${mouthY + 22} ${cx - headRx + 14} ${headCy + 34} Z`}
             fill={look.hairColor}
             opacity={look.facialHair === "stubble" ? 0.4 : 1}
           />
+          </g>
         );
     }
   })();
@@ -207,6 +233,19 @@ export const Host: React.FC<HostProps> = ({ look: lookIn, pose = "idle", express
   const glasses = (() => {
     if (look.glasses === "none") return null;
     const c = look.glassesColor;
+    if (look.glasses === "sunglasses") {
+      return (
+        <g>
+          <rect x={cx - eyeDx - 32} y={eyeY - 22} width={64} height={44} rx={14} fill={colors.ink} stroke={c} strokeWidth={4} />
+          <rect x={cx + eyeDx - 32} y={eyeY - 22} width={64} height={44} rx={14} fill={colors.ink} stroke={c} strokeWidth={4} />
+          <path d={`M ${cx - eyeDx - 20} ${eyeY - 8} q 10 -8 24 -4`} stroke={colors.white} strokeWidth={4} strokeLinecap="round" opacity={0.35} fill="none" />
+          <path d={`M ${cx + eyeDx - 20} ${eyeY - 8} q 10 -8 24 -4`} stroke={colors.white} strokeWidth={4} strokeLinecap="round" opacity={0.35} fill="none" />
+          <line x1={cx - 4} y1={eyeY - 10} x2={cx + 4} y2={eyeY - 10} stroke={c} strokeWidth={5} />
+          <line x1={cx - eyeDx - 32} y1={eyeY - 10} x2={cx - headRx} y2={eyeY - 14} stroke={c} strokeWidth={5} />
+          <line x1={cx + eyeDx + 32} y1={eyeY - 10} x2={cx + headRx} y2={eyeY - 14} stroke={c} strokeWidth={5} />
+        </g>
+      );
+    }
     if (look.glasses === "round") {
       return (
         <g fill="none" stroke={c} strokeWidth={5}>
@@ -312,6 +351,7 @@ export const Host: React.FC<HostProps> = ({ look: lookIn, pose = "idle", express
         {torso}
         {/* neck */}
         <rect x={cx - 24} y={headCy + headRy - 24} width={48} height={52} rx={14} fill={skinDark} stroke={colors.ink} strokeWidth={4.5} />
+        {look.chain ? <path d={`M ${cx - 20} ${headCy + headRy + 10} Q ${cx} ${headCy + headRy + 40} ${cx + 20} ${headCy + headRy + 10}`} fill="none" stroke="#D4AF37" strokeWidth={3.5} strokeLinecap="round" /> : null}
         {/* hair behind the head */}
         {hairBack}
         {/* ears */}
