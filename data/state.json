@@ -131,7 +131,8 @@
         "weather-nature-030",
         "how-things-work-036",
         "dinosaurs-020",
-        "food-031"
+        "food-031",
+        "feelings-friendship-014"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5016,11 +5017,49 @@
       "approvedAt": "2026-11-21T07:47:13.774Z",
       "telegramMessageId": 437,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-21-hi-feelings-friendship-014",
+      "kind": "short",
+      "topicId": "feelings-friendship-014",
+      "date": "2026-11-21",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हमें गर्व महसूस क्यों होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-21T07:58:48.367Z",
+      "updatedAt": "2026-11-21T07:58:48.367Z",
+      "durationSeconds": 37.63333333333333,
+      "releaseTag": "draft-2026-11-21-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-21-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774861625",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-21-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774861656",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774861679",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/774861708"
+      },
+      "description": "बोल्ट के साथ जानिए कि हमें गर्व महसूस क्यों होता है। बच्चों के लिए एक प्यारी सी वीडियो जो भावनाओं को समझाती है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "feelings",
+        "kids",
+        "bolt",
+        "proud",
+        "emotions",
+        "hindi"
+      ],
+      "reviewerIssues": [
+        "[validator 1] answer: 27 words (allowed 28–47)"
+      ],
+      "approvedAt": "2026-11-21T07:58:48.367Z",
+      "telegramMessageId": 439,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-21T07:47:13.774Z",
+    "generate": "2026-11-21T07:58:48.367Z",
     "publish": "2026-11-21T01:28:30.395Z"
   }
 }
