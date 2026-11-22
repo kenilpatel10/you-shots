@@ -70,7 +70,9 @@
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
-      "weeklyCompiled": []
+      "weeklyCompiled": [
+        "2026-W47"
+      ]
     },
     "bolt-pip/hi": {
       "usedTopicIds": [
@@ -5225,11 +5227,53 @@
       ],
       "telegramMessageId": 451,
       "includes": []
+    },
+    {
+      "id": "weekly-2026-W47-en",
+      "kind": "weekly",
+      "topicId": "2026-W47",
+      "date": "2026-11-22",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Bolt & Pip's Big Week: Why do we feel proud · How does a swing keep swinging and more",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-22T11:09:04.249Z",
+      "updatedAt": "2026-11-22T11:09:04.249Z",
+      "durationSeconds": 225.16666666666666,
+      "releaseTag": "weekly-2026-W47-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/weekly-2026-W47-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778788327",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/weekly-2026-W47-en/long.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778788398",
+        "thumbnail": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778788418",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778788444"
+      },
+      "description": "Bolt answers 5 big questions this week.\n\n00:00 Why do we feel proud\n00:48 How does a swing keep swinging\n01:28 How do we know how old a fossil is\n02:12 What is a galaxy\n02:58 How does a wristwatch tick\n\n• Why do we feel proud\n• How does a swing keep swinging\n• How do we know how old a fossil is\n• What is a galaxy\n• How does a wristwatch tick\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "kids",
+        "learning",
+        "science for kids",
+        "why questions",
+        "Bolt & Pip",
+        "bolt and pip",
+        "compilation"
+      ],
+      "reviewerIssues": [],
+      "includes": [
+        "short-2026-11-16-en-feelings-friendship-014",
+        "short-2026-11-17-en-everyday-things-035",
+        "short-2026-11-20-en-dinosaurs-029",
+        "short-2026-11-21-en-space-035",
+        "short-2026-11-22-en-how-things-work-034"
+      ]
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-22T07:51:54.020Z",
-    "publish": "2026-11-22T03:05:36.208Z"
+    "publish": "2026-11-22T03:05:36.208Z",
+    "weekly": "2026-11-22T11:09:04.249Z"
   }
 }
