@@ -5244,10 +5244,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Bolt & Pip's Big Week: Why do we feel proud · How does a swing keep swinging and more",
-      "status": "drafted",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-22T11:09:04.249Z",
-      "updatedAt": "2026-11-22T11:09:04.249Z",
+      "updatedAt": "2026-11-22T18:30:16.024Z",
       "durationSeconds": 225.16666666666666,
       "releaseTag": "weekly-2026-W47-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/weekly-2026-W47-en",
@@ -5269,6 +5269,10 @@
         "compilation"
       ],
       "reviewerIssues": [],
+      "approvedAt": "2026-11-22T18:30:10.757Z",
+      "youtubeVideoId": "KZwuMWZCcKs",
+      "scheduledFor": "2026-11-25T11:30:00.000Z",
+      "uploadedAt": "2026-11-22T18:30:16.024Z",
       "includes": [
         "short-2026-11-16-en-feelings-friendship-014",
         "short-2026-11-17-en-everyday-things-035",
@@ -5285,10 +5289,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "बोल्ट और पिप का बड़ा हफ़्ता: ताला सही चाबी कैसे पहचानता है · क्या डायनासोर झुंड में रहते थे and more",
-      "status": "drafted",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-22T11:32:09.127Z",
-      "updatedAt": "2026-11-22T11:32:09.127Z",
+      "updatedAt": "2026-11-22T18:30:20.661Z",
       "durationSeconds": 220.46666666666667,
       "releaseTag": "weekly-2026-W47-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/weekly-2026-W47-hi",
@@ -5310,6 +5314,10 @@
         "compilation"
       ],
       "reviewerIssues": [],
+      "approvedAt": "2026-11-22T18:30:11.410Z",
+      "youtubeVideoId": "BvofbgVMDPA",
+      "scheduledFor": "2026-11-24T11:30:00.000Z",
+      "uploadedAt": "2026-11-22T18:30:20.661Z",
       "includes": [
         "short-2026-11-16-hi-how-things-work-036",
         "short-2026-11-17-hi-dinosaurs-020",
@@ -5322,7 +5330,7 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-22T07:51:54.020Z",
-    "publish": "2026-11-22T11:34:30.156Z",
+    "publish": "2026-11-22T18:30:21.287Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
