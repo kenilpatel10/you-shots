@@ -142,7 +142,8 @@
     },
     "ai-digest/en": {
       "usedTopicIds": [
-        "gh-sybil-solutions-inference-optimisation-skill"
+        "gh-sybil-solutions-inference-optimisation-skill",
+        "gh-w01fb0ss-pibot"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5186,11 +5187,49 @@
       "approvedAt": "2026-11-22T07:40:56.808Z",
       "telegramMessageId": 449,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-22-ai-digest-en-gh-w01fb0ss-pibot",
+      "kind": "short",
+      "topicId": "gh-w01fb0ss-pibot",
+      "date": "2026-11-22",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "PiBot: Open-source local AI agent team for desktop",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-22T07:51:54.020Z",
+      "updatedAt": "2026-11-22T07:51:54.020Z",
+      "durationSeconds": 50.63333333333333,
+      "releaseTag": "draft-2026-11-22-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-22-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778312553",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-22-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778312584",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778312604",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778312625"
+      },
+      "description": "PiBot is an open-source, local-first desktop application that lets you run teams of AI agents on macOS, Windows, and Linux. You can assign roles to different bots, run tasks in group chats, and keep all files and commands safely on your own machine.\n\nSource: w01fb0ss/PiBot\nhttps://github.com/w01fb0ss/PiBot\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "pibot",
+        "ai agent",
+        "local ai",
+        "typescript",
+        "ollama",
+        "open source",
+        "developer tools"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Mentions company name 'Slack', which is not in the source notes."
+      ],
+      "telegramMessageId": 451,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-22T07:40:56.808Z",
+    "generate": "2026-11-22T07:51:54.020Z",
     "publish": "2026-11-22T03:05:36.208Z"
   }
 }
