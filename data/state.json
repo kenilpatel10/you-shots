@@ -65,7 +65,8 @@
         "feelings-friendship-014",
         "everyday-things-035",
         "dinosaurs-029",
-        "space-035"
+        "space-035",
+        "how-things-work-034"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5108,11 +5109,50 @@
       ],
       "telegramMessageId": 445,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-22-en-how-things-work-034",
+      "kind": "short",
+      "topicId": "how-things-work-034",
+      "date": "2026-11-22",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "How does a wristwatch tick",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-22T07:32:50.651Z",
+      "updatedAt": "2026-11-22T07:32:50.651Z",
+      "durationSeconds": 40.13333333333333,
+      "releaseTag": "draft-2026-11-22-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-22-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778272228",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-22-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778272256",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778272282",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778272316"
+      },
+      "description": "Learn how wristwatches make their gentle tick-tock sound using springs and gears. Bolt explains the mechanics of tiny ticking mechanisms in a fun way for young learners.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "wristwatch",
+        "how watches work",
+        "gears",
+        "science for kids",
+        "bolt and pip",
+        "how things work",
+        "clocks"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The explanation in the answer claimed that 'that spring stops the wheels from spinning too fast', which is misleading. The mainspring powers the wheels, whereas the swinging arm (escapement mechanism) regulates and stops the wheels from spinning too fast."
+      ],
+      "approvedAt": "2026-11-22T07:32:50.651Z",
+      "telegramMessageId": 447,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-21T12:14:41.882Z",
+    "generate": "2026-11-22T07:32:50.651Z",
     "publish": "2026-11-22T03:05:36.208Z"
   }
 }
