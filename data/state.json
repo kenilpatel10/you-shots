@@ -5124,10 +5124,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "How does a wristwatch tick",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-22T07:32:50.651Z",
-      "updatedAt": "2026-11-22T07:32:50.651Z",
+      "updatedAt": "2026-11-22T11:34:27.558Z",
       "durationSeconds": 40.13333333333333,
       "releaseTag": "draft-2026-11-22-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-22-en",
@@ -5153,6 +5153,9 @@
       ],
       "approvedAt": "2026-11-22T07:32:50.651Z",
       "telegramMessageId": 447,
+      "youtubeVideoId": "zRSaDFk4lNA",
+      "scheduledFor": "2026-11-24T11:30:00.000Z",
+      "uploadedAt": "2026-11-22T11:34:27.558Z",
       "includes": []
     },
     {
@@ -5163,10 +5166,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "झूला कैसे झूलता रहता है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-22T07:40:56.808Z",
-      "updatedAt": "2026-11-22T07:40:56.808Z",
+      "updatedAt": "2026-11-22T11:34:29.855Z",
       "durationSeconds": 41.7,
       "releaseTag": "draft-2026-11-22-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-22-hi",
@@ -5190,6 +5193,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-22T07:40:56.808Z",
       "telegramMessageId": 449,
+      "youtubeVideoId": "pEmOHy41lJk",
+      "scheduledFor": "2026-11-23T11:30:00.000Z",
+      "uploadedAt": "2026-11-22T11:34:29.855Z",
       "includes": []
     },
     {
@@ -5316,7 +5322,7 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-22T07:51:54.020Z",
-    "publish": "2026-11-22T03:05:36.208Z",
+    "publish": "2026-11-22T11:34:30.156Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
