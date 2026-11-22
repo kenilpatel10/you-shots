@@ -140,7 +140,9 @@
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
-      "weeklyCompiled": []
+      "weeklyCompiled": [
+        "2026-W47"
+      ]
     },
     "ai-digest/en": {
       "usedTopicIds": [
@@ -5268,12 +5270,53 @@
         "short-2026-11-21-en-space-035",
         "short-2026-11-22-en-how-things-work-034"
       ]
+    },
+    {
+      "id": "weekly-2026-W47-hi",
+      "kind": "weekly",
+      "topicId": "2026-W47",
+      "date": "2026-11-22",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "बोल्ट और पिप का बड़ा हफ़्ता: ताला सही चाबी कैसे पहचानता है · क्या डायनासोर झुंड में रहते थे and more",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-22T11:32:09.127Z",
+      "updatedAt": "2026-11-22T11:32:09.127Z",
+      "durationSeconds": 220.46666666666667,
+      "releaseTag": "weekly-2026-W47-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/weekly-2026-W47-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778846407",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/weekly-2026-W47-hi/long.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778846480",
+        "thumbnail": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778846506",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778846520"
+      },
+      "description": "Bolt answers 5 big questions this week.\n\n00:00 ताला सही चाबी कैसे पहचानता है\n00:45 क्या डायनासोर झुंड में रहते थे\n01:28 चीनी कहाँ से आती है\n02:12 हमें गर्व महसूस क्यों होता है\n02:52 झूला कैसे झूलता रहता है\n\n• ताला सही चाबी कैसे पहचानता है\n• क्या डायनासोर झुंड में रहते थे\n• चीनी कहाँ से आती है\n• हमें गर्व महसूस क्यों होता है\n• झूला कैसे झूलता रहता है\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "बच्चों के लिए",
+        "विज्ञान",
+        "क्यों",
+        "Bolt & Pip Hindi",
+        "bolt aur pip",
+        "hindi kids",
+        "compilation"
+      ],
+      "reviewerIssues": [],
+      "includes": [
+        "short-2026-11-16-hi-how-things-work-036",
+        "short-2026-11-17-hi-dinosaurs-020",
+        "short-2026-11-20-hi-food-031",
+        "short-2026-11-21-hi-feelings-friendship-014",
+        "short-2026-11-22-hi-everyday-things-035"
+      ]
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-22T07:51:54.020Z",
     "publish": "2026-11-22T03:05:36.208Z",
-    "weekly": "2026-11-22T11:09:04.249Z"
+    "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
