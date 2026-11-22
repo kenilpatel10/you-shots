@@ -133,7 +133,8 @@
         "how-things-work-036",
         "dinosaurs-020",
         "food-031",
-        "feelings-friendship-014"
+        "feelings-friendship-014",
+        "everyday-things-035"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5148,11 +5149,48 @@
       "approvedAt": "2026-11-22T07:32:50.651Z",
       "telegramMessageId": 447,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-22-hi-everyday-things-035",
+      "kind": "short",
+      "topicId": "everyday-things-035",
+      "date": "2026-11-22",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "झूला कैसे झूलता रहता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-22T07:40:56.808Z",
+      "updatedAt": "2026-11-22T07:40:56.808Z",
+      "durationSeconds": 41.7,
+      "releaseTag": "draft-2026-11-22-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-22-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778289812",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-22-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778289846",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778289867",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/778289895"
+      },
+      "description": "जानिए झूला कैसे आगे-पीछे झूलता रहता है। बच्चों के लिए एक आसान और मजेदार विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "swing",
+        "science for kids",
+        "bolt and pip",
+        "hindi shorts",
+        "झूला",
+        "विज्ञान",
+        "बच्चों के खेल"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-22T07:40:56.808Z",
+      "telegramMessageId": 449,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-22T07:32:50.651Z",
+    "generate": "2026-11-22T07:40:56.808Z",
     "publish": "2026-11-22T03:05:36.208Z"
   }
 }
