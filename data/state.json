@@ -149,7 +149,8 @@
     "ai-digest/en": {
       "usedTopicIds": [
         "gh-sybil-solutions-inference-optimisation-skill",
-        "gh-w01fb0ss-pibot"
+        "gh-w01fb0ss-pibot",
+        "gh-pierridotite-mobile-agent-testers"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5400,11 +5401,51 @@
       "approvedAt": "2026-11-23T08:30:47.685Z",
       "telegramMessageId": 467,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-23-ai-digest-en-gh-pierridotite-mobile-agent-testers",
+      "kind": "short",
+      "topicId": "gh-pierridotite-mobile-agent-testers",
+      "date": "2026-11-23",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "mobile-agent-testers AI QA for mobile apps",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-23T08:38:11.525Z",
+      "updatedAt": "2026-11-23T08:38:11.525Z",
+      "durationSeconds": 50.266666666666666,
+      "releaseTag": "draft-2026-11-23-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-23-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782177035",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-23-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782177093",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782177105",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782177153"
+      },
+      "description": "mobile-agent-testers runs AI agents across multiple mobile emulators to test your app for layout, accessibility, and broken flows. It runs on GitHub Actions without writing test scripts and supports native and cross-platform apps.\n\nSource: pierridotite/mobile-agent-testers\nhttps://github.com/pierridotite/mobile-agent-testers\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "mobile-agent-testers",
+        "ai testing",
+        "qa automation",
+        "claude",
+        "android emulator",
+        "ios simulator",
+        "github actions",
+        "python"
+      ],
+      "reviewerIssues": [
+        "[validator 1] estimated length 58.3s (target 44–58s)",
+        "[attempt 2] The source notes state the cost is $0.15 to $0.55 'per phone' rather than 'per run'."
+      ],
+      "telegramMessageId": 469,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-23T08:30:47.685Z",
+    "generate": "2026-11-23T08:38:11.525Z",
     "publish": "2026-11-23T07:40:19.802Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
