@@ -5116,6 +5116,7 @@
         "[attempt 1] The wowFact section omitted the strict requirements/limitations mentioned in the notes (memory caps and full-context stability checks).",
         "[attempt 1] The original answer did not include an explicit everyday sentence stating what you would use the tool for."
       ],
+      "reminderSentAt": "2026-11-23T20:07:48.218Z",
       "telegramMessageId": 445,
       "includes": []
     },
@@ -5337,10 +5338,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do camels have humps",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-23T08:23:36.362Z",
-      "updatedAt": "2026-11-23T08:23:36.362Z",
+      "updatedAt": "2026-11-23T20:07:50.276Z",
       "durationSeconds": 41.733333333333334,
       "releaseTag": "draft-2026-11-23-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-23-en",
@@ -5364,6 +5365,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-23T08:23:36.362Z",
       "telegramMessageId": 465,
+      "youtubeVideoId": "Q1fe6Pb2Lvo",
+      "scheduledFor": "2026-11-26T11:30:00.000Z",
+      "uploadedAt": "2026-11-23T20:07:50.276Z",
       "includes": []
     },
     {
@@ -5374,10 +5378,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "जीवाश्म कितने पुराने हैं कैसे पता लगाएं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-23T08:30:47.685Z",
-      "updatedAt": "2026-11-23T08:30:47.685Z",
+      "updatedAt": "2026-11-23T20:07:52.723Z",
       "durationSeconds": 48.333333333333336,
       "releaseTag": "draft-2026-11-23-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-23-hi",
@@ -5400,6 +5404,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-23T08:30:47.685Z",
       "telegramMessageId": 467,
+      "youtubeVideoId": "UNi2dMdsjh4",
+      "scheduledFor": "2026-11-25T11:30:00.000Z",
+      "uploadedAt": "2026-11-23T20:07:52.723Z",
       "includes": []
     },
     {
@@ -5446,7 +5453,7 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-23T08:38:11.525Z",
-    "publish": "2026-11-23T07:40:19.802Z",
+    "publish": "2026-11-23T20:07:53.042Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
