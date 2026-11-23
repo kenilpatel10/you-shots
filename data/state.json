@@ -137,7 +137,8 @@
         "dinosaurs-020",
         "food-031",
         "feelings-friendship-014",
-        "everyday-things-035"
+        "everyday-things-035",
+        "dinosaurs-029"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5363,11 +5364,47 @@
       "approvedAt": "2026-11-23T08:23:36.362Z",
       "telegramMessageId": 465,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-23-hi-dinosaurs-029",
+      "kind": "short",
+      "topicId": "dinosaurs-029",
+      "date": "2026-11-23",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "जीवाश्म कितने पुराने हैं कैसे पता लगाएं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-23T08:30:47.685Z",
+      "updatedAt": "2026-11-23T08:30:47.685Z",
+      "durationSeconds": 48.333333333333336,
+      "releaseTag": "draft-2026-11-23-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-23-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782155001",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-23-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782155049",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782155081",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/782155119"
+      },
+      "description": "जानिए वैज्ञानिक डायनासोर की पुरानी हड्डियों और जीवाश्मों की उम्र का पता कैसे लगाते हैं। बच्चों के लिए एक मजेदार और आसान विज्ञान वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "dinosaurs",
+        "fossils",
+        "kids science",
+        "bolt and pip",
+        "hindi science",
+        "dinosaurs for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-23T08:30:47.685Z",
+      "telegramMessageId": 467,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-23T08:23:36.362Z",
+    "generate": "2026-11-23T08:30:47.685Z",
     "publish": "2026-11-23T07:40:19.802Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
