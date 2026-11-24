@@ -5240,6 +5240,7 @@
       "reviewerIssues": [
         "[attempt 1] Mentions company name 'Slack', which is not in the source notes."
       ],
+      "reminderSentAt": "2026-11-24T15:48:57.994Z",
       "telegramMessageId": 451,
       "includes": []
     },
@@ -5460,10 +5461,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we get dizzy when we spin",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-24T10:31:47.707Z",
-      "updatedAt": "2026-11-24T10:31:47.707Z",
+      "updatedAt": "2026-11-24T15:49:00.274Z",
       "durationSeconds": 40.2,
       "releaseTag": "draft-2026-11-24-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-24-en",
@@ -5487,6 +5488,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-24T10:31:47.707Z",
       "telegramMessageId": 474,
+      "youtubeVideoId": "tHvVRfctxMo",
+      "scheduledFor": "2026-11-27T11:30:00.000Z",
+      "uploadedAt": "2026-11-24T15:49:00.274Z",
       "includes": []
     },
     {
@@ -5497,10 +5501,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "गैलेक्सी क्या होती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-24T10:43:30.924Z",
-      "updatedAt": "2026-11-24T10:43:30.924Z",
+      "updatedAt": "2026-11-24T15:49:03.196Z",
       "durationSeconds": 39.5,
       "releaseTag": "draft-2026-11-24-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-24-hi",
@@ -5525,6 +5529,9 @@
       ],
       "approvedAt": "2026-11-24T10:43:30.924Z",
       "telegramMessageId": 476,
+      "youtubeVideoId": "ZWajI_K94F8",
+      "scheduledFor": "2026-11-26T11:30:00.000Z",
+      "uploadedAt": "2026-11-24T15:49:03.196Z",
       "includes": []
     },
     {
@@ -5570,7 +5577,7 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-24T10:55:02.291Z",
-    "publish": "2026-11-24T04:44:49.640Z",
+    "publish": "2026-11-24T15:49:03.560Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
