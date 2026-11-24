@@ -152,7 +152,8 @@
       "usedTopicIds": [
         "gh-sybil-solutions-inference-optimisation-skill",
         "gh-w01fb0ss-pibot",
-        "gh-pierridotite-mobile-agent-testers"
+        "gh-pierridotite-mobile-agent-testers",
+        "gh-liufelix2004-dsh-workbuddy"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5525,11 +5526,50 @@
       "approvedAt": "2026-11-24T10:43:30.924Z",
       "telegramMessageId": 476,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-24-ai-digest-en-gh-liufelix2004-dsh-workbuddy",
+      "kind": "short",
+      "topicId": "gh-liufelix2004-dsh-workbuddy",
+      "date": "2026-11-24",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "dsh-workbuddy connect WorkBuddy to DeepSeek Harness",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-24T10:55:02.291Z",
+      "updatedAt": "2026-11-24T10:55:02.291Z",
+      "durationSeconds": 53.13333333333333,
+      "releaseTag": "draft-2026-11-24-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-24-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786806847",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-24-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786806901",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786806936",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786806991"
+      },
+      "description": "dsh-workbuddy is an open-source MIT plugin that imports WorkBuddy accounts into DeepSeek Harness as model providers. It allows developers to bypass desktop CLI overhead, track per-account credit balances, and route raw model requests directly.\n\nSource: LIUFelix2004/dsh-workbuddy\nhttps://github.com/LIUFelix2004/dsh-workbuddy\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "dsh-workbuddy",
+        "deepseek harness",
+        "workbuddy",
+        "javascript",
+        "ai tools",
+        "open source",
+        "llm provider"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] Requirements (Node.js 18 and DeepSeek Harness 0.2.1+) should be mentioned in the wowFact section per content rules.",
+        "[attempt 1] The answer section should include a direct everyday sentence stating what you would use the tool for."
+      ],
+      "telegramMessageId": 478,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-24T10:43:30.924Z",
+    "generate": "2026-11-24T10:55:02.291Z",
     "publish": "2026-11-24T04:44:49.640Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
