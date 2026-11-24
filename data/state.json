@@ -139,7 +139,8 @@
         "food-031",
         "feelings-friendship-014",
         "everyday-things-035",
-        "dinosaurs-029"
+        "dinosaurs-029",
+        "space-035"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5486,11 +5487,49 @@
       "approvedAt": "2026-11-24T10:31:47.707Z",
       "telegramMessageId": 474,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-24-hi-space-035",
+      "kind": "short",
+      "topicId": "space-035",
+      "date": "2026-11-24",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "गैलेक्सी क्या होती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-24T10:43:30.924Z",
+      "updatedAt": "2026-11-24T10:43:30.924Z",
+      "durationSeconds": 39.5,
+      "releaseTag": "draft-2026-11-24-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-24-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786767534",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-24-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786767616",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786767642",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786767670"
+      },
+      "description": "बोल्ट के साथ जानिए कि गैलेक्सी क्या होती है और अंतरिक्ष में तारे कैसे रहते हैं। बच्चों के लिए एक सरल और ज्ञानवर्धक वीडियो।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "space",
+        "galaxy",
+        "bolt",
+        "kids science",
+        "hindi"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The analogy in the answer ('रोटी में ढेरों छोटे दाने होते हैं') is illogical as rotis do not contain grains.",
+        "[attempt 1] The wowFact statement ('आसमान में जितनी रेत की कण नहीं होती') is misleading because sand is on beaches/ground, not in the sky."
+      ],
+      "approvedAt": "2026-11-24T10:43:30.924Z",
+      "telegramMessageId": 476,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-24T10:31:47.707Z",
+    "generate": "2026-11-24T10:43:30.924Z",
     "publish": "2026-11-24T04:44:49.640Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
