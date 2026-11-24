@@ -67,7 +67,8 @@
         "dinosaurs-029",
         "space-035",
         "how-things-work-034",
-        "animals-027"
+        "animals-027",
+        "human-body-027"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5448,11 +5449,48 @@
       ],
       "telegramMessageId": 469,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-24-en-human-body-027",
+      "kind": "short",
+      "topicId": "human-body-027",
+      "date": "2026-11-24",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we get dizzy when we spin",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-24T10:31:47.707Z",
+      "updatedAt": "2026-11-24T10:31:47.707Z",
+      "durationSeconds": 40.2,
+      "releaseTag": "draft-2026-11-24-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-24-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786730044",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-24-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786730123",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786730161",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/786730226"
+      },
+      "description": "Bolt explains why spinning makes us feel dizzy using a simple water cup comparison. Children learn how liquid inside our inner ears helps us balance. Perfect for curious young minds!\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dizzy",
+        "spinning",
+        "human body",
+        "ears",
+        "balance",
+        "kids science",
+        "bolt and pip"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-24T10:31:47.707Z",
+      "telegramMessageId": 474,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-23T08:38:11.525Z",
+    "generate": "2026-11-24T10:31:47.707Z",
     "publish": "2026-11-24T04:44:49.640Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
