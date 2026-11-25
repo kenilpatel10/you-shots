@@ -141,7 +141,8 @@
         "feelings-friendship-014",
         "everyday-things-035",
         "dinosaurs-029",
-        "space-035"
+        "space-035",
+        "how-things-work-034"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5610,11 +5611,51 @@
       "approvedAt": "2026-11-25T09:17:50.063Z",
       "telegramMessageId": 483,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-25-hi-how-things-work-034",
+      "kind": "short",
+      "topicId": "how-things-work-034",
+      "date": "2026-11-25",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हाथ की घड़ी टिक टिक आवाज क्यों करती है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-25T09:26:14.477Z",
+      "updatedAt": "2026-11-25T09:26:14.477Z",
+      "durationSeconds": 44.666666666666664,
+      "releaseTag": "draft-2026-11-25-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-25-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790893713",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-25-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790893784",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790893826",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790893873"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को समझाता है कि हाथ की घड़ी कैसे काम करती है और टिक-टिक की आवाज क्यों आती है। छोटे बच्चों के लिए विज्ञान की यह जानकारी बहुत ही सरल और मजेदार तरीके से प्रस्तुत की गई है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "clock",
+        "wristwatch",
+        "science for kids",
+        "hindi stories",
+        "bolt and pip",
+        "kaise kaam karta hai",
+        "gadi ki tik tik",
+        "kids educational video",
+        "how wrist watch works",
+        "experiments for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-25T09:26:14.477Z",
+      "telegramMessageId": 485,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-25T09:17:50.063Z",
+    "generate": "2026-11-25T09:26:14.477Z",
     "publish": "2026-11-25T00:38:39.311Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
