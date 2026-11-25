@@ -5453,6 +5453,7 @@
         "[validator 1] estimated length 58.3s (target 44–58s)",
         "[attempt 2] The source notes state the cost is $0.15 to $0.55 'per phone' rather than 'per run'."
       ],
+      "reminderSentAt": "2026-11-25T09:48:06.707Z",
       "telegramMessageId": 469,
       "includes": []
     },
@@ -5584,10 +5585,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why do we feel grateful",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-25T09:17:50.063Z",
-      "updatedAt": "2026-11-25T09:17:50.063Z",
+      "updatedAt": "2026-11-25T09:48:09.062Z",
       "durationSeconds": 41.4,
       "releaseTag": "draft-2026-11-25-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-25-en",
@@ -5611,6 +5612,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-25T09:17:50.063Z",
       "telegramMessageId": 483,
+      "youtubeVideoId": "-MVvQMdpc0I",
+      "scheduledFor": "2026-11-28T11:30:00.000Z",
+      "uploadedAt": "2026-11-25T09:48:09.062Z",
       "includes": []
     },
     {
@@ -5621,10 +5625,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "हाथ की घड़ी टिक टिक आवाज क्यों करती है",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-25T09:26:14.477Z",
-      "updatedAt": "2026-11-25T09:26:14.477Z",
+      "updatedAt": "2026-11-25T09:48:11.550Z",
       "durationSeconds": 44.666666666666664,
       "releaseTag": "draft-2026-11-25-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-25-hi",
@@ -5651,6 +5655,9 @@
       "reviewerIssues": [],
       "approvedAt": "2026-11-25T09:26:14.477Z",
       "telegramMessageId": 485,
+      "youtubeVideoId": "4M2or_MFB60",
+      "scheduledFor": "2026-11-27T11:30:00.000Z",
+      "uploadedAt": "2026-11-25T09:48:11.550Z",
       "includes": []
     },
     {
@@ -5694,7 +5701,7 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-25T09:36:22.166Z",
-    "publish": "2026-11-25T00:38:39.311Z",
+    "publish": "2026-11-25T09:48:11.866Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
