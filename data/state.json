@@ -68,7 +68,8 @@
         "space-035",
         "how-things-work-034",
         "animals-027",
-        "human-body-027"
+        "human-body-027",
+        "feelings-friendship-034"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5572,11 +5573,48 @@
       ],
       "telegramMessageId": 478,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-25-en-feelings-friendship-034",
+      "kind": "short",
+      "topicId": "feelings-friendship-034",
+      "date": "2026-11-25",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why do we feel grateful",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-25T09:17:50.063Z",
+      "updatedAt": "2026-11-25T09:17:50.063Z",
+      "durationSeconds": 41.4,
+      "releaseTag": "draft-2026-11-25-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-25-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790868908",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-25-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790868987",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790869015",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790869042"
+      },
+      "description": "Learn why saying thank you makes us feel so warm and happy inside. Bolt explains gratitude with a cozy comparison and a fun drawing idea for kids. A gentle introduction to feelings for young minds.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "gratitude",
+        "feelings",
+        "kids science",
+        "bolt and pip",
+        "friendship",
+        "kindness",
+        "emotions for kids"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-25T09:17:50.063Z",
+      "telegramMessageId": 483,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-24T10:55:02.291Z",
+    "generate": "2026-11-25T09:17:50.063Z",
     "publish": "2026-11-25T00:38:39.311Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
