@@ -155,7 +155,8 @@
         "gh-sybil-solutions-inference-optimisation-skill",
         "gh-w01fb0ss-pibot",
         "gh-pierridotite-mobile-agent-testers",
-        "gh-liufelix2004-dsh-workbuddy"
+        "gh-liufelix2004-dsh-workbuddy",
+        "tech-016"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5651,11 +5652,48 @@
       "approvedAt": "2026-11-25T09:26:14.477Z",
       "telegramMessageId": 485,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-25-ai-digest-en-tech-016",
+      "kind": "short",
+      "topicId": "tech-016",
+      "date": "2026-11-25",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "What is a README file and why every project needs one",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-25T09:36:22.166Z",
+      "updatedAt": "2026-11-25T09:36:22.166Z",
+      "durationSeconds": 49.766666666666666,
+      "releaseTag": "draft-2026-11-25-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-25-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790926633",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-25-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790926677",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790926710",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/790926727"
+      },
+      "description": "Learn what a README file is and why every software project starts with one. Discover how to write clear documentation so developers can easily understand and run your code.\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "readme",
+        "markdown",
+        "github",
+        "documentation",
+        "coding",
+        "software engineering",
+        "open source",
+        "developer tools"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 487,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-25T09:26:14.477Z",
+    "generate": "2026-11-25T09:36:22.166Z",
     "publish": "2026-11-25T00:38:39.311Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
