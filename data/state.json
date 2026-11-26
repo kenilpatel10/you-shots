@@ -158,7 +158,8 @@
         "gh-w01fb0ss-pibot",
         "gh-pierridotite-mobile-agent-testers",
         "gh-liufelix2004-dsh-workbuddy",
-        "tech-016"
+        "tech-016",
+        "gh-alesha-pro-llm-asm"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5772,11 +5773,50 @@
       "approvedAt": "2026-11-26T09:32:52.435Z",
       "telegramMessageId": 494,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-26-ai-digest-en-gh-alesha-pro-llm-asm",
+      "kind": "short",
+      "topicId": "gh-alesha-pro-llm-asm",
+      "date": "2026-11-26",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "llm.asm: Three LLM projects in pure assembly",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-26T09:48:18.077Z",
+      "updatedAt": "2026-11-26T09:48:18.077Z",
+      "durationSeconds": 44.43333333333333,
+      "releaseTag": "draft-2026-11-26-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-26-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795228335",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-26-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795228394",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795228422",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795228455"
+      },
+      "description": "Discover alesha-pro/llm.asm, featuring complete Qwen3 inference, a bootable bare-metal OS, and a Mini-GPT trainer written entirely in x86-64 NASM assembly with zero dependencies.\n\nSource: alesha-pro/llm.asm\nhttps://github.com/alesha-pro/llm.asm\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "llm.asm",
+        "assembly",
+        "nasm",
+        "bare-metal",
+        "machine-learning",
+        "qwen",
+        "opensource",
+        "ai"
+      ],
+      "reviewerIssues": [
+        "[validator 1] estimated length 59.4s (target 44–58s)"
+      ],
+      "telegramMessageId": 496,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-26T09:32:52.435Z",
+    "generate": "2026-11-26T09:48:18.077Z",
     "publish": "2026-11-26T02:48:38.593Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
