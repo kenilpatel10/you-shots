@@ -69,7 +69,8 @@
         "how-things-work-034",
         "animals-027",
         "human-body-027",
-        "feelings-friendship-034"
+        "feelings-friendship-034",
+        "food-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5696,11 +5697,47 @@
       "reviewerIssues": [],
       "telegramMessageId": 487,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-26-en-food-004",
+      "kind": "short",
+      "topicId": "food-004",
+      "date": "2026-11-26",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why is honey sticky",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-26T09:01:17.576Z",
+      "updatedAt": "2026-11-26T09:01:17.576Z",
+      "durationSeconds": 40.86666666666667,
+      "releaseTag": "draft-2026-11-26-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-26-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795065474",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-26-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795065565",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795065604",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795065661"
+      },
+      "description": "Learn why honey is so sticky and how natural sugar grabs onto water. Bolt explains this sweet food science with a fun hands-on activity.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "honey",
+        "science for kids",
+        "sticky honey",
+        "food science",
+        "bolt and pip",
+        "fun facts"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-26T09:01:17.576Z",
+      "telegramMessageId": 492,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-25T09:36:22.166Z",
+    "generate": "2026-11-26T09:01:17.576Z",
     "publish": "2026-11-26T02:48:38.593Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
