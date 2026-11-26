@@ -143,7 +143,8 @@
         "everyday-things-035",
         "dinosaurs-029",
         "space-035",
-        "how-things-work-034"
+        "how-things-work-034",
+        "animals-027"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5733,11 +5734,49 @@
       "approvedAt": "2026-11-26T09:01:17.576Z",
       "telegramMessageId": 492,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-26-hi-animals-027",
+      "kind": "short",
+      "topicId": "animals-027",
+      "date": "2026-11-26",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "ऊंट की पीठ पर कूबड़ क्यों होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-26T09:32:52.435Z",
+      "updatedAt": "2026-11-26T09:32:52.435Z",
+      "durationSeconds": 40.46666666666667,
+      "releaseTag": "draft-2026-11-26-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-26-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795174124",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-26-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795174186",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795174210",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/795174247"
+      },
+      "description": "जानिए ऊंट के कूबड़ का असली रहस्य। यह पानी नहीं बल्कि ऊर्जा का खजाना होता है जो ऊंट को रेगिस्तान में मदद करता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "animals",
+        "camels",
+        "kids science hindi",
+        "bolt and pip",
+        "camel hump",
+        "fun facts hindi"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] The total spoken word count in the original script was 77 words, which is below the required limit of 81–104 words."
+      ],
+      "approvedAt": "2026-11-26T09:32:52.435Z",
+      "telegramMessageId": 494,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-26T09:01:17.576Z",
+    "generate": "2026-11-26T09:32:52.435Z",
     "publish": "2026-11-26T02:48:38.593Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
