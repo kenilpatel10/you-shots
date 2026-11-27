@@ -5701,6 +5701,7 @@
         "developer tools"
       ],
       "reviewerIssues": [],
+      "reminderSentAt": "2026-11-27T14:59:27.505Z",
       "telegramMessageId": 487,
       "includes": []
     },
@@ -5831,10 +5832,10 @@
       "language": "en",
       "persona": "bolt-pip",
       "title": "Why can't we drink sea water?",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-27T09:15:01.899Z",
-      "updatedAt": "2026-11-27T09:15:01.899Z",
+      "updatedAt": "2026-11-27T14:59:29.722Z",
       "durationSeconds": 38.43333333333333,
       "releaseTag": "draft-2026-11-27-en",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-27-en",
@@ -5862,6 +5863,9 @@
       ],
       "approvedAt": "2026-11-27T09:15:01.899Z",
       "telegramMessageId": 501,
+      "youtubeVideoId": "M3kmBlt2cNI",
+      "scheduledFor": "2026-11-30T11:30:00.000Z",
+      "uploadedAt": "2026-11-27T14:59:29.722Z",
       "includes": []
     },
     {
@@ -5872,10 +5876,10 @@
       "language": "hi",
       "persona": "bolt-pip",
       "title": "गोल घूमने पर चक्कर क्यों आते हैं",
-      "status": "approved",
+      "status": "uploaded",
       "source": "llm",
       "createdAt": "2026-11-27T09:28:29.888Z",
-      "updatedAt": "2026-11-27T09:28:29.888Z",
+      "updatedAt": "2026-11-27T14:59:31.891Z",
       "durationSeconds": 41.1,
       "releaseTag": "draft-2026-11-27-hi",
       "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-27-hi",
@@ -5903,6 +5907,9 @@
       ],
       "approvedAt": "2026-11-27T09:28:29.888Z",
       "telegramMessageId": 503,
+      "youtubeVideoId": "G5RYTPfHCAI",
+      "scheduledFor": "2026-11-29T11:30:00.000Z",
+      "uploadedAt": "2026-11-27T14:59:31.891Z",
       "includes": []
     },
     {
@@ -5945,7 +5952,7 @@
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
     "generate": "2026-11-27T09:36:11.298Z",
-    "publish": "2026-11-27T04:59:11.801Z",
+    "publish": "2026-11-27T14:59:32.197Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
 }
