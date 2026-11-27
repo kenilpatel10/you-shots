@@ -70,7 +70,8 @@
         "animals-027",
         "human-body-027",
         "feelings-friendship-034",
-        "food-004"
+        "food-004",
+        "ocean-023"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5819,11 +5820,52 @@
       ],
       "telegramMessageId": 496,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-27-en-ocean-023",
+      "kind": "short",
+      "topicId": "ocean-023",
+      "date": "2026-11-27",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why can't we drink sea water?",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-27T09:15:01.899Z",
+      "updatedAt": "2026-11-27T09:15:01.899Z",
+      "durationSeconds": 38.43333333333333,
+      "releaseTag": "draft-2026-11-27-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-27-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799789671",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-27-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799789721",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799789778",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799789814"
+      },
+      "description": "Bolt explains to young viewers why drinking ocean water makes us thirsty instead of hydrated. Children will learn about salt levels in seawater through a simple comparison and a fun evaporation observation activity.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "ocean",
+        "salty water",
+        "sea water",
+        "science for kids",
+        "bolt and pip",
+        "curious kids",
+        "water science",
+        "kids experiment"
+      ],
+      "reviewerIssues": [
+        "[validator 1] experiment involves eating/tasting or putting things near the mouth, eyes, ears or nose",
+        "[attempt 2] The wow fact understates the amount of salt in the ocean; if spread over all land, ocean salt would form a layer about 500 feet thick, which is as tall as a skyscraper, not just a house."
+      ],
+      "approvedAt": "2026-11-27T09:15:01.899Z",
+      "telegramMessageId": 501,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-26T09:48:18.077Z",
+    "generate": "2026-11-27T09:15:01.899Z",
     "publish": "2026-11-27T04:59:11.801Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
