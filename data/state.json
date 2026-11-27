@@ -161,7 +161,8 @@
         "gh-pierridotite-mobile-agent-testers",
         "gh-liufelix2004-dsh-workbuddy",
         "tech-016",
-        "gh-alesha-pro-llm-asm"
+        "gh-alesha-pro-llm-asm",
+        "tech-001"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5903,11 +5904,47 @@
       "approvedAt": "2026-11-27T09:28:29.888Z",
       "telegramMessageId": 503,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-27-ai-digest-en-tech-001",
+      "kind": "short",
+      "topicId": "tech-001",
+      "date": "2026-11-27",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "What is a large language model really",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-27T09:36:11.298Z",
+      "updatedAt": "2026-11-27T09:36:11.298Z",
+      "durationSeconds": 45.733333333333334,
+      "releaseTag": "draft-2026-11-27-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-27-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799855521",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-27-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799855625",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799855658",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799855708"
+      },
+      "description": "Learn what a large language model actually does under the hood without the hype. Discover how LLMs predict text and why hallucinations happen.\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "llm",
+        "ai",
+        "machine learning",
+        "developer",
+        "tech concepts",
+        "how ai works",
+        "predictive text"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 505,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-27T09:28:29.888Z",
+    "generate": "2026-11-27T09:36:11.298Z",
     "publish": "2026-11-27T04:59:11.801Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
