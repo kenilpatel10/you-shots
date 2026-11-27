@@ -145,7 +145,8 @@
         "dinosaurs-029",
         "space-035",
         "how-things-work-034",
-        "animals-027"
+        "animals-027",
+        "human-body-027"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5861,11 +5862,52 @@
       "approvedAt": "2026-11-27T09:15:01.899Z",
       "telegramMessageId": 501,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-27-hi-human-body-027",
+      "kind": "short",
+      "topicId": "human-body-027",
+      "date": "2026-11-27",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "गोल घूमने पर चक्कर क्यों आते हैं",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-27T09:28:29.888Z",
+      "updatedAt": "2026-11-27T09:28:29.888Z",
+      "durationSeconds": 41.1,
+      "releaseTag": "draft-2026-11-27-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-27-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799830963",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-27-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799831017",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799831057",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/799831076"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को समझाता है कि गोल घूमने के बाद चक्कर क्यों आते हैं। जानिए कान के अंदर का तरल पदार्थ हमारे संतुलन को कैसे प्रभावित करता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "human body",
+        "dizziness",
+        "kids science",
+        "bolt and pip",
+        "hindi science shorts",
+        "inner ear",
+        "experiments for kids"
+      ],
+      "reviewerIssues": [
+        "[attempt 1] wowFact is factually incorrect: claiming that astronauts never get dizzy in space is false, as astronauts frequently experience space motion sickness and spatial disorientation in microgravity.",
+        "[attempt 1] Answer length is 26 words, which is below the required range of 28–47 words.",
+        "[attempt 1] Experiment length is 12 words, which is below the required range of 14–28 words."
+      ],
+      "approvedAt": "2026-11-27T09:28:29.888Z",
+      "telegramMessageId": 503,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-27T09:15:01.899Z",
+    "generate": "2026-11-27T09:28:29.888Z",
     "publish": "2026-11-27T04:59:11.801Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
