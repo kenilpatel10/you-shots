@@ -71,7 +71,8 @@
         "human-body-027",
         "feelings-friendship-034",
         "food-004",
-        "ocean-023"
+        "ocean-023",
+        "weather-nature-029"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5947,11 +5948,48 @@
       "reviewerIssues": [],
       "telegramMessageId": 505,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-28-en-weather-nature-029",
+      "kind": "short",
+      "topicId": "weather-nature-029",
+      "date": "2026-11-28",
+      "language": "en",
+      "persona": "bolt-pip",
+      "title": "Why does dew appear on grass in the morning",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-28T08:32:36.731Z",
+      "updatedAt": "2026-11-28T08:32:36.731Z",
+      "durationSeconds": 40.3,
+      "releaseTag": "draft-2026-11-28-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-28-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803845708",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-28-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803845741",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803845765",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803845792"
+      },
+      "description": "Bolt explains how morning dew forms on grass when cool overnight air touches cold plants. Children learn how invisible water in the air turns into tiny water drops.\n\n#Shorts #kids #science #learning #whyquestions\nBolt & Pip",
+      "tags": [
+        "dew",
+        "weather",
+        "nature",
+        "science for kids",
+        "bolt and pip",
+        "morning dew",
+        "water drops"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-28T08:32:36.731Z",
+      "telegramMessageId": 510,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-27T09:36:11.298Z",
+    "generate": "2026-11-28T08:32:36.731Z",
     "publish": "2026-11-28T07:39:58.060Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
