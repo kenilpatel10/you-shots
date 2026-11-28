@@ -164,7 +164,8 @@
         "gh-liufelix2004-dsh-workbuddy",
         "tech-016",
         "gh-alesha-pro-llm-asm",
-        "tech-001"
+        "tech-001",
+        "tech-004"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -6022,11 +6023,48 @@
       "approvedAt": "2026-11-28T08:42:49.458Z",
       "telegramMessageId": 512,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-28-ai-digest-en-tech-004",
+      "kind": "short",
+      "topicId": "tech-004",
+      "date": "2026-11-28",
+      "language": "en",
+      "persona": "ai-digest",
+      "title": "What is RAG and how retrieval augmented generation works",
+      "status": "drafted",
+      "source": "llm",
+      "createdAt": "2026-11-28T08:50:24.922Z",
+      "updatedAt": "2026-11-28T08:50:24.922Z",
+      "durationSeconds": 51.2,
+      "releaseTag": "draft-2026-11-28-ai-digest-en",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-28-ai-digest-en",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803896538",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-28-ai-digest-en/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803896578",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803896590",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803896609"
+      },
+      "description": "Retrieval-Augmented Generation (RAG) lets developers connect private files and databases directly to AI language models. Learn how RAG works as an open-book lookup system to make AI responses more accurate.\n\n#ai #opensource #github #shorts\n60-Second AI",
+      "tags": [
+        "rag",
+        "retrieval augmented generation",
+        "ai",
+        "langchain",
+        "llamaindex",
+        "llm",
+        "developer tools",
+        "python"
+      ],
+      "reviewerIssues": [],
+      "telegramMessageId": 514,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-28T08:42:49.458Z",
+    "generate": "2026-11-28T08:50:24.922Z",
     "publish": "2026-11-28T07:39:58.060Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
