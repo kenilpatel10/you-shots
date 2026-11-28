@@ -147,7 +147,8 @@
         "space-035",
         "how-things-work-034",
         "animals-027",
-        "human-body-027"
+        "human-body-027",
+        "feelings-friendship-034"
       ],
       "redoTopicIds": [],
       "usedFallbackScripts": [],
@@ -5985,11 +5986,47 @@
       "approvedAt": "2026-11-28T08:32:36.731Z",
       "telegramMessageId": 510,
       "includes": []
+    },
+    {
+      "id": "short-2026-11-28-hi-feelings-friendship-034",
+      "kind": "short",
+      "topicId": "feelings-friendship-034",
+      "date": "2026-11-28",
+      "language": "hi",
+      "persona": "bolt-pip",
+      "title": "हमें धन्यवाद महसूस क्यों होता है",
+      "status": "approved",
+      "source": "llm",
+      "createdAt": "2026-11-28T08:42:49.458Z",
+      "updatedAt": "2026-11-28T08:42:49.458Z",
+      "durationSeconds": 41.766666666666666,
+      "releaseTag": "draft-2026-11-28-hi",
+      "releaseUrl": "https://github.com/kenilpatel10/you-shots/releases/tag/draft-2026-11-28-hi",
+      "assets": {
+        "video": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803876053",
+        "videoPublic": "https://github.com/kenilpatel10/you-shots/releases/download/draft-2026-11-28-hi/short.mp4",
+        "script": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803876120",
+        "audio": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803876156",
+        "props": "https://api.github.com/repos/kenilpatel10/you-shots/releases/assets/803876204"
+      },
+      "description": "इस वीडियो में बोल्ट बच्चों को समझाता है कि हमें धन्यवाद या आभार महसूस क्यों होता है। जानिए कैसे धन्यवाद कहना हमारे मन और शरीर को खुश रखता है।\n\n#Shorts #बच्चे #विज्ञान #hindi #क्यों\nबोल्ट और पिप",
+      "tags": [
+        "bolt and pip",
+        "hindi kids science",
+        "gratitude for kids",
+        "feelings for children",
+        "moral values hindi",
+        "boltu"
+      ],
+      "reviewerIssues": [],
+      "approvedAt": "2026-11-28T08:42:49.458Z",
+      "telegramMessageId": 512,
+      "includes": []
     }
   ],
   "lastTelegramUpdateId": 171672820,
   "lastRuns": {
-    "generate": "2026-11-28T08:32:36.731Z",
+    "generate": "2026-11-28T08:42:49.458Z",
     "publish": "2026-11-28T07:39:58.060Z",
     "weekly": "2026-11-22T11:32:09.127Z"
   }
